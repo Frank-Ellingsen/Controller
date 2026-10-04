@@ -8,14 +8,18 @@ table Dim_Date
 		summarizeBy: none
 		sourceColumn: Date
 
+		variation Variation
+			isDefault
+			relationship: 48792e5b-f9ed-408b-b91a-25b06c92dc11
+			defaultHierarchy: LocalDateTable_e98e644e-dd24-4cf7-98de-09a63bc142d2.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
-		annotation UnderlyingDateTimeDataType = Date
 
 	column Year
 		dataType: int64
 		formatString: 0
 		lineageTag: 5487eba3-2e70-4184-a644-4892f8edb2c7
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Year
 
 		annotation SummarizationSetBy = Automatic
@@ -24,7 +28,7 @@ table Dim_Date
 		dataType: int64
 		formatString: 0
 		lineageTag: 8ac53197-e080-4270-90c2-56bf56c0563b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Month
 
 		annotation SummarizationSetBy = Automatic
@@ -50,7 +54,7 @@ table Dim_Date
 		dataType: int64
 		formatString: 0
 		lineageTag: 3d5f4d3e-0200-430e-b803-0b3ef5dcfd47
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Quarter
 
 		annotation SummarizationSetBy = Automatic
@@ -70,3 +74,4 @@ table Dim_Date
 				    })
 				in
 				    #"Changed Type"
+

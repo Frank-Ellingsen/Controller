@@ -155,3 +155,4 @@ table _Measures
 	partition _Measures-partition = m
 		mode: import
 		source = let Source = #table({"_Placeholder"}, {{1}}) in Source
+
