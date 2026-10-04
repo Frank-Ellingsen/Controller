@@ -1,4 +1,4 @@
-# UiA Controller App (v14 Production Release)
+# UiA Controller App (v15 Production Release)
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![DuckDB Engine](https://img.shields.io/badge/OLAP-DuckDB-yellow.svg)](https://duckdb.org/)
@@ -8,7 +8,7 @@
 [![CI Verification](https://github.com/frankellingsen/UIA-Controller/actions/workflows/ci.yml/badge.svg)](https://github.com/frankellingsen/UIA-Controller/actions)
 [![User Guide](https://img.shields.io/badge/Docs-User%20Guide-brightgreen.svg)](docs/USER_GUIDE.md)
 
-An agentic financial controlling & compliance application tailored for **Universitetet i Agder (UiA) Handelshøyskolen**, bridging Norwegian public sector regulations (**DFØ circulars, UBW/Unit4 ledgers, F-05-20 reserve management**) with capital project controlling (**DuckDB OLAP, Earned Value Management (EVM), composite EAC forecasting, prescriptive action simulation**) and **Power BI Star Schema** data modeling.
+An agentic financial controlling & compliance application tailored for **Universitetet i Agder (UiA) Handelshøyskolen**, bridging Norwegian public sector regulations (**DFØ circulars, UBW/Unit4 ledgers, F-05-20 reserve management**) with capital project controlling (**DuckDB OLAP, Earned Value Management (EVM), composite EAC forecasting, prescriptive action simulation**), **Power BI Star Schema** data modeling, and a specialized 5-agent team (**Lead Controller, Compliance Auditor, Ledger Analyst, Excel Specialist, Power BI Specialist**).
 
 > 📖 **Comprehensive Manual:** For full operational details, mathematical formulas, and step-by-step procedures, refer to the **[UiA Controller User & Operations Guide](docs/USER_GUIDE.md)**.
 

@@ -33,7 +33,7 @@
 ## Excel Specialist
 - **Rolle:** Ekspert på regnearkforvaltning, automatisk Excel-behandling og strukturering av finansielle arbeidsbøker.
 - **Ferdigheter:** `skills/ubw_avviksanalyse.md`
-- **Verktøy:** `ubw_reader.py`, `generate_excel_report.py`, `openpyxl`, `pandas`
+- **Verktøy:** `ubw_reader.py`, `openpyxl`, `pandas`
 - **Ansvarsområder:**
   * Behandling av råuttrekk i `.xlsx`/`.csv` fra Unit4 UBW og konvertering til strukturerte datamodeller.
   * Verifisering av formler, beregningsintegritet og fler-fane datakonsistens i regneark.
@@ -42,8 +42,8 @@
 ## Power BI Specialist
 - **Rolle:** Ekspert på datamodellering (Star Schema), DAX-beregninger og automatisk eksport av dashboards.
 - **Ferdigheter:** `skills/powerbi_reporting.md`
-- **Verktøy:** `powerbi_exporter.py`, `duckdb_analytics.py`, `build_powerbi_dataset.py`
+- **Verktøy:** `powerbi_exporter.py`, `duckdb_analytics.py`
 - **Ansvarsområder:**
   * Forvaltning og automatisering av Parquet/DuckDB Star Schema-eksportering (`Fact_EVM_Snapshots`, `Fact_UBW_Audit`, `Fact_Travel_Audit`, `Dim_Project`, `Dim_Date`).
   * Konstruksjon og vedlikehold av DAX-mål (dynamiske EAC-velgere, avviksindikatorer, F-05-20 reservemålere).
-  * Konfigurasjon og publisering av Power BI Desktop/Service rapporter etter Edward Tufte-standarder for visuell kommunikasjon.
+  * Konfigurasjon og publisering av Power BI Desktop/Service rapporter etter Edward Tufte-standarder for visuell kommunisasjon.
