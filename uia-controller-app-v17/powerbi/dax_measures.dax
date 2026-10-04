@@ -1,0 +1,178 @@
+// ===============================================================================
+// Power BI DAX Measures Library — UiA Controller App (v12)
+// Designed for Project Controlling, EVM, DFØ Compliance & F-05-20 Reserve Tracking
+// Edward Tufte Data-Ink Compliant Metric Definitions
+// ===============================================================================
+
+// -------------------------------------------------------------------------------
+// SECTION 1: CORE EARNED VALUE MANAGEMENT (EVM) BASE METRICS
+// -------------------------------------------------------------------------------
+
+[Total BAC] = 
+SUM('Fact_EVM_Snapshots'[bac])
+// Budget at Completion across selected projects
+
+[Total PV] = 
+SUM('Fact_EVM_Snapshots'[pv])
+// Planned Value for the reporting period
+
+[Total EV] = 
+SUM('Fact_EVM_Snapshots'[ev])
+// Earned Value (Work performed)
+
+[Total AC] = 
+SUM('Fact_EVM_Snapshots'[ac])
+// Actual Cost incurred
+
+[Cost Variance NOK] = 
+[Total EV] - [Total AC]
+// Positive = Under budget, Negative = Cost overrun
+
+[Schedule Variance NOK] = 
+[Total EV] - [Total PV]
+// Positive = Ahead of schedule, Negative = Behind schedule
+
+[Portfolio CPI] = 
+DIVIDE([Total EV], [Total AC], 1.0)
+// Cost Performance Index (>1.0 is favorable)
+
+[Portfolio SPI] = 
+DIVIDE([Total EV], [Total PV], 1.0)
+// Schedule Performance Index (>1.0 is favorable)
+
+
+// -------------------------------------------------------------------------------
+// SECTION 2: MULTI-MODEL EAC (ESTIMATE AT COMPLETION) FORECASTING
+// -------------------------------------------------------------------------------
+
+[EAC Typical CPI] = 
+DIVIDE([Total BAC], [Portfolio CPI], [Total BAC])
+// Formula: BAC / CPI — Assumes past cost efficiency continues
+
+[EAC Composite CPI_SPI] = 
+VAR RemainingWork = [Total BAC] - [Total EV]
+VAR CompositeIndex = [Portfolio CPI] * [Portfolio SPI]
+RETURN
+    IF(
+        CompositeIndex > 0,
+        [Total AC] + DIVIDE(RemainingWork, CompositeIndex, RemainingWork),
+        [Total BAC]
+    )
+// Formula: AC + (BAC - EV) / (CPI * SPI) — Factors in schedule pressure
+
+[EAC Weighted 80_20] = 
+VAR RemainingWork = [Total BAC] - [Total EV]
+VAR WeightedIndex = 0.8 * [Portfolio CPI] + 0.2 * [Portfolio SPI]
+RETURN
+    IF(
+        WeightedIndex > 0,
+        [Total AC] + DIVIDE(RemainingWork, WeightedIndex, RemainingWork),
+        [Total BAC]
+    )
+// Formula: AC + (BAC - EV) / (0.8*CPI + 0.2*SPI) — Heavy cost weighting
+
+[EAC Selected Model] = 
+VAR SelectedModel = SELECTEDVALUE('Dim_Model_Parameter'[ModelCode], "CPI")
+RETURN
+    SWITCH(
+        SelectedModel,
+        "CPI", [EAC Typical CPI],
+        "COMPOSITE", [EAC Composite CPI_SPI],
+        "WEIGHTED", [EAC Weighted 80_20],
+        [EAC Typical CPI]
+    )
+// Dynamic EAC switching based on report slicer selection
+
+[VAC Selected Model] = 
+[Total BAC] - [EAC Selected Model]
+// Variance at Completion for selected model (Negative = Overrun)
+
+
+// -------------------------------------------------------------------------------
+// SECTION 3: TO-COMPLETE PERFORMANCE INDEX (TCPI) & STATUS FLAGS
+// -------------------------------------------------------------------------------
+
+[TCPI Target BAC] = 
+VAR RemainingWork = [Total BAC] - [Total EV]
+VAR RemainingFund = [Total BAC] - [Total AC]
+RETURN
+    IF(
+        RemainingFund > 0,
+        DIVIDE(RemainingWork, RemainingFund, 9.99),
+        9.99
+    )
+// TCPI required to meet original BAC budget (>1.10 indicates extreme recovery challenge)
+
+[Project Risk Status] = 
+VAR CurrentCPI = [Portfolio CPI]
+VAR CurrentSPI = [Portfolio SPI]
+VAR CurrentVAC = [VAC Selected Model]
+RETURN
+    SWITCH(
+        TRUE(),
+        CurrentCPI < 0.85 || CurrentSPI < 0.85 || CurrentVAC < -1000000, "CRITICAL",
+        CurrentCPI < 0.95 || CurrentSPI < 0.95 || CurrentVAC < -250000, "WARNING",
+        "ON TRACK"
+    )
+
+[Status Color Hex] = 
+SWITCH(
+    [Project Risk Status],
+    "CRITICAL", "#ef4444",
+    "WARNING", "#f59e0b",
+    "ON TRACK", "#34d399",
+    "#94a3b8"
+)
+
+
+// -------------------------------------------------------------------------------
+// SECTION 4: F-05-20 STATLIG DRIFTSAVSETNING & DISPENSASJON
+// -------------------------------------------------------------------------------
+
+[Statlig Rammebevilgning NOK] = 1200000000
+// Kap. 260, post 50 total grant amount (1.2 billion NOK)
+
+[Reell Driftsavsetning NOK] = 72000000
+// Accumulated carryover reserve per 2026-M10
+
+[Reserve Share Pct] = 
+DIVIDE([Reell Driftsavsetning NOK], [Statlig Rammebevilgning NOK], 0)
+// Actual reserve percentage (e.g., 0.060 = 6.0%)
+
+[Reserve Cap 5% Limit NOK] = 
+[Statlig Rammebevilgning NOK] * 0.05
+// 5.0% maximum threshold (60,000,000 NOK)
+
+[Reserve Cap Excess NOK] = 
+MAX(0, [Reell Driftsavsetning NOK] - [Reserve Cap 5% Limit NOK])
+// Excess carryover reserve subject to KD clawback (12,000,000 NOK)
+
+[F-05-20 Status Flag] = 
+IF([Reserve Cap Excess NOK] > 0, "DISPENSASJON PÅKREVD", "INNENFOR GRENSE")
+
+
+// -------------------------------------------------------------------------------
+// SECTION 5: DFØ INTERNKONTROLL & REISEREGNING AUDIT
+// -------------------------------------------------------------------------------
+
+[Total Scanned Claims Count] = 
+COUNTROWS('Fact_Travel_Audit')
+
+[Flagged Claims Count] = 
+CALCULATE(
+    COUNTROWS('Fact_Travel_Audit'),
+    'Fact_Travel_Audit'[Status] = "FLAGGED"
+)
+
+[Total Flagged Amount NOK] = 
+CALCULATE(
+    SUM('Fact_Travel_Audit'[Belop_NOK]),
+    'Fact_Travel_Audit'[Status] = "FLAGGED"
+)
+
+[Self-Approval Breach Amount NOK] = 
+CALCULATE(
+    SUM('Fact_Travel_Audit'[Belop_NOK]),
+    SEARCH("Egengodkjenning", 'Fact_Travel_Audit'[Avvik_Beskrivelse], 1, 0) > 0
+)
+// 4-eyes principle violations
