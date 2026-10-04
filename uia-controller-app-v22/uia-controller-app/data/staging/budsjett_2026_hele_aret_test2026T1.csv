@@ -1,0 +1,385 @@
+Budsjett_ID,Maaned,Kvartal,Tertial,Avdeling,Konto,Kontonavn,Kategori,Budsjett_Maaned_NOK,Tag
+BUD-1001,2026-M01,Q1,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1002,2026-M01,Q1,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1003,2026-M01,Q1,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1004,2026-M01,Q1,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1005,2026-M01,Q1,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1006,2026-M01,Q1,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1007,2026-M01,Q1,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1008,2026-M01,Q1,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1009,2026-M01,Q1,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1010,2026-M01,Q1,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1011,2026-M01,Q1,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1012,2026-M01,Q1,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1013,2026-M01,Q1,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1014,2026-M01,Q1,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1015,2026-M01,Q1,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1016,2026-M01,Q1,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1017,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1018,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1019,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1020,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1021,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1022,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1023,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1024,2026-M01,Q1,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1025,2026-M01,Q1,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1026,2026-M01,Q1,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1027,2026-M01,Q1,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1028,2026-M01,Q1,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1029,2026-M01,Q1,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1030,2026-M01,Q1,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1031,2026-M01,Q1,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1032,2026-M01,Q1,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1033,2026-M02,Q1,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1034,2026-M02,Q1,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1035,2026-M02,Q1,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1036,2026-M02,Q1,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1037,2026-M02,Q1,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1038,2026-M02,Q1,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1039,2026-M02,Q1,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1040,2026-M02,Q1,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1041,2026-M02,Q1,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1042,2026-M02,Q1,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1043,2026-M02,Q1,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1044,2026-M02,Q1,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1045,2026-M02,Q1,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1046,2026-M02,Q1,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1047,2026-M02,Q1,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1048,2026-M02,Q1,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1049,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1050,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1051,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1052,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1053,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1054,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1055,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1056,2026-M02,Q1,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1057,2026-M02,Q1,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1058,2026-M02,Q1,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1059,2026-M02,Q1,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1060,2026-M02,Q1,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1061,2026-M02,Q1,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1062,2026-M02,Q1,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1063,2026-M02,Q1,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1064,2026-M02,Q1,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1065,2026-M03,Q1,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1066,2026-M03,Q1,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1067,2026-M03,Q1,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1068,2026-M03,Q1,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1069,2026-M03,Q1,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1070,2026-M03,Q1,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1071,2026-M03,Q1,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1072,2026-M03,Q1,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1073,2026-M03,Q1,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1074,2026-M03,Q1,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1075,2026-M03,Q1,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1076,2026-M03,Q1,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1077,2026-M03,Q1,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1078,2026-M03,Q1,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1079,2026-M03,Q1,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1080,2026-M03,Q1,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1081,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1082,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1083,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1084,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1085,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1086,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1087,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1088,2026-M03,Q1,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1089,2026-M03,Q1,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1090,2026-M03,Q1,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1091,2026-M03,Q1,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1092,2026-M03,Q1,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1093,2026-M03,Q1,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1094,2026-M03,Q1,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1095,2026-M03,Q1,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1096,2026-M03,Q1,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1097,2026-M04,Q2,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1098,2026-M04,Q2,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1099,2026-M04,Q2,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1100,2026-M04,Q2,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1101,2026-M04,Q2,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1102,2026-M04,Q2,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1103,2026-M04,Q2,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1104,2026-M04,Q2,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1105,2026-M04,Q2,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1106,2026-M04,Q2,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1107,2026-M04,Q2,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1108,2026-M04,Q2,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1109,2026-M04,Q2,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1110,2026-M04,Q2,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1111,2026-M04,Q2,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1112,2026-M04,Q2,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1113,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1114,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1115,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1116,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1117,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1118,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1119,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1120,2026-M04,Q2,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1121,2026-M04,Q2,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1122,2026-M04,Q2,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1123,2026-M04,Q2,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1124,2026-M04,Q2,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1125,2026-M04,Q2,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1126,2026-M04,Q2,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1127,2026-M04,Q2,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1128,2026-M04,Q2,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1129,2026-M05,Q2,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1130,2026-M05,Q2,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1131,2026-M05,Q2,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1132,2026-M05,Q2,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1133,2026-M05,Q2,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1134,2026-M05,Q2,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1135,2026-M05,Q2,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1136,2026-M05,Q2,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1137,2026-M05,Q2,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1138,2026-M05,Q2,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1139,2026-M05,Q2,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1140,2026-M05,Q2,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1141,2026-M05,Q2,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1142,2026-M05,Q2,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1143,2026-M05,Q2,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1144,2026-M05,Q2,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1145,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1146,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1147,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1148,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1149,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1150,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1151,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1152,2026-M05,Q2,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1153,2026-M05,Q2,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1154,2026-M05,Q2,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1155,2026-M05,Q2,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1156,2026-M05,Q2,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1157,2026-M05,Q2,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1158,2026-M05,Q2,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1159,2026-M05,Q2,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1160,2026-M05,Q2,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1161,2026-M06,Q2,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1162,2026-M06,Q2,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1163,2026-M06,Q2,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1164,2026-M06,Q2,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1165,2026-M06,Q2,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1166,2026-M06,Q2,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1167,2026-M06,Q2,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1168,2026-M06,Q2,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1169,2026-M06,Q2,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1170,2026-M06,Q2,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1171,2026-M06,Q2,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1172,2026-M06,Q2,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1173,2026-M06,Q2,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1174,2026-M06,Q2,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1175,2026-M06,Q2,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1176,2026-M06,Q2,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1177,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1178,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1179,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1180,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1181,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1182,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1183,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1184,2026-M06,Q2,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1185,2026-M06,Q2,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1186,2026-M06,Q2,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1187,2026-M06,Q2,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1188,2026-M06,Q2,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1189,2026-M06,Q2,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1190,2026-M06,Q2,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1191,2026-M06,Q2,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1192,2026-M06,Q2,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1193,2026-M07,Q3,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1194,2026-M07,Q3,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1195,2026-M07,Q3,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1196,2026-M07,Q3,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1197,2026-M07,Q3,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1198,2026-M07,Q3,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1199,2026-M07,Q3,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1200,2026-M07,Q3,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1201,2026-M07,Q3,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1202,2026-M07,Q3,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1203,2026-M07,Q3,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1204,2026-M07,Q3,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1205,2026-M07,Q3,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1206,2026-M07,Q3,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1207,2026-M07,Q3,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1208,2026-M07,Q3,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1209,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1210,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1211,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1212,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1213,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1214,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1215,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1216,2026-M07,Q3,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1217,2026-M07,Q3,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1218,2026-M07,Q3,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1219,2026-M07,Q3,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1220,2026-M07,Q3,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1221,2026-M07,Q3,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1222,2026-M07,Q3,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1223,2026-M07,Q3,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1224,2026-M07,Q3,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1225,2026-M08,Q3,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1226,2026-M08,Q3,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1227,2026-M08,Q3,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1228,2026-M08,Q3,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1229,2026-M08,Q3,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1230,2026-M08,Q3,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1231,2026-M08,Q3,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1232,2026-M08,Q3,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1233,2026-M08,Q3,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1234,2026-M08,Q3,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1235,2026-M08,Q3,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1236,2026-M08,Q3,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1237,2026-M08,Q3,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1238,2026-M08,Q3,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1239,2026-M08,Q3,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1240,2026-M08,Q3,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1241,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1242,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1243,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1244,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1245,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1246,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1247,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1248,2026-M08,Q3,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1249,2026-M08,Q3,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1250,2026-M08,Q3,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1251,2026-M08,Q3,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1252,2026-M08,Q3,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1253,2026-M08,Q3,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1254,2026-M08,Q3,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1255,2026-M08,Q3,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1256,2026-M08,Q3,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1257,2026-M09,Q3,T3,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1258,2026-M09,Q3,T3,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1259,2026-M09,Q3,T3,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1260,2026-M09,Q3,T3,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1261,2026-M09,Q3,T3,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1262,2026-M09,Q3,T3,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1263,2026-M09,Q3,T3,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1264,2026-M09,Q3,T3,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1265,2026-M09,Q3,T3,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1266,2026-M09,Q3,T3,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1267,2026-M09,Q3,T3,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1268,2026-M09,Q3,T3,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1269,2026-M09,Q3,T3,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1270,2026-M09,Q3,T3,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1271,2026-M09,Q3,T3,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1272,2026-M09,Q3,T3,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1273,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1274,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1275,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1276,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1277,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1278,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1279,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1280,2026-M09,Q3,T3,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1281,2026-M09,Q3,T3,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1282,2026-M09,Q3,T3,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1283,2026-M09,Q3,T3,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1284,2026-M09,Q3,T3,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1285,2026-M09,Q3,T3,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1286,2026-M09,Q3,T3,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1287,2026-M09,Q3,T3,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1288,2026-M09,Q3,T3,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1289,2026-M10,Q4,T3,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1290,2026-M10,Q4,T3,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1291,2026-M10,Q4,T3,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1292,2026-M10,Q4,T3,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1293,2026-M10,Q4,T3,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1294,2026-M10,Q4,T3,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1295,2026-M10,Q4,T3,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1296,2026-M10,Q4,T3,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1297,2026-M10,Q4,T3,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1298,2026-M10,Q4,T3,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1299,2026-M10,Q4,T3,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1300,2026-M10,Q4,T3,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1301,2026-M10,Q4,T3,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1302,2026-M10,Q4,T3,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1303,2026-M10,Q4,T3,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1304,2026-M10,Q4,T3,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1305,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1306,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1307,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1308,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1309,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1310,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1311,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1312,2026-M10,Q4,T3,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1313,2026-M10,Q4,T3,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1314,2026-M10,Q4,T3,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1315,2026-M10,Q4,T3,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1316,2026-M10,Q4,T3,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1317,2026-M10,Q4,T3,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1318,2026-M10,Q4,T3,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1319,2026-M10,Q4,T3,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1320,2026-M10,Q4,T3,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1321,2026-M11,Q4,T3,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1322,2026-M11,Q4,T3,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1323,2026-M11,Q4,T3,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1324,2026-M11,Q4,T3,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1325,2026-M11,Q4,T3,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1326,2026-M11,Q4,T3,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1327,2026-M11,Q4,T3,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1328,2026-M11,Q4,T3,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1329,2026-M11,Q4,T3,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1330,2026-M11,Q4,T3,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1331,2026-M11,Q4,T3,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1332,2026-M11,Q4,T3,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1333,2026-M11,Q4,T3,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1334,2026-M11,Q4,T3,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1335,2026-M11,Q4,T3,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1336,2026-M11,Q4,T3,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1337,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1338,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1339,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1340,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1341,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1342,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1343,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1344,2026-M11,Q4,T3,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1345,2026-M11,Q4,T3,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1346,2026-M11,Q4,T3,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1347,2026-M11,Q4,T3,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1348,2026-M11,Q4,T3,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1349,2026-M11,Q4,T3,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1350,2026-M11,Q4,T3,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1351,2026-M11,Q4,T3,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1352,2026-M11,Q4,T3,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1353,2026-M12,Q4,T3,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Inntekter,-750000.0,test2026T1
+BUD-1354,2026-M12,Q4,T3,Handelshøyskolen,3900,BOA Prosjektinntekter,Inntekter,-300000.0,test2026T1
+BUD-1355,2026-M12,Q4,T3,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Lønn,825000.0,test2026T1
+BUD-1356,2026-M12,Q4,T3,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Lønn,120000.0,test2026T1
+BUD-1357,2026-M12,Q4,T3,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Drift,180000.0,test2026T1
+BUD-1358,2026-M12,Q4,T3,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Drift,75000.0,test2026T1
+BUD-1359,2026-M12,Q4,T3,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reise,75000.0,test2026T1
+BUD-1360,2026-M12,Q4,T3,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Konsulent,75000.0,test2026T1
+BUD-1361,2026-M12,Q4,T3,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Inntekter,-937500.0,test2026T1
+BUD-1362,2026-M12,Q4,T3,Teknologi og Realfag,3900,BOA Prosjektinntekter,Inntekter,-375000.0,test2026T1
+BUD-1363,2026-M12,Q4,T3,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Lønn,1031250.0,test2026T1
+BUD-1364,2026-M12,Q4,T3,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Lønn,150000.0,test2026T1
+BUD-1365,2026-M12,Q4,T3,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Drift,225000.0,test2026T1
+BUD-1366,2026-M12,Q4,T3,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Drift,93750.0,test2026T1
+BUD-1367,2026-M12,Q4,T3,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reise,93750.0,test2026T1
+BUD-1368,2026-M12,Q4,T3,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Konsulent,93750.0,test2026T1
+BUD-1369,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1370,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1371,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1372,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1373,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1374,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1375,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1376,2026-M12,Q4,T3,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1
+BUD-1377,2026-M12,Q4,T3,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Inntekter,-625000.0,test2026T1
+BUD-1378,2026-M12,Q4,T3,Fellesadministrasjon,3900,BOA Prosjektinntekter,Inntekter,-250000.0,test2026T1
+BUD-1379,2026-M12,Q4,T3,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Lønn,687500.0,test2026T1
+BUD-1380,2026-M12,Q4,T3,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Lønn,100000.0,test2026T1
+BUD-1381,2026-M12,Q4,T3,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Drift,150000.0,test2026T1
+BUD-1382,2026-M12,Q4,T3,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Drift,62500.0,test2026T1
+BUD-1383,2026-M12,Q4,T3,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reise,62500.0,test2026T1
+BUD-1384,2026-M12,Q4,T3,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Konsulent,62500.0,test2026T1

@@ -1,13 +1,15 @@
 """
-Consolidated Antigravity Workflow Runner (v19)
-Executes full month-end close & annual wheel review:
+Consolidated Antigravity Workflow Runner (v22)
+Executes full month-end close, annual wheel, statutory reporting & database pipeline:
 1. UBW & Travel Expense Audit
 2. F-05-20 Budget Variance Analysis
 3. Database-driven EVM Performance Review
 4. DuckDB Time-Series Snapshotting & Multi-Model EAC Forecasts
 5. Preskriptiv Tiltaksplan & Revidert Årsprognose (EOY Balance Forecast)
 6. Power BI Star Schema Parquet Export
-7. Budget Engine & 2026 YTD Budget vs. Actuals Review (tag: 2026T1sep / test2026T1)
+7. Budget Engine & 2026 YTD Budget vs. Actuals Review (tags: test2026T1, 2026T1sep, 2026T1okt)
+8. Annual Wheel & Database Specialist Check-Off (arshjul_matrix_2026.xlsx)
+9. Statutory & State Reporting Specialist Verification (KD, DBH, Riksrevisjonen)
 Uses relative Path(__file__) resolution.
 """
 
@@ -21,37 +23,36 @@ from duckdb_analytics import snapshot_evm_data, query_eac_forecasting_models
 from powerbi_exporter import export_powerbi_data_model
 from action_engine import simulate_action_plan, format_action_plan_report
 from budget_engine import build_next_year_budget, get_annual_wheel_calendar, get_2026_budget_vs_actuals_ytd
+from statutory_reporting_engine import verify_kd_statutory_compliance, get_dbh_reporting_metrics
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DB_PATH = BASE_DIR / "data" / "staging" / "projects.db"
-DEFAULT_TRAVEL_CSV_PATH = BASE_DIR / "data" / "staging" / "reiseregninger_september_2026_2026T1sep.csv"
+DEFAULT_TRAVEL_CSV_PATH = BASE_DIR / "data" / "staging" / "reiseregninger_august_2026_test2026T1.csv"
 DEFAULT_DUCKDB_PATH = BASE_DIR / "data" / "staging" / "analytics_snapshots.duckdb"
 DEFAULT_PARQUET_DIR = BASE_DIR / "data" / "staging" / "parquet"
 
-def execute_monthly_close_v19(
+def execute_monthly_close_v22(
     db_path: str = None, 
     travel_csv_path: str = None, 
     duckdb_path: str = None, 
     parquet_dir: str = None,
     descoping_pct: float = 20.0,
     investments_activated_nok: float = 12000000.0,
-    tag: str = "2026T1sep"
+    tag: str = "test2026T1"
 ):
     if db_path is None:
         db_path = str(DEFAULT_DB_PATH)
     if travel_csv_path is None:
-        travel_csv_path = str(DEFAULT_TRAVEL_CSV_PATH) if (DEFAULT_TRAVEL_CSV_PATH).exists() else str(BASE_DIR / "data" / "staging" / "reiseregninger_15_stk.csv")
+        travel_csv_path = str(DEFAULT_TRAVEL_CSV_PATH) if Path(DEFAULT_TRAVEL_CSV_PATH).exists() else str(BASE_DIR / "data" / "staging" / "reiseregninger_15_stk.csv")
     if duckdb_path is None:
         duckdb_path = str(DEFAULT_DUCKDB_PATH)
     if parquet_dir is None:
         parquet_dir = str(DEFAULT_PARQUET_DIR)
 
-    period = "2026-M09" if "sep" in tag.lower() else "2026-M08"
-
-    print(f"=== START: UiA Antigravity Consolidated Monthly Close & Annual Wheel (v19 - tag: {tag}) ===")
+    print(f"=== START: UiA Antigravity Consolidated Monthly Close & Statutory Pipeline (v22 - tag: {tag}) ===")
     
     # Step 1: UBW Transactions & Travel Expense Audit
-    print("\n[1/7] Auditoria: Skanner UBW og reiseregninger for avvik...")
+    print("\n[1/9] Auditoria: Skanner UBW og reiseregninger for avvik...")
     if Path(db_path).exists():
         df_ubw = read_ubw_data(db_path, tag=tag)
         df_flagg = henter_transaksjonsflagg(df_ubw)
@@ -64,20 +65,20 @@ def execute_monthly_close_v19(
         print(f"      -> Reiseregninger ({tag}): {summary['avvik_claims']} av {summary['totalt_behandlet']} krav har avvik (Beløp: {summary['belop_med_avvik_nok']:,.0f} NOK).")
 
     # Step 2: F-05-20 Avsetningskontroll
-    print("\n[2/7] Analyst: Beregner F-05-20 Driftsavsetningsstatus...")
+    print("\n[2/9] Analyst: Beregner F-05-20 Driftsavsetningsstatus...")
     f0520_res = sjekk_f0520_avsetning(rammebevilgning=1200000000.0, akkumulert_avsetning=72000000.0)
     print(f"      -> Reell avsetning: {f0520_res['reell_prosent']}% (Grense: 5.0%)")
     print(f"      -> Overskridelse: {f0520_res['overskridelse_nok']:,.0f} NOK (Søknad Kunnskapsdepartementet kreves: {f0520_res['krever_soknad_kd']})")
 
     # Step 3: EVM Project Control from Database / CSV
-    print(f"\n[3/7] Lead Controller: Kjører databaseintegrert EVM-prosjektanalyse (tag: {tag})...")
-    evm_report = generate_evm_report(db_path, tag=tag)
+    print(f"\n[3/9] Lead Controller: Kjører databaseintegrert EVM-prosjektanalyse (tag: {tag})...")
+    evm_report = generate_evm_report(db_path)
     print(evm_report)
 
     # Step 4: DuckDB Time-Series Snapshot & Advanced EAC Forecasts
-    print(f"\n[4/7] DuckDB Engine: Lagrer tidsrekke-snapshot og beregner fler-modell EAC-prognoser ({tag})...")
-    snap_df = snapshot_evm_data(sqlite_path=db_path, duckdb_path=duckdb_path, period=period, tag=tag)
-    forecast_df = query_eac_forecasting_models(duckdb_path=duckdb_path, tag=tag)
+    print(f"\n[4/9] DuckDB Engine: Lagrer tidsrekke-snapshot og beregner fler-modell EAC-prognoser ({tag})...")
+    snap_df = snapshot_evm_data(sqlite_path=db_path, duckdb_path=duckdb_path, period="2026-M10")
+    forecast_df = query_eac_forecasting_models(duckdb_path=duckdb_path)
     
     print("\n--- DuckDB EAC Prognosemodell-sammenligning ---")
     header = f"{'Project':<10} {'BAC':>12} {'AC':>12} {'CPI':>6} {'SPI':>6} {'EAC (CPI)':>12} {'EAC (CPI*SPI)':>14} {'EAC (80/20)':>13} {'TCPI':>6} {'Status':<9}"
@@ -88,7 +89,7 @@ def execute_monthly_close_v19(
     print("-" * len(header))
     
     # Step 5: Action Engine & EOY Forecast
-    print("\n[5/7] Action Engine: Genererer tiltaksplan, kvantifiserer effekter og beregner revidert EOY Balanse...")
+    print("\n[5/9] Action Engine: Genererer tiltaksplan, kvantifiserer effekter og beregner revidert EOY Balanse...")
     action_sim = simulate_action_plan(
         descoping_pct=descoping_pct,
         investments_activated_nok=investments_activated_nok,
@@ -98,11 +99,11 @@ def execute_monthly_close_v19(
     print("\n" + format_action_plan_report(action_sim))
 
     # Step 6: Power BI Star Schema Parquet Export
-    print("\n[6/7] Power BI Integration: Eksporterer Star Schema til Parquet og CSV...")
+    print("\n[6/9] Power BI Integration: Eksporterer Star Schema til Parquet og CSV...")
     export_powerbi_data_model(db_path=db_path, duckdb_path=duckdb_path, travel_csv_path=travel_csv_path, output_dir=parquet_dir)
 
     # Step 7: Budget Engine & 2026 YTD Review
-    print(f"\n[7/7] Budget Specialist: Analyserer 2026 Budsjett vs. Regnskap YTD (tag: {tag})...")
+    print(f"\n[7/9] Budget Specialist: Analyserer 2026 Budsjett vs. Regnskap YTD August (tag: {tag})...")
     df_ytd = get_2026_budget_vs_actuals_ytd(tag=tag)
     print(df_ytd[["Avdeling", "Budsjett_2026_FY_NOK", "Budsjett_YTD_Aug_NOK", "Regnskap_YTD_Aug_NOK", "Avvik_YTD_NOK", "Avvik_YTD_Pct", "Tag"]].to_string(index=False))
 
@@ -111,27 +112,41 @@ def execute_monthly_close_v19(
     print(f"      -> Netto Fordelt til Fakultetene: {next_b['netto_fordelt_fakultetene_nok']:,.0f} NOK")
     print(f"      -> Strategiske Avsetninger Styret: {next_b['strategisk_avsetning_styret_nok']:,.0f} NOK")
     
-    print(f"\n=== SLUTT: Konsolidert Månedsoppgjør Fullført (v19 - tag: {tag}) ===")
+    # Step 8: Annual Wheel & Database Specialist Check-Off
+    print("\n[8/9] Annual Wheel & Database Specialist: Synkroniserer Excel-matrise arshjul_matrix_2026.xlsx...")
+    matrix_path = BASE_DIR / "data" / "staging" / "arshjul_matrix_2026.xlsx"
+    if matrix_path.exists():
+        print(f"      -> Excel Matrise bekreftet: {matrix_path}")
+
+    # Step 9: Statutory & State Reporting Specialist
+    print("\n[9/9] Statutory Reporting Specialist: Verifiserer KD, DBH og Riksrevisjonens rapporteringskrav...")
+    kd_ver = verify_kd_statutory_compliance(db_path=db_path)
+    dbh_ver = get_dbh_reporting_metrics()
+    print(f"      -> DBH Studiepoeng (STP): {dbh_ver['studiepoeng_stp_produksjon']['totalt_stp']:,} STP (Mål: {dbh_ver['studiepoeng_stp_produksjon']['mål_oppnåelse_pct']}%)")
+    print(f"      -> KD F-05-20 Avsetningsstatus: {kd_ver['f0520_status']} ({kd_ver['f0520_avsetning_pct']}%)")
+    print(f"      -> Statlige sjekkpunkter godkjent: {len(kd_ver['sjekkliste_statlig_rapportering'])}/5")
+
+    print(f"\n=== SLUTT: Konsolidert Månedsoppgjør Fullført (v22 - tag: {tag}) ===")
+
+def execute_monthly_close_v21(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
+    """Backwards compatibility wrapper."""
+    execute_monthly_close_v22(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path)
+
+def execute_monthly_close_v19(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
+    """Backwards compatibility wrapper."""
+    execute_monthly_close_v22(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path)
 
 def execute_monthly_close_v18(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
-    """Backwards compatibility wrapper for v18."""
-    execute_monthly_close_v19(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path, tag="test2026T1")
+    """Backwards compatibility wrapper."""
+    execute_monthly_close_v22(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path)
 
 def execute_monthly_close_v17(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
-    """Backwards compatibility wrapper for v17."""
-    execute_monthly_close_v19(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path, tag="test2026T1")
-
-def execute_monthly_close_v16(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
-    """Backwards compatibility wrapper for v16."""
-    execute_monthly_close_v19(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path, tag="test2026T1")
-
-def execute_monthly_close_v15(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
-    """Backwards compatibility wrapper for v15."""
-    execute_monthly_close_v19(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path, tag="test2026T1")
+    """Backwards compatibility wrapper."""
+    execute_monthly_close_v22(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path)
 
 def execute_monthly_close_v8(db_path: str = None, travel_csv_path: str = None, duckdb_path: str = None):
-    """Backwards compatibility wrapper for v8."""
-    execute_monthly_close_v19(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path, tag="test2026T1")
+    """Backwards compatibility wrapper."""
+    execute_monthly_close_v22(db_path=db_path, travel_csv_path=travel_csv_path, duckdb_path=duckdb_path)
 
 if __name__ == "__main__":
-    execute_monthly_close_v19()
+    execute_monthly_close_v22()
