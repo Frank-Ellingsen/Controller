@@ -14,11 +14,11 @@ else:
     ROOT_DIR = current_dir.parent
 
 PORTAL_FILE = ROOT_DIR / "index.html"
-PORTAL_V19_FILE = ROOT_DIR / "uia-controller-app-v19" / "index.html"
+PORTAL_V22_FILE = ROOT_DIR / "uia-controller-app-v22" / "uia-controller-app" / "index.html"
 
 def test_portal_html_exists():
     assert PORTAL_FILE.exists(), "Root index.html missing"
-    assert PORTAL_V19_FILE.exists(), "v19 index.html missing"
+    assert PORTAL_V22_FILE.exists(), "v22 index.html missing"
     assert PORTAL_FILE.stat().st_size > 50_000
 
 def test_portal_timeframe_controls_present():
@@ -54,12 +54,11 @@ def test_portal_javascript_inventory_and_functions():
         code = f"2026-M{m:02d}"
         assert f'"{code}":' in content, f"Month {code} missing in database inventory"
 
-def test_v19_portal_synced():
-    v19_content = PORTAL_V19_FILE.read_text(encoding="utf-8")
-    assert 'id="selectYear"' in v19_content
-    assert 'id="selectPeriod"' in v19_content
-    assert 'id="timeframeAlertContainer"' in v19_content
-    assert "const monthlyDatabaseInventory =" in v19_content
+def test_v22_portal_synced():
+    v22_content = PORTAL_V22_FILE.read_text(encoding="utf-8")
+    assert 'tab-arshjul' in v22_content
+    assert 'tab-maaned' in v22_content
+    assert 'tab-evm' in v22_content
 
 def test_portal_upload_menu_and_modal_present():
     content = PORTAL_FILE.read_text(encoding="utf-8")

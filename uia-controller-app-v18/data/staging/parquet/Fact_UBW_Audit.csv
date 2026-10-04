@@ -1,6 +1,0 @@
-transaksjon_id,konto,beskrivelse,belop_nok,bdm_id,attestant_id,kvittering_vedlagt,formaal,Kontrollflagg
-TX-1001,7100,Bilgodtgjørelse feltarbeid,1450.0,EMP-201,EMP-202,1,Feltarbeid Agder,OK
-TX-1002,7130,Reiseregning fagsamling,4200.0,EMP-203,EMP-203,1,Konferanse Oslo (FEIL: Egengodkjent),BRUDD: Egengodkjent (BDM == Attestant)
-TX-1003,6800,Kontorrekvisita,250.0,EMP-201,EMP-204,0,Innkjøp rekvisita (FEIL: Mangler kvittering > 100 kr),BRUDD: Mangler kvittering (>100 NOK)
-TX-1004,5330,Sensorhonorar Vår 2026,12500.0,EMP-205,EMP-206,1,Sensur ORG-200,OK
-TX-1005,7150,Utenlandsreise AACSB,18500.0,EMP-201,EMP-202,1,AACSB Konferanse USA,OK
