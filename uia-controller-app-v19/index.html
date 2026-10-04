@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UiA Controller Dashboard — Månedsoppgjør & Datakilder (v19)</title>
+    <title>UiA Controller Dashboard — Månedsoppgjør, Årshjul & Datakilder (v21)</title>
+    <!-- SheetJS for Client-Side Excel Export -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1218,6 +1220,175 @@
             gap: 6px;
         }
 
+
+        /* --- Årshjul & Budsjett Tab (Edward Tufte Data-Ink Design) --- */
+        .arshjul-header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-card);
+            padding: 16px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .arshjul-section-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 24px;
+        }
+
+        .arshjul-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .arshjul-filter-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-filter-pill {
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.775rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-filter-pill:hover, .btn-filter-pill.active {
+            background: var(--bg-card-hover);
+            color: var(--text-main);
+            border-color: var(--accent-blue);
+        }
+
+        .btn-filter-pill.active {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* Budget Simulator Grid & Sliders */
+        .budget-sim-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .budget-sim-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sim-slider-card {
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+        }
+
+        .sim-slider-label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .sim-slider-label {
+            font-size: 0.825rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .sim-slider-value {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-size: 0.95rem;
+        }
+
+        .sim-slider-input {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #1e293b;
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+
+        .sim-slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            cursor: pointer;
+            box-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
+        }
+
+        .budget-result-card {
+            background: #090d16;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .budget-metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+            font-size: 0.85rem;
+        }
+
+        .budget-metric-row:last-child {
+            border-bottom: none;
+            padding-top: 14px;
+            margin-top: 6px;
+            border-top: 2px solid var(--accent-blue);
+        }
+
+        .budget-metric-row .metric-label {
+            color: var(--text-muted);
+        }
+
+        .budget-metric-row .metric-val {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .budget-metric-row.total-row .metric-label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .budget-metric-row.total-row .metric-val {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--accent-green);
+        }
+    
     </style>
 </head>
 <body>
@@ -1226,7 +1397,7 @@
         <header>
         <div class="header-title">
             <h1>UiA Handelshøyskolen — Project Controller Dashboard</h1>
-            <p>Konsolidert Månedsoppgjør, EVM Prosjektstyring &amp; DFØ Internkontroll (v19)</p>
+            <p>Konsolidert Månedsoppgjør, EVM Prosjektstyring &amp; DFØ Internkontroll (v21)</p>
         </div>
         <div class="header-controls">
             <!-- Timeframe Selector Bar -->
@@ -1367,11 +1538,15 @@
     <div class="tab-nav">
         <button class="tab-btn active" onclick="switchTab('streamlit-tab')">
             <span>⚡ Streamlit App (Live)</span>
-            <span class="badge-pill">v19</span>
+            <span class="badge-pill">v21</span>
+        </button>
+        <button class="tab-btn" onclick="switchTab('arshjul-tab')">
+            <span>📅 Årshjul &amp; Budsjett</span>
+            <span class="badge-pill">2026</span>
         </button>
         <button class="tab-btn" onclick="switchTab('sources-tab')">
             <span>📂 Datakilder &amp; Filer</span>
-            <span class="badge-pill">9 kilder</span>
+            <span class="badge-pill">10 kilder</span>
         </button>
         <button class="tab-btn" onclick="switchTab('evm-tab')">
             <span>📈 EVM Prosjektkontroll &amp; S-Kurve</span>
@@ -1519,6 +1694,273 @@
     </div>
 
     <!-- ========================================================================= -->
+    <!-- TAB: ÅRSHJUL & BUDSJETT (Statlig Årshjul, Avsjekksmatrise & Rammesimulator) -->
+    <!-- ========================================================================= -->
+    <div id="arshjul-tab" class="tab-content">
+        <div class="arshjul-container">
+            
+            <!-- Årshjul Header Bar -->
+            <div class="arshjul-header-bar">
+                <div>
+                    <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+                        📅 Det Statlige Økonomiske Årshjulet &amp; Neste Års Budsjettbygger (2026 / T+1)
+                    </h2>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">
+                        Knytter månedsoppgjør og kontrollavsjekker mot Kunnskapsdepartementets (KD) tidsfrister, Riksrevisjonen, Prop. 1 S og UiAs interne fordelingsmodell.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+                    <a href="Data/staging/arshjul_matrix_2026.xlsx" download class="btn-action btn-primary" style="text-decoration: none;">
+                        <span>📥</span> Last ned Årshjul-matrise (.xlsx)
+                    </a>
+                    <button class="btn-action" onclick="exportArshjulToExcel()" title="Generer ny Excel-arbeidsbok direkte i nettleseren via SheetJS">
+                        <span>📊</span> Eksporter Avsjekk (XLSX)
+                    </button>
+                    <button class="btn-action" onclick="syncArshjulWithDatabase()" title="Synkroniser status med live SQLite/DuckDB-database">
+                        <span>🔄</span> Synkroniser med Database
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 Kvartalsvise Milepælkort (Q1 - Q4) -->
+            <div class="kpi-grid" style="margin-bottom: 24px;">
+                <div class="kpi-card" style="border-left: 3px solid #38bdf8;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <span class="kpi-label" style="color: #38bdf8;">Q1: Årsoppgjør &amp; Rapportering</span>
+                        <span class="badge badge-ontrack" style="font-size: 0.7rem;">15. MARS</span>
+                    </div>
+                    <div class="kpi-value" style="font-size: 1.2rem;">Årsrapport &amp; Regnskap</div>
+                    <div class="kpi-subtext" style="line-height: 1.4; margin-top: 4px;">
+                        Styregodkjent årsrapport og årsregnskap sendes KD, Riksrevisjonen og DBH. Hovedbokavstemming M12 fullført.
+                    </div>
+                </div>
+
+                <div class="kpi-card" style="border-left: 3px solid #34d399;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <span class="kpi-label" style="color: #34d399;">Q2: 1. Tertial &amp; RNB</span>
+                        <span class="badge badge-ontrack" style="font-size: 0.7rem;">JUNI</span>
+                    </div>
+                    <div class="kpi-value" style="font-size: 1.2rem;">1. Tertialrapport (T1)</div>
+                    <div class="kpi-subtext" style="line-height: 1.4; margin-top: 4px;">
+                        1. tertialregnskap, oppdatert årsprognose (EOY) og styrejusteringer etter Revidert Nasjonalbudsjett (RNB).
+                    </div>
+                </div>
+
+                <div class="kpi-card" style="border-left: 3px solid #f59e0b;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <span class="kpi-label" style="color: #f59e0b;">Q3: 2. Tertial &amp; Modell</span>
+                        <span class="badge badge-ontrack" style="font-size: 0.7rem;">SEPTEMBER</span>
+                    </div>
+                    <div class="kpi-value" style="font-size: 1.2rem;">2. Tertialrapport (T2)</div>
+                    <div class="kpi-subtext" style="line-height: 1.4; margin-top: 4px;">
+                        Gjennomgang av UiAs interne fordelingsmodell (basis, studiepoeng, dr-grader) og 5 % F-05-20 reservevurdering.
+                    </div>
+                </div>
+
+                <div class="kpi-card" style="border-left: 3px solid #a855f7;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                        <span class="kpi-label" style="color: #a855f7;">Q4: Rammer &amp; Tildelingsbrev</span>
+                        <span class="badge badge-info" style="font-size: 0.7rem;">DESEMBER</span>
+                    </div>
+                    <div class="kpi-value" style="font-size: 1.2rem;">Statsbudsjett Prop. 1 S</div>
+                    <div class="kpi-subtext" style="line-height: 1.4; margin-top: 4px;">
+                        Kap. 260 post 50 vedtas i Stortinget, styret vedtar fakultetsrammer, interne tildelingsbrev registreres i UBW.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seksjon 1: Månedlig og Tertialvis Avsjekksmatrise (2026) -->
+            <div class="arshjul-section-card">
+                <div class="arshjul-section-header">
+                    <div>
+                        <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-main);">📋 Månedlig og Tertialvis Kontroll- &amp; Avsjekksmatrise (2026)</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                            Avsjekk for UBW-bokføring, reiseregningsaudit, DuckDB EVM-snapshots, F-05-20 avsetning og Power BI-eksport.
+                        </p>
+                    </div>
+                    <div class="arshjul-filter-group">
+                        <span style="font-size: 0.775rem; color: var(--text-muted); margin-right: 4px;">Filter:</span>
+                        <button class="btn-filter-pill active" onclick="filterArshjulAvsjekk('all', this)">Alle (12)</button>
+                        <button class="btn-filter-pill" onclick="filterArshjulAvsjekk('FULLFØRT', this)">Fullført</button>
+                        <button class="btn-filter-pill" onclick="filterArshjulAvsjekk('I ARBEID', this)">I Arbeid</button>
+                        <button class="btn-filter-pill" onclick="filterArshjulAvsjekk('PLANLAGT', this)">Planlagt</button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="tufte-table" id="arshjulAvsjekkTable">
+                        <thead>
+                            <tr>
+                                <th>Periode</th>
+                                <th>Revisjonstag</th>
+                                <th>UBW Hovedbok</th>
+                                <th>Reiseregning Audit</th>
+                                <th>EVM Snapshot</th>
+                                <th>F-05-20 Avsetning</th>
+                                <th>Power BI Parquet</th>
+                                <th>Ansvarlig Agent</th>
+                                <th>Status</th>
+                                <th style="text-align: center;">Handling</th>
+                            </tr>
+                        </thead>
+                        <tbody id="arshjulAvsjekkBody">
+                            <!-- Innhold genereres dynamisk av renderArshjulAvsjekkTable() -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Seksjon 2: Operativ Kalender & Frister mot KD og Riksrevisjonen -->
+            <div class="arshjul-section-card">
+                <div class="arshjul-section-header">
+                    <div>
+                        <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-main);">🗓️ Operativ Kalender &amp; Frister mot KD og Riksrevisjonen</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                            Lovpålagte milepæler, leveranser og hjemler i henhold til Statens økonomireglement og UiAs styringsstruktur.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <input type="text" id="arshjulMilestoneSearch" placeholder="🔍 Søk i kalender &amp; hjemler..." oninput="filterArshjulMilestones()" style="background: #090d16; border: 1px solid var(--border-subtle); color: var(--text-main); font-size: 0.8rem; padding: 6px 12px; border-radius: 6px; width: 220px;">
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="tufte-table" id="arshjulMilestonesTable">
+                        <thead>
+                            <tr>
+                                <th>Kvartal</th>
+                                <th>Måned</th>
+                                <th>Frist / Milepæl</th>
+                                <th>Beskrivelse / Leveranse</th>
+                                <th>Ansvarlig Agent</th>
+                                <th>Avsjekk Status</th>
+                                <th>Hjemmel / Regelverk</th>
+                            </tr>
+                        </thead>
+                        <tbody id="arshjulMilestonesBody">
+                            <!-- Innhold genereres dynamisk av renderArshjulMilestonesTable() -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Seksjon 3: T+1 Budsjettbygger (Kap. 260 post 50) -->
+            <div class="arshjul-section-card">
+                <div class="arshjul-section-header">
+                    <div>
+                        <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text-main);">🧮 Simuler Neste Års Internfordeling (T+1 Budsjettbygger — Kap. 260 post 50)</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                            Deterministisk modellering av statlig deflator, resultatbasert uttelling og strategisk styreavsetning for fakultetsfordelingen.
+                        </p>
+                    </div>
+                    <button class="btn-action" onclick="resetBudgetSim()">
+                        <span>↺</span> Tilbakestill til Basis
+                    </button>
+                </div>
+
+                <div class="budget-sim-grid">
+                    <!-- Venstre kolonne: Glidebrytere -->
+                    <div>
+                        <div class="sim-slider-card">
+                            <div class="sim-slider-label-row">
+                                <span class="sim-slider-label">Statlig Pris- og Lønnsdeflator:</span>
+                                <span class="sim-slider-value" id="dispDeflator">3,5 %</span>
+                            </div>
+                            <input type="range" class="sim-slider-input" id="simDeflator" min="0.0" max="8.0" step="0.1" value="3.5" oninput="updateBudgetSim()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.725rem; color: var(--text-dim); margin-top: 4px;">
+                                <span>0,0 % (Nullvekst)</span>
+                                <span>3,5 % (Statens anslag)</span>
+                                <span>8,0 % (Høyvekst)</span>
+                            </div>
+                        </div>
+
+                        <div class="sim-slider-card">
+                            <div class="sim-slider-label-row">
+                                <span class="sim-slider-label">Resultatbasert Uttelling (Studiepoeng &amp; Dr-grader):</span>
+                                <span class="sim-slider-value" id="dispResultat">+2,0 %</span>
+                            </div>
+                            <input type="range" class="sim-slider-input" id="simResultat" min="-5.0" max="10.0" step="0.5" value="2.0" oninput="updateBudgetSim()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.725rem; color: var(--text-dim); margin-top: 4px;">
+                                <span>-5,0 % (Kutt)</span>
+                                <span>+2,0 % (Normaluttelling)</span>
+                                <span>+10,0 % (Ekspansjon)</span>
+                            </div>
+                        </div>
+
+                        <div class="sim-slider-card">
+                            <div class="sim-slider-label-row">
+                                <span class="sim-slider-label">Strategisk Styreavsetning:</span>
+                                <span class="sim-slider-value" id="dispStrategisk">2,5 %</span>
+                            </div>
+                            <input type="range" class="sim-slider-input" id="simStrategisk" min="0.0" max="6.0" step="0.1" value="2.5" oninput="updateBudgetSim()">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.725rem; color: var(--text-dim); margin-top: 4px;">
+                                <span>0,0 % (Ingen avsetning)</span>
+                                <span>2,5 % (UiA-standard)</span>
+                                <span>6,0 % (Maks reserve)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Høyre kolonne: Resultatberegning -->
+                    <div class="budget-result-card">
+                        <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); font-weight: 600; margin-bottom: 12px;">
+                            Beregnet Statsbudsjettramme (2027)
+                        </div>
+                        <div class="budget-metric-row">
+                            <span class="metric-label">Grunnlag inneværende år (2026):</span>
+                            <span class="metric-val" id="resBase">2 004 904 873 NOK</span>
+                        </div>
+                        <div class="budget-metric-row">
+                            <span class="metric-label">Pris- og lønnsjustering (Deflator):</span>
+                            <span class="metric-val text-accent-blue" id="resPris">+70 171 671 NOK</span>
+                        </div>
+                        <div class="budget-metric-row">
+                            <span class="metric-label">Resultatbasert endring:</span>
+                            <span class="metric-val text-accent-green" id="resResultat">+40 098 097 NOK</span>
+                        </div>
+                        <div class="budget-metric-row">
+                            <span class="metric-label">Ny Brutto Rammebevilgning:</span>
+                            <span class="metric-val" id="resBrutto" style="font-weight: 700;">2 115 174 641 NOK</span>
+                        </div>
+                        <div class="budget-metric-row">
+                            <span class="metric-label">Strategisk Styreavsetning:</span>
+                            <span class="metric-val text-alert-amber" id="resAvsetning">-52 879 366 NOK</span>
+                        </div>
+                        <div class="budget-metric-row total-row">
+                            <span class="metric-label">Netto Til Fordeling Fakulteter:</span>
+                            <span class="metric-val" id="resNetto">2 062 295 275 NOK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fakultetsfordeling Tabell -->
+                <div style="margin-top: 20px;">
+                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-main); margin-bottom: 8px;">
+                        UiA Internfordeling per Enhet / Fakultet (Nøkkel 2026/2027):
+                    </div>
+                    <div class="table-container">
+                        <table class="tufte-table" id="facultyBudgetTable">
+                            <thead>
+                                <tr>
+                                    <th>Organisasjonsenhet / Fakultet</th>
+                                    <th class="num">Fordelingsandel (%)</th>
+                                    <th class="num">Beregnet Netto Ramme (NOK)</th>
+                                    <th class="num">Endring fra 2026 (NOK)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="facultyBudgetBody">
+                                <!-- Genereres dynamisk av updateBudgetSim() -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
     <!-- TAB 2: Data Sources & File Explorer Menu -->
     <!-- ========================================================================= -->
     <div id="sources-tab" class="tab-content">
@@ -1554,6 +1996,12 @@
                 <button class="source-item-btn" onclick="selectDataSource('pbi_travel_audit')">
                     <span>Fact_Travel_Audit</span>
                     <span class="source-item-badge">Parquet/CSV</span>
+                </button>
+
+                <div class="source-group-title">📅 Statlig Årshjul &amp; Avsjekk</div>
+                <button class="source-item-btn" onclick="selectDataSource('excel_arshjul_matrix')">
+                    <span>arshjul_matrix_2026.xlsx</span>
+                    <span class="source-item-badge">2 ark</span>
                 </button>
 
                 <div class="source-group-title">🏛️ UiA Dimensjoner &amp; Fakta</div>
@@ -2346,6 +2794,8 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
                 setTimeout(drawScurve, 50);
             } else if (tabId === 'sources-tab') {
                 renderCurrentDataSource();
+            } else if (tabId === 'arshjul-tab') {
+                syncArshjulWithDatabase();
             }
         }
 
@@ -3160,6 +3610,278 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
             }
         }
 
+
+        // =========================================================================
+        // ÅRSHJUL, AVSJEKKSMATRISE & BUDSJETTSIMULATOR (v21)
+        // =========================================================================
+        const arshjulMilestones = [
+            { q: 'Q1', month: 'Januar', milestone: 'Månedsoppgjør M12', desc: 'Hovedbokavstemming, periodisering og årsavslutningsposteringer i UBW.', agent: 'Ledger Analyst', status: 'FULLFØRT', hjemmel: 'SRS / Reglement for økonomistyring § 12' },
+            { q: 'Q1', month: 'Februar', milestone: 'Internrevisjon & Bilag', desc: 'Gjennomgang av reiseregninger, BDM-godkjenninger og MVA-behandling.', agent: 'Compliance Auditor', status: 'FULLFØRT', hjemmel: 'UiAs Fullmaktsmatrise / DFØ Reiseregulativ' },
+            { q: 'Q1', month: 'Mars', milestone: '15. mars: Årsrapport til KD', desc: 'Styregodkjent årsrapport og årsregnskap oversendes KD, DBH og Riksrevisjonen.', agent: 'Lead Controller', status: 'FULLFØRT', hjemmel: 'Instruks for årsrapport UH-sektoren' },
+            { q: 'Q2', month: 'April', milestone: '1. Tertial Forberedelse', desc: 'Trekke ut UBW-tall for T1 (januar-april) og oppdatere DuckDB time-series snapshots.', agent: 'Database Specialist', status: 'FULLFØRT', hjemmel: 'DuckDB Analytics & Parquet Star Schema' },
+            { q: 'Q2', month: 'Mai/Juni', milestone: '1. Tertialrapport & RNB', desc: 'Styrebehandling av 1. tertialregnskap og rammejusteringer etter Revidert nasjonalbudsjett.', agent: 'Lead Controller', status: 'FULLFØRT', hjemmel: 'Rundskriv F-05-20 / Revidert Nasjonalbudsjett' },
+            { q: 'Q3', month: 'Juli/Aug', milestone: 'Sommerstenging & EVM', desc: 'Prosjekt-EVM gjennomgang og kontroll av summerte sommerutlegg.', agent: 'Ledger Analyst', status: 'FULLFØRT', hjemmel: 'EVM Standard / TDI-modellen' },
+            { q: 'Q3', month: 'September', milestone: '2. Tertialrapport & Budsjett', desc: 'Review av intern fordelingsmodell, resultatindikatorer og 2. tertialprognose.', agent: 'Budgeting Specialist', status: 'FULLFØRT', hjemmel: 'UiA Budsjettmodell / Kap 260 post 50' },
+            { q: 'Q4', month: 'Oktober', milestone: 'Statsbudsjettet (Prop 1 S)', desc: 'Analyse av foreløpig rammebevilgning fra Regjeringen og F-05-20 avsetninger.', agent: 'Budgeting Specialist', status: 'I ARBEID', hjemmel: 'Statsbudsjettet Prop. 1 S' },
+            { q: 'Q4', month: 'November', milestone: 'Endelig Internfordeling', desc: 'Universitetsstyrets vedtak av neste års budsjettrammer per fakultet.', agent: 'Annual Wheel Specialist', status: 'PLANLAGT', hjemmel: 'UiA Styrevedtak / Tildelingsmodell' },
+            { q: 'Q4', month: 'Desember', milestone: 'Interne Tildelingsbrev', desc: 'Utsending av interne tildelingsbrev og opprettelse av nye rammer i Unit4/UBW.', agent: 'Annual Wheel Specialist', status: 'PLANLAGT', hjemmel: 'Universitetsdirektørens Tildelingsbrev' }
+        ];
+
+        let arshjulAvsjekkData = [
+            { period: '2026-M01', tag: 'test2026T1', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'OK (4.8%)', pbi: 'EKSPORTERT', agent: 'Database Specialist', status: 'FULLFØRT' },
+            { period: '2026-M02', tag: 'test2026T1', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'OK (4.9%)', pbi: 'EKSPORTERT', agent: 'Database Specialist', status: 'FULLFØRT' },
+            { period: '2026-M03', tag: 'test2026T1', label: '2026-M03 (Q1)', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'OK (5.0%)', pbi: 'EKSPORTERT', agent: 'Lead Controller', status: 'FULLFØRT' },
+            { period: '2026-M04', tag: 'test2026T1', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'OK (4.9%)', pbi: 'EKSPORTERT', agent: 'Ledger Analyst', status: 'FULLFØRT' },
+            { period: '2026-M05', tag: 'test2026T1', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'AVVIK (5.2%)', pbi: 'EKSPORTERT', agent: 'Ledger Analyst', status: 'FULLFØRT' },
+            { period: '2026-M06', tag: 'test2026T1', label: '2026-M06 (T1)', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'AVVIK (5.5%)', pbi: 'EKSPORTERT', agent: 'Lead Controller', status: 'FULLFØRT' },
+            { period: '2026-M07', tag: 'test2026T1', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'AVVIK (5.8%)', pbi: 'EKSPORTERT', agent: 'Database Specialist', status: 'FULLFØRT' },
+            { period: '2026-M08', tag: 'test2026T1', ubw: 'JA (96 bilag)', travel: 'JA', evm: 'JA (EVM)', reserve: 'AVVIK (6.0%)', pbi: 'EKSPORTERT', agent: 'Budgeting Specialist', status: 'FULLFØRT' },
+            { period: '2026-M09', tag: '2026T1sep', label: '2026-M09 (T2)', ubw: 'JA (87 bilag)', travel: 'JA (14 krav)', evm: 'JA (5 prosjekter)', reserve: 'REVIDERT (5.0%)', pbi: 'EKSPORTERT', agent: 'Annual Wheel Specialist', status: 'FULLFØRT' },
+            { period: '2026-M10', tag: '2026T1okt', label: '2026-M10 (Okt)', ubw: 'JA (94 bilag)', travel: 'JA (Audited)', evm: 'JA (EVM)', reserve: 'PROGNOSE (5.0%)', pbi: 'EKSPORTERT', agent: 'Annual Wheel Specialist', status: 'FULLFØRT' },
+            { period: '2026-M11', tag: '2026T1nov', ubw: 'NEI (Venter)', travel: 'NEI', evm: 'PLANLAGT', reserve: 'PLANLAGT', pbi: 'VENTER', agent: 'Annual Wheel Specialist', status: 'PLANLAGT' },
+            { period: '2026-M12', tag: '2026T1des', label: '2026-M12 (M12)', ubw: 'NEI (Venter)', travel: 'NEI', evm: 'PLANLAGT', reserve: 'PLANLAGT', pbi: 'VENTER', agent: 'Annual Wheel Specialist', status: 'PLANLAGT' }
+        ];
+
+        let currentArshjulFilter = 'all';
+
+        function renderArshjulMilestonesTable(filterText = '') {
+            const tbody = document.getElementById('arshjulMilestonesBody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            const term = filterText.toLowerCase();
+            const filtered = arshjulMilestones.filter(m => {
+                if (!term) return true;
+                return m.q.toLowerCase().includes(term) ||
+                       m.month.toLowerCase().includes(term) ||
+                       m.milestone.toLowerCase().includes(term) ||
+                       m.desc.toLowerCase().includes(term) ||
+                       m.agent.toLowerCase().includes(term) ||
+                       m.hjemmel.toLowerCase().includes(term);
+            });
+
+            filtered.forEach(m => {
+                const tr = document.createElement('tr');
+                let badgeClass = 'badge-ontrack';
+                if (m.status === 'I ARBEID') badgeClass = 'badge-amber';
+                else if (m.status === 'PLANLAGT') badgeClass = 'badge-info';
+
+                tr.innerHTML = `
+                    <td><strong>${m.q}</strong></td>
+                    <td>${m.month}</td>
+                    <td><strong style="color: var(--text-main);">${m.milestone}</strong></td>
+                    <td style="color: var(--text-muted); font-size: 0.8125rem;">${m.desc}</td>
+                    <td><span style="font-family: var(--font-mono); font-size: 0.775rem;">${m.agent}</span></td>
+                    <td><span class="badge ${badgeClass}">${m.status}</span></td>
+                    <td style="font-size: 0.75rem; color: var(--text-dim);">${m.hjemmel}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterArshjulMilestones() {
+            const input = document.getElementById('arshjulMilestoneSearch');
+            renderArshjulMilestonesTable(input ? input.value : '');
+        }
+
+        function renderArshjulAvsjekkTable() {
+            const tbody = document.getElementById('arshjulAvsjekkBody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            const filtered = arshjulAvsjekkData.filter(item => {
+                if (currentArshjulFilter === 'all') return true;
+                return item.status === currentArshjulFilter;
+            });
+
+            filtered.forEach(item => {
+                const tr = document.createElement('tr');
+                let badgeClass = 'badge-ontrack';
+                if (item.status === 'I ARBEID') badgeClass = 'badge-amber';
+                else if (item.status === 'PLANLAGT') badgeClass = 'badge-critical';
+
+                let reserveClass = '';
+                if (item.reserve.includes('AVVIK')) reserveClass = 'text-alert-red';
+                else if (item.reserve.includes('OK') || item.reserve.includes('REVIDERT')) reserveClass = 'text-accent-green';
+                else if (item.reserve.includes('PROGNOSE')) reserveClass = 'text-accent-blue';
+
+                const pName = item.label || item.period;
+
+                tr.innerHTML = `
+                    <td><strong>${pName}</strong></td>
+                    <td><code style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-blue);">${item.tag}</code></td>
+                    <td>${item.ubw}</td>
+                    <td>${item.travel}</td>
+                    <td>${item.evm}</td>
+                    <td class="${reserveClass}">${item.reserve}</td>
+                    <td><span style="font-size: 0.75rem;">${item.pbi}</span></td>
+                    <td><span style="font-family: var(--font-mono); font-size: 0.775rem;">${item.agent}</span></td>
+                    <td><span class="badge ${badgeClass}">${item.status}</span></td>
+                    <td style="text-align: center;">
+                        <button class="btn-action" style="padding: 2px 8px; font-size: 0.725rem;" onclick="selectPeriod('${item.period}'); switchTab('streamlit-tab');" title="Velg denne perioden i tidslinjen og se detaljer">
+                            ▶️ Vis
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterArshjulAvsjekk(status, btn) {
+            currentArshjulFilter = status;
+            document.querySelectorAll('.arshjul-filter-group .btn-filter-pill').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderArshjulAvsjekkTable();
+        }
+
+        function syncArshjulWithDatabase() {
+            // Check live inventory from monthlyDatabaseInventory
+            if (typeof monthlyDatabaseInventory !== 'undefined') {
+                arshjulAvsjekkData.forEach(row => {
+                    const inv = monthlyDatabaseInventory[row.period];
+                    if (inv && inv.has_actuals) {
+                        const cnt = inv.ubw_count || 0;
+                        const sum = Math.round(inv.ubw_sum || inv.ubw_total || 0);
+                        row.ubw = `JA (${cnt} bilag, kr ${(sum / 1000).toFixed(0)}k)`;
+                        if (row.period === '2026-M10') {
+                            row.status = 'FULLFØRT';
+                            row.reserve = 'OK (5.0%)';
+                        }
+                    }
+                });
+            }
+            renderArshjulAvsjekkTable();
+            renderArshjulMilestonesTable();
+        }
+
+        // --- Budget Simulator Model (Kap. 260 post 50) ---
+        const deptBudgetShares = [
+            { name: 'Handelshøyskolen ved UiA', share: 0.118 },
+            { name: 'Fakultet for helse- og idrettsvitenskap', share: 0.140 },
+            { name: 'Fakultet for humaniora og pedagogikk', share: 0.102 },
+            { name: 'Fakultet for kunstfag', share: 0.050 },
+            { name: 'Fakultet for samfunnsvitenskap', share: 0.082 },
+            { name: 'Fakultet for teknologi og realfag', share: 0.142 },
+            { name: 'Fellestjenester & Bibliotek', share: 0.220 },
+            { name: 'Særkostnader & Fellesutgifter', share: 0.239 }
+        ];
+
+        function updateBudgetSim() {
+            const deflator = parseFloat(document.getElementById('simDeflator').value);
+            const resultat = parseFloat(document.getElementById('simResultat').value);
+            const strategisk = parseFloat(document.getElementById('simStrategisk').value);
+
+            document.getElementById('dispDeflator').innerText = deflator.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('dispResultat').innerText = (resultat >= 0 ? '+' : '') + resultat.toFixed(1).replace('.', ',') + ' %';
+            document.getElementById('dispStrategisk').innerText = strategisk.toFixed(1).replace('.', ',') + ' %';
+
+            const baseRamme = 2004904873.0;
+            const prisjustering = baseRamme * (deflator / 100.0);
+            const resultatEndring = baseRamme * (resultat / 100.0);
+            const nyBrutto = baseRamme + prisjustering + resultatEndring;
+            const styreavsetning = nyBrutto * (strategisk / 100.0);
+            const nettoTilFordeling = nyBrutto - styreavsetning;
+
+            // Formatteringer
+            const fmt = num => Math.round(num).toLocaleString('no-NO') + ' NOK';
+            document.getElementById('resBase').innerText = fmt(baseRamme);
+            document.getElementById('resPris').innerText = (prisjustering >= 0 ? '+' : '') + fmt(prisjustering);
+            document.getElementById('resResultat').innerText = (resultatEndring >= 0 ? '+' : '') + fmt(resultatEndring);
+            document.getElementById('resBrutto').innerText = fmt(nyBrutto);
+            document.getElementById('resAvsetning').innerText = '-' + fmt(styreavsetning);
+            document.getElementById('resNetto').innerText = fmt(nettoTilFordeling);
+
+            // Fakultetsfordeling Tabell
+            const tbody = document.getElementById('facultyBudgetBody');
+            if (tbody) {
+                tbody.innerHTML = '';
+                deptBudgetShares.forEach(dept => {
+                    const deptAmount = nettoTilFordeling * dept.share;
+                    const prevBase = baseRamme * (1 - 0.025) * dept.share;
+                    const diff = deptAmount - prevBase;
+
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><strong>${dept.name}</strong></td>
+                        <td class="num">${(dept.share * 100).toFixed(1).replace('.', ',')} %</td>
+                        <td class="num" style="font-weight: 600; color: var(--accent-blue);">${fmt(deptAmount)}</td>
+                        <td class="num ${diff >= 0 ? 'text-accent-green' : 'text-alert-red'}">${diff >= 0 ? '+' : ''}${fmt(diff)}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
+            }
+        }
+
+        function resetBudgetSim() {
+            document.getElementById('simDeflator').value = 3.5;
+            document.getElementById('simResultat').value = 2.0;
+            document.getElementById('simStrategisk').value = 2.5;
+            updateBudgetSim();
+        }
+
+        function exportArshjulToExcel() {
+            if (typeof XLSX === 'undefined') {
+                alert('SheetJS-biblioteket er ennå ikke ferdig lastet. Prøv igjen om et øyeblikk.');
+                return;
+            }
+
+            const wb = XLSX.utils.book_new();
+
+            // Sheet 1: Årshjul Kalender
+            const calData = [
+                ['Universitetet i Agder - Statlig Økonomisk Årshjul 2026'],
+                ['Operativ kalender, frister og milepælsoppfølging mot Kunnskapsdepartementet (KD) og Riksrevisjonen'],
+                [],
+                ['Kvartal', 'Måned', 'Frist / Milepæl', 'Beskrivelse / Leveranse', 'Ansvarlig Agent', 'Avsjekk Status', 'Hjemmel / Regelverk']
+            ];
+            arshjulMilestones.forEach(m => {
+                calData.push([m.q, m.month, m.milestone, m.desc, m.agent, m.status, m.hjemmel]);
+            });
+            const wsCal = XLSX.utils.aoa_to_sheet(calData);
+            XLSX.utils.book_append_sheet(wb, wsCal, 'Årshjul_Kalender_2026');
+
+            // Sheet 2: Rapporterings Avsjekk
+            const chkData = [
+                ['Månedlig og Tertialvis Kontroll- & Avsjekksmatrise (2026)'],
+                [],
+                ['Måned / Periode', 'Revisjonstag', 'UBW Innlest', 'Reiseregning Audit', 'EVM Snapshot', 'F-05-20 Sjekk', 'Power BI Parquet', 'Ansvarlig Agent', 'Avsjekk Status']
+            ];
+            arshjulAvsjekkData.forEach(row => {
+                chkData.push([row.label || row.period, row.tag, row.ubw, row.travel, row.evm, row.reserve, row.pbi, row.agent, row.status]);
+            });
+            const wsChk = XLSX.utils.aoa_to_sheet(chkData);
+            XLSX.utils.book_append_sheet(wb, wsChk, 'Rapporterings_Avsjekk');
+
+            // Sheet 3: Budsjett & Rammesimulering (T+1)
+            const deflator = parseFloat(document.getElementById('simDeflator').value);
+            const resultat = parseFloat(document.getElementById('simResultat').value);
+            const strategisk = parseFloat(document.getElementById('simStrategisk').value);
+            const baseRamme = 2004904873.0;
+            const nyBrutto = baseRamme * (1 + (deflator + resultat) / 100);
+            const netto = nyBrutto * (1 - strategisk / 100);
+
+            const bData = [
+                ['UiA Rammesimulering Neste År (Kap. 260 post 50)'],
+                ['Forutsetninger: Deflator ' + deflator + '%, Resultat ' + resultat + '%, Strategisk avsetning ' + strategisk + '%'],
+                [],
+                ['Enhet / Fakultet', 'Andel (%)', 'Beregnet Ramme (NOK)']
+            ];
+            deptBudgetShares.forEach(d => {
+                bData.push([d.name, (d.share * 100) + ' %', Math.round(netto * d.share)]);
+            });
+            const wsBud = XLSX.utils.aoa_to_sheet(bData);
+            XLSX.utils.book_append_sheet(wb, wsBud, 'Budsjett_og_Ramme_Matrise');
+
+            XLSX.writeFile(wb, 'UiA_Statlig_Arshjul_og_Avsjekk_2026.xlsx');
+        }
+
+        function initArshjulTab() {
+            renderArshjulMilestonesTable();
+            renderArshjulAvsjekkTable();
+            updateBudgetSim();
+            syncArshjulWithDatabase();
+        }
+    
         // Initialize on Load
         window.addEventListener('DOMContentLoaded', () => {
             handleTimeframeChange();
@@ -3171,6 +3893,7 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
             initModalDropzone();
             checkPortalServerStatus();
             loadLiveDatabaseInventory();
+            initArshjulTab();
 
             // Periodic Streamlit & Portal ping
             setInterval(checkStreamlitStatus, 10000);

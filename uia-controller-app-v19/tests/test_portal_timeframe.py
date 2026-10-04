@@ -8,7 +8,7 @@ import re
 import pytest
 
 current_dir = Path(__file__).resolve().parent
-if current_dir.parent.name == "uia-controller-app-v19":
+if "uia-controller-app" in current_dir.parent.name:
     ROOT_DIR = current_dir.parent.parent
 else:
     ROOT_DIR = current_dir.parent
