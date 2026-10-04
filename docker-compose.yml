@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  uia-controller-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uia_controller_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./powerbi:/app/powerbi
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UiA Controller Dashboard - Månedsoppgjør 2026-M10</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0f172a;
+            --bg-card: #1e293b;
+            --bg-card-hover: #334155;
+            --border-subtle: #334155;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --accent-blue: #38bdf8;
+            --accent-green: #34d399;
+            --alert-red: #ef4444;
+            --alert-amber: #f59e0b;
+            --bg-red-subtle: rgba(239, 68, 68, 0.12);
+            --bg-amber-subtle: rgba(245, 158, 11, 0.12);
+            --bg-green-subtle: rgba(52, 211, 153, 0.12);
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            padding: 24px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* --- Header Section --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .header-title h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .header-title p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .meta-tag {
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8125rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+        }
+
+        .meta-tag strong {
+            color: var(--text-main);
+        }
+
+        /* --- KPI Summary Row --- */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .kpi-card {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .kpi-label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 1.625rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .kpi-subtext {
+            font-size: 0.8125rem;
+            margin-top: 6px;
+            color: var(--text-muted);
+        }
+
+        .text-alert-red { color: var(--alert-red) !important; }
+        .text-alert-amber { color: var(--alert-amber) !important; }
+        .text-accent-green { color: var(--accent-green) !important; }
+
+        /* --- Navigation Tabs --- */
+        .tab-nav {
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 10px 16px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.15s ease;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* --- Tab Content Panels --- */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* --- Tufte Compliant Data Tables --- */
+        .table-container {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .table-header-toolbar {
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .table-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .model-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+        }
+
+        .select-input {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: var(--font-main);
+            font-size: 0.8125rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .tufte-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            text-align: left;
+        }
+
+        .tufte-table th {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-subtle);
+            background-color: rgba(15, 23, 42, 0.4);
+        }
+
+        .tufte-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+            color: var(--text-main);
+        }
+
+        /* Strict Alignment & Numeric Rules (Tufte) */
+        .tufte-table th.num, .tufte-table td.num {
+            text-align: right;
+            font-family: var(--font-mono);
+        }
+
+        .tufte-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tufte-table tbody tr:hover {
+            background-color: var(--bg-card-hover);
+        }
+
+        /* Badges & Flags */
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        .badge-critical {
+            background-color: var(--bg-red-subtle);
+            color: var(--alert-red);
+        }
+
+        .badge-warning {
+            background-color: var(--bg-amber-subtle);
+            color: var(--alert-amber);
+        }
+
+        .badge-ontrack {
+            background-color: var(--bg-green-subtle);
+            color: var(--accent-green);
+        }
+
+        /* --- S-Curve Visual Area --- */
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .chart-box {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .chart-title {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        canvas#scurveCanvas {
+            width: 100%;
+            height: 320px;
+            display: block;
+        }
+
+        /* Reserve Cap Progress Bar */
+        .reserve-card {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .reserve-bar-container {
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .reserve-track {
+            height: 16px;
+            background-color: #0f172a;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reserve-fill {
+            height: 100%;
+            background-color: var(--alert-red);
+            width: 75%; /* 6% out of 8% max scale */
+            transition: width 0.3s ease;
+        }
+
+        .reserve-threshold {
+            position: absolute;
+            top: -6px;
+            bottom: -6px;
+            left: 62.5%; /* 5.0% mark */
+            width: 2px;
+            background-color: var(--text-main);
+            z-index: 10;
+        }
+
+        .reserve-threshold-label {
+            position: absolute;
+            top: -24px;
+            left: 62.5%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            color: var(--text-main);
+            background: var(--bg-body);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .reserve-legend {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8125rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* Action Buttons */
+        .btn-action {
+            background: var(--bg-body);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-action:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .btn-action.btn-danger {
+            color: var(--alert-red);
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+
+        .btn-action.btn-danger:hover {
+            background-color: var(--bg-red-subtle);
+        }
+
+        /* Code / Schema snippet block */
+        .code-block {
+            background-color: #090d16;
+            padding: 16px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: #e2e8f0;
+            overflow-x: auto;
+            border: 1px solid var(--border-subtle);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8125rem;
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-title">
+            <h1>UiA Handelshøyskolen — Project Controller Dashboard</h1>
+            <p>Konsolidert Månedsoppgjør, EVM Prosjektanalyse &amp; DFØ Internkontroll</p>
+        </div>
+        <div class="header-meta">
+            <div class="meta-tag">PERIODE: <strong>2026-M10</strong></div>
+            <div class="meta-tag">ENGINE: <strong>DuckDB + SQLite</strong></div>
+            <div class="meta-tag">STATUS: <strong class="text-alert-red">2 DISPENSASJONER PÅKREVD</strong></div>
+        </div>
+    </header>
+
+    <!-- Top KPI Grid -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <div class="kpi-label">Portefølje Budsjett (BAC)</div>
+            <div class="kpi-value">71 700 000 NOK</div>
+            <div class="kpi-subtext">3 aktive forsknings- &amp; labprosjekter</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Påløpt Kostnad (AC)</div>
+            <div class="kpi-value">41 700 000 NOK</div>
+            <div class="kpi-subtext">Gjennomsnittlig CPI: 0,90</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Projisert Avvik (VAC)</div>
+            <div class="kpi-value text-alert-red">-6 501 888 NOK</div>
+            <div class="kpi-subtext">Kritiske avvik på UM-ENG-03 &amp; UM-FPV-01</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">F-05-20 Driftsavsetning</div>
+            <div class="kpi-value text-alert-red">6,0 % (72M NOK)</div>
+            <div class="kpi-subtext">Maks grense: 5,0 % (+12M NOK overskridelse)</div>
+        </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('evm-tab')">EVM Prosjektkontroll &amp; S-Kurve</button>
+        <button class="tab-btn" onclick="switchTab('reserve-tab')">Statlig Avsetning (F-05-20)</button>
+        <button class="tab-btn" onclick="switchTab('audit-tab')">Reiseregning Audit (DFØ)</button>
+        <button class="tab-btn" onclick="switchTab('powerbi-tab')">Power BI &amp; Star Schema</button>
+    </div>
+
+    <!-- TAB 1: EVM Prosjektkontroll -->
+    <div id="evm-tab" class="tab-content active">
+        
+        <div class="chart-grid">
+            <!-- S-Curve Chart -->
+            <div class="chart-box">
+                <div class="chart-title">
+                    <span>Prosjekt Ytelsesprofil &amp; Kumulativ S-Kurve (Portefølje Totalt)</span>
+                    <span style="font-size:0.75rem; color: var(--text-muted); font-weight: normal;">Direkte etiketter (Tufte Data-Ink)</span>
+                </div>
+                <canvas id="scurveCanvas"></canvas>
+            </div>
+
+            <!-- Portfolio Quick Summary -->
+            <div class="chart-box">
+                <div class="chart-title">Statusfordeling &amp; TCPI Indikatorer</div>
+                <div style="margin-top: 16px;">
+                    <div style="margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                            <span>UM-DEF-02 (Forsvar)</span>
+                            <span class="badge badge-ontrack">ON TRACK</span>
+                        </div>
+                        <div style="font-size: 0.8125rem; color: var(--text-muted);">CPI: 1,03 | TCPI: 0,94 | VAC: +538,835 NOK</div>
+                    </div>
+
+                    <div style="margin-bottom: 16px; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                            <span>UM-ENG-03 (Kompositt)</span>
+                            <span class="badge badge-critical">CRITICAL</span>
+                        </div>
+                        <div style="font-size: 0.8125rem; color: var(--text-muted);">CPI: 0,76 | TCPI: <strong class="text-alert-red">2,14</strong> | VAC: -2,589,474 NOK</div>
+                    </div>
+
+                    <div style="padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 4px;">
+                            <span>UM-FPV-01 (Fornybar Lab)</span>
+                            <span class="badge badge-critical">CRITICAL</span>
+                        </div>
+                        <div style="font-size: 0.8125rem; color: var(--text-muted);">CPI: 0,91 | TCPI: 1,10 | VAC: -4,450,549 NOK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EVM Data Table -->
+        <div class="table-container">
+            <div class="table-header-toolbar">
+                <div class="table-title">Prosjektportefølje Performance &amp; Fler-modell EAC Prognose</div>
+                <div class="model-selector">
+                    <label for="eacModelSelect">Prognosemodell:</label>
+                    <select id="eacModelSelect" class="select-input" onchange="updateEacTable()">
+                        <option value="cpi">Typisk CPI Modell (BAC / CPI)</option>
+                        <option value="composite">Sammensatt CPI × SPI Modell</option>
+                        <option value="weighted">Vektet 80/20 Modell (0.8 CPI + 0.2 SPI)</option>
+                    </select>
+                </div>
+            </div>
+            <table class="tufte-table">
+                <thead>
+                    <tr>
+                        <th>Prosjekt-ID</th>
+                        <th class="num">Budsjett (BAC)</th>
+                        <th class="num">Planlagt (PV)</th>
+                        <th class="num">Opptjent (EV)</th>
+                        <th class="num">Påløpt (AC)</th>
+                        <th class="num">CPI</th>
+                        <th class="num">SPI</th>
+                        <th class="num">Prognose (EAC)</th>
+                        <th class="num">Avvik (VAC)</th>
+                        <th class="num">TCPI</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="evmTableBody">
+                    <!-- Dynamic JavaScript Table Rows -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- TAB 2: Statlig Avsetning (F-05-20) -->
+    <div id="reserve-tab" class="tab-content">
+        <div class="reserve-card" style="margin-bottom: 24px;">
+            <div class="chart-title">Akkumulert Driftsavsetning vs. Kunnskapsdepartementets Tak (Rundskriv F-05-20)</div>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px;">
+                Statlige universiteter og høyskoler kan maksimalt fremføre 5,0 % av statlig rammebevilgning (Kap. 260, post 50) til neste budsjettår. Avsetninger utover dette krever formell skriftlig dispensasjon.
+            </p>
+
+            <div class="reserve-bar-container">
+                <div class="reserve-threshold-label">Maks grense: 5.0% (60M NOK)</div>
+                <div class="reserve-threshold"></div>
+                <div class="reserve-track">
+                    <div class="reserve-fill"></div>
+                </div>
+            </div>
+
+            <div class="reserve-legend">
+                <span>0,0 % (0 NOK)</span>
+                <span style="font-weight: 600;" class="text-alert-red">Reell avsetning: 6,0 % (72 000 000 NOK)</span>
+                <span>8,0 % (96 000 000 NOK)</span>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Statlig Rammebevilgning</div>
+                <div class="kpi-value">1 200 000 000 NOK</div>
+                <div class="kpi-subtext">Kap. 260, post 50</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Maks Tillatt Avsetning (5%)</div>
+                <div class="kpi-value">60 000 000 NOK</div>
+                <div class="kpi-subtext">Automatisk overføringsgrense</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Uoppfordret Avsetning (Reell)</div>
+                <div class="kpi-value text-alert-red">72 000 000 NOK</div>
+                <div class="kpi-subtext">Akkumulert per 2026-M10</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Departementssøknad Påkrevd</div>
+                <div class="kpi-value text-alert-red">12 000 000 NOK</div>
+                <div class="kpi-subtext">Risiko for inndragning i statsbudsjettet</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: Reiseregning Audit -->
+    <div id="audit-tab" class="tab-content">
+        <div class="table-container">
+            <div class="table-header-toolbar">
+                <div class="table-title">DFØ Internkontroll — Flaggede Reiseregninger &amp; Bilagsavvik (19 420 NOK)</div>
+                <div style="font-size: 0.8125rem; color: var(--text-muted);">Skannet: 15 bilag | Flagget: 7 avvik</div>
+            </div>
+            <table class="tufte-table">
+                <thead>
+                    <tr>
+                        <th>Krav-ID</th>
+                        <th>Ansatt / Enhet</th>
+                        <th class="num">Beløp (NOK)</th>
+                        <th>Regelbrudd / Regelverk</th>
+                        <th>Status</th>
+                        <th style="text-align: right;">Handling</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-004</td>
+                        <td>K. Hansen (Handelshøyskolen)</td>
+                        <td class="num">6 400,00</td>
+                        <td><strong class="text-alert-red">Egengodkjenning</strong> (Attektasjon brudd / UiA fullmakt)</td>
+                        <td><span class="badge badge-critical">UTBETALING SPERRET</span></td>
+                        <td style="text-align: right;"><button class="btn-action btn-danger">Omdiriger til ledelse</button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-014</td>
+                        <td>M. Olsen (Fakultetsdirektør)</td>
+                        <td class="num">4 800,00</td>
+                        <td><strong class="text-alert-red">Egengodkjenning</strong> (Manglende 4-øyne kontroll)</td>
+                        <td><span class="badge badge-critical">UTBETALING SPERRET</span></td>
+                        <td style="text-align: right;"><button class="btn-action btn-danger">Omdiriger til ledelse</button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-002</td>
+                        <td>J. Berg (Institutt for økonomi)</td>
+                        <td class="num">3 100,00</td>
+                        <td>Manglende måltidsfradrag (Dekket middag på konferanse)</td>
+                        <td><span class="badge badge-warning">TRENGER KORRIGERING</span></td>
+                        <td style="text-align: right;"><button class="btn-action">Juster diett</button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-005</td>
+                        <td>A. Lie (Forskning)</td>
+                        <td class="num">2 200,00</td>
+                        <td>Manglende måltidsfradrag (Lunsj inkludert i hotell)</td>
+                        <td><span class="badge badge-warning">TRENGER KORRIGERING</span></td>
+                        <td style="text-align: right;"><button class="btn-action">Juster diett</button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-007</td>
+                        <td>E. Strand (Prosjekt admin)</td>
+                        <td class="num">1 450,00</td>
+                        <td>Manglende kvittering over 100 NOK (Drosje uten bilag)</td>
+                        <td><span class="badge badge-warning">BILAG MANGLER</span></td>
+                        <td style="text-align: right;"><button class="btn-action">Etterspør kvittering</button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-011</td>
+                        <td>P. Nygård (Doktorgradsstipendiat)</td>
+                        <td class="num">1 020,00</td>
+                        <td>Manglende originalkvittering (Bankutskrift leveres ikke)</td>
+                        <td><span class="badge badge-warning">BILAG MANGLER</span></td>
+                        <td style="text-align: right;"><button class="btn-action">Etterspør kvittering</button></td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: var(--font-mono);">REISE-2026-006</td>
+                        <td>S. Foss (Gjesteforeleser)</td>
+                        <td class="num">450,00</td>
+                        <td>Mangler kjørerutebeskrivelse i kilometergodtgjørelse</td>
+                        <td><span class="badge badge-warning">INFO MANGLER</span></td>
+                        <td style="text-align: right;"><button class="btn-action">Be om rute</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TAB 4: Power BI & Data Export -->
+    <div id="powerbi-tab" class="tab-content">
+        <div class="chart-box" style="margin-bottom: 24px;">
+            <div class="chart-title">Power BI Star Schema Model Structure (`data/staging/parquet/`)</div>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px;">
+                Prosjektets automatiske eksportør skaper Parquet &amp; CSV dimensjons- og faktatabeller direkte tilpasset Power BI Desktop.
+            </p>
+            <div class="code-block">
+Data Model Tables (Star Schema):
+├── Fact_EVM_Snapshots (reporting_period, project_id, bac, pv, ev, ac, cpi, spi, eac_cpi, tcpi, status)
+├── Fact_UBW_Audit     (voucher_id, account_id, org_unit, amount, status, audit_flag)
+├── Fact_Travel_Audit  (claim_id, employee_id, amount_nok, rule_violation, action_required)
+├── Dim_Project        (project_id, project_name, department, pm_name, bac)
+└── Dim_Date           (date_key, year, quarter, month_name, reporting_period)
+            </div>
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">Standard DAX Måltall for Power BI</div>
+            <div class="code-block">
+// Dynamic EAC Selector DAX Measure
+EAC_Selected_Model = 
+VAR SelectedModel = SELECTEDVALUE('Model_Parameter'[Model], "CPI")
+RETURN
+    SWITCH(
+        SelectedModel,
+        "CPI", SUM('Fact_EVM_Snapshots'[eac_cpi]),
+        "Composite", SUM('Fact_EVM_Snapshots'[eac_composite]),
+        "Weighted", SUM('Fact_EVM_Snapshots'[eac_weighted]),
+        SUM('Fact_EVM_Snapshots'[eac_cpi])
+    )
+
+// Reserve Cap Compliance DAX Measure
+Reserve_Cap_Violation_NOK = 
+VAR TotalReserve = SUM('Fact_YearlyReconciliation'[accumulated_reserve])
+VAR MaxLimit = SUM('Fact_YearlyReconciliation'[grant_amount]) * 0.05
+RETURN
+    IF(TotalReserve > MaxLimit, TotalReserve - MaxLimit, 0)
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>UiA Controller App v12 — Powered by DuckDB &amp; Antigravity Agentic Pipeline</div>
+        <div>Tufte Data-Ink Compliant Interface</div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // EVM Dataset
+        const evmData = [
+            {
+                id: 'UM-DEF-02',
+                bac: 18500000,
+                pv: 12000000,
+                ev: 12200000,
+                ac: 11800000,
+                cpi: 1.03,
+                spi: 1.02,
+                eac_cpi: 17961165,
+                eac_composite: 17796573,
+                eac_weighted: 17928405,
+                tcpi: 0.94,
+                status: 'ON TRACK'
+            },
+            {
+                id: 'UM-ENG-03',
+                bac: 8200000,
+                pv: 6500000,
+                ev: 5200000,
+                ac: 6800000,
+                cpi: 0.76,
+                spi: 0.80,
+                eac_cpi: 10789474,
+                eac_composite: 11734211,
+                eac_weighted: 10706250,
+                tcpi: 2.14,
+                status: 'CRITICAL'
+            },
+            {
+                id: 'UM-FPV-01',
+                bac: 45000000,
+                pv: 22500000,
+                ev: 21000000,
+                ac: 23100000,
+                cpi: 0.91,
+                spi: 0.93,
+                eac_cpi: 49450549,
+                eac_composite: 51458738,
+                eac_weighted: 49358206,
+                tcpi: 1.10,
+                status: 'CRITICAL'
+            }
+        ];
+
+        function formatNok(val) {
+            return Math.round(val).toLocaleString('no-NO') + ' NOK';
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+
+            if (tabId === 'evm-tab') {
+                drawScurve();
+            }
+        }
+
+        function updateEacTable() {
+            const model = document.getElementById('eacModelSelect').value;
+            const tbody = document.getElementById('evmTableBody');
+            tbody.innerHTML = '';
+
+            evmData.forEach(item => {
+                let eacVal = item.eac_cpi;
+                if (model === 'composite') eacVal = item.eac_composite;
+                if (model === 'weighted') eacVal = item.eac_weighted;
+
+                const vacVal = item.bac - eacVal;
+                const statusBadge = item.status === 'CRITICAL' ? 'badge-critical' : 'badge-ontrack';
+                const tcpiClass = item.tcpi > 1.1 ? 'text-alert-red' : '';
+
+                const row = `
+                    <tr>
+                        <td style="font-family: var(--font-mono); font-weight: 500;">${item.id}</td>
+                        <td class="num">${formatNok(item.bac)}</td>
+                        <td class="num">${formatNok(item.pv)}</td>
+                        <td class="num">${formatNok(item.ev)}</td>
+                        <td class="num">${formatNok(item.ac)}</td>
+                        <td class="num">${item.cpi.toFixed(2)}</td>
+                        <td class="num">${item.spi.toFixed(2)}</td>
+                        <td class="num" style="font-weight: 600;">${formatNok(eacVal)}</td>
+                        <td class="num ${vacVal < 0 ? 'text-alert-red' : ''}">${formatNok(vacVal)}</td>
+                        <td class="num ${tcpiClass}">${item.tcpi.toFixed(2)}</td>
+                        <td><span class="badge ${statusBadge}">${item.status}</span></td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // Tufte-style S-Curve Drawing on Canvas
+        function drawScurve() {
+            const canvas = document.getElementById('scurveCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            // Handle retina scaling
+            const dpr = window.devicePixelRatio || 1;
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+
+            const width = rect.width;
+            const height = rect.height;
+            const padding = { top: 30, right: 120, bottom: 40, left: 60 };
+
+            ctx.clearRect(0, 0, width, height);
+
+            // Horizontal grid lines only (Muted, Tufte)
+            ctx.strokeStyle = '#334155';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            for (let i = 0; i <= 4; i++) {
+                const y = padding.top + (height - padding.top - padding.bottom) * (i / 4);
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(width - padding.right, y);
+            }
+            ctx.stroke();
+
+            // Timeline points M1 to M12
+            const chartW = width - padding.left - padding.right;
+            const chartH = height - padding.top - padding.bottom;
+
+            // Data curves (Kumulativ Portfolio: BAC 71.7M)
+            const pvPoints = [0, 5, 12, 22, 35, 48, 58, 65, 71.7];
+            const evPoints = [0, 4, 11, 20, 32, 44, 52]; // Up to M6 (Current period)
+            const acPoints = [0, 5, 13, 24, 38, 50, 58.4]; // Påløpt
+            const eacPoints = [58.4, 64, 71, 78.2]; // Projection from M6 to M9
+
+            function getX(index, total) {
+                return padding.left + (index / (total - 1)) * chartW;
+            }
+
+            function getY(val) {
+                return padding.top + chartH - (val / 80) * chartH;
+            }
+
+            // Draw PV Line (Muted Blue)
+            ctx.strokeStyle = '#38bdf8';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            pvPoints.forEach((val, i) => {
+                const x = getX(i, 9);
+                const y = getY(val);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            // Label PV directly at end
+            ctx.fillStyle = '#38bdf8';
+            ctx.font = '12px Inter';
+            ctx.fillText('PV (71.7M)', getX(8, 9) + 8, getY(71.7) + 4);
+
+            // Draw EV Line (Green)
+            ctx.strokeStyle = '#34d399';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            evPoints.forEach((val, i) => {
+                const x = getX(i, 9);
+                const y = getY(val);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            ctx.fillStyle = '#34d399';
+            ctx.fillText('EV (52.0M)', getX(6, 9) + 8, getY(52) + 4);
+
+            // Draw AC Line (Amber)
+            ctx.strokeStyle = '#f59e0b';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            acPoints.forEach((val, i) => {
+                const x = getX(i, 9);
+                const y = getY(val);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            ctx.fillStyle = '#f59e0b';
+            ctx.fillText('AC (58.4M)', getX(6, 9) + 8, getY(58.4) + 16);
+
+            // Draw EAC Projection Line (Dashed Red)
+            ctx.strokeStyle = '#ef4444';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([5, 5]);
+            ctx.beginPath();
+            eacPoints.forEach((val, i) => {
+                const x = getX(i + 5, 9);
+                const y = getY(val);
+                if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#ef4444';
+            ctx.fillText('EAC (78.2M)', getX(8, 9) + 8, getY(78.2) + 4);
+        }
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateEacTable();
+            drawScurve();
+        });
+
+        window.addEventListener('resize', drawScurve);
+    </script>
+</body>
+</html>

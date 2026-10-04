@@ -1,0 +1,37 @@
+name: UiA Controller CI & Workflow Verification
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Month-End Close Workflow
+        run: |
+          python src/tools/antigravity_workflow.py
+
+      - name: Run Power BI Star Schema Exporter
+        run: |
+          python powerbi/build_powerbi_dataset.py
+
+      - name: Generate Excel Executive Report
+        run: |
+          python src/tools/generate_excel_report.py
