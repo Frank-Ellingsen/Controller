@@ -1,0 +1,769 @@
+Transaksjon_ID,Dato,Maaned,Tertial,Avdeling,Konto,Kontonavn,Beskrivelse,Belop_NOK,BDM_ID,Attestant_ID,Kvittering_Vedlagt,Kontrollflagg,Tag
+TX-5001,2026-01-07,2026-M01,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M01),-448990.87,EMP-102,EMP-206,True,OK,test2026T1
+TX-5002,2026-01-26,2026-M01,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M01),-196406.29,EMP-102,EMP-207,True,OK,test2026T1
+TX-5003,2026-01-19,2026-M01,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M01),-136174.86,EMP-102,EMP-208,True,OK,test2026T1
+TX-5004,2026-01-03,2026-M01,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M01),-160863.7,EMP-102,EMP-209,True,OK,test2026T1
+TX-5005,2026-01-22,2026-M01,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M01),-106238.78,EMP-102,EMP-210,True,OK,test2026T1
+TX-5006,2026-01-21,2026-M01,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M01),-40337.05,EMP-102,EMP-211,True,OK,test2026T1
+TX-5007,2026-01-21,2026-M01,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M01),714856.82,EMP-102,EMP-212,True,OK,test2026T1
+TX-5008,2026-01-01,2026-M01,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M01),95513.13,EMP-102,EMP-213,True,OK,test2026T1
+TX-5009,2026-01-12,2026-M01,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M01),80303.61,EMP-102,EMP-214,True,OK,test2026T1
+TX-5010,2026-01-10,2026-M01,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M01),1161.56,EMP-102,EMP-200,True,OK,test2026T1
+TX-5011,2026-01-16,2026-M01,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M01),3821.84,EMP-102,EMP-201,True,OK,test2026T1
+TX-5012,2026-01-15,2026-M01,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M01),121860.7,EMP-102,EMP-202,True,OK,test2026T1
+TX-5013,2026-01-25,2026-M01,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M01),116769.5,EMP-102,EMP-203,True,OK,test2026T1
+TX-5014,2026-01-03,2026-M01,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M01),16911.47,EMP-102,EMP-204,True,OK,test2026T1
+TX-5015,2026-01-05,2026-M01,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M01),54820.87,EMP-102,EMP-205,True,OK,test2026T1
+TX-5016,2026-01-14,2026-M01,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M01),4590.65,EMP-102,EMP-206,True,OK,test2026T1
+TX-5017,2026-01-18,2026-M01,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M01),1651.6,EMP-102,EMP-207,True,OK,test2026T1
+TX-5018,2026-01-26,2026-M01,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M01),73015.91,EMP-102,EMP-208,True,OK,test2026T1
+TX-5019,2026-01-07,2026-M01,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M01),4357.57,EMP-102,EMP-102,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5020,2026-01-12,2026-M01,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M01),48874.47,EMP-102,EMP-210,True,OK,test2026T1
+TX-5021,2026-01-08,2026-M01,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M01),24594.76,EMP-102,EMP-211,True,OK,test2026T1
+TX-5022,2026-01-02,2026-M01,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M01),48532.94,EMP-102,EMP-212,True,OK,test2026T1
+TX-5023,2026-01-06,2026-M01,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M01),6054.59,EMP-102,EMP-213,True,OK,test2026T1
+TX-5024,2026-01-22,2026-M01,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M01),21962.46,EMP-102,EMP-214,True,OK,test2026T1
+TX-5025,2026-01-02,2026-M01,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M01),-39249.01,EMP-104,EMP-200,True,OK,test2026T1
+TX-5026,2026-01-10,2026-M01,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M01),-670728.28,EMP-104,EMP-201,True,OK,test2026T1
+TX-5027,2026-01-04,2026-M01,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M01),-286557.81,EMP-104,EMP-202,True,OK,test2026T1
+TX-5028,2026-01-25,2026-M01,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M01),-356389.13,EMP-104,EMP-203,True,OK,test2026T1
+TX-5029,2026-01-08,2026-M01,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M01),-12952.44,EMP-104,EMP-204,True,OK,test2026T1
+TX-5030,2026-01-21,2026-M01,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M01),-30493.35,EMP-104,EMP-205,True,OK,test2026T1
+TX-5031,2026-01-13,2026-M01,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M01),136273.49,EMP-104,EMP-206,True,OK,test2026T1
+TX-5032,2026-01-09,2026-M01,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M01),759609.96,EMP-104,EMP-207,True,OK,test2026T1
+TX-5033,2026-01-15,2026-M01,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M01),189940.17,EMP-104,EMP-208,True,OK,test2026T1
+TX-5034,2026-01-08,2026-M01,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M01),2297.66,EMP-104,EMP-209,True,OK,test2026T1
+TX-5035,2026-01-24,2026-M01,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M01),80273.74,EMP-104,EMP-210,True,OK,test2026T1
+TX-5036,2026-01-11,2026-M01,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M01),73235.25,EMP-104,EMP-211,True,OK,test2026T1
+TX-5037,2026-01-10,2026-M01,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M01),77901.27,EMP-104,EMP-212,True,OK,test2026T1
+TX-5038,2026-01-07,2026-M01,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M01),97899.68,EMP-104,EMP-213,True,OK,test2026T1
+TX-5039,2026-01-26,2026-M01,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M01),58389.49,EMP-104,EMP-214,True,OK,test2026T1
+TX-5040,2026-01-16,2026-M01,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M01),57343.55,EMP-104,EMP-200,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5041,2026-01-23,2026-M01,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M01),28153.76,EMP-104,EMP-201,True,OK,test2026T1
+TX-5042,2026-01-23,2026-M01,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M01),11587.31,EMP-104,EMP-202,True,OK,test2026T1
+TX-5043,2026-01-03,2026-M01,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M01),47595.16,EMP-104,EMP-203,True,OK,test2026T1
+TX-5044,2026-01-01,2026-M01,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M01),38842.9,EMP-104,EMP-204,True,OK,test2026T1
+TX-5045,2026-01-03,2026-M01,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M01),13943.65,EMP-104,EMP-205,True,OK,test2026T1
+TX-5046,2026-01-14,2026-M01,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M01),34623.07,EMP-104,EMP-206,True,OK,test2026T1
+TX-5047,2026-01-07,2026-M01,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M01),39647.38,EMP-104,EMP-207,True,OK,test2026T1
+TX-5048,2026-01-27,2026-M01,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M01),22836.37,EMP-104,EMP-208,True,OK,test2026T1
+TX-5049,2026-01-07,2026-M01,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M01),-490343.69,EMP-103,EMP-209,True,OK,test2026T1
+TX-5050,2026-01-17,2026-M01,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M01),-22633.45,EMP-103,EMP-210,True,OK,test2026T1
+TX-5051,2026-01-20,2026-M01,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M01),-100358.29,EMP-103,EMP-211,True,OK,test2026T1
+TX-5052,2026-01-15,2026-M01,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M01),-129024.72,EMP-103,EMP-212,True,OK,test2026T1
+TX-5053,2026-01-11,2026-M01,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M01),-16280.39,EMP-103,EMP-213,True,OK,test2026T1
+TX-5054,2026-01-04,2026-M01,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M01),-100625.04,EMP-103,EMP-214,True,OK,test2026T1
+TX-5055,2026-01-10,2026-M01,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M01),149559.85,EMP-103,EMP-200,True,OK,test2026T1
+TX-5056,2026-01-13,2026-M01,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M01),194303.81,EMP-103,EMP-201,True,OK,test2026T1
+TX-5057,2026-01-25,2026-M01,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M01),347788.7,EMP-103,EMP-202,True,OK,test2026T1
+TX-5058,2026-01-11,2026-M01,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M01),41824.81,EMP-103,EMP-203,True,OK,test2026T1
+TX-5059,2026-01-26,2026-M01,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M01),16904.71,EMP-103,EMP-204,True,OK,test2026T1
+TX-5060,2026-01-23,2026-M01,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M01),36950.79,EMP-103,EMP-205,True,OK,test2026T1
+TX-5061,2026-01-25,2026-M01,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M01),75986.5,EMP-103,EMP-206,True,OK,test2026T1
+TX-5062,2026-01-20,2026-M01,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M01),23147.95,EMP-103,EMP-207,True,OK,test2026T1
+TX-5063,2026-01-13,2026-M01,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M01),51359.08,EMP-103,EMP-208,True,OK,test2026T1
+TX-5064,2026-01-05,2026-M01,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M01),345.89,EMP-103,EMP-209,True,OK,test2026T1
+TX-5065,2026-01-01,2026-M01,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M01),35443.27,EMP-103,EMP-210,True,OK,test2026T1
+TX-5066,2026-01-19,2026-M01,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M01),26786.53,EMP-103,EMP-211,True,OK,test2026T1
+TX-5067,2026-01-24,2026-M01,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M01),23776.0,EMP-103,EMP-212,True,OK,test2026T1
+TX-5068,2026-01-09,2026-M01,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M01),15654.1,EMP-103,EMP-103,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5069,2026-01-20,2026-M01,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M01),20972.49,EMP-103,EMP-214,True,OK,test2026T1
+TX-5070,2026-01-02,2026-M01,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M01),30356.24,EMP-103,EMP-200,True,OK,test2026T1
+TX-5071,2026-01-03,2026-M01,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M01),27924.64,EMP-103,EMP-201,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5072,2026-01-17,2026-M01,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M01),2467.96,EMP-103,EMP-202,True,OK,test2026T1
+TX-5073,2026-01-22,2026-M01,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M01),-359590.43,EMP-107,EMP-203,True,OK,test2026T1
+TX-5074,2026-01-23,2026-M01,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M01),-18314.8,EMP-107,EMP-204,True,OK,test2026T1
+TX-5075,2026-01-05,2026-M01,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M01),-221661.97,EMP-107,EMP-205,True,OK,test2026T1
+TX-5076,2026-01-26,2026-M01,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M01),-84069.2,EMP-107,EMP-206,True,OK,test2026T1
+TX-5077,2026-01-06,2026-M01,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M01),-95396.62,EMP-107,EMP-207,True,OK,test2026T1
+TX-5078,2026-01-23,2026-M01,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M01),-63256.73,EMP-107,EMP-208,True,OK,test2026T1
+TX-5079,2026-01-24,2026-M01,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M01),324491.17,EMP-107,EMP-209,True,OK,test2026T1
+TX-5080,2026-01-05,2026-M01,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M01),61403.15,EMP-107,EMP-210,True,OK,test2026T1
+TX-5081,2026-01-20,2026-M01,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M01),294814.26,EMP-107,EMP-211,True,OK,test2026T1
+TX-5082,2026-01-09,2026-M01,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M01),13485.52,EMP-107,EMP-212,True,OK,test2026T1
+TX-5083,2026-01-27,2026-M01,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M01),44923.68,EMP-107,EMP-213,True,OK,test2026T1
+TX-5084,2026-01-06,2026-M01,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M01),42433.33,EMP-107,EMP-214,True,OK,test2026T1
+TX-5085,2026-01-26,2026-M01,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M01),111899.62,EMP-107,EMP-200,True,OK,test2026T1
+TX-5086,2026-01-03,2026-M01,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M01),22584.47,EMP-107,EMP-201,True,OK,test2026T1
+TX-5087,2026-01-19,2026-M01,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M01),14242.98,EMP-107,EMP-202,True,OK,test2026T1
+TX-5088,2026-01-07,2026-M01,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M01),1789.3,EMP-107,EMP-203,True,OK,test2026T1
+TX-5089,2026-01-18,2026-M01,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M01),49937.15,EMP-107,EMP-204,True,OK,test2026T1
+TX-5090,2026-01-08,2026-M01,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M01),8967.39,EMP-107,EMP-205,True,OK,test2026T1
+TX-5091,2026-01-10,2026-M01,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M01),8001.14,EMP-107,EMP-206,True,OK,test2026T1
+TX-5092,2026-01-03,2026-M01,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M01),2310.28,EMP-107,EMP-207,True,OK,test2026T1
+TX-5093,2026-01-07,2026-M01,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M01),49606.47,EMP-107,EMP-208,True,OK,test2026T1
+TX-5094,2026-01-02,2026-M01,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M01),32198.51,EMP-107,EMP-209,True,OK,test2026T1
+TX-5095,2026-01-01,2026-M01,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M01),15348.81,EMP-107,EMP-210,True,OK,test2026T1
+TX-5096,2026-01-16,2026-M01,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M01),14290.62,EMP-107,EMP-211,True,OK,test2026T1
+TX-5097,2026-02-09,2026-M02,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M02),-208741.76,EMP-102,EMP-212,True,OK,test2026T1
+TX-5098,2026-02-03,2026-M02,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M02),-547325.18,EMP-102,EMP-213,True,OK,test2026T1
+TX-5099,2026-02-19,2026-M02,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M02),-53424.12,EMP-102,EMP-214,True,OK,test2026T1
+TX-5100,2026-02-24,2026-M02,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M02),-121641.42,EMP-102,EMP-200,True,OK,test2026T1
+TX-5101,2026-02-20,2026-M02,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M02),-116668.73,EMP-102,EMP-201,True,OK,test2026T1
+TX-5102,2026-02-11,2026-M02,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M02),-80960.41,EMP-102,EMP-202,True,OK,test2026T1
+TX-5103,2026-02-16,2026-M02,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M02),389288.14,EMP-102,EMP-203,True,OK,test2026T1
+TX-5104,2026-02-25,2026-M02,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M02),279714.5,EMP-102,EMP-204,True,OK,test2026T1
+TX-5105,2026-02-03,2026-M02,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M02),219889.5,EMP-102,EMP-205,True,OK,test2026T1
+TX-5106,2026-02-03,2026-M02,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M02),31747.52,EMP-102,EMP-206,True,OK,test2026T1
+TX-5107,2026-02-16,2026-M02,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M02),34637.65,EMP-102,EMP-207,True,OK,test2026T1
+TX-5108,2026-02-09,2026-M02,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M02),63195.73,EMP-102,EMP-208,True,OK,test2026T1
+TX-5109,2026-02-24,2026-M02,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M02),3771.72,EMP-102,EMP-209,True,OK,test2026T1
+TX-5110,2026-02-08,2026-M02,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M02),140815.31,EMP-102,EMP-210,True,OK,test2026T1
+TX-5111,2026-02-07,2026-M02,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M02),40737.97,EMP-102,EMP-211,True,OK,test2026T1
+TX-5112,2026-02-22,2026-M02,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M02),15787.56,EMP-102,EMP-212,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5113,2026-02-23,2026-M02,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M02),33527.98,EMP-102,EMP-213,True,OK,test2026T1
+TX-5114,2026-02-22,2026-M02,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M02),30478.4,EMP-102,EMP-214,True,OK,test2026T1
+TX-5115,2026-02-27,2026-M02,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M02),44195.44,EMP-102,EMP-200,True,OK,test2026T1
+TX-5116,2026-02-27,2026-M02,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M02),6109.84,EMP-102,EMP-201,True,OK,test2026T1
+TX-5117,2026-02-02,2026-M02,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M02),27235.07,EMP-102,EMP-102,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5118,2026-02-16,2026-M02,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M02),19538.91,EMP-102,EMP-203,True,OK,test2026T1
+TX-5119,2026-02-19,2026-M02,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M02),20849.37,EMP-102,EMP-204,True,OK,test2026T1
+TX-5120,2026-02-04,2026-M02,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M02),37653.34,EMP-102,EMP-205,True,OK,test2026T1
+TX-5121,2026-02-14,2026-M02,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M02),-246997.32,EMP-104,EMP-206,True,OK,test2026T1
+TX-5122,2026-02-21,2026-M02,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M02),-46431.55,EMP-104,EMP-207,True,OK,test2026T1
+TX-5123,2026-02-06,2026-M02,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M02),-671958.47,EMP-104,EMP-208,True,OK,test2026T1
+TX-5124,2026-02-21,2026-M02,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M02),-1913.92,EMP-104,EMP-209,True,OK,test2026T1
+TX-5125,2026-02-03,2026-M02,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M02),-323815.1,EMP-104,EMP-210,True,OK,test2026T1
+TX-5126,2026-02-01,2026-M02,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M02),-68674.27,EMP-104,EMP-211,True,OK,test2026T1
+TX-5127,2026-02-03,2026-M02,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M02),437033.74,EMP-104,EMP-212,True,OK,test2026T1
+TX-5128,2026-02-18,2026-M02,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M02),253761.33,EMP-104,EMP-213,True,OK,test2026T1
+TX-5129,2026-02-25,2026-M02,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M02),374477.95,EMP-104,EMP-214,True,OK,test2026T1
+TX-5130,2026-02-18,2026-M02,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M02),63974.13,EMP-104,EMP-200,True,OK,test2026T1
+TX-5131,2026-02-15,2026-M02,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M02),91508.8,EMP-104,EMP-201,True,OK,test2026T1
+TX-5132,2026-02-22,2026-M02,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M02),2512.43,EMP-104,EMP-202,True,OK,test2026T1
+TX-5133,2026-02-08,2026-M02,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M02),67154.83,EMP-104,EMP-203,True,OK,test2026T1
+TX-5134,2026-02-01,2026-M02,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M02),80144.02,EMP-104,EMP-204,True,OK,test2026T1
+TX-5135,2026-02-09,2026-M02,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M02),89178.39,EMP-104,EMP-205,True,OK,test2026T1
+TX-5136,2026-02-03,2026-M02,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M02),18286.04,EMP-104,EMP-206,True,OK,test2026T1
+TX-5137,2026-02-18,2026-M02,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M02),14266.32,EMP-104,EMP-207,True,OK,test2026T1
+TX-5138,2026-02-25,2026-M02,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M02),68029.95,EMP-104,EMP-208,True,OK,test2026T1
+TX-5139,2026-02-20,2026-M02,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M02),7892.35,EMP-104,EMP-209,True,OK,test2026T1
+TX-5140,2026-02-01,2026-M02,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M02),482.02,EMP-104,EMP-210,True,OK,test2026T1
+TX-5141,2026-02-08,2026-M02,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M02),91665.54,EMP-104,EMP-211,True,OK,test2026T1
+TX-5142,2026-02-02,2026-M02,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M02),37967.2,EMP-104,EMP-212,True,OK,test2026T1
+TX-5143,2026-02-02,2026-M02,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M02),52753.91,EMP-104,EMP-213,True,OK,test2026T1
+TX-5144,2026-02-23,2026-M02,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M02),9858.12,EMP-104,EMP-214,True,OK,test2026T1
+TX-5145,2026-02-22,2026-M02,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M02),-53799.46,EMP-103,EMP-200,True,OK,test2026T1
+TX-5146,2026-02-26,2026-M02,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M02),-22788.36,EMP-103,EMP-201,True,OK,test2026T1
+TX-5147,2026-02-26,2026-M02,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M02),-542234.13,EMP-103,EMP-202,True,OK,test2026T1
+TX-5148,2026-02-05,2026-M02,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M02),-4093.43,EMP-103,EMP-203,True,OK,test2026T1
+TX-5149,2026-02-01,2026-M02,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M02),-185978.2,EMP-103,EMP-204,True,OK,test2026T1
+TX-5150,2026-02-08,2026-M02,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M02),-48026.72,EMP-103,EMP-205,True,OK,test2026T1
+TX-5151,2026-02-13,2026-M02,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M02),127302.54,EMP-103,EMP-206,True,OK,test2026T1
+TX-5152,2026-02-20,2026-M02,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M02),510648.87,EMP-103,EMP-207,True,OK,test2026T1
+TX-5153,2026-02-15,2026-M02,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M02),46713.08,EMP-103,EMP-208,True,OK,test2026T1
+TX-5154,2026-02-10,2026-M02,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M02),3904.18,EMP-103,EMP-209,True,OK,test2026T1
+TX-5155,2026-02-19,2026-M02,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M02),3734.1,EMP-103,EMP-210,True,OK,test2026T1
+TX-5156,2026-02-17,2026-M02,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M02),91534.85,EMP-103,EMP-211,True,OK,test2026T1
+TX-5157,2026-02-26,2026-M02,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M02),37405.07,EMP-103,EMP-212,True,OK,test2026T1
+TX-5158,2026-02-21,2026-M02,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M02),89692.45,EMP-103,EMP-213,True,OK,test2026T1
+TX-5159,2026-02-23,2026-M02,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M02),19010.08,EMP-103,EMP-214,True,OK,test2026T1
+TX-5160,2026-02-15,2026-M02,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M02),19256.44,EMP-103,EMP-200,True,OK,test2026T1
+TX-5161,2026-02-02,2026-M02,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M02),989.86,EMP-103,EMP-201,True,OK,test2026T1
+TX-5162,2026-02-22,2026-M02,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M02),40740.25,EMP-103,EMP-202,True,OK,test2026T1
+TX-5163,2026-02-07,2026-M02,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M02),14861.36,EMP-103,EMP-203,True,OK,test2026T1
+TX-5164,2026-02-05,2026-M02,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M02),4521.68,EMP-103,EMP-204,True,OK,test2026T1
+TX-5165,2026-02-22,2026-M02,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M02),42655.6,EMP-103,EMP-205,True,OK,test2026T1
+TX-5166,2026-02-22,2026-M02,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M02),2873.8,EMP-103,EMP-206,True,OK,test2026T1
+TX-5167,2026-02-25,2026-M02,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M02),49068.02,EMP-103,EMP-207,True,OK,test2026T1
+TX-5168,2026-02-14,2026-M02,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M02),10153.58,EMP-103,EMP-208,True,OK,test2026T1
+TX-5169,2026-02-05,2026-M02,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M02),-13552.35,EMP-107,EMP-209,True,OK,test2026T1
+TX-5170,2026-02-12,2026-M02,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M02),-51133.7,EMP-107,EMP-210,True,OK,test2026T1
+TX-5171,2026-02-16,2026-M02,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M02),-532812.56,EMP-107,EMP-211,True,OK,test2026T1
+TX-5172,2026-02-05,2026-M02,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M02),-107247.98,EMP-107,EMP-212,True,OK,test2026T1
+TX-5173,2026-02-23,2026-M02,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M02),-101688.73,EMP-107,EMP-213,True,OK,test2026T1
+TX-5174,2026-02-26,2026-M02,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M02),-30151.45,EMP-107,EMP-214,True,OK,test2026T1
+TX-5175,2026-02-26,2026-M02,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M02),448819.46,EMP-107,EMP-200,True,OK,test2026T1
+TX-5176,2026-02-19,2026-M02,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M02),20640.82,EMP-107,EMP-201,True,OK,test2026T1
+TX-5177,2026-02-26,2026-M02,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M02),208972.96,EMP-107,EMP-202,True,OK,test2026T1
+TX-5178,2026-02-16,2026-M02,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M02),26344.41,EMP-107,EMP-203,True,OK,test2026T1
+TX-5179,2026-02-23,2026-M02,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M02),39147.34,EMP-107,EMP-204,True,OK,test2026T1
+TX-5180,2026-02-02,2026-M02,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M02),32514.36,EMP-107,EMP-205,True,OK,test2026T1
+TX-5181,2026-02-18,2026-M02,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M02),27632.66,EMP-107,EMP-206,True,OK,test2026T1
+TX-5182,2026-02-03,2026-M02,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M02),88328.69,EMP-107,EMP-207,True,OK,test2026T1
+TX-5183,2026-02-01,2026-M02,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M02),26862.48,EMP-107,EMP-208,True,OK,test2026T1
+TX-5184,2026-02-01,2026-M02,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M02),11712.12,EMP-107,EMP-209,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5185,2026-02-08,2026-M02,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M02),42139.82,EMP-107,EMP-210,True,OK,test2026T1
+TX-5186,2026-02-10,2026-M02,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M02),7244.63,EMP-107,EMP-211,True,OK,test2026T1
+TX-5187,2026-02-19,2026-M02,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M02),18606.91,EMP-107,EMP-107,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5188,2026-02-18,2026-M02,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M02),14038.55,EMP-107,EMP-213,True,OK,test2026T1
+TX-5189,2026-02-03,2026-M02,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M02),27526.61,EMP-107,EMP-214,True,OK,test2026T1
+TX-5190,2026-02-02,2026-M02,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M02),23973.69,EMP-107,EMP-200,True,OK,test2026T1
+TX-5191,2026-02-19,2026-M02,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M02),10944.19,EMP-107,EMP-201,True,OK,test2026T1
+TX-5192,2026-02-09,2026-M02,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M02),25731.46,EMP-107,EMP-202,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5193,2026-03-24,2026-M03,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M03),-212797.36,EMP-102,EMP-203,True,OK,test2026T1
+TX-5194,2026-03-04,2026-M03,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M03),-77189.08,EMP-102,EMP-204,True,OK,test2026T1
+TX-5195,2026-03-25,2026-M03,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M03),-497326.33,EMP-102,EMP-205,True,OK,test2026T1
+TX-5196,2026-03-03,2026-M03,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M03),-55481.53,EMP-102,EMP-206,True,OK,test2026T1
+TX-5197,2026-03-17,2026-M03,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M03),-32708.37,EMP-102,EMP-207,True,OK,test2026T1
+TX-5198,2026-03-03,2026-M03,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M03),-232545.89,EMP-102,EMP-208,True,OK,test2026T1
+TX-5199,2026-03-05,2026-M03,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M03),168452.09,EMP-102,EMP-209,True,OK,test2026T1
+TX-5200,2026-03-12,2026-M03,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M03),542368.35,EMP-102,EMP-210,True,OK,test2026T1
+TX-5201,2026-03-17,2026-M03,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M03),150887.86,EMP-102,EMP-211,True,OK,test2026T1
+TX-5202,2026-03-17,2026-M03,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M03),81939.81,EMP-102,EMP-212,True,OK,test2026T1
+TX-5203,2026-03-20,2026-M03,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M03),16556.75,EMP-102,EMP-213,True,OK,test2026T1
+TX-5204,2026-03-16,2026-M03,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M03),28863.07,EMP-102,EMP-214,True,OK,test2026T1
+TX-5205,2026-03-09,2026-M03,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M03),129147.17,EMP-102,EMP-200,True,OK,test2026T1
+TX-5206,2026-03-19,2026-M03,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M03),38507.65,EMP-102,EMP-201,True,OK,test2026T1
+TX-5207,2026-03-12,2026-M03,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M03),20093.45,EMP-102,EMP-202,True,OK,test2026T1
+TX-5208,2026-03-26,2026-M03,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M03),49750.06,EMP-102,EMP-203,True,OK,test2026T1
+TX-5209,2026-03-15,2026-M03,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M03),17883.01,EMP-102,EMP-204,True,OK,test2026T1
+TX-5210,2026-03-16,2026-M03,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M03),10431.36,EMP-102,EMP-205,True,OK,test2026T1
+TX-5211,2026-03-04,2026-M03,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M03),14632.63,EMP-102,EMP-206,True,OK,test2026T1
+TX-5212,2026-03-21,2026-M03,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M03),16802.65,EMP-102,EMP-207,True,OK,test2026T1
+TX-5213,2026-03-23,2026-M03,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M03),47071.12,EMP-102,EMP-208,True,OK,test2026T1
+TX-5214,2026-03-14,2026-M03,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M03),1494.7,EMP-102,EMP-209,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5215,2026-03-26,2026-M03,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M03),33169.72,EMP-102,EMP-210,True,OK,test2026T1
+TX-5216,2026-03-05,2026-M03,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M03),45414.7,EMP-102,EMP-211,True,OK,test2026T1
+TX-5217,2026-03-09,2026-M03,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M03),-145314.64,EMP-104,EMP-212,True,OK,test2026T1
+TX-5218,2026-03-10,2026-M03,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M03),-225222.96,EMP-104,EMP-213,True,OK,test2026T1
+TX-5219,2026-03-26,2026-M03,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M03),-637345.64,EMP-104,EMP-214,True,OK,test2026T1
+TX-5220,2026-03-10,2026-M03,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M03),-30447.58,EMP-104,EMP-200,True,OK,test2026T1
+TX-5221,2026-03-09,2026-M03,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M03),-25091.65,EMP-104,EMP-201,True,OK,test2026T1
+TX-5222,2026-03-18,2026-M03,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M03),-344780.27,EMP-104,EMP-202,True,OK,test2026T1
+TX-5223,2026-03-08,2026-M03,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M03),155009.19,EMP-104,EMP-203,True,OK,test2026T1
+TX-5224,2026-03-16,2026-M03,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M03),704155.64,EMP-104,EMP-204,True,OK,test2026T1
+TX-5225,2026-03-13,2026-M03,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M03),259663.71,EMP-104,EMP-205,True,OK,test2026T1
+TX-5226,2026-03-04,2026-M03,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M03),29747.18,EMP-104,EMP-206,True,OK,test2026T1
+TX-5227,2026-03-04,2026-M03,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M03),52233.45,EMP-104,EMP-207,True,OK,test2026T1
+TX-5228,2026-03-06,2026-M03,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M03),75785.29,EMP-104,EMP-208,True,OK,test2026T1
+TX-5229,2026-03-10,2026-M03,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M03),67439.45,EMP-104,EMP-209,True,OK,test2026T1
+TX-5230,2026-03-26,2026-M03,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M03),48726.39,EMP-104,EMP-210,True,OK,test2026T1
+TX-5231,2026-03-19,2026-M03,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M03),125313.24,EMP-104,EMP-211,True,OK,test2026T1
+TX-5232,2026-03-26,2026-M03,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M03),49803.07,EMP-104,EMP-212,True,OK,test2026T1
+TX-5233,2026-03-20,2026-M03,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M03),838.14,EMP-104,EMP-213,True,OK,test2026T1
+TX-5234,2026-03-08,2026-M03,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M03),46415.55,EMP-104,EMP-214,True,OK,test2026T1
+TX-5235,2026-03-25,2026-M03,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M03),30880.93,EMP-104,EMP-200,True,OK,test2026T1
+TX-5236,2026-03-17,2026-M03,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M03),40403.41,EMP-104,EMP-104,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5237,2026-03-25,2026-M03,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M03),25810.17,EMP-104,EMP-202,True,OK,test2026T1
+TX-5238,2026-03-13,2026-M03,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M03),7204.3,EMP-104,EMP-203,True,OK,test2026T1
+TX-5239,2026-03-15,2026-M03,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M03),94020.36,EMP-104,EMP-204,True,OK,test2026T1
+TX-5240,2026-03-21,2026-M03,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M03),348.11,EMP-104,EMP-205,True,OK,test2026T1
+TX-5241,2026-03-19,2026-M03,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M03),-285657.65,EMP-103,EMP-206,True,OK,test2026T1
+TX-5242,2026-03-20,2026-M03,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M03),-277836.84,EMP-103,EMP-207,True,OK,test2026T1
+TX-5243,2026-03-25,2026-M03,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M03),-32225.49,EMP-103,EMP-208,True,OK,test2026T1
+TX-5244,2026-03-21,2026-M03,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M03),-87329.11,EMP-103,EMP-209,True,OK,test2026T1
+TX-5245,2026-03-22,2026-M03,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M03),-104684.72,EMP-103,EMP-210,True,OK,test2026T1
+TX-5246,2026-03-22,2026-M03,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M03),-53325.7,EMP-103,EMP-211,True,OK,test2026T1
+TX-5247,2026-03-16,2026-M03,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M03),127858.79,EMP-103,EMP-212,True,OK,test2026T1
+TX-5248,2026-03-08,2026-M03,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M03),236206.67,EMP-103,EMP-213,True,OK,test2026T1
+TX-5249,2026-03-06,2026-M03,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M03),305003.39,EMP-103,EMP-214,True,OK,test2026T1
+TX-5250,2026-03-26,2026-M03,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M03),63019.18,EMP-103,EMP-200,True,OK,test2026T1
+TX-5251,2026-03-08,2026-M03,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M03),21151.52,EMP-103,EMP-201,True,OK,test2026T1
+TX-5252,2026-03-26,2026-M03,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M03),13568.56,EMP-103,EMP-202,True,OK,test2026T1
+TX-5253,2026-03-27,2026-M03,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M03),42296.88,EMP-103,EMP-203,True,OK,test2026T1
+TX-5254,2026-03-22,2026-M03,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M03),61131.01,EMP-103,EMP-204,True,OK,test2026T1
+TX-5255,2026-03-17,2026-M03,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M03),41185.38,EMP-103,EMP-205,True,OK,test2026T1
+TX-5256,2026-03-13,2026-M03,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M03),18097.62,EMP-103,EMP-206,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5257,2026-03-14,2026-M03,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M03),31545.42,EMP-103,EMP-207,True,OK,test2026T1
+TX-5258,2026-03-03,2026-M03,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M03),10797.59,EMP-103,EMP-208,True,OK,test2026T1
+TX-5259,2026-03-02,2026-M03,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M03),35675.94,EMP-103,EMP-209,True,OK,test2026T1
+TX-5260,2026-03-10,2026-M03,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M03),15425.99,EMP-103,EMP-210,True,OK,test2026T1
+TX-5261,2026-03-24,2026-M03,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M03),11333.39,EMP-103,EMP-211,True,OK,test2026T1
+TX-5262,2026-03-22,2026-M03,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M03),33225.96,EMP-103,EMP-212,True,OK,test2026T1
+TX-5263,2026-03-01,2026-M03,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M03),7461.98,EMP-103,EMP-213,True,OK,test2026T1
+TX-5264,2026-03-18,2026-M03,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M03),21946.29,EMP-103,EMP-214,True,OK,test2026T1
+TX-5265,2026-03-22,2026-M03,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M03),-66547.02,EMP-107,EMP-200,True,OK,test2026T1
+TX-5266,2026-03-27,2026-M03,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M03),-368119.97,EMP-107,EMP-201,True,OK,test2026T1
+TX-5267,2026-03-27,2026-M03,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M03),-195740.4,EMP-107,EMP-202,True,OK,test2026T1
+TX-5268,2026-03-21,2026-M03,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M03),-65400.55,EMP-107,EMP-203,True,OK,test2026T1
+TX-5269,2026-03-16,2026-M03,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M03),-37392.36,EMP-107,EMP-204,True,OK,test2026T1
+TX-5270,2026-03-23,2026-M03,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M03),-143222.58,EMP-107,EMP-205,True,OK,test2026T1
+TX-5271,2026-03-21,2026-M03,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M03),74243.34,EMP-107,EMP-206,True,OK,test2026T1
+TX-5272,2026-03-23,2026-M03,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M03),361997.1,EMP-107,EMP-207,True,OK,test2026T1
+TX-5273,2026-03-05,2026-M03,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M03),252253.46,EMP-107,EMP-208,True,OK,test2026T1
+TX-5274,2026-03-09,2026-M03,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M03),64907.05,EMP-107,EMP-209,True,OK,test2026T1
+TX-5275,2026-03-14,2026-M03,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M03),21768.66,EMP-107,EMP-210,True,OK,test2026T1
+TX-5276,2026-03-01,2026-M03,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M03),12653.88,EMP-107,EMP-211,True,OK,test2026T1
+TX-5277,2026-03-02,2026-M03,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M03),61039.59,EMP-107,EMP-212,True,OK,test2026T1
+TX-5278,2026-03-08,2026-M03,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M03),17005.04,EMP-107,EMP-213,True,OK,test2026T1
+TX-5279,2026-03-07,2026-M03,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M03),72960.1,EMP-107,EMP-214,True,OK,test2026T1
+TX-5280,2026-03-12,2026-M03,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M03),15416.17,EMP-107,EMP-200,True,OK,test2026T1
+TX-5281,2026-03-01,2026-M03,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M03),31054.5,EMP-107,EMP-201,True,OK,test2026T1
+TX-5282,2026-03-22,2026-M03,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M03),15409.86,EMP-107,EMP-202,True,OK,test2026T1
+TX-5283,2026-03-15,2026-M03,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M03),2282.72,EMP-107,EMP-203,True,OK,test2026T1
+TX-5284,2026-03-23,2026-M03,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M03),38701.86,EMP-107,EMP-204,True,OK,test2026T1
+TX-5285,2026-03-15,2026-M03,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M03),21985.23,EMP-107,EMP-107,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5286,2026-03-02,2026-M03,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M03),12733.73,EMP-107,EMP-206,True,OK,test2026T1
+TX-5287,2026-03-06,2026-M03,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M03),20413.66,EMP-107,EMP-207,True,OK,test2026T1
+TX-5288,2026-03-18,2026-M03,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M03),29148.76,EMP-107,EMP-208,True,OK,test2026T1
+TX-5289,2026-04-20,2026-M04,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M04),-115340.72,EMP-102,EMP-209,True,OK,test2026T1
+TX-5290,2026-04-25,2026-M04,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M04),-133253.39,EMP-102,EMP-210,True,OK,test2026T1
+TX-5291,2026-04-06,2026-M04,T1,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M04),-543154.49,EMP-102,EMP-211,True,OK,test2026T1
+TX-5292,2026-04-17,2026-M04,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M04),-216025.63,EMP-102,EMP-212,True,OK,test2026T1
+TX-5293,2026-04-05,2026-M04,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M04),-31668.43,EMP-102,EMP-213,True,OK,test2026T1
+TX-5294,2026-04-04,2026-M04,T1,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M04),-66378.15,EMP-102,EMP-214,True,OK,test2026T1
+TX-5295,2026-04-05,2026-M04,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M04),471989.49,EMP-102,EMP-200,True,OK,test2026T1
+TX-5296,2026-04-02,2026-M04,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M04),374622.79,EMP-102,EMP-201,True,OK,test2026T1
+TX-5297,2026-04-06,2026-M04,T1,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M04),17524.77,EMP-102,EMP-202,True,OK,test2026T1
+TX-5298,2026-04-19,2026-M04,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M04),29941.23,EMP-102,EMP-203,True,OK,test2026T1
+TX-5299,2026-04-15,2026-M04,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M04),75374.81,EMP-102,EMP-204,True,OK,test2026T1
+TX-5300,2026-04-25,2026-M04,T1,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M04),20628.15,EMP-102,EMP-205,True,OK,test2026T1
+TX-5301,2026-04-04,2026-M04,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M04),64070.82,EMP-102,EMP-206,True,OK,test2026T1
+TX-5302,2026-04-08,2026-M04,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M04),37274.57,EMP-102,EMP-207,True,OK,test2026T1
+TX-5303,2026-04-04,2026-M04,T1,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M04),87202.36,EMP-102,EMP-208,True,OK,test2026T1
+TX-5304,2026-04-18,2026-M04,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M04),44134.21,EMP-102,EMP-209,True,OK,test2026T1
+TX-5305,2026-04-26,2026-M04,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M04),12484.06,EMP-102,EMP-210,True,OK,test2026T1
+TX-5306,2026-04-19,2026-M04,T1,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M04),21402.5,EMP-102,EMP-211,True,OK,test2026T1
+TX-5307,2026-04-21,2026-M04,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M04),20060.72,EMP-102,EMP-212,True,OK,test2026T1
+TX-5308,2026-04-06,2026-M04,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M04),35400.62,EMP-102,EMP-213,True,OK,test2026T1
+TX-5309,2026-04-01,2026-M04,T1,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M04),21119.27,EMP-102,EMP-214,True,OK,test2026T1
+TX-5310,2026-04-26,2026-M04,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M04),12295.36,EMP-102,EMP-200,True,OK,test2026T1
+TX-5311,2026-04-13,2026-M04,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M04),62766.31,EMP-102,EMP-201,True,OK,test2026T1
+TX-5312,2026-04-27,2026-M04,T1,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M04),3850.99,EMP-102,EMP-202,True,OK,test2026T1
+TX-5313,2026-04-11,2026-M04,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M04),-579143.14,EMP-104,EMP-203,True,OK,test2026T1
+TX-5314,2026-04-16,2026-M04,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M04),-356389.24,EMP-104,EMP-204,True,OK,test2026T1
+TX-5315,2026-04-17,2026-M04,T1,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M04),-30749.11,EMP-104,EMP-205,True,OK,test2026T1
+TX-5316,2026-04-15,2026-M04,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M04),-199592.2,EMP-104,EMP-206,True,OK,test2026T1
+TX-5317,2026-04-15,2026-M04,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M04),-167775.64,EMP-104,EMP-207,True,OK,test2026T1
+TX-5318,2026-04-24,2026-M04,T1,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M04),-24810.7,EMP-104,EMP-208,True,OK,test2026T1
+TX-5319,2026-04-13,2026-M04,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M04),514480.48,EMP-104,EMP-209,True,OK,test2026T1
+TX-5320,2026-04-26,2026-M04,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M04),245920.44,EMP-104,EMP-210,True,OK,test2026T1
+TX-5321,2026-04-14,2026-M04,T1,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M04),331708.98,EMP-104,EMP-211,True,OK,test2026T1
+TX-5322,2026-04-11,2026-M04,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M04),7023.27,EMP-104,EMP-212,True,OK,test2026T1
+TX-5323,2026-04-15,2026-M04,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M04),57133.62,EMP-104,EMP-213,True,OK,test2026T1
+TX-5324,2026-04-13,2026-M04,T1,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M04),91482.55,EMP-104,EMP-214,True,OK,test2026T1
+TX-5325,2026-04-23,2026-M04,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M04),101098.24,EMP-104,EMP-200,True,OK,test2026T1
+TX-5326,2026-04-05,2026-M04,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M04),117037.56,EMP-104,EMP-201,True,OK,test2026T1
+TX-5327,2026-04-10,2026-M04,T1,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M04),25619.05,EMP-104,EMP-202,True,OK,test2026T1
+TX-5328,2026-04-25,2026-M04,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M04),67950.24,EMP-104,EMP-203,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5329,2026-04-17,2026-M04,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M04),3456.15,EMP-104,EMP-204,True,OK,test2026T1
+TX-5330,2026-04-13,2026-M04,T1,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M04),28350.0,EMP-104,EMP-205,True,OK,test2026T1
+TX-5331,2026-04-15,2026-M04,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M04),33572.12,EMP-104,EMP-206,True,OK,test2026T1
+TX-5332,2026-04-04,2026-M04,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M04),45979.69,EMP-104,EMP-207,True,OK,test2026T1
+TX-5333,2026-04-15,2026-M04,T1,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M04),20381.24,EMP-104,EMP-208,True,OK,test2026T1
+TX-5334,2026-04-10,2026-M04,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M04),32498.62,EMP-104,EMP-209,True,OK,test2026T1
+TX-5335,2026-04-09,2026-M04,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M04),35180.25,EMP-104,EMP-210,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5336,2026-04-05,2026-M04,T1,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M04),33108.19,EMP-104,EMP-211,True,OK,test2026T1
+TX-5337,2026-04-13,2026-M04,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M04),-271355.72,EMP-103,EMP-212,True,OK,test2026T1
+TX-5338,2026-04-06,2026-M04,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M04),-221057.86,EMP-103,EMP-213,True,OK,test2026T1
+TX-5339,2026-04-05,2026-M04,T1,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M04),-115054.7,EMP-103,EMP-214,True,OK,test2026T1
+TX-5340,2026-04-16,2026-M04,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M04),-2649.37,EMP-103,EMP-200,True,OK,test2026T1
+TX-5341,2026-04-04,2026-M04,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M04),-89442.07,EMP-103,EMP-201,True,OK,test2026T1
+TX-5342,2026-04-11,2026-M04,T1,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M04),-159283.83,EMP-103,EMP-202,True,OK,test2026T1
+TX-5343,2026-04-03,2026-M04,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M04),303956.21,EMP-103,EMP-203,True,OK,test2026T1
+TX-5344,2026-04-19,2026-M04,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M04),10618.09,EMP-103,EMP-204,True,OK,test2026T1
+TX-5345,2026-04-08,2026-M04,T1,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M04),342516.07,EMP-103,EMP-205,True,OK,test2026T1
+TX-5346,2026-04-11,2026-M04,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M04),64800.35,EMP-103,EMP-206,True,OK,test2026T1
+TX-5347,2026-04-04,2026-M04,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M04),24931.15,EMP-103,EMP-207,True,OK,test2026T1
+TX-5348,2026-04-15,2026-M04,T1,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M04),9426.63,EMP-103,EMP-208,True,OK,test2026T1
+TX-5349,2026-04-25,2026-M04,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M04),28096.86,EMP-103,EMP-209,True,OK,test2026T1
+TX-5350,2026-04-02,2026-M04,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M04),17652.63,EMP-103,EMP-210,True,OK,test2026T1
+TX-5351,2026-04-15,2026-M04,T1,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M04),104047.09,EMP-103,EMP-211,True,OK,test2026T1
+TX-5352,2026-04-26,2026-M04,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M04),14714.4,EMP-103,EMP-212,True,OK,test2026T1
+TX-5353,2026-04-22,2026-M04,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M04),41448.31,EMP-103,EMP-213,True,OK,test2026T1
+TX-5354,2026-04-04,2026-M04,T1,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M04),5216.05,EMP-103,EMP-214,True,OK,test2026T1
+TX-5355,2026-04-26,2026-M04,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M04),38986.84,EMP-103,EMP-103,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5356,2026-04-14,2026-M04,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M04),15276.59,EMP-103,EMP-201,True,OK,test2026T1
+TX-5357,2026-04-06,2026-M04,T1,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M04),6712.55,EMP-103,EMP-202,True,OK,test2026T1
+TX-5358,2026-04-01,2026-M04,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M04),6513.48,EMP-103,EMP-203,True,OK,test2026T1
+TX-5359,2026-04-06,2026-M04,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M04),25489.16,EMP-103,EMP-204,True,OK,test2026T1
+TX-5360,2026-04-18,2026-M04,T1,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M04),29545.92,EMP-103,EMP-205,True,OK,test2026T1
+TX-5361,2026-04-08,2026-M04,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M04),-267416.43,EMP-107,EMP-206,True,OK,test2026T1
+TX-5362,2026-04-02,2026-M04,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M04),-267654.0,EMP-107,EMP-207,True,OK,test2026T1
+TX-5363,2026-04-20,2026-M04,T1,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M04),-75748.92,EMP-107,EMP-208,True,OK,test2026T1
+TX-5364,2026-04-24,2026-M04,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M04),-79417.89,EMP-107,EMP-209,True,OK,test2026T1
+TX-5365,2026-04-06,2026-M04,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M04),-99125.87,EMP-107,EMP-210,True,OK,test2026T1
+TX-5366,2026-04-23,2026-M04,T1,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M04),-62849.45,EMP-107,EMP-211,True,OK,test2026T1
+TX-5367,2026-04-18,2026-M04,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M04),22853.71,EMP-107,EMP-212,True,OK,test2026T1
+TX-5368,2026-04-14,2026-M04,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M04),385239.45,EMP-107,EMP-213,True,OK,test2026T1
+TX-5369,2026-04-21,2026-M04,T1,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M04),277553.49,EMP-107,EMP-214,True,OK,test2026T1
+TX-5370,2026-04-08,2026-M04,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M04),90616.14,EMP-107,EMP-200,True,OK,test2026T1
+TX-5371,2026-04-22,2026-M04,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M04),6503.37,EMP-107,EMP-201,True,OK,test2026T1
+TX-5372,2026-04-08,2026-M04,T1,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M04),2237.99,EMP-107,EMP-202,True,OK,test2026T1
+TX-5373,2026-04-05,2026-M04,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M04),43909.97,EMP-107,EMP-203,True,OK,test2026T1
+TX-5374,2026-04-05,2026-M04,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M04),50830.98,EMP-107,EMP-204,True,OK,test2026T1
+TX-5375,2026-04-19,2026-M04,T1,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M04),55151.48,EMP-107,EMP-205,True,OK,test2026T1
+TX-5376,2026-04-25,2026-M04,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M04),13953.98,EMP-107,EMP-206,True,OK,test2026T1
+TX-5377,2026-04-18,2026-M04,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M04),8376.83,EMP-107,EMP-207,True,OK,test2026T1
+TX-5378,2026-04-08,2026-M04,T1,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M04),39526.29,EMP-107,EMP-208,True,OK,test2026T1
+TX-5379,2026-04-01,2026-M04,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M04),16870.84,EMP-107,EMP-209,True,OK,test2026T1
+TX-5380,2026-04-23,2026-M04,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M04),31007.53,EMP-107,EMP-210,True,OK,test2026T1
+TX-5381,2026-04-15,2026-M04,T1,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M04),13195.04,EMP-107,EMP-211,True,OK,test2026T1
+TX-5382,2026-04-21,2026-M04,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M04),15941.84,EMP-107,EMP-212,True,OK,test2026T1
+TX-5383,2026-04-08,2026-M04,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M04),18035.45,EMP-107,EMP-213,True,OK,test2026T1
+TX-5384,2026-04-08,2026-M04,T1,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M04),27557.47,EMP-107,EMP-214,True,OK,test2026T1
+TX-5385,2026-05-08,2026-M05,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M05),-25140.79,EMP-102,EMP-200,True,OK,test2026T1
+TX-5386,2026-05-10,2026-M05,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M05),-568405.55,EMP-102,EMP-201,True,OK,test2026T1
+TX-5387,2026-05-20,2026-M05,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M05),-199823.91,EMP-102,EMP-202,True,OK,test2026T1
+TX-5388,2026-05-04,2026-M05,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M05),-78074.21,EMP-102,EMP-203,True,OK,test2026T1
+TX-5389,2026-05-06,2026-M05,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M05),-61506.88,EMP-102,EMP-204,True,OK,test2026T1
+TX-5390,2026-05-25,2026-M05,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M05),-180975.99,EMP-102,EMP-205,True,OK,test2026T1
+TX-5391,2026-05-22,2026-M05,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M05),145448.69,EMP-102,EMP-206,True,OK,test2026T1
+TX-5392,2026-05-02,2026-M05,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M05),693649.71,EMP-102,EMP-207,True,OK,test2026T1
+TX-5393,2026-05-10,2026-M05,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M05),17365.85,EMP-102,EMP-208,True,OK,test2026T1
+TX-5394,2026-05-15,2026-M05,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M05),77531.4,EMP-102,EMP-209,True,OK,test2026T1
+TX-5395,2026-05-04,2026-M05,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M05),5993.1,EMP-102,EMP-210,True,OK,test2026T1
+TX-5396,2026-05-13,2026-M05,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M05),42430.0,EMP-102,EMP-211,True,OK,test2026T1
+TX-5397,2026-05-15,2026-M05,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M05),41309.19,EMP-102,EMP-212,True,OK,test2026T1
+TX-5398,2026-05-04,2026-M05,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M05),130214.86,EMP-102,EMP-213,True,OK,test2026T1
+TX-5399,2026-05-12,2026-M05,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M05),13251.67,EMP-102,EMP-214,True,OK,test2026T1
+TX-5400,2026-05-26,2026-M05,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M05),558.89,EMP-102,EMP-200,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5401,2026-05-11,2026-M05,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M05),41531.93,EMP-102,EMP-201,True,OK,test2026T1
+TX-5402,2026-05-27,2026-M05,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M05),37943.82,EMP-102,EMP-202,True,OK,test2026T1
+TX-5403,2026-05-08,2026-M05,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M05),4509.95,EMP-102,EMP-203,True,OK,test2026T1
+TX-5404,2026-05-23,2026-M05,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M05),53805.73,EMP-102,EMP-102,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5405,2026-05-15,2026-M05,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M05),19705.24,EMP-102,EMP-205,True,OK,test2026T1
+TX-5406,2026-05-18,2026-M05,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M05),21002.82,EMP-102,EMP-206,True,OK,test2026T1
+TX-5407,2026-05-25,2026-M05,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M05),53448.63,EMP-102,EMP-207,True,OK,test2026T1
+TX-5408,2026-05-01,2026-M05,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M05),3296.51,EMP-102,EMP-208,True,OK,test2026T1
+TX-5409,2026-05-04,2026-M05,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M05),-355727.45,EMP-104,EMP-209,True,OK,test2026T1
+TX-5410,2026-05-05,2026-M05,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M05),-465262.69,EMP-104,EMP-210,True,OK,test2026T1
+TX-5411,2026-05-24,2026-M05,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M05),-144027.17,EMP-104,EMP-211,True,OK,test2026T1
+TX-5412,2026-05-09,2026-M05,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M05),-135717.14,EMP-104,EMP-212,True,OK,test2026T1
+TX-5413,2026-05-22,2026-M05,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M05),-189988.6,EMP-104,EMP-213,True,OK,test2026T1
+TX-5414,2026-05-19,2026-M05,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M05),-60418.35,EMP-104,EMP-214,True,OK,test2026T1
+TX-5415,2026-05-14,2026-M05,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M05),509981.36,EMP-104,EMP-200,True,OK,test2026T1
+TX-5416,2026-05-05,2026-M05,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M05),486426.44,EMP-104,EMP-201,True,OK,test2026T1
+TX-5417,2026-05-21,2026-M05,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M05),112224.99,EMP-104,EMP-202,True,OK,test2026T1
+TX-5418,2026-05-22,2026-M05,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M05),13237.54,EMP-104,EMP-203,True,OK,test2026T1
+TX-5419,2026-05-23,2026-M05,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M05),116654.47,EMP-104,EMP-204,True,OK,test2026T1
+TX-5420,2026-05-19,2026-M05,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M05),25917.05,EMP-104,EMP-205,True,OK,test2026T1
+TX-5421,2026-05-20,2026-M05,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M05),125392.69,EMP-104,EMP-206,True,OK,test2026T1
+TX-5422,2026-05-25,2026-M05,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M05),13869.54,EMP-104,EMP-207,True,OK,test2026T1
+TX-5423,2026-05-21,2026-M05,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M05),100543.92,EMP-104,EMP-208,True,OK,test2026T1
+TX-5424,2026-05-06,2026-M05,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M05),4581.68,EMP-104,EMP-209,True,OK,test2026T1
+TX-5425,2026-05-02,2026-M05,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M05),20212.28,EMP-104,EMP-210,True,OK,test2026T1
+TX-5426,2026-05-07,2026-M05,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M05),75199.47,EMP-104,EMP-211,True,OK,test2026T1
+TX-5427,2026-05-12,2026-M05,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M05),60031.12,EMP-104,EMP-212,True,OK,test2026T1
+TX-5428,2026-05-27,2026-M05,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M05),27013.95,EMP-104,EMP-213,True,OK,test2026T1
+TX-5429,2026-05-19,2026-M05,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M05),11417.39,EMP-104,EMP-214,True,OK,test2026T1
+TX-5430,2026-05-01,2026-M05,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M05),78303.74,EMP-104,EMP-200,True,OK,test2026T1
+TX-5431,2026-05-17,2026-M05,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M05),16438.7,EMP-104,EMP-201,True,OK,test2026T1
+TX-5432,2026-05-11,2026-M05,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M05),3131.35,EMP-104,EMP-202,True,OK,test2026T1
+TX-5433,2026-05-20,2026-M05,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M05),-6266.73,EMP-103,EMP-203,True,OK,test2026T1
+TX-5434,2026-05-09,2026-M05,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M05),-517880.14,EMP-103,EMP-204,True,OK,test2026T1
+TX-5435,2026-05-17,2026-M05,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M05),-93213.84,EMP-103,EMP-205,True,OK,test2026T1
+TX-5436,2026-05-07,2026-M05,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M05),-164761.25,EMP-103,EMP-206,True,OK,test2026T1
+TX-5437,2026-05-01,2026-M05,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M05),-64032.75,EMP-103,EMP-207,True,OK,test2026T1
+TX-5438,2026-05-13,2026-M05,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M05),-17048.39,EMP-103,EMP-208,True,OK,test2026T1
+TX-5439,2026-05-17,2026-M05,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M05),143613.57,EMP-103,EMP-209,True,OK,test2026T1
+TX-5440,2026-05-13,2026-M05,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M05),415058.72,EMP-103,EMP-210,True,OK,test2026T1
+TX-5441,2026-05-16,2026-M05,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M05),110926.79,EMP-103,EMP-211,True,OK,test2026T1
+TX-5442,2026-05-02,2026-M05,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M05),3087.39,EMP-103,EMP-212,True,OK,test2026T1
+TX-5443,2026-05-22,2026-M05,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M05),67864.8,EMP-103,EMP-213,True,OK,test2026T1
+TX-5444,2026-05-17,2026-M05,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M05),27429.08,EMP-103,EMP-214,True,OK,test2026T1
+TX-5445,2026-05-23,2026-M05,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M05),100738.87,EMP-103,EMP-200,True,OK,test2026T1
+TX-5446,2026-05-07,2026-M05,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M05),20721.42,EMP-103,EMP-201,True,OK,test2026T1
+TX-5447,2026-05-03,2026-M05,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M05),24664.45,EMP-103,EMP-202,True,OK,test2026T1
+TX-5448,2026-05-23,2026-M05,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M05),10240.71,EMP-103,EMP-203,True,OK,test2026T1
+TX-5449,2026-05-23,2026-M05,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M05),33499.51,EMP-103,EMP-204,True,OK,test2026T1
+TX-5450,2026-05-18,2026-M05,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M05),17044.19,EMP-103,EMP-205,True,OK,test2026T1
+TX-5451,2026-05-23,2026-M05,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M05),20263.5,EMP-103,EMP-206,True,OK,test2026T1
+TX-5452,2026-05-27,2026-M05,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M05),31014.09,EMP-103,EMP-207,True,OK,test2026T1
+TX-5453,2026-05-08,2026-M05,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M05),11321.11,EMP-103,EMP-103,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5454,2026-05-15,2026-M05,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M05),33600.47,EMP-103,EMP-209,True,OK,test2026T1
+TX-5455,2026-05-08,2026-M05,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M05),4107.14,EMP-103,EMP-210,True,OK,test2026T1
+TX-5456,2026-05-02,2026-M05,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M05),22087.49,EMP-103,EMP-211,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5457,2026-05-16,2026-M05,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M05),-396605.67,EMP-107,EMP-212,True,OK,test2026T1
+TX-5458,2026-05-04,2026-M05,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M05),-81727.54,EMP-107,EMP-213,True,OK,test2026T1
+TX-5459,2026-05-20,2026-M05,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M05),-145387.12,EMP-107,EMP-214,True,OK,test2026T1
+TX-5460,2026-05-07,2026-M05,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M05),-19968.23,EMP-107,EMP-200,True,OK,test2026T1
+TX-5461,2026-05-10,2026-M05,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M05),-30199.86,EMP-107,EMP-201,True,OK,test2026T1
+TX-5462,2026-05-07,2026-M05,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M05),-197302.77,EMP-107,EMP-202,True,OK,test2026T1
+TX-5463,2026-05-18,2026-M05,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M05),313580.06,EMP-107,EMP-203,True,OK,test2026T1
+TX-5464,2026-05-02,2026-M05,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M05),21794.82,EMP-107,EMP-204,True,OK,test2026T1
+TX-5465,2026-05-01,2026-M05,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M05),347911.57,EMP-107,EMP-205,True,OK,test2026T1
+TX-5466,2026-05-23,2026-M05,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M05),34921.92,EMP-107,EMP-206,True,OK,test2026T1
+TX-5467,2026-05-23,2026-M05,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M05),25074.47,EMP-107,EMP-207,True,OK,test2026T1
+TX-5468,2026-05-12,2026-M05,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M05),39870.17,EMP-107,EMP-208,True,OK,test2026T1
+TX-5469,2026-05-21,2026-M05,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M05),26891.09,EMP-107,EMP-209,True,OK,test2026T1
+TX-5470,2026-05-12,2026-M05,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M05),94407.22,EMP-107,EMP-210,True,OK,test2026T1
+TX-5471,2026-05-03,2026-M05,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M05),28618.07,EMP-107,EMP-211,True,OK,test2026T1
+TX-5472,2026-05-24,2026-M05,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M05),25047.54,EMP-107,EMP-212,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5473,2026-05-27,2026-M05,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M05),2621.62,EMP-107,EMP-213,True,OK,test2026T1
+TX-5474,2026-05-14,2026-M05,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M05),35228.91,EMP-107,EMP-214,True,OK,test2026T1
+TX-5475,2026-05-09,2026-M05,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M05),7766.74,EMP-107,EMP-200,True,OK,test2026T1
+TX-5476,2026-05-08,2026-M05,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M05),25621.72,EMP-107,EMP-201,True,OK,test2026T1
+TX-5477,2026-05-02,2026-M05,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M05),27755.2,EMP-107,EMP-202,True,OK,test2026T1
+TX-5478,2026-05-04,2026-M05,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M05),8185.21,EMP-107,EMP-203,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5479,2026-05-26,2026-M05,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M05),4118.6,EMP-107,EMP-204,True,OK,test2026T1
+TX-5480,2026-05-26,2026-M05,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M05),49436.72,EMP-107,EMP-205,True,OK,test2026T1
+TX-5481,2026-06-21,2026-M06,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M06),-233769.05,EMP-102,EMP-206,True,OK,test2026T1
+TX-5482,2026-06-10,2026-M06,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M06),-228656.83,EMP-102,EMP-207,True,OK,test2026T1
+TX-5483,2026-06-04,2026-M06,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M06),-344001.15,EMP-102,EMP-208,True,OK,test2026T1
+TX-5484,2026-06-12,2026-M06,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M06),-17147.92,EMP-102,EMP-209,True,OK,test2026T1
+TX-5485,2026-06-23,2026-M06,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M06),-128134.76,EMP-102,EMP-210,True,OK,test2026T1
+TX-5486,2026-06-21,2026-M06,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M06),-169681.23,EMP-102,EMP-211,True,OK,test2026T1
+TX-5487,2026-06-08,2026-M06,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M06),27380.89,EMP-102,EMP-212,True,OK,test2026T1
+TX-5488,2026-06-02,2026-M06,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M06),428318.54,EMP-102,EMP-213,True,OK,test2026T1
+TX-5489,2026-06-12,2026-M06,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M06),385134.58,EMP-102,EMP-214,True,OK,test2026T1
+TX-5490,2026-06-21,2026-M06,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M06),25814.42,EMP-102,EMP-200,True,OK,test2026T1
+TX-5491,2026-06-26,2026-M06,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M06),32247.61,EMP-102,EMP-201,True,OK,test2026T1
+TX-5492,2026-06-14,2026-M06,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M06),68944.19,EMP-102,EMP-202,True,OK,test2026T1
+TX-5493,2026-06-04,2026-M06,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M06),20796.72,EMP-102,EMP-203,True,OK,test2026T1
+TX-5494,2026-06-19,2026-M06,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M06),153182.41,EMP-102,EMP-204,True,OK,test2026T1
+TX-5495,2026-06-26,2026-M06,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M06),9883.47,EMP-102,EMP-205,True,OK,test2026T1
+TX-5496,2026-06-27,2026-M06,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M06),28637.01,EMP-102,EMP-206,True,OK,test2026T1
+TX-5497,2026-06-07,2026-M06,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M06),9072.03,EMP-102,EMP-207,True,OK,test2026T1
+TX-5498,2026-06-08,2026-M06,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M06),39000.94,EMP-102,EMP-208,True,OK,test2026T1
+TX-5499,2026-06-05,2026-M06,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M06),11361.55,EMP-102,EMP-209,True,OK,test2026T1
+TX-5500,2026-06-24,2026-M06,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M06),19153.87,EMP-102,EMP-210,True,OK,test2026T1
+TX-5501,2026-06-01,2026-M06,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M06),48548.35,EMP-102,EMP-211,True,OK,test2026T1
+TX-5502,2026-06-17,2026-M06,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M06),21566.41,EMP-102,EMP-212,True,OK,test2026T1
+TX-5503,2026-06-27,2026-M06,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M06),4911.11,EMP-102,EMP-213,True,OK,test2026T1
+TX-5504,2026-06-13,2026-M06,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M06),51185.31,EMP-102,EMP-214,True,OK,test2026T1
+TX-5505,2026-06-08,2026-M06,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M06),-465440.36,EMP-104,EMP-200,True,OK,test2026T1
+TX-5506,2026-06-17,2026-M06,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M06),-306469.03,EMP-104,EMP-201,True,OK,test2026T1
+TX-5507,2026-06-01,2026-M06,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M06),-201250.44,EMP-104,EMP-202,True,OK,test2026T1
+TX-5508,2026-06-03,2026-M06,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M06),-229443.99,EMP-104,EMP-203,True,OK,test2026T1
+TX-5509,2026-06-18,2026-M06,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M06),-112282.55,EMP-104,EMP-204,True,OK,test2026T1
+TX-5510,2026-06-05,2026-M06,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M06),-55665.93,EMP-104,EMP-205,True,OK,test2026T1
+TX-5511,2026-06-05,2026-M06,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M06),1026376.98,EMP-104,EMP-206,True,OK,test2026T1
+TX-5512,2026-06-12,2026-M06,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M06),1575.05,EMP-104,EMP-207,True,OK,test2026T1
+TX-5513,2026-06-27,2026-M06,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M06),32532.66,EMP-104,EMP-208,True,OK,test2026T1
+TX-5514,2026-06-15,2026-M06,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M06),6414.68,EMP-104,EMP-209,True,OK,test2026T1
+TX-5515,2026-06-12,2026-M06,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M06),130817.13,EMP-104,EMP-210,True,OK,test2026T1
+TX-5516,2026-06-16,2026-M06,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M06),25749.36,EMP-104,EMP-211,True,OK,test2026T1
+TX-5517,2026-06-22,2026-M06,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M06),79611.01,EMP-104,EMP-212,True,OK,test2026T1
+TX-5518,2026-06-16,2026-M06,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M06),99259.04,EMP-104,EMP-213,True,OK,test2026T1
+TX-5519,2026-06-06,2026-M06,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M06),64966.8,EMP-104,EMP-214,True,OK,test2026T1
+TX-5520,2026-06-09,2026-M06,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M06),52409.66,EMP-104,EMP-200,True,OK,test2026T1
+TX-5521,2026-06-13,2026-M06,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M06),23332.65,EMP-104,EMP-201,True,OK,test2026T1
+TX-5522,2026-06-26,2026-M06,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M06),26498.13,EMP-104,EMP-202,True,OK,test2026T1
+TX-5523,2026-06-21,2026-M06,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M06),29424.0,EMP-104,EMP-104,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5524,2026-06-22,2026-M06,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M06),62412.39,EMP-104,EMP-204,True,OK,test2026T1
+TX-5525,2026-06-26,2026-M06,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M06),4792.44,EMP-104,EMP-205,True,OK,test2026T1
+TX-5526,2026-06-08,2026-M06,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M06),7622.6,EMP-104,EMP-206,True,OK,test2026T1
+TX-5527,2026-06-18,2026-M06,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M06),77938.8,EMP-104,EMP-207,True,OK,test2026T1
+TX-5528,2026-06-27,2026-M06,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M06),12697.75,EMP-104,EMP-208,True,OK,test2026T1
+TX-5529,2026-06-18,2026-M06,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M06),-90131.44,EMP-103,EMP-209,True,OK,test2026T1
+TX-5530,2026-06-27,2026-M06,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M06),-277716.67,EMP-103,EMP-210,True,OK,test2026T1
+TX-5531,2026-06-10,2026-M06,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M06),-260978.69,EMP-103,EMP-211,True,OK,test2026T1
+TX-5532,2026-06-13,2026-M06,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M06),-111565.92,EMP-103,EMP-212,True,OK,test2026T1
+TX-5533,2026-06-02,2026-M06,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M06),-48188.39,EMP-103,EMP-213,True,OK,test2026T1
+TX-5534,2026-06-03,2026-M06,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M06),-87370.52,EMP-103,EMP-214,True,OK,test2026T1
+TX-5535,2026-06-15,2026-M06,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M06),159680.28,EMP-103,EMP-200,True,OK,test2026T1
+TX-5536,2026-06-24,2026-M06,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M06),496018.41,EMP-103,EMP-201,True,OK,test2026T1
+TX-5537,2026-06-17,2026-M06,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M06),25986.28,EMP-103,EMP-202,True,OK,test2026T1
+TX-5538,2026-06-13,2026-M06,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M06),33718.94,EMP-103,EMP-203,True,OK,test2026T1
+TX-5539,2026-06-10,2026-M06,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M06),41658.56,EMP-103,EMP-204,True,OK,test2026T1
+TX-5540,2026-06-12,2026-M06,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M06),22848.3,EMP-103,EMP-205,True,OK,test2026T1
+TX-5541,2026-06-23,2026-M06,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M06),1711.98,EMP-103,EMP-206,True,OK,test2026T1
+TX-5542,2026-06-13,2026-M06,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M06),141442.82,EMP-103,EMP-207,True,OK,test2026T1
+TX-5543,2026-06-13,2026-M06,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M06),1489.9,EMP-103,EMP-208,True,OK,test2026T1
+TX-5544,2026-06-17,2026-M06,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M06),59025.99,EMP-103,EMP-209,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5545,2026-06-21,2026-M06,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M06),1588.99,EMP-103,EMP-210,True,OK,test2026T1
+TX-5546,2026-06-12,2026-M06,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M06),208.59,EMP-103,EMP-211,True,OK,test2026T1
+TX-5547,2026-06-25,2026-M06,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M06),16644.76,EMP-103,EMP-212,True,OK,test2026T1
+TX-5548,2026-06-07,2026-M06,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M06),33310.2,EMP-103,EMP-213,True,OK,test2026T1
+TX-5549,2026-06-20,2026-M06,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M06),11763.62,EMP-103,EMP-214,True,OK,test2026T1
+TX-5550,2026-06-18,2026-M06,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M06),20474.37,EMP-103,EMP-200,True,OK,test2026T1
+TX-5551,2026-06-04,2026-M06,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M06),8785.23,EMP-103,EMP-201,True,OK,test2026T1
+TX-5552,2026-06-18,2026-M06,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M06),32863.51,EMP-103,EMP-202,True,OK,test2026T1
+TX-5553,2026-06-09,2026-M06,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M06),-5810.2,EMP-107,EMP-203,True,OK,test2026T1
+TX-5554,2026-06-15,2026-M06,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M06),-2436.72,EMP-107,EMP-204,True,OK,test2026T1
+TX-5555,2026-06-17,2026-M06,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M06),-594463.17,EMP-107,EMP-205,True,OK,test2026T1
+TX-5556,2026-06-05,2026-M06,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M06),-6648.21,EMP-107,EMP-206,True,OK,test2026T1
+TX-5557,2026-06-11,2026-M06,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M06),-156741.7,EMP-107,EMP-207,True,OK,test2026T1
+TX-5558,2026-06-06,2026-M06,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M06),-80017.06,EMP-107,EMP-208,True,OK,test2026T1
+TX-5559,2026-06-02,2026-M06,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M06),276018.88,EMP-107,EMP-209,True,OK,test2026T1
+TX-5560,2026-06-25,2026-M06,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M06),117569.08,EMP-107,EMP-210,True,OK,test2026T1
+TX-5561,2026-06-07,2026-M06,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M06),299660.24,EMP-107,EMP-211,True,OK,test2026T1
+TX-5562,2026-06-21,2026-M06,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M06),6372.38,EMP-107,EMP-212,True,OK,test2026T1
+TX-5563,2026-06-19,2026-M06,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M06),69155.3,EMP-107,EMP-213,True,OK,test2026T1
+TX-5564,2026-06-13,2026-M06,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M06),25360.4,EMP-107,EMP-214,True,OK,test2026T1
+TX-5565,2026-06-26,2026-M06,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M06),12114.44,EMP-107,EMP-200,True,OK,test2026T1
+TX-5566,2026-06-03,2026-M06,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M06),122108.14,EMP-107,EMP-201,True,OK,test2026T1
+TX-5567,2026-06-24,2026-M06,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M06),9428.8,EMP-107,EMP-202,True,OK,test2026T1
+TX-5568,2026-06-03,2026-M06,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M06),635.73,EMP-107,EMP-203,True,OK,test2026T1
+TX-5569,2026-06-20,2026-M06,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M06),37099.09,EMP-107,EMP-204,True,OK,test2026T1
+TX-5570,2026-06-26,2026-M06,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M06),22964.4,EMP-107,EMP-205,True,OK,test2026T1
+TX-5571,2026-06-17,2026-M06,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M06),10868.57,EMP-107,EMP-206,True,OK,test2026T1
+TX-5572,2026-06-24,2026-M06,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M06),26110.11,EMP-107,EMP-107,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5573,2026-06-03,2026-M06,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M06),24363.31,EMP-107,EMP-208,True,OK,test2026T1
+TX-5574,2026-06-09,2026-M06,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M06),12417.08,EMP-107,EMP-209,True,OK,test2026T1
+TX-5575,2026-06-04,2026-M06,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M06),12377.86,EMP-107,EMP-210,True,OK,test2026T1
+TX-5576,2026-06-14,2026-M06,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M06),37615.74,EMP-107,EMP-211,True,OK,test2026T1
+TX-5577,2026-07-09,2026-M07,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M07),-344857.18,EMP-102,EMP-212,True,OK,test2026T1
+TX-5578,2026-07-03,2026-M07,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M07),-279868.86,EMP-102,EMP-213,True,OK,test2026T1
+TX-5579,2026-07-25,2026-M07,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M07),-179789.95,EMP-102,EMP-214,True,OK,test2026T1
+TX-5580,2026-07-11,2026-M07,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M07),-3721.27,EMP-102,EMP-200,True,OK,test2026T1
+TX-5581,2026-07-27,2026-M07,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M07),-41176.26,EMP-102,EMP-201,True,OK,test2026T1
+TX-5582,2026-07-02,2026-M07,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M07),-276758.92,EMP-102,EMP-202,True,OK,test2026T1
+TX-5583,2026-07-26,2026-M07,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M07),195739.52,EMP-102,EMP-203,True,OK,test2026T1
+TX-5584,2026-07-18,2026-M07,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M07),126252.46,EMP-102,EMP-204,True,OK,test2026T1
+TX-5585,2026-07-06,2026-M07,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M07),539499.87,EMP-102,EMP-205,True,OK,test2026T1
+TX-5586,2026-07-18,2026-M07,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M07),2105.75,EMP-102,EMP-206,True,OK,test2026T1
+TX-5587,2026-07-08,2026-M07,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M07),40845.63,EMP-102,EMP-207,True,OK,test2026T1
+TX-5588,2026-07-13,2026-M07,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M07),86542.26,EMP-102,EMP-208,True,OK,test2026T1
+TX-5589,2026-07-02,2026-M07,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M07),55259.19,EMP-102,EMP-209,True,OK,test2026T1
+TX-5590,2026-07-08,2026-M07,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M07),107204.12,EMP-102,EMP-210,True,OK,test2026T1
+TX-5591,2026-07-27,2026-M07,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M07),26316.54,EMP-102,EMP-211,True,OK,test2026T1
+TX-5592,2026-07-01,2026-M07,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M07),26069.7,EMP-102,EMP-212,True,OK,test2026T1
+TX-5593,2026-07-27,2026-M07,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M07),14504.57,EMP-102,EMP-213,True,OK,test2026T1
+TX-5594,2026-07-27,2026-M07,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M07),39897.95,EMP-102,EMP-214,True,OK,test2026T1
+TX-5595,2026-07-04,2026-M07,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M07),9389.33,EMP-102,EMP-200,True,OK,test2026T1
+TX-5596,2026-07-27,2026-M07,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M07),6299.49,EMP-102,EMP-201,True,OK,test2026T1
+TX-5597,2026-07-06,2026-M07,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M07),61456.57,EMP-102,EMP-202,True,OK,test2026T1
+TX-5598,2026-07-23,2026-M07,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M07),27428.52,EMP-102,EMP-203,True,OK,test2026T1
+TX-5599,2026-07-10,2026-M07,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M07),41802.28,EMP-102,EMP-204,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5600,2026-07-10,2026-M07,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M07),8050.76,EMP-102,EMP-205,True,OK,test2026T1
+TX-5601,2026-07-02,2026-M07,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M07),-99050.01,EMP-104,EMP-206,True,OK,test2026T1
+TX-5602,2026-07-14,2026-M07,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M07),-913349.18,EMP-104,EMP-207,True,OK,test2026T1
+TX-5603,2026-07-13,2026-M07,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M07),-427.65,EMP-104,EMP-208,True,OK,test2026T1
+TX-5604,2026-07-17,2026-M07,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M07),-1953.34,EMP-104,EMP-209,True,OK,test2026T1
+TX-5605,2026-07-09,2026-M07,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M07),-103158.15,EMP-104,EMP-210,True,OK,test2026T1
+TX-5606,2026-07-17,2026-M07,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M07),-292566.62,EMP-104,EMP-211,True,OK,test2026T1
+TX-5607,2026-07-16,2026-M07,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M07),230587.95,EMP-104,EMP-212,True,OK,test2026T1
+TX-5608,2026-07-06,2026-M07,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M07),4445.62,EMP-104,EMP-213,True,OK,test2026T1
+TX-5609,2026-07-19,2026-M07,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M07),832895.58,EMP-104,EMP-214,True,OK,test2026T1
+TX-5610,2026-07-15,2026-M07,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M07),28001.71,EMP-104,EMP-200,True,OK,test2026T1
+TX-5611,2026-07-05,2026-M07,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M07),118455.91,EMP-104,EMP-201,True,OK,test2026T1
+TX-5612,2026-07-22,2026-M07,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M07),15032.59,EMP-104,EMP-202,True,OK,test2026T1
+TX-5613,2026-07-17,2026-M07,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M07),178937.53,EMP-104,EMP-203,True,OK,test2026T1
+TX-5614,2026-07-12,2026-M07,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M07),10795.34,EMP-104,EMP-204,True,OK,test2026T1
+TX-5615,2026-07-22,2026-M07,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M07),55023.87,EMP-104,EMP-205,True,OK,test2026T1
+TX-5616,2026-07-18,2026-M07,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M07),82883.49,EMP-104,EMP-206,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5617,2026-07-18,2026-M07,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M07),7707.22,EMP-104,EMP-207,True,OK,test2026T1
+TX-5618,2026-07-14,2026-M07,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M07),10027.9,EMP-104,EMP-208,True,OK,test2026T1
+TX-5619,2026-07-12,2026-M07,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M07),71005.97,EMP-104,EMP-209,True,OK,test2026T1
+TX-5620,2026-07-07,2026-M07,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M07),28340.35,EMP-104,EMP-210,True,OK,test2026T1
+TX-5621,2026-07-11,2026-M07,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M07),2851.86,EMP-104,EMP-104,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5622,2026-07-23,2026-M07,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M07),19113.08,EMP-104,EMP-212,True,OK,test2026T1
+TX-5623,2026-07-26,2026-M07,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M07),70215.22,EMP-104,EMP-213,True,OK,test2026T1
+TX-5624,2026-07-02,2026-M07,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M07),11963.72,EMP-104,EMP-214,True,OK,test2026T1
+TX-5625,2026-07-07,2026-M07,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M07),-504525.96,EMP-103,EMP-200,True,OK,test2026T1
+TX-5626,2026-07-15,2026-M07,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M07),-47890.87,EMP-103,EMP-201,True,OK,test2026T1
+TX-5627,2026-07-23,2026-M07,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M07),-51763.95,EMP-103,EMP-202,True,OK,test2026T1
+TX-5628,2026-07-20,2026-M07,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M07),-24127.47,EMP-103,EMP-203,True,OK,test2026T1
+TX-5629,2026-07-22,2026-M07,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M07),-124754.95,EMP-103,EMP-204,True,OK,test2026T1
+TX-5630,2026-07-11,2026-M07,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M07),-100908.61,EMP-103,EMP-205,True,OK,test2026T1
+TX-5631,2026-07-21,2026-M07,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M07),534976.81,EMP-103,EMP-206,True,OK,test2026T1
+TX-5632,2026-07-15,2026-M07,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M07),29075.87,EMP-103,EMP-207,True,OK,test2026T1
+TX-5633,2026-07-16,2026-M07,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M07),100531.33,EMP-103,EMP-208,True,OK,test2026T1
+TX-5634,2026-07-27,2026-M07,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M07),62467.87,EMP-103,EMP-209,True,OK,test2026T1
+TX-5635,2026-07-01,2026-M07,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M07),26708.23,EMP-103,EMP-210,True,OK,test2026T1
+TX-5636,2026-07-26,2026-M07,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M07),10925.18,EMP-103,EMP-211,True,OK,test2026T1
+TX-5637,2026-07-25,2026-M07,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M07),73827.67,EMP-103,EMP-212,True,OK,test2026T1
+TX-5638,2026-07-24,2026-M07,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M07),67712.02,EMP-103,EMP-213,True,OK,test2026T1
+TX-5639,2026-07-12,2026-M07,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M07),8936.27,EMP-103,EMP-214,True,OK,test2026T1
+TX-5640,2026-07-25,2026-M07,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M07),24586.44,EMP-103,EMP-200,True,OK,test2026T1
+TX-5641,2026-07-17,2026-M07,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M07),30207.38,EMP-103,EMP-201,True,OK,test2026T1
+TX-5642,2026-07-21,2026-M07,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M07),6686.79,EMP-103,EMP-202,True,OK,test2026T1
+TX-5643,2026-07-12,2026-M07,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M07),26306.86,EMP-103,EMP-203,True,OK,test2026T1
+TX-5644,2026-07-21,2026-M07,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M07),32886.09,EMP-103,EMP-204,True,OK,test2026T1
+TX-5645,2026-07-24,2026-M07,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M07),784.25,EMP-103,EMP-205,True,OK,test2026T1
+TX-5646,2026-07-14,2026-M07,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M07),18769.02,EMP-103,EMP-206,True,OK,test2026T1
+TX-5647,2026-07-07,2026-M07,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M07),31169.34,EMP-103,EMP-207,True,OK,test2026T1
+TX-5648,2026-07-17,2026-M07,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M07),12858.25,EMP-103,EMP-208,True,OK,test2026T1
+TX-5649,2026-07-22,2026-M07,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M07),-129161.74,EMP-107,EMP-209,True,OK,test2026T1
+TX-5650,2026-07-22,2026-M07,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M07),-371207.51,EMP-107,EMP-210,True,OK,test2026T1
+TX-5651,2026-07-21,2026-M07,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M07),-116074.27,EMP-107,EMP-211,True,OK,test2026T1
+TX-5652,2026-07-08,2026-M07,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M07),-149796.52,EMP-107,EMP-212,True,OK,test2026T1
+TX-5653,2026-07-21,2026-M07,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M07),-34847.8,EMP-107,EMP-213,True,OK,test2026T1
+TX-5654,2026-07-18,2026-M07,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M07),-56959.88,EMP-107,EMP-214,True,OK,test2026T1
+TX-5655,2026-07-11,2026-M07,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M07),62793.18,EMP-107,EMP-200,True,OK,test2026T1
+TX-5656,2026-07-13,2026-M07,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M07),458629.58,EMP-107,EMP-201,True,OK,test2026T1
+TX-5657,2026-07-25,2026-M07,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M07),159622.2,EMP-107,EMP-202,True,OK,test2026T1
+TX-5658,2026-07-24,2026-M07,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M07),68600.36,EMP-107,EMP-203,True,OK,test2026T1
+TX-5659,2026-07-09,2026-M07,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M07),1832.35,EMP-107,EMP-204,True,OK,test2026T1
+TX-5660,2026-07-17,2026-M07,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M07),29684.81,EMP-107,EMP-205,True,OK,test2026T1
+TX-5661,2026-07-20,2026-M07,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M07),79712.7,EMP-107,EMP-206,True,OK,test2026T1
+TX-5662,2026-07-01,2026-M07,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M07),1746.59,EMP-107,EMP-207,True,OK,test2026T1
+TX-5663,2026-07-10,2026-M07,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M07),62037.33,EMP-107,EMP-208,True,OK,test2026T1
+TX-5664,2026-07-09,2026-M07,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M07),48038.66,EMP-107,EMP-209,True,OK,test2026T1
+TX-5665,2026-07-13,2026-M07,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M07),1274.12,EMP-107,EMP-210,True,OK,test2026T1
+TX-5666,2026-07-01,2026-M07,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M07),12950.8,EMP-107,EMP-211,True,OK,test2026T1
+TX-5667,2026-07-26,2026-M07,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M07),5979.9,EMP-107,EMP-212,True,OK,test2026T1
+TX-5668,2026-07-14,2026-M07,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M07),5249.26,EMP-107,EMP-213,True,OK,test2026T1
+TX-5669,2026-07-26,2026-M07,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M07),51213.43,EMP-107,EMP-214,True,OK,test2026T1
+TX-5670,2026-07-11,2026-M07,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M07),26931.45,EMP-107,EMP-200,True,OK,test2026T1
+TX-5671,2026-07-03,2026-M07,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M07),22104.22,EMP-107,EMP-201,True,OK,test2026T1
+TX-5672,2026-07-27,2026-M07,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M07),13318.98,EMP-107,EMP-202,True,OK,test2026T1
+TX-5673,2026-08-18,2026-M08,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M08),-587584.22,EMP-102,EMP-203,True,OK,test2026T1
+TX-5674,2026-08-12,2026-M08,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M08),-11394.42,EMP-102,EMP-204,True,OK,test2026T1
+TX-5675,2026-08-08,2026-M08,T2,Handelshøyskolen,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Handelshøyskolen - M08),-166388.81,EMP-102,EMP-205,True,OK,test2026T1
+TX-5676,2026-08-07,2026-M08,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M08),-91798.02,EMP-102,EMP-206,True,OK,test2026T1
+TX-5677,2026-08-11,2026-M08,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M08),-143059.61,EMP-102,EMP-207,True,OK,test2026T1
+TX-5678,2026-08-20,2026-M08,T2,Handelshøyskolen,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Handelshøyskolen - M08),-88597.29,EMP-102,EMP-208,True,OK,test2026T1
+TX-5679,2026-08-09,2026-M08,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M08),255311.75,EMP-102,EMP-209,True,OK,test2026T1
+TX-5680,2026-08-10,2026-M08,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M08),429737.81,EMP-102,EMP-210,True,OK,test2026T1
+TX-5681,2026-08-14,2026-M08,T2,Handelshøyskolen,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M08),183955.19,EMP-102,EMP-211,True,OK,test2026T1
+TX-5682,2026-08-13,2026-M08,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M08),14708.18,EMP-102,EMP-212,True,OK,test2026T1
+TX-5683,2026-08-19,2026-M08,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M08),67061.49,EMP-102,EMP-213,True,OK,test2026T1
+TX-5684,2026-08-26,2026-M08,T2,Handelshøyskolen,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Handelshøyskolen - M08),41067.45,EMP-102,EMP-214,True,OK,test2026T1
+TX-5685,2026-08-21,2026-M08,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M08),29315.65,EMP-102,EMP-200,True,OK,test2026T1
+TX-5686,2026-08-23,2026-M08,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M08),62933.56,EMP-102,EMP-201,True,OK,test2026T1
+TX-5687,2026-08-19,2026-M08,T2,Handelshøyskolen,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Handelshøyskolen - M08),94811.84,EMP-102,EMP-202,True,OK,test2026T1
+TX-5688,2026-08-24,2026-M08,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M08),1095.86,EMP-102,EMP-203,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5689,2026-08-09,2026-M08,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M08),55058.22,EMP-102,EMP-204,True,OK,test2026T1
+TX-5690,2026-08-27,2026-M08,T2,Handelshøyskolen,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Handelshøyskolen - M08),20997.32,EMP-102,EMP-205,True,OK,test2026T1
+TX-5691,2026-08-15,2026-M08,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M08),12301.7,EMP-102,EMP-102,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5692,2026-08-01,2026-M08,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M08),63016.75,EMP-102,EMP-207,True,OK,test2026T1
+TX-5693,2026-08-07,2026-M08,T2,Handelshøyskolen,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Handelshøyskolen - M08),4141.84,EMP-102,EMP-208,True,OK,test2026T1
+TX-5694,2026-08-20,2026-M08,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M08),34006.87,EMP-102,EMP-209,True,OK,test2026T1
+TX-5695,2026-08-05,2026-M08,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M08),21791.41,EMP-102,EMP-210,True,OK,test2026T1
+TX-5696,2026-08-04,2026-M08,T2,Handelshøyskolen,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Handelshøyskolen - M08),22775.12,EMP-102,EMP-211,True,OK,test2026T1
+TX-5697,2026-08-19,2026-M08,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M08),-499310.62,EMP-104,EMP-212,True,OK,test2026T1
+TX-5698,2026-08-09,2026-M08,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M08),-240410.12,EMP-104,EMP-213,True,OK,test2026T1
+TX-5699,2026-08-04,2026-M08,T2,Teknologi og Realfag,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Teknologi og Realfag - M08),-268062.02,EMP-104,EMP-214,True,OK,test2026T1
+TX-5700,2026-08-04,2026-M08,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M08),-82887.15,EMP-104,EMP-200,True,OK,test2026T1
+TX-5701,2026-08-06,2026-M08,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M08),-153445.44,EMP-104,EMP-201,True,OK,test2026T1
+TX-5702,2026-08-07,2026-M08,T2,Teknologi og Realfag,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Teknologi og Realfag - M08),-149943.47,EMP-104,EMP-202,True,OK,test2026T1
+TX-5703,2026-08-13,2026-M08,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M08),271202.91,EMP-104,EMP-203,True,OK,test2026T1
+TX-5704,2026-08-18,2026-M08,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M08),735789.59,EMP-104,EMP-204,True,OK,test2026T1
+TX-5705,2026-08-08,2026-M08,T2,Teknologi og Realfag,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Teknologi og Realfag - M08),71495.19,EMP-104,EMP-205,True,OK,test2026T1
+TX-5706,2026-08-23,2026-M08,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M08),19091.68,EMP-104,EMP-206,True,OK,test2026T1
+TX-5707,2026-08-10,2026-M08,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M08),106216.5,EMP-104,EMP-207,True,OK,test2026T1
+TX-5708,2026-08-12,2026-M08,T2,Teknologi og Realfag,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Teknologi og Realfag - M08),36897.24,EMP-104,EMP-208,True,OK,test2026T1
+TX-5709,2026-08-09,2026-M08,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M08),128561.36,EMP-104,EMP-209,True,OK,test2026T1
+TX-5710,2026-08-22,2026-M08,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M08),95304.37,EMP-104,EMP-210,True,OK,test2026T1
+TX-5711,2026-08-15,2026-M08,T2,Teknologi og Realfag,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Teknologi og Realfag - M08),12814.73,EMP-104,EMP-211,True,OK,test2026T1
+TX-5712,2026-08-17,2026-M08,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M08),42162.3,EMP-104,EMP-212,True,OK,test2026T1
+TX-5713,2026-08-27,2026-M08,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M08),52893.39,EMP-104,EMP-213,True,OK,test2026T1
+TX-5714,2026-08-25,2026-M08,T2,Teknologi og Realfag,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Teknologi og Realfag - M08),4873.34,EMP-104,EMP-214,True,OK,test2026T1
+TX-5715,2026-08-08,2026-M08,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M08),17322.42,EMP-104,EMP-200,True,OK,test2026T1
+TX-5716,2026-08-12,2026-M08,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M08),62032.81,EMP-104,EMP-201,True,OK,test2026T1
+TX-5717,2026-08-24,2026-M08,T2,Teknologi og Realfag,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Teknologi og Realfag - M08),22818.65,EMP-104,EMP-202,True,OK,test2026T1
+TX-5718,2026-08-22,2026-M08,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M08),9933.48,EMP-104,EMP-203,True,OK,test2026T1
+TX-5719,2026-08-14,2026-M08,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M08),9820.37,EMP-104,EMP-204,True,OK,test2026T1
+TX-5720,2026-08-16,2026-M08,T2,Teknologi og Realfag,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Teknologi og Realfag - M08),79004.99,EMP-104,EMP-205,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5721,2026-08-20,2026-M08,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M08),-91978.24,EMP-103,EMP-206,True,OK,test2026T1
+TX-5722,2026-08-08,2026-M08,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M08),-395097.79,EMP-103,EMP-207,True,OK,test2026T1
+TX-5723,2026-08-11,2026-M08,T2,Helse- og Idrettsvitenskap,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Helse- og Idrettsvitenskap - M08),-126150.66,EMP-103,EMP-208,True,OK,test2026T1
+TX-5724,2026-08-11,2026-M08,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M08),-60360.96,EMP-103,EMP-209,True,OK,test2026T1
+TX-5725,2026-08-05,2026-M08,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M08),-92310.41,EMP-103,EMP-210,True,OK,test2026T1
+TX-5726,2026-08-15,2026-M08,T2,Helse- og Idrettsvitenskap,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Helse- og Idrettsvitenskap - M08),-98922.81,EMP-103,EMP-211,True,OK,test2026T1
+TX-5727,2026-08-15,2026-M08,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M08),105757.19,EMP-103,EMP-212,True,OK,test2026T1
+TX-5728,2026-08-15,2026-M08,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M08),305446.37,EMP-103,EMP-213,True,OK,test2026T1
+TX-5729,2026-08-06,2026-M08,T2,Helse- og Idrettsvitenskap,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Helse- og Idrettsvitenskap - M08),269168.24,EMP-103,EMP-214,True,OK,test2026T1
+TX-5730,2026-08-05,2026-M08,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M08),23232.3,EMP-103,EMP-200,True,OK,test2026T1
+TX-5731,2026-08-20,2026-M08,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M08),61532.57,EMP-103,EMP-201,True,OK,test2026T1
+TX-5732,2026-08-26,2026-M08,T2,Helse- og Idrettsvitenskap,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Helse- og Idrettsvitenskap - M08),11505.48,EMP-103,EMP-202,True,OK,test2026T1
+TX-5733,2026-08-05,2026-M08,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M08),5398.4,EMP-103,EMP-203,True,OK,test2026T1
+TX-5734,2026-08-01,2026-M08,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M08),24947.37,EMP-103,EMP-204,True,OK,test2026T1
+TX-5735,2026-08-17,2026-M08,T2,Helse- og Idrettsvitenskap,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Helse- og Idrettsvitenskap - M08),112591.23,EMP-103,EMP-205,True,OK,test2026T1
+TX-5736,2026-08-27,2026-M08,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M08),30849.71,EMP-103,EMP-206,True,OK,test2026T1
+TX-5737,2026-08-11,2026-M08,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M08),13406.65,EMP-103,EMP-207,True,OK,test2026T1
+TX-5738,2026-08-02,2026-M08,T2,Helse- og Idrettsvitenskap,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Helse- og Idrettsvitenskap - M08),17304.8,EMP-103,EMP-208,True,OK,test2026T1
+TX-5739,2026-08-11,2026-M08,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M08),45869.46,EMP-103,EMP-209,True,OK,test2026T1
+TX-5740,2026-08-18,2026-M08,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M08),11009.14,EMP-103,EMP-103,True,BRUDD: Egengodkjent (BDM == Attestant),test2026T1
+TX-5741,2026-08-23,2026-M08,T2,Helse- og Idrettsvitenskap,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Helse- og Idrettsvitenskap - M08),3721.41,EMP-103,EMP-211,True,OK,test2026T1
+TX-5742,2026-08-16,2026-M08,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M08),16952.11,EMP-103,EMP-212,True,BRUDD: Mangler MVA-spesifikasjon,test2026T1
+TX-5743,2026-08-18,2026-M08,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M08),3429.7,EMP-103,EMP-213,True,OK,test2026T1
+TX-5744,2026-08-10,2026-M08,T2,Helse- og Idrettsvitenskap,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Helse- og Idrettsvitenskap - M08),41481.42,EMP-103,EMP-214,True,OK,test2026T1
+TX-5745,2026-08-06,2026-M08,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M08),-64798.97,EMP-107,EMP-200,True,OK,test2026T1
+TX-5746,2026-08-05,2026-M08,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M08),-76315.48,EMP-107,EMP-201,True,OK,test2026T1
+TX-5747,2026-08-15,2026-M08,T2,Fellesadministrasjon,3400,Statlig Bevilgning Kap 260,Statlig Bevilgning Kap 260 (Fellesadministrasjon - M08),-479944.59,EMP-107,EMP-202,True,OK,test2026T1
+TX-5748,2026-08-10,2026-M08,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M08),-48087.15,EMP-107,EMP-203,True,OK,test2026T1
+TX-5749,2026-08-18,2026-M08,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M08),-74223.31,EMP-107,EMP-204,True,OK,test2026T1
+TX-5750,2026-08-18,2026-M08,T2,Fellesadministrasjon,3900,BOA Prosjektinntekter,BOA Prosjektinntekter (Fellesadministrasjon - M08),-117943.64,EMP-107,EMP-205,True,OK,test2026T1
+TX-5751,2026-08-08,2026-M08,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M08),474067.73,EMP-107,EMP-206,True,OK,test2026T1
+TX-5752,2026-08-25,2026-M08,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M08),197246.38,EMP-107,EMP-207,True,OK,test2026T1
+TX-5753,2026-08-14,2026-M08,T2,Fellesadministrasjon,5000,Fast Lønn & Fastlønnskostnader,Fast Lønn & Fastlønnskostnader (Fellesadministrasjon - M08),7199.87,EMP-107,EMP-208,True,OK,test2026T1
+TX-5754,2026-08-16,2026-M08,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M08),16766.28,EMP-107,EMP-209,True,OK,test2026T1
+TX-5755,2026-08-05,2026-M08,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M08),51662.72,EMP-107,EMP-210,True,OK,test2026T1
+TX-5756,2026-08-09,2026-M08,T2,Fellesadministrasjon,5300,Timelønn & Sensorhonorarer,Timelønn & Sensorhonorarer (Fellesadministrasjon - M08),32032.82,EMP-107,EMP-211,True,OK,test2026T1
+TX-5757,2026-08-09,2026-M08,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M08),17975.44,EMP-107,EMP-212,True,OK,test2026T1
+TX-5758,2026-08-01,2026-M08,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M08),124726.53,EMP-107,EMP-213,True,OK,test2026T1
+TX-5759,2026-08-09,2026-M08,T2,Fellesadministrasjon,6000,Husleie & Eiendomsdrift,Husleie & Eiendomsdrift (Fellesadministrasjon - M08),828.18,EMP-107,EMP-214,True,OK,test2026T1
+TX-5760,2026-08-11,2026-M08,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M08),48068.62,EMP-107,EMP-200,False,BRUDD: Mangler kvittering (>100 NOK),test2026T1
+TX-5761,2026-08-04,2026-M08,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M08),3265.52,EMP-107,EMP-201,True,OK,test2026T1
+TX-5762,2026-08-02,2026-M08,T2,Fellesadministrasjon,6800,Kontorrekvisita & IT-lisenser,Kontorrekvisita & IT-lisenser (Fellesadministrasjon - M08),11728.88,EMP-107,EMP-202,True,OK,test2026T1
+TX-5763,2026-08-18,2026-M08,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M08),7664.37,EMP-107,EMP-203,True,OK,test2026T1
+TX-5764,2026-08-13,2026-M08,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M08),21313.75,EMP-107,EMP-204,True,OK,test2026T1
+TX-5765,2026-08-09,2026-M08,T2,Fellesadministrasjon,7100,Reisegodtgjørelser & Diett,Reisegodtgjørelser & Diett (Fellesadministrasjon - M08),31919.6,EMP-107,EMP-205,True,OK,test2026T1
+TX-5766,2026-08-07,2026-M08,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M08),43109.91,EMP-107,EMP-206,True,OK,test2026T1
+TX-5767,2026-08-25,2026-M08,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M08),9995.18,EMP-107,EMP-207,True,OK,test2026T1
+TX-5768,2026-08-21,2026-M08,T2,Fellesadministrasjon,7500,Kjøp av Konsulenttjenester,Kjøp av Konsulenttjenester (Fellesadministrasjon - M08),7473.1,EMP-107,EMP-208,True,OK,test2026T1

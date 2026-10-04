@@ -1,0 +1,159 @@
+table Fact_EVM_Snapshots
+	lineageTag: 3a39f29b-7242-4ed3-a876-41666124a6d1
+
+	column reporting_period
+		dataType: string
+		lineageTag: b5718a50-bd7e-4a61-8f34-28d3214b4e9e
+		summarizeBy: none
+		sourceColumn: reporting_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column snapshot_timestamp
+		dataType: dateTime
+		formatString: yyyy-MM-dd HH:mm:ss
+		lineageTag: e1936691-50dc-4d6d-88fa-c9c30933729f
+		summarizeBy: none
+		sourceColumn: snapshot_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column project_id
+		dataType: string
+		lineageTag: 43b3ad4f-25e3-423d-a18d-750b9295d0f5
+		summarizeBy: none
+		sourceColumn: project_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column bac
+		dataType: double
+		formatString: #,##0
+		lineageTag: 6f6ca01d-0b80-47dc-9a8e-7a6d846882d9
+		summarizeBy: sum
+		sourceColumn: bac
+
+		annotation SummarizationSetBy = Automatic
+
+	column pv
+		dataType: double
+		formatString: #,##0
+		lineageTag: 8292161c-79f0-4021-8ba2-950f064c9520
+		summarizeBy: sum
+		sourceColumn: pv
+
+		annotation SummarizationSetBy = Automatic
+
+	column ev
+		dataType: double
+		formatString: #,##0
+		lineageTag: 84951b1b-c4ce-49d1-9bc0-cee53bb049a6
+		summarizeBy: sum
+		sourceColumn: ev
+
+		annotation SummarizationSetBy = Automatic
+
+	column ac
+		dataType: double
+		formatString: #,##0
+		lineageTag: 5d20353f-76d2-4bcd-9a40-6c48a98745f9
+		summarizeBy: sum
+		sourceColumn: ac
+
+		annotation SummarizationSetBy = Automatic
+
+	column cpi
+		dataType: double
+		formatString: 0.00
+		lineageTag: ce71a385-f5b2-4542-a486-e85af1b1137d
+		summarizeBy: average
+		sourceColumn: cpi
+
+		annotation SummarizationSetBy = Automatic
+
+	column spi
+		dataType: double
+		formatString: 0.00
+		lineageTag: 73814eed-5339-49e2-8546-df5c91984fea
+		summarizeBy: average
+		sourceColumn: spi
+
+		annotation SummarizationSetBy = Automatic
+
+	column eac_cpi
+		dataType: double
+		formatString: #,##0
+		lineageTag: a22e5284-16dd-4153-a88f-eda513146226
+		summarizeBy: sum
+		sourceColumn: eac_cpi
+
+		annotation SummarizationSetBy = Automatic
+
+	column eac_composite
+		dataType: double
+		formatString: #,##0
+		lineageTag: 86d15789-819e-453d-9b9f-836c60e0c1cd
+		summarizeBy: sum
+		sourceColumn: eac_composite
+
+		annotation SummarizationSetBy = Automatic
+
+	column eac_weighted
+		dataType: double
+		formatString: #,##0
+		lineageTag: add4f177-4ee7-4d2d-b4ef-a71e6e43e2f5
+		summarizeBy: sum
+		sourceColumn: eac_weighted
+
+		annotation SummarizationSetBy = Automatic
+
+	column vac
+		dataType: double
+		formatString: #,##0
+		lineageTag: 5657b3e6-1fe4-4522-8a5c-9a7c52b6f3a1
+		summarizeBy: sum
+		sourceColumn: vac
+
+		annotation SummarizationSetBy = Automatic
+
+	column tcpi
+		dataType: double
+		formatString: 0.00
+		lineageTag: 2544fe2e-eb76-4a8d-a895-e2cf27f83db7
+		summarizeBy: average
+		sourceColumn: tcpi
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 0d0e9b6d-5b92-4905-8671-1ee3b809fded
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_EVM_Snapshots-partition = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\Fact_EVM_Snapshots.parquet")),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{
+				        {"reporting_period", type text},
+				        {"snapshot_timestamp", type datetime},
+				        {"project_id", type text},
+				        {"bac", type number},
+				        {"pv", type number},
+				        {"ev", type number},
+				        {"ac", type number},
+				        {"cpi", type number},
+				        {"spi", type number},
+				        {"eac_cpi", type number},
+				        {"eac_composite", type number},
+				        {"eac_weighted", type number},
+				        {"vac", type number},
+				        {"tcpi", type number},
+				        {"status", type text}
+				    })
+				in
+				    #"Changed Type"

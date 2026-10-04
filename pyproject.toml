@@ -1,7 +1,7 @@
 [project]
 name = "uia-controller-app"
-version = "18.0.0"
-description = "UiA Controlling App for Norwegian Public Sector Financial Management, EVM Capital Project Controlling, Annual Wheel, 2026 YTD Review, Power BI & Web Portal Dashboard (v18)"
+version = "19.0.0"
+description = "UiA Controlling App for Norwegian Public Sector Financial Management, EVM Capital Project Controlling, Annual Wheel, 2026 YTD Review, Data Ingestion, Power BI & Web Portal Dashboard (v19)"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
