@@ -49,7 +49,9 @@ def ingest_data_file(
     tag: str = "2026T1sep",
     db_path: str = None,
     duckdb_path: str = None,
-    parquet_dir: str = None
+    parquet_dir: str = None,
+    period: str = None,
+    file_type_override: str = None
 ) -> dict:
     if db_path is None:
         db_path = str(DEFAULT_DB_PATH)
@@ -64,14 +66,30 @@ def ingest_data_file(
 
     # Read DataFrame
     if p.suffix == ".csv":
-        df = pd.read_csv(p)
+        # Support both comma and semicolon
+        try:
+            df = pd.read_csv(p, sep=None, engine='python')
+        except Exception:
+            df = pd.read_csv(p)
     elif p.suffix in [".xlsx", ".xls"]:
         df = pd.read_excel(p)
     else:
         raise ValueError(f"Filformat {p.suffix} støttes ikke.")
 
-    file_type = detect_file_type(df, p.name)
+    valid_types = ["regnskap_ubw", "reiseregninger", "evm_prosjekter", "budsjett"]
+    if file_type_override and file_type_override in valid_types:
+        file_type = file_type_override
+    else:
+        file_type = detect_file_type(df, p.name)
+
     df["Tag"] = tag
+    if period:
+        df["Maaned"] = period
+    elif "Maaned" not in df.columns and "Dato" in df.columns:
+        try:
+            df["Maaned"] = pd.to_datetime(df["Dato"]).dt.strftime('%Y-M%m')
+        except Exception:
+            pass
 
     conn_sqlite = sqlite3.connect(db_path)
     inserted_rows = len(df)
@@ -156,8 +174,8 @@ def ingest_data_file(
             )
         """)
         
-        period = str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else "2026-M09"
-        con_duck.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND tag = ?", [period, tag])
+        ret_period = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else "2026-M09")
+        con_duck.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND tag = ?", [ret_period, tag])
         
         now = datetime.now()
         duck_rows = []
@@ -182,7 +200,7 @@ def ingest_data_file(
             p_name = str(r.get('Project_Name', r.get('project_name', 'Prosjekt')))
             
             duck_rows.append((
-                period, now, p_id, p_name, bac, pv, ev, ac,
+                ret_period, now, p_id, p_name, bac, pv, ev, ac,
                 cpi, spi, eac_cpi, eac_comp, eac_weight, vac, etc, tcpi,
                 status, tag
             ))
@@ -203,10 +221,12 @@ def ingest_data_file(
     except Exception as e:
         print(f"Parquet re-export note: {e}")
 
+    ret_period = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else None)
     return {
         "filename": p.name,
         "file_type": file_type,
         "tag": tag,
+        "period": ret_period,
         "rows_ingested": inserted_rows,
         "status": "SUCCESS"
     }

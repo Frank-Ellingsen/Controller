@@ -91,3 +91,5 @@ TX-9084,3400,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),-77273.08,
 TX-9085,3400,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),-55581.5,EMP-111,EMP-104,1,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),OK
 TX-9086,6800,Kontorrekvisita - Sept 2026 (Handelshøyskolen),2044.87,EMP-111,EMP-114,1,Kontorrekvisita - Sept 2026 (Handelshøyskolen),OK
 TX-9087,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),2458.76,EMP-114,EMP-113,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),OK
+TX-TEST-901,5000,Oktober Lønnskjøring,45000.0,EMP-102,EMP-201,1,Lønn oktober,OK
+TX-TEST-902,6800,Fagbøker,3200.0,EMP-102,EMP-202,1,Pensum,OK

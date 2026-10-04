@@ -111,8 +111,8 @@ python src/tools/antigravity_workflow.py
 # 6. Launch interactive Streamlit action simulator & dashboard
 streamlit run src/tools/app.py
 
-# Or launch lightweight local Tufte HTML dashboard
-python -m http.server 8000
+# 7. Launch lightweight Tufte HTML Web Portal with live database API & upload server
+python src/tools/portal_server.py
 ```
 
 ### Option B: Docker & Docker Compose (Recommended)
@@ -153,9 +153,11 @@ UIA-Controller/
 │       ├── antigravity_workflow.py # 6-step consolidated month-end close runner
 │       ├── app.py                  # Streamlit interactive controlling dashboard
 │       ├── audit_travel_expenses.py# DFØ travel expense compliance audit
+│       ├── data_ingestion.py       # Dynamic multi-source upload & database ingestion
 │       ├── duckdb_analytics.py     # DuckDB OLAP snapshotting engine
 │       ├── evm_calculator.py       # Earned Value Management metric formulas
 │       ├── generate_excel_report.py# openpyxl Tufte-compliant Excel report builder
+│       ├── portal_server.py        # Standard library HTTP API & Web Portal server (port 8000)
 │       ├── powerbi_exporter.py     # Parquet / Star Schema exporter
 │       ├── ubw_reader.py           # Unit4 / UBW transaction audit reader
 │       └── variance_calculator.py  # F-05-20 reserve & variance analysis

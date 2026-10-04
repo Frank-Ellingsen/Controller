@@ -730,21 +730,540 @@
             font-size: 0.8125rem;
             color: var(--text-dim);
         }
+    
+        /* --- Timeframe Picker & Missing Data Warnings (Tufte Style) --- */
+        .timeframe-picker-bar {
+            display: flex;
+            align-items: center;
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 4px 10px;
+            gap: 12px;
+        }
+
+        .timeframe-picker-bar .picker-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .timeframe-picker-bar .picker-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .timeframe-picker-bar label {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            font-weight: 500;
+        }
+
+        .timeframe-picker-bar select {
+            background: #1e293b;
+            color: var(--accent-blue);
+            border: 1px solid var(--border-subtle);
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .timeframe-alert {
+            padding: 14px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .timeframe-alert.alert-ok {
+            background-color: var(--bg-green-subtle);
+            border-color: rgba(52, 211, 153, 0.4);
+            color: #ecfdf5;
+        }
+
+        .timeframe-alert.alert-warning {
+            background-color: var(--bg-amber-subtle);
+            border-color: rgba(245, 158, 11, 0.5);
+            color: #fffbeb;
+        }
+
+        .timeframe-alert.alert-critical {
+            background-color: var(--bg-red-subtle);
+            border-color: rgba(239, 68, 68, 0.6);
+            color: #fef2f2;
+        }
+
+        .timeframe-alert.alert-info {
+            background-color: var(--bg-blue-subtle);
+            border-color: rgba(56, 189, 248, 0.4);
+            color: #f0f9ff;
+        }
+
+        .alert-icon {
+            font-size: 1.35rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .alert-content {
+            flex-grow: 1;
+        }
+
+        .alert-title {
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-size: 0.925rem;
+        }
+
+        .alert-desc {
+            font-size: 0.825rem;
+            color: inherit;
+            opacity: 0.92;
+        }
+
+        .alert-actions {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-alert-action {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid currentColor;
+            color: inherit;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.775rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        .btn-alert-action:hover {
+            background: rgba(15, 23, 42, 0.95);
+        }
+
+        /* --- Timeframe Inspector Card --- */
+        .timeframe-inspector-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+
+        .inspector-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .inspector-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 12-Month Coverage Timeline Track */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 1024px) {
+            .timeline-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .timeline-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .timeline-month-btn {
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 8px 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: var(--font-mono);
+            user-select: none;
+        }
+
+        .timeline-month-btn:hover {
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.08);
+        }
+
+        .timeline-month-btn.selected {
+            border-color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.18);
+            box-shadow: inset 0 0 0 1px var(--accent-blue);
+        }
+
+        .m-code-badge {
+            font-size: 0.775rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .m-status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .m-status-dot.complete { background-color: var(--accent-green); }
+        .m-status-dot.partial { background-color: var(--alert-amber); }
+        .m-status-dot.missing { background-color: var(--alert-red); }
+
+        .m-month-label {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            margin-top: 3px;
+            text-transform: uppercase;
+        }
+
+        .m-month-count {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Coverage Detail Grid */
+        .coverage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .coverage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .coverage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .coverage-card {
+            background: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 12px 14px;
+        }
+
+        .coverage-card-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .coverage-card-val {
+            font-size: 1.05rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            margin-top: 4px;
+            color: var(--text-main);
+        }
+
+        .coverage-card-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* --- Upload File Modal & Menu (Tufte Compliant) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(4, 7, 17, 0.78);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-dialog {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 10px;
+            width: 620px;
+            max-width: 92vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #090d16;
+        }
+
+        .modal-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modal-close-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 1.25rem;
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .modal-close-btn:hover {
+            color: var(--text-main);
+            background-color: #1e293b;
+        }
+
+        .modal-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-label {
+            font-size: 0.775rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-muted);
+        }
+
+        .form-control {
+            background-color: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dropzone-box {
+            border: 2px dashed rgba(56, 189, 248, 0.35);
+            background-color: rgba(9, 13, 22, 0.7);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dropzone-box:hover, .dropzone-box.dragover {
+            border-color: var(--accent-blue);
+            background-color: rgba(56, 189, 248, 0.06);
+        }
+
+        .dropzone-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .dropzone-text {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .dropzone-subtext {
+            font-size: 0.725rem;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        .selected-file-card {
+            background-color: #090d16;
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.825rem;
+        }
+
+        .modal-footer {
+            padding: 14px 20px;
+            border-top: 1px solid var(--border-subtle);
+            background-color: #090d16;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .upload-feedback-box {
+            padding: 12px 14px;
+            border-radius: 6px;
+            font-size: 0.825rem;
+            display: none;
+            line-height: 1.4;
+        }
+
+        .upload-feedback-box.active {
+            display: block;
+        }
+
+        .upload-feedback-box.success {
+            background-color: var(--bg-green-subtle);
+            border: 1px solid rgba(52, 211, 153, 0.4);
+            color: #ecfdf5;
+        }
+
+        .upload-feedback-box.error {
+            background-color: var(--bg-red-subtle);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fef2f2;
+        }
+
+        .upload-feedback-box.info {
+            background-color: var(--bg-blue-subtle);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #f0f9ff;
+        }
+
+        .server-status-pill {
+            font-size: 0.725rem;
+            color: var(--text-dim);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header>
+        <header>
         <div class="header-title">
             <h1>UiA Handelshøyskolen — Project Controller Dashboard</h1>
             <p>Konsolidert Månedsoppgjør, EVM Prosjektstyring &amp; DFØ Internkontroll (v19)</p>
         </div>
         <div class="header-controls">
+            <!-- Timeframe Selector Bar -->
+            <div class="timeframe-picker-bar">
+                <span class="picker-label">📅 Tidsramme:</span>
+                <div class="picker-group">
+                    <label for="selectYear">År:</label>
+                    <select id="selectYear" onchange="handleTimeframeChange()">
+                        <option value="2026" selected>2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
+                <div class="picker-group">
+                    <label for="selectPeriod">Periode:</label>
+                    <select id="selectPeriod" onchange="handleTimeframeChange()">
+                        <option value="2026-M01">2026-M01 (Januar)</option>
+                        <option value="2026-M02">2026-M02 (Februar)</option>
+                        <option value="2026-M03">2026-M03 (Mars)</option>
+                        <option value="2026-M04">2026-M04 (April)</option>
+                        <option value="2026-M05">2026-M05 (Mai)</option>
+                        <option value="2026-M06">2026-M06 (Juni)</option>
+                        <option value="2026-M07">2026-M07 (Juli)</option>
+                        <option value="2026-M08">2026-M08 (August — test2026T1)</option>
+                        <option value="2026-M09" selected>2026-M09 (September — 2026T1sep)</option>
+                        <option value="2026-M10">2026-M10 (Oktober — Foreløpig)</option>
+                        <option value="2026-M11">2026-M11 (November — Datagap)</option>
+                        <option value="2026-M12">2026-M12 (Desember — Datagap)</option>
+                    </select>
+                </div>
+            </div>
+
             <!-- Global Data Source Selector -->
             <div class="source-selector-bar">
                 <label for="headerSourceSelect">Datakilde:</label>
                 <select id="headerSourceSelect" onchange="switchHeaderSource(this.value)">
+                    <option value="period_selected">Valgt Periode Transaksjoner</option>
                     <option value="sqlite_evm_projects">SQLite: projects.db (evm_projects)</option>
                     <option value="sqlite_evm_2026_sep">SQLite: evm_projects_2026 (September 2026T1sep)</option>
                     <option value="sqlite_evm_2026_aug">SQLite: evm_projects_2026 (August test2026T1)</option>
@@ -760,11 +1279,65 @@
             </div>
 
             <div class="header-meta">
-                <div class="meta-tag">PERIODE: <strong>2026-M09 / M10</strong></div>
+                <button class="btn-action btn-primary" onclick="openUploadModal()" title="Last opp regnskapsfil eller reiseregninger til databasen">
+                    <span>📤</span> Last opp datafil
+                </button>
+                <div class="meta-tag" id="headerPeriodBadge">STATUS: <strong class="text-accent-green">KOMPLETT (M09)</strong></div>
                 <div class="meta-tag" id="streamlitHeaderBadge">STREAMLIT: <strong class="text-alert-amber">SØKER...</strong></div>
             </div>
         </div>
     </header>
+
+    <!-- Dynamic Timeframe & Integrity Warning Alert -->
+    <div id="timeframeAlertContainer"></div>
+
+    <!-- Timeframe Database Inspector & 12-Month Coverage Track -->
+    <div class="timeframe-inspector-card">
+        <div class="inspector-top-row">
+            <div class="inspector-title">
+                <span>🗓️ Databasedekning &amp; Tidslinje (2026)</span>
+                <span class="badge badge-info" id="inspectorSubtitle">Valgt: 2026-M09 (September)</span>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <button class="btn-action btn-primary" onclick="openUploadModal()">
+                    <span>📤</span> Last opp ny periode
+                </button>
+                <button class="btn-action" onclick="viewSelectedPeriodData('ubw')">
+                    <span>🔍</span> Vis UBW-bilag for perioden
+                </button>
+                <button class="btn-action" onclick="viewSelectedPeriodData('travel')">
+                    <span>✈️</span> Vis Reiseregninger
+                </button>
+            </div>
+        </div>
+
+        <!-- 12-Month Interactive Timeline -->
+        <div class="timeline-grid" id="timelineGrid"></div>
+
+        <!-- 4-Card Coverage Status Grid -->
+        <div class="coverage-grid">
+            <div class="coverage-card">
+                <div class="coverage-card-label">UBW Hovedbokstransaksjoner</div>
+                <div class="coverage-card-val" id="covUbwVal">174 bilag</div>
+                <div class="coverage-card-meta" id="covUbwMeta">kr 917 798 NOK bokført</div>
+            </div>
+            <div class="coverage-card">
+                <div class="coverage-card-label">DFØ Reiseregninger &amp; Utlegg</div>
+                <div class="coverage-card-val" id="covTravelVal">14 krav</div>
+                <div class="coverage-card-meta" id="covTravelMeta">kr 34 600 NOK (10 flagget)</div>
+            </div>
+            <div class="coverage-card">
+                <div class="coverage-card-label">EVM Prosjektstatus</div>
+                <div class="coverage-card-val" id="covEvmVal">5 prosjekter</div>
+                <div class="coverage-card-meta" id="covEvmMeta">Full EVM-kalkyle (CPI: 1,04)</div>
+            </div>
+            <div class="coverage-card">
+                <div class="coverage-card-label">Periodisert Budsjett</div>
+                <div class="coverage-card-val" id="covBudVal">kr 1 175 000 NOK</div>
+                <div class="coverage-card-meta" id="covBudMeta">4 fakulteter tildelt</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Top KPI Grid -->
     <div class="kpi-grid">
@@ -997,9 +1570,13 @@
                     <span class="source-item-badge">Struktur</span>
                 </button>
 
-                <div class="source-group-title">📁 Egendefinert Fil</div>
-                <label for="fileUploadInput" class="source-item-btn" style="cursor: pointer; background: rgba(56, 189, 248, 0.08); color: var(--accent-blue);">
-                    <span>+ Last opp lokal CSV...</span>
+                <div class="source-group-title">📤 Databaseopplasting &amp; Ingestion</div>
+                <button class="source-item-btn" onclick="openUploadModal()" style="background: rgba(56, 189, 248, 0.12); color: var(--accent-blue); font-weight: 600; border-color: rgba(56, 189, 248, 0.3);">
+                    <span>📤 Last opp til database...</span>
+                    <span class="source-item-badge">Ny periode</span>
+                </button>
+                <label for="fileUploadInput" class="source-item-btn" style="cursor: pointer; background: transparent; color: var(--text-dim); margin-top: 4px;">
+                    <span>👁️ Kun vis lokal fil i nettleser</span>
                 </label>
                 <input type="file" id="fileUploadInput" accept=".csv,.txt,.json" style="display: none;" onchange="handleFileUpload(event)">
             </div>
@@ -1332,6 +1909,372 @@ RETURN
 
     <!-- Interactive JavaScript -->
     <script>
+const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Januar 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1257392.58, "travel_count": 2, "travel_sum": 5550.0, "travel_flagged": 1, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5001", "Dato": "2026-01-07", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M01)", "Belop_NOK": -448990.87, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5002", "Dato": "2026-01-26", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M01)", "Belop_NOK": -196406.29, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5003", "Dato": "2026-01-19", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M01)", "Belop_NOK": -136174.86, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5004", "Dato": "2026-01-03", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M01)", "Belop_NOK": -160863.7, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5005", "Dato": "2026-01-22", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M01)", "Belop_NOK": -106238.78, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5006", "Dato": "2026-01-21", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M01)", "Belop_NOK": -40337.05, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5007", "Dato": "2026-01-21", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M01)", "Belop_NOK": 714856.82, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5008", "Dato": "2026-01-01", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M01)", "Belop_NOK": 95513.13, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5009", "Dato": "2026-01-12", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M01)", "Belop_NOK": 80303.61, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5010", "Dato": "2026-01-10", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M01)", "Belop_NOK": 1161.56, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5011", "Dato": "2026-01-16", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M01)", "Belop_NOK": 3821.84, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5012", "Dato": "2026-01-15", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M01)", "Belop_NOK": 121860.7, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5013", "Dato": "2026-01-25", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M01)", "Belop_NOK": 116769.5, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5014", "Dato": "2026-01-03", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M01)", "Belop_NOK": 16911.47, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5015", "Dato": "2026-01-05", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M01)", "Belop_NOK": 54820.87, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-101", "Ansatt": "Ola Nordmann", "Dato": "2026-01-12", "Formaal": "Fagkonferanse Bergen", "Belop_NOK": 3450.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-101", "Attestant_ID": "EMP-102", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-102", "Ansatt": "Kari Hansen", "Dato": "2026-01-15", "Formaal": "Møte Kunnskapsdepartementet", "Belop_NOK": 2100.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": 0, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-104", "Kontrollflagg": "BRUDD_MALTID"}], "budget_samples": [{"Budsjett_ID": "BUD-1001", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1002", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1003", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1004", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1005", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1006", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1007", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1008", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1009", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1010", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M02": {"month": "2026-M02", "name": "Februar 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1234308.67, "travel_count": 2, "travel_sum": 6050.0, "travel_flagged": 1, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5097", "Dato": "2026-02-09", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M02)", "Belop_NOK": -208741.76, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5098", "Dato": "2026-02-03", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M02)", "Belop_NOK": -547325.18, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5099", "Dato": "2026-02-19", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M02)", "Belop_NOK": -53424.12, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5100", "Dato": "2026-02-24", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M02)", "Belop_NOK": -121641.42, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5101", "Dato": "2026-02-20", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M02)", "Belop_NOK": -116668.73, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5102", "Dato": "2026-02-11", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M02)", "Belop_NOK": -80960.41, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5103", "Dato": "2026-02-16", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M02)", "Belop_NOK": 389288.14, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5104", "Dato": "2026-02-25", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M02)", "Belop_NOK": 279714.5, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5105", "Dato": "2026-02-03", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M02)", "Belop_NOK": 219889.5, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5106", "Dato": "2026-02-03", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M02)", "Belop_NOK": 31747.52, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5107", "Dato": "2026-02-16", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M02)", "Belop_NOK": 34637.65, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5108", "Dato": "2026-02-09", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M02)", "Belop_NOK": 63195.73, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5109", "Dato": "2026-02-24", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M02)", "Belop_NOK": 3771.72, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5110", "Dato": "2026-02-08", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M02)", "Belop_NOK": 140815.31, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5111", "Dato": "2026-02-07", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M02)", "Belop_NOK": 40737.97, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-103", "Ansatt": "Per Olsen", "Dato": "2026-02-18", "Formaal": "Feltarbeid Agder", "Belop_NOK": 1250.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 180, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-105", "Attestant_ID": "EMP-106", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-104", "Ansatt": "Anne Berg", "Dato": "2026-02-20", "Formaal": "Prosjektmøte EU Horizon", "Belop_NOK": 4800.0, "Maltid_Dekket": "Frokost, Lunsj", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-107", "Attestant_ID": "EMP-107", "Kontrollflagg": "BRUDD_FIRE_OYNE"}], "budget_samples": [{"Budsjett_ID": "BUD-1033", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1034", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1035", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1036", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1037", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1038", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1039", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1040", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1041", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1042", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M03": {"month": "2026-M03", "name": "Mars 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1216436.31, "travel_count": 1, "travel_sum": 3200.0, "travel_flagged": 1, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5193", "Dato": "2026-03-24", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M03)", "Belop_NOK": -212797.36, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5194", "Dato": "2026-03-04", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M03)", "Belop_NOK": -77189.08, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5195", "Dato": "2026-03-25", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M03)", "Belop_NOK": -497326.33, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5196", "Dato": "2026-03-03", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M03)", "Belop_NOK": -55481.53, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5197", "Dato": "2026-03-17", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M03)", "Belop_NOK": -32708.37, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5198", "Dato": "2026-03-03", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M03)", "Belop_NOK": -232545.89, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5199", "Dato": "2026-03-05", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M03)", "Belop_NOK": 168452.09, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5200", "Dato": "2026-03-12", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M03)", "Belop_NOK": 542368.35, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5201", "Dato": "2026-03-17", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M03)", "Belop_NOK": 150887.86, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5202", "Dato": "2026-03-17", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M03)", "Belop_NOK": 81939.81, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5203", "Dato": "2026-03-20", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M03)", "Belop_NOK": 16556.75, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5204", "Dato": "2026-03-16", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M03)", "Belop_NOK": 28863.07, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5205", "Dato": "2026-03-09", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M03)", "Belop_NOK": 129147.17, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5206", "Dato": "2026-03-19", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M03)", "Belop_NOK": 38507.65, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5207", "Dato": "2026-03-12", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M03)", "Belop_NOK": 20093.45, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-105", "Ansatt": "Lars Lie", "Dato": "2026-03-22", "Formaal": "Forskningsseminar Trondheim", "Belop_NOK": 3200.0, "Maltid_Dekket": "Frokost, Lunsj, Middag", "Fradrag_Utfort": 0, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-108", "Attestant_ID": "EMP-109", "Kontrollflagg": "BRUDD_MALTID"}], "budget_samples": [{"Budsjett_ID": "BUD-1065", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1066", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1067", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1068", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1069", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1070", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1071", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1072", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1073", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1074", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M04": {"month": "2026-M04", "name": "April 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1238097.0, "travel_count": 2, "travel_sum": 1070.0, "travel_flagged": 2, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5289", "Dato": "2026-04-20", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M04)", "Belop_NOK": -115340.72, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5290", "Dato": "2026-04-25", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M04)", "Belop_NOK": -133253.39, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5291", "Dato": "2026-04-06", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M04)", "Belop_NOK": -543154.49, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5292", "Dato": "2026-04-17", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M04)", "Belop_NOK": -216025.63, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5293", "Dato": "2026-04-05", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M04)", "Belop_NOK": -31668.43, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5294", "Dato": "2026-04-04", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M04)", "Belop_NOK": -66378.15, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5295", "Dato": "2026-04-05", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M04)", "Belop_NOK": 471989.49, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5296", "Dato": "2026-04-02", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M04)", "Belop_NOK": 374622.79, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5297", "Dato": "2026-04-06", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M04)", "Belop_NOK": 17524.77, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5298", "Dato": "2026-04-19", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M04)", "Belop_NOK": 29941.23, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5299", "Dato": "2026-04-15", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M04)", "Belop_NOK": 75374.81, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5300", "Dato": "2026-04-25", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M04)", "Belop_NOK": 20628.15, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5301", "Dato": "2026-04-04", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M04)", "Belop_NOK": 64070.82, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5302", "Dato": "2026-04-08", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M04)", "Belop_NOK": 37274.57, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5303", "Dato": "2026-04-04", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M04)", "Belop_NOK": 87202.36, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-106", "Ansatt": "Eva Sunde", "Dato": "2026-04-10", "Formaal": "Kort møte Arendal", "Belop_NOK": 450.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 65, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-110", "Attestant_ID": "EMP-111", "Kontrollflagg": "BRUDD_KM_RUTE"}, {"Reise_ID": "REISE-2026-107", "Ansatt": "Kjetil Dahl", "Dato": "2026-04-28", "Formaal": "Taxi til flyplass Kjevik", "Belop_NOK": 620.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 0, "BDM_ID": "EMP-112", "Attestant_ID": "EMP-113", "Kontrollflagg": "BRUDD_KVITTERING"}], "budget_samples": [{"Budsjett_ID": "BUD-1097", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1098", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1099", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1100", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1101", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1102", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1103", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1104", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1105", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1106", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M05": {"month": "2026-M05", "name": "Mai 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1220247.6, "travel_count": 1, "travel_sum": 8900.0, "travel_flagged": 0, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5385", "Dato": "2026-05-08", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M05)", "Belop_NOK": -25140.79, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5386", "Dato": "2026-05-10", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M05)", "Belop_NOK": -568405.55, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5387", "Dato": "2026-05-20", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M05)", "Belop_NOK": -199823.91, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5388", "Dato": "2026-05-04", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M05)", "Belop_NOK": -78074.21, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5389", "Dato": "2026-05-06", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M05)", "Belop_NOK": -61506.88, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5390", "Dato": "2026-05-25", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M05)", "Belop_NOK": -180975.99, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5391", "Dato": "2026-05-22", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M05)", "Belop_NOK": 145448.69, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5392", "Dato": "2026-05-02", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M05)", "Belop_NOK": 693649.71, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5393", "Dato": "2026-05-10", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M05)", "Belop_NOK": 17365.85, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5394", "Dato": "2026-05-15", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M05)", "Belop_NOK": 77531.4, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5395", "Dato": "2026-05-04", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M05)", "Belop_NOK": 5993.1, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5396", "Dato": "2026-05-13", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M05)", "Belop_NOK": 42430.0, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5397", "Dato": "2026-05-15", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M05)", "Belop_NOK": 41309.19, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5398", "Dato": "2026-05-04", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M05)", "Belop_NOK": 130214.86, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5399", "Dato": "2026-05-12", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M05)", "Belop_NOK": 13251.67, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-108", "Ansatt": "Guri Moe", "Dato": "2026-05-14", "Formaal": "AACSB Akkrediteringsmøte", "Belop_NOK": 8900.0, "Maltid_Dekket": "Lunsj", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-114", "Attestant_ID": "EMP-115", "Kontrollflagg": "OK"}], "budget_samples": [{"Budsjett_ID": "BUD-1129", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1130", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1131", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1132", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1133", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1134", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1135", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1136", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1137", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1138", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M06": {"month": "2026-M06", "name": "Juni 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1167018.89, "travel_count": 2, "travel_sum": 4600.0, "travel_flagged": 1, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5481", "Dato": "2026-06-21", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M06)", "Belop_NOK": -233769.05, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5482", "Dato": "2026-06-10", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M06)", "Belop_NOK": -228656.83, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5483", "Dato": "2026-06-04", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M06)", "Belop_NOK": -344001.15, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5484", "Dato": "2026-06-12", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M06)", "Belop_NOK": -17147.92, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5485", "Dato": "2026-06-23", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M06)", "Belop_NOK": -128134.76, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5486", "Dato": "2026-06-21", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M06)", "Belop_NOK": -169681.23, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5487", "Dato": "2026-06-08", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M06)", "Belop_NOK": 27380.89, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5488", "Dato": "2026-06-02", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M06)", "Belop_NOK": 428318.54, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5489", "Dato": "2026-06-12", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M06)", "Belop_NOK": 385134.58, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5490", "Dato": "2026-06-21", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M06)", "Belop_NOK": 25814.42, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5491", "Dato": "2026-06-26", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M06)", "Belop_NOK": 32247.61, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5492", "Dato": "2026-06-14", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M06)", "Belop_NOK": 68944.19, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5493", "Dato": "2026-06-04", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M06)", "Belop_NOK": 20796.72, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5494", "Dato": "2026-06-19", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M06)", "Belop_NOK": 153182.41, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5495", "Dato": "2026-06-26", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M06)", "Belop_NOK": 9883.47, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-109", "Ansatt": "Monika Vik", "Dato": "2026-06-02", "Formaal": "Styreseminar Grimstad", "Belop_NOK": 2750.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 120, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-116", "Attestant_ID": "EMP-117", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-110", "Ansatt": "Tor Haug", "Dato": "2026-06-25", "Formaal": "Middagsrepresentasjon", "Belop_NOK": 1850.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 0, "BDM_ID": "EMP-118", "Attestant_ID": "EMP-119", "Kontrollflagg": "BRUDD_KVITTERING"}], "budget_samples": [{"Budsjett_ID": "BUD-1161", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1162", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1163", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1164", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1165", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1166", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1167", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1168", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1169", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1170", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M07": {"month": "2026-M07", "name": "Juli 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1155388.09, "travel_count": 1, "travel_sum": 6400.0, "travel_flagged": 1, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [{"Transaksjon_ID": "TX-5577", "Dato": "2026-07-09", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M07)", "Belop_NOK": -344857.18, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5578", "Dato": "2026-07-03", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M07)", "Belop_NOK": -279868.86, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5579", "Dato": "2026-07-25", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M07)", "Belop_NOK": -179789.95, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5580", "Dato": "2026-07-11", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M07)", "Belop_NOK": -3721.27, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5581", "Dato": "2026-07-27", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M07)", "Belop_NOK": -41176.26, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5582", "Dato": "2026-07-02", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M07)", "Belop_NOK": -276758.92, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5583", "Dato": "2026-07-26", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M07)", "Belop_NOK": 195739.52, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5584", "Dato": "2026-07-18", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M07)", "Belop_NOK": 126252.46, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5585", "Dato": "2026-07-06", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M07)", "Belop_NOK": 539499.87, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5586", "Dato": "2026-07-18", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M07)", "Belop_NOK": 2105.75, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5587", "Dato": "2026-07-08", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M07)", "Belop_NOK": 40845.63, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5588", "Dato": "2026-07-13", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M07)", "Belop_NOK": 86542.26, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5589", "Dato": "2026-07-02", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M07)", "Belop_NOK": 55259.19, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5590", "Dato": "2026-07-08", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M07)", "Belop_NOK": 107204.12, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5591", "Dato": "2026-07-27", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M07)", "Belop_NOK": 26316.54, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-111", "Ansatt": "Hilde Bø", "Dato": "2026-07-15", "Formaal": "Disputas Tromsø", "Belop_NOK": 6400.0, "Maltid_Dekket": "Lunsj", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-120", "Attestant_ID": "EMP-120", "Kontrollflagg": "BRUDD_FIRE_OYNE"}], "budget_samples": [{"Budsjett_ID": "BUD-1193", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1194", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1195", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1196", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1197", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1198", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1199", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1200", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1201", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1202", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M08": {"month": "2026-M08", "name": "August 2026", "status": "complete", "ubw_count": 96, "ubw_sum": 1193956.56, "travel_count": 1, "travel_sum": 310.0, "travel_flagged": 0, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 5, "ubw_samples": [{"Transaksjon_ID": "TX-5673", "Dato": "2026-08-18", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M08)", "Belop_NOK": -587584.22, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-203", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5674", "Dato": "2026-08-12", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M08)", "Belop_NOK": -11394.42, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-204", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5675", "Dato": "2026-08-08", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Beskrivelse": "Statlig Bevilgning Kap 260 (Handelshøyskolen - M08)", "Belop_NOK": -166388.81, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-205", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5676", "Dato": "2026-08-07", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M08)", "Belop_NOK": -91798.02, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-206", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5677", "Dato": "2026-08-11", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M08)", "Belop_NOK": -143059.61, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-207", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5678", "Dato": "2026-08-20", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Beskrivelse": "BOA Prosjektinntekter (Handelshøyskolen - M08)", "Belop_NOK": -88597.29, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-208", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5679", "Dato": "2026-08-09", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M08)", "Belop_NOK": 255311.75, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-209", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5680", "Dato": "2026-08-10", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M08)", "Belop_NOK": 429737.81, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-210", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5681", "Dato": "2026-08-14", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Beskrivelse": "Fast Lønn & Fastlønnskostnader (Handelshøyskolen - M08)", "Belop_NOK": 183955.19, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-211", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5682", "Dato": "2026-08-13", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M08)", "Belop_NOK": 14708.18, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-212", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5683", "Dato": "2026-08-19", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M08)", "Belop_NOK": 67061.49, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-213", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5684", "Dato": "2026-08-26", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Beskrivelse": "Timelønn & Sensorhonorarer (Handelshøyskolen - M08)", "Belop_NOK": 41067.45, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-214", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5685", "Dato": "2026-08-21", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M08)", "Belop_NOK": 29315.65, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-200", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5686", "Dato": "2026-08-23", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M08)", "Belop_NOK": 62933.56, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-201", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-5687", "Dato": "2026-08-19", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Beskrivelse": "Husleie & Eiendomsdrift (Handelshøyskolen - M08)", "Belop_NOK": 94811.84, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-202", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-112", "Ansatt": "Svein Bakke", "Dato": "2026-08-20", "Formaal": "Bedriftsbesøk Kristiansand", "Belop_NOK": 310.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 45, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-121", "Attestant_ID": "EMP-122", "Kontrollflagg": "OK"}], "budget_samples": [{"Budsjett_ID": "BUD-1225", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1226", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1227", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1228", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1229", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1230", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1231", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1232", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1233", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1234", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": [{"Project_ID": "UM-DEF-02", "Project_Name": "Forsvarsforskning Agder", "Avdeling": "Handelshøyskolen", "BAC_NOK": 18500000.0, "PV_NOK": null, "EV_NOK": null, "AC_NOK": null, "CPI": 1.04, "SPI": 1.02, "CV_NOK": 500000.0, "SV_NOK": 266667.0, "EAC_NOK": 17788461.54, "VAC_NOK": 711538.46, "TCPI": 0.92, "Status": "ON TRACK"}, {"Project_ID": "UM-ENG-03", "Project_Name": "Ingeniørutdanning Fornybar", "Avdeling": "Teknologi og Realfag", "BAC_NOK": 8200000.0, "PV_NOK": null, "EV_NOK": null, "AC_NOK": null, "CPI": 0.74, "SPI": 0.79, "CV_NOK": -1500000.0, "SV_NOK": -1166667.0, "EAC_NOK": 11081081.08, "VAC_NOK": -2881081.08, "TCPI": 1.62, "Status": "CRITICAL"}, {"Project_ID": "UM-FPV-01", "Project_Name": "Fotovoltaikk Solceller", "Avdeling": "Teknologi og Realfag", "BAC_NOK": 45000000.0, "PV_NOK": null, "EV_NOK": null, "AC_NOK": null, "CPI": 0.91, "SPI": 0.92, "CV_NOK": -2700000.0, "SV_NOK": -2500000.0, "EAC_NOK": 49450549.45, "VAC_NOK": -4450549.45, "TCPI": 1.18, "Status": "CRITICAL"}, {"Project_ID": "UM-AI-04", "Project_Name": "AI i Offentlig Sektor", "Avdeling": "Handelshøyskolen", "BAC_NOK": 12000000.0, "PV_NOK": null, "EV_NOK": null, "AC_NOK": null, "CPI": 1.05, "SPI": 1.04, "CV_NOK": 400000.0, "SV_NOK": 300000.0, "EAC_NOK": 11428571.43, "VAC_NOK": 571428.57, "TCPI": 0.9, "Status": "ON TRACK"}, {"Project_ID": "UM-HEALTH-05", "Project_Name": "Helserevisjon & Digitalisering", "Avdeling": "Helse- og Idrettsvitenskap", "BAC_NOK": 15000000.0, "PV_NOK": null, "EV_NOK": null, "AC_NOK": null, "CPI": 0.88, "SPI": 0.91, "CV_NOK": -1300000.0, "SV_NOK": -900000.0, "EAC_NOK": 17045454.55, "VAC_NOK": -2045454.55, "TCPI": 1.28, "Status": "CRITICAL"}]}, "2026-M09": {"month": "2026-M09", "name": "September 2026", "status": "complete", "ubw_count": 174, "ubw_sum": 917797.98, "travel_count": 14, "travel_sum": 34600.0, "travel_flagged": 10, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 5, "ubw_samples": [{"Transaksjon_ID": "TX-9001", "Dato": "2026-09-01", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn", "Beskrivelse": "Fast Lønn - Sept 2026 (Handelshøyskolen)", "Belop_NOK": 40471.27, "BDM_ID": "EMP-114", "Attestant_ID": "EMP-108", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9002", "Dato": "2026-09-01", "Avdeling": "Helse- og Idrettsvitenskap", "Konto": 7100, "Kontonavn": "Bilgodtgjørelse feltarbeid", "Beskrivelse": "Bilgodtgjørelse feltarbeid - Sept 2026 (Helse- og Idrettsvitenskap)", "Belop_NOK": 2352.61, "BDM_ID": "EMP-110", "Attestant_ID": "EMP-112", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9003", "Dato": "2026-09-01", "Avdeling": "Fellesadministrasjon", "Konto": 5000, "Kontonavn": "Fast Lønn", "Beskrivelse": "Fast Lønn - Sept 2026 (Fellesadministrasjon)", "Belop_NOK": 55209.04, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-110", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9004", "Dato": "2026-09-02", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Oppdragsinntekter BOA", "Beskrivelse": "Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen)", "Belop_NOK": -69957.11, "BDM_ID": "EMP-104", "Attestant_ID": "EMP-114", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9005", "Dato": "2026-09-02", "Avdeling": "Handelshøyskolen", "Konto": 7130, "Kontonavn": "Reiseregning fagsamling", "Beskrivelse": "Reiseregning fagsamling - Sept 2026 (Handelshøyskolen)", "Belop_NOK": 4001.14, "BDM_ID": "EMP-107", "Attestant_ID": "EMP-102", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9006", "Dato": "2026-09-02", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita", "Beskrivelse": "Kontorrekvisita - Sept 2026 (Handelshøyskolen)", "Belop_NOK": 1437.32, "BDM_ID": "EMP-101", "Attestant_ID": "EMP-107", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9007", "Dato": "2026-09-02", "Avdeling": "Teknologi og Realfag", "Konto": 5330, "Kontonavn": "Sensorhonorarer", "Beskrivelse": "Sensorhonorarer - Sept 2026 (Teknologi og Realfag)", "Belop_NOK": 10574.2, "BDM_ID": "EMP-104", "Attestant_ID": "EMP-113", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9008", "Dato": "2026-09-03", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn", "Beskrivelse": "Fast Lønn - Sept 2026 (Handelshøyskolen)", "Belop_NOK": 36720.74, "BDM_ID": "EMP-114", "Attestant_ID": "EMP-102", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9009", "Dato": "2026-09-03", "Avdeling": "Teknologi og Realfag", "Konto": 7150, "Kontonavn": "Utenlandsreise fagkonferanse", "Beskrivelse": "Utenlandsreise fagkonferanse - Sept 2026 (Teknologi og Realfag)", "Belop_NOK": 19717.25, "BDM_ID": "EMP-102", "Attestant_ID": "EMP-110", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9010", "Dato": "2026-09-03", "Avdeling": "Helse- og Idrettsvitenskap", "Konto": 5330, "Kontonavn": "Sensorhonorarer", "Beskrivelse": "Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap)", "Belop_NOK": 13873.48, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-114", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9011", "Dato": "2026-09-03", "Avdeling": "Teknologi og Realfag", "Konto": 5000, "Kontonavn": "Fast Lønn", "Beskrivelse": "Fast Lønn - Sept 2026 (Teknologi og Realfag)", "Belop_NOK": 52415.69, "BDM_ID": "EMP-108", "Attestant_ID": "EMP-106", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9012", "Dato": "2026-09-04", "Avdeling": "Helse- og Idrettsvitenskap", "Konto": 6800, "Kontonavn": "Kontorrekvisita", "Beskrivelse": "Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap)", "Belop_NOK": 1656.08, "BDM_ID": "EMP-114", "Attestant_ID": "EMP-114", "Kontrollflagg": "BRUDD: Egengodkjent (BDM == Attestant)"}, {"Transaksjon_ID": "TX-9013", "Dato": "2026-09-04", "Avdeling": "Helse- og Idrettsvitenskap", "Konto": 6800, "Kontonavn": "Kontorrekvisita", "Beskrivelse": "Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap)", "Belop_NOK": 1653.4, "BDM_ID": "EMP-113", "Attestant_ID": "EMP-112", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9014", "Dato": "2026-09-05", "Avdeling": "Teknologi og Realfag", "Konto": 7100, "Kontonavn": "Bilgodtgjørelse feltarbeid", "Beskrivelse": "Bilgodtgjørelse feltarbeid - Sept 2026 (Teknologi og Realfag)", "Belop_NOK": 2622.02, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-101", "Kontrollflagg": "OK"}, {"Transaksjon_ID": "TX-9015", "Dato": "2026-09-05", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Bilgodtgjørelse feltarbeid", "Beskrivelse": "Bilgodtgjørelse feltarbeid - Sept 2026 (Handelshøyskolen)", "Belop_NOK": 1540.99, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-103", "Kontrollflagg": "OK"}], "travel_samples": [{"Reise_ID": "REISE-2026-SEP-01", "Ansatt": "Ola Nordmann", "Dato": "2026-09-04", "Formaal": "Forskningskonferanse Bergen", "Belop_NOK": 3850.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-101", "Attestant_ID": "EMP-102", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-SEP-02", "Ansatt": "Kari Hansen", "Dato": "2026-09-09", "Formaal": "Møte Kunnskapsdepartementet", "Belop_NOK": 2400.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": 0, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-104", "Kontrollflagg": "BRUDD_MALTID"}, {"Reise_ID": "REISE-2026-SEP-03", "Ansatt": "Per Olsen", "Dato": "2026-09-12", "Formaal": "Feltarbeid Agder", "Belop_NOK": 920.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 210, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-105", "Attestant_ID": "EMP-106", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-SEP-04", "Ansatt": "Anne Berg", "Dato": "2026-09-16", "Formaal": "Prosjektmøte EU Horizon", "Belop_NOK": 5200.0, "Maltid_Dekket": "Frokost, Lunsj", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-107", "Attestant_ID": "EMP-107", "Kontrollflagg": "BRUDD_FIRE_OYNE"}, {"Reise_ID": "REISE-2026-SEP-05", "Ansatt": "Lars Lie", "Dato": "2026-09-21", "Formaal": "Forskningsseminar Trondheim", "Belop_NOK": 3600.0, "Maltid_Dekket": "Frokost, Lunsj, Middag", "Fradrag_Utfort": 0, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-108", "Attestant_ID": "EMP-109", "Kontrollflagg": "BRUDD_MALTID"}, {"Reise_ID": "REISE-2026-SEP-06", "Ansatt": "Eva Sunde", "Dato": "2026-09-25", "Formaal": "Møte Arendal Kommune", "Belop_NOK": 580.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 85, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-110", "Attestant_ID": "EMP-111", "Kontrollflagg": "BRUDD_KM_RUTE"}, {"Reise_ID": "REISE-2026-SEP-07", "Ansatt": "Kjetil Dahl", "Dato": "2026-09-28", "Formaal": "Taxi til Kjevik Lufthavn", "Belop_NOK": 750.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 0, "BDM_ID": "EMP-112", "Attestant_ID": "EMP-113", "Kontrollflagg": "BRUDD_KVITTERING"}, {"Reise_ID": "REISE-2026-SEP-01", "Ansatt": "Ola Nordmann", "Dato": "2026-09-04", "Formaal": "Forskningskonferanse Bergen", "Belop_NOK": 3850.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-101", "Attestant_ID": "EMP-102", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-SEP-02", "Ansatt": "Kari Hansen", "Dato": "2026-09-09", "Formaal": "Møte Kunnskapsdepartementet", "Belop_NOK": 2400.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": 0, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-104", "Kontrollflagg": "BRUDD_MALTID"}, {"Reise_ID": "REISE-2026-SEP-03", "Ansatt": "Per Olsen", "Dato": "2026-09-12", "Formaal": "Feltarbeid Agder", "Belop_NOK": 920.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 210, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-105", "Attestant_ID": "EMP-106", "Kontrollflagg": "OK"}, {"Reise_ID": "REISE-2026-SEP-04", "Ansatt": "Anne Berg", "Dato": "2026-09-16", "Formaal": "Prosjektmøte EU Horizon", "Belop_NOK": 5200.0, "Maltid_Dekket": "Frokost, Lunsj", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-107", "Attestant_ID": "EMP-107", "Kontrollflagg": "BRUDD_FIRE_OYNE"}, {"Reise_ID": "REISE-2026-SEP-05", "Ansatt": "Lars Lie", "Dato": "2026-09-21", "Formaal": "Forskningsseminar Trondheim", "Belop_NOK": 3600.0, "Maltid_Dekket": "Frokost, Lunsj, Middag", "Fradrag_Utfort": 0, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-108", "Attestant_ID": "EMP-109", "Kontrollflagg": "BRUDD_MALTID"}, {"Reise_ID": "REISE-2026-SEP-06", "Ansatt": "Eva Sunde", "Dato": "2026-09-25", "Formaal": "Møte Arendal Kommune", "Belop_NOK": 580.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 85, "Kvittering_Vedlagt": 1, "BDM_ID": "EMP-110", "Attestant_ID": "EMP-111", "Kontrollflagg": "BRUDD_KM_RUTE"}, {"Reise_ID": "REISE-2026-SEP-07", "Ansatt": "Kjetil Dahl", "Dato": "2026-09-28", "Formaal": "Taxi til Kjevik Lufthavn", "Belop_NOK": 750.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": 1, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": 0, "BDM_ID": "EMP-112", "Attestant_ID": "EMP-113", "Kontrollflagg": "BRUDD_KVITTERING"}], "budget_samples": [{"Budsjett_ID": "BUD-1257", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1258", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1259", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1260", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1261", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1262", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1263", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1264", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1265", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1266", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": [{"Project_ID": "UM-DEF-02", "Project_Name": "Forsvarsforskning Agder", "Avdeling": "Teknologi og Realfag", "BAC_NOK": 18500000.0, "PV_NOK": 13875000.0, "EV_NOK": 14100000.0, "AC_NOK": 13500000.0, "CPI": 1.04, "SPI": 1.02, "CV_NOK": 600000.0, "SV_NOK": 225000.0, "EAC_NOK": 17788461.54, "VAC_NOK": 711538.46, "TCPI": 0.88, "Status": "ON TRACK"}, {"Project_ID": "UM-ENG-03", "Project_Name": "Ingeniørutdanning Fornybar", "Avdeling": "Teknologi og Realfag", "BAC_NOK": 8200000.0, "PV_NOK": 6150000.0, "EV_NOK": 4800000.0, "AC_NOK": 6500000.0, "CPI": 0.74, "SPI": 0.78, "CV_NOK": -1700000.0, "SV_NOK": -1350000.0, "EAC_NOK": 11081081.08, "VAC_NOK": -2881081.08, "TCPI": 2.0, "Status": "CRITICAL"}, {"Project_ID": "UM-FPV-01", "Project_Name": "Fotovoltaikk Solceller", "Avdeling": "Teknologi og Realfag", "BAC_NOK": 45000000.0, "PV_NOK": 33750000.0, "EV_NOK": 31000000.0, "AC_NOK": 33800000.0, "CPI": 0.92, "SPI": 0.92, "CV_NOK": -2800000.0, "SV_NOK": -2750000.0, "EAC_NOK": 48913043.48, "VAC_NOK": -3913043.48, "TCPI": 1.25, "Status": "CRITICAL"}, {"Project_ID": "UM-AI-04", "Project_Name": "AI & Kunstig Intelligens i Helse", "Avdeling": "Helse- og Idrettsvitenskap", "BAC_NOK": 12000000.0, "PV_NOK": 9000000.0, "EV_NOK": 9300000.0, "AC_NOK": 8800000.0, "CPI": 1.06, "SPI": 1.03, "CV_NOK": 500000.0, "SV_NOK": 300000.0, "EAC_NOK": 11320754.72, "VAC_NOK": 679245.28, "TCPI": 0.84, "Status": "ON TRACK"}, {"Project_ID": "UM-HEALTH-05", "Project_Name": "Velferdsteknologi Agder", "Avdeling": "Helse- og Idrettsvitenskap", "BAC_NOK": 15000000.0, "PV_NOK": 11250000.0, "EV_NOK": 10200000.0, "AC_NOK": 11600000.0, "CPI": 0.88, "SPI": 0.91, "CV_NOK": -1400000.0, "SV_NOK": -1050000.0, "EAC_NOK": 17045454.55, "VAC_NOK": -2045454.55, "TCPI": 1.41, "Status": "CRITICAL"}]}, "2026-M10": {"month": "2026-M10", "name": "Oktober 2026", "status": "partial", "ubw_count": 0, "ubw_sum": 0, "travel_count": 0, "travel_sum": 0, "travel_flagged": 0, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [], "travel_samples": [], "budget_samples": [{"Budsjett_ID": "BUD-1289", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1290", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1291", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1292", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1293", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1294", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1295", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1296", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1297", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1298", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M11": {"month": "2026-M11", "name": "November 2026", "status": "missing", "ubw_count": 0, "ubw_sum": 0, "travel_count": 0, "travel_sum": 0, "travel_flagged": 0, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [], "travel_samples": [], "budget_samples": [{"Budsjett_ID": "BUD-1321", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1322", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1323", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1324", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1325", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1326", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1327", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1328", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1329", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1330", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}, "2026-M12": {"month": "2026-M12", "name": "Desember 2026", "status": "missing", "ubw_count": 0, "ubw_sum": 0, "travel_count": 0, "travel_sum": 0, "travel_flagged": 0, "budget_sum": 1175000.0, "budget_count": 32, "evm_count": 0, "ubw_samples": [], "travel_samples": [], "budget_samples": [{"Budsjett_ID": "BUD-1353", "Avdeling": "Handelshøyskolen", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -750000.0}, {"Budsjett_ID": "BUD-1354", "Avdeling": "Handelshøyskolen", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -300000.0}, {"Budsjett_ID": "BUD-1355", "Avdeling": "Handelshøyskolen", "Konto": 5000, "Kontonavn": "Fast Lønn & Fastlønnskostnader", "Budsjett_Maaned_NOK": 825000.0}, {"Budsjett_ID": "BUD-1356", "Avdeling": "Handelshøyskolen", "Konto": 5300, "Kontonavn": "Timelønn & Sensorhonorarer", "Budsjett_Maaned_NOK": 120000.0}, {"Budsjett_ID": "BUD-1357", "Avdeling": "Handelshøyskolen", "Konto": 6000, "Kontonavn": "Husleie & Eiendomsdrift", "Budsjett_Maaned_NOK": 180000.0}, {"Budsjett_ID": "BUD-1358", "Avdeling": "Handelshøyskolen", "Konto": 6800, "Kontonavn": "Kontorrekvisita & IT-lisenser", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1359", "Avdeling": "Handelshøyskolen", "Konto": 7100, "Kontonavn": "Reisegodtgjørelser & Diett", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1360", "Avdeling": "Handelshøyskolen", "Konto": 7500, "Kontonavn": "Kjøp av Konsulenttjenester", "Budsjett_Maaned_NOK": 75000.0}, {"Budsjett_ID": "BUD-1361", "Avdeling": "Teknologi og Realfag", "Konto": 3400, "Kontonavn": "Statlig Bevilgning Kap 260", "Budsjett_Maaned_NOK": -937500.0}, {"Budsjett_ID": "BUD-1362", "Avdeling": "Teknologi og Realfag", "Konto": 3900, "Kontonavn": "BOA Prosjektinntekter", "Budsjett_Maaned_NOK": -375000.0}], "evm_rows": []}};
+
+        // =========================================================================
+        // TIMEFRAME SELECTION, INTEGRITY & MISSING DATA WARNING ENGINE
+        // =========================================================================
+        const monthNamesNorwegian = {
+            '2026-M01': 'Januar', '2026-M02': 'Februar', '2026-M03': 'Mars',
+            '2026-M04': 'April', '2026-M05': 'Mai', '2026-M06': 'Juni',
+            '2026-M07': 'Juli', '2026-M08': 'August', '2026-M09': 'September',
+            '2026-M10': 'Oktober', '2026-M11': 'November', '2026-M12': 'Desember'
+        };
+
+        function evaluateTimeframeIntegrity(year, period) {
+            if (year === '2025') {
+                return {
+                    level: 'info',
+                    title: 'ℹ️ Historiske data (2025)',
+                    message: 'Månedlige transaksjonslogger for 2025 er lukket og arkivert. Aggregerte årstall for bevilgning og avsetninger er tilgjengelige under FactYearlyReconciliation.csv.',
+                    missingMonths: [],
+                    hasCurrentActuals: false
+                };
+            }
+            if (year === '2027') {
+                return {
+                    level: 'info',
+                    title: '🔮 Framskrevet statsbudsjettramme (2027)',
+                    message: 'Ingen faktiske regnskapsposter eller bilag foreligger ennå for 2027. Modellert bruttoramme etter deflatorjustering (Kap. 260 post 50): kr 2 075 076 544 NOK.',
+                    missingMonths: [],
+                    hasCurrentActuals: false
+                };
+            }
+
+            const monthNum = parseInt(period.replace('2026-M', ''), 10);
+            const monthsWithActuals = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            const hasCurrent = monthsWithActuals.includes(monthNum);
+
+            // Check preceding months in 2026 that lack actuals
+            const missingPriorMonths = [];
+            for (let m = 1; m < monthNum; m++) {
+                if (!monthsWithActuals.includes(m)) {
+                    const code = `2026-M${String(m).padStart(2, '0')}`;
+                    missingPriorMonths.push(`${code} (${monthNamesNorwegian[code]})`);
+                }
+            }
+
+            const curName = `${period} (${monthNamesNorwegian[period] || period})`;
+
+            if (!hasCurrent) {
+                if (missingPriorMonths.length > 0) {
+                    return {
+                        level: 'critical',
+                        title: `🚨 KRITISK DATAGAP: Faktiske data mangler for ${curName} OG forutgående periode ${missingPriorMonths.join(', ')}!`,
+                        message: `Databasen mangler bokførte UBW-hovedbokstransaksjoner og reiseregninger for ${curName}. I tillegg mangler forutgående periode (${missingPriorMonths.join(', ')}). Månedsoppgjør og EVM-avviksanalyse kan ikke gjennomføres før forutgående periode er bokført og importert.`,
+                        missingMonths: [...missingPriorMonths, curName],
+                        hasCurrentActuals: false
+                    };
+                } else {
+                    return {
+                        level: 'warning',
+                        title: `⚠️ ADVARSEL: Faktiske regnskapstall (Actuals) for ${curName} er IKKE innlest i databasen!`,
+                        message: `Budsjettramme (1 175 000 NOK) og foreløpig EVM-overslag er registrert, men ingen faktiske UBW-bilag eller reiseregninger er bokført ennå for oktober. Månedsoppgjør avventer UBW-hovedbokimport.`,
+                        missingMonths: [curName],
+                        hasCurrentActuals: false
+                    };
+                }
+            } else {
+                const inv = monthlyDatabaseInventory[period] || {};
+                const ubwSum = (inv.ubw_sum || 0).toLocaleString('no-NO');
+                const trSum = (inv.travel_sum || 0).toLocaleString('no-NO');
+                const bSum = (inv.budget_sum || 0).toLocaleString('no-NO');
+                return {
+                    level: 'ok',
+                    title: `✅ Fullstendig datagrunnlag i databasen for ${curName}`,
+                    message: `${inv.ubw_count || 0} UBW-transaksjoner (kr ${ubwSum} NOK), ${inv.travel_count || 0} reiseregninger (kr ${trSum} NOK), ${inv.evm_count || 5} EVM-prosjekter og kr ${bSum} NOK periodisert budsjett er avstemt og konsolidert.`,
+                    missingMonths: [],
+                    hasCurrentActuals: true
+                };
+            }
+        }
+
+        function handleTimeframeChange() {
+            const year = document.getElementById('selectYear').value;
+            const periodSelect = document.getElementById('selectPeriod');
+            
+            // Adjust periods if year != 2026
+            if (year !== '2026') {
+                periodSelect.innerHTML = `
+                    <option value="${year}-FY" selected>${year} Hele Året</option>
+                    <option value="${year}-T1">${year} T1 (Jan-Apr)</option>
+                    <option value="${year}-T2">${year} T2 (Mai-Aug)</option>
+                    <option value="${year}-T3">${year} T3 (Sep-Des)</option>
+                `;
+            } else if (!periodSelect.innerHTML.includes('2026-M01')) {
+                periodSelect.innerHTML = `
+                    <option value="2026-M01">2026-M01 (Januar)</option>
+                    <option value="2026-M02">2026-M02 (Februar)</option>
+                    <option value="2026-M03">2026-M03 (Mars)</option>
+                    <option value="2026-M04">2026-M04 (April)</option>
+                    <option value="2026-M05">2026-M05 (Mai)</option>
+                    <option value="2026-M06">2026-M06 (Juni)</option>
+                    <option value="2026-M07">2026-M07 (Juli)</option>
+                    <option value="2026-M08">2026-M08 (August — test2026T1)</option>
+                    <option value="2026-M09" selected>2026-M09 (September — 2026T1sep)</option>
+                    <option value="2026-M10">2026-M10 (Oktober — Foreløpig)</option>
+                    <option value="2026-M11">2026-M11 (November — Datagap)</option>
+                    <option value="2026-M12">2026-M12 (Desember — Datagap)</option>
+                `;
+            }
+
+            const period = periodSelect.value;
+            const integrity = evaluateTimeframeIntegrity(year, period);
+
+            // Render Alert Banner
+            renderTimeframeAlert(integrity, period);
+
+            // Update Header Status Badge
+            const headerBadge = document.getElementById('headerPeriodBadge');
+            if (headerBadge) {
+                if (integrity.level === 'ok') {
+                    headerBadge.innerHTML = `STATUS: <strong class="text-accent-green">KOMPLETT (${period.slice(-3)})</strong>`;
+                } else if (integrity.level === 'warning') {
+                    headerBadge.innerHTML = `STATUS: <strong class="text-alert-amber">MANGLER ACTUALS (${period.slice(-3)})</strong>`;
+                } else if (integrity.level === 'critical') {
+                    headerBadge.innerHTML = `STATUS: <strong class="text-alert-red">DATAGAP (${period.slice(-3)})</strong>`;
+                } else {
+                    headerBadge.innerHTML = `STATUS: <strong class="text-accent-blue">${year}</strong>`;
+                }
+            }
+
+            // Render Timeline Track
+            renderTimelineTrack(year, period);
+
+            // Update Coverage Cards
+            updateCoverageCards(year, period, integrity);
+
+            // Update Top KPIs
+            updateTopKpisForPeriod(year, period, integrity);
+
+            // Sync Period Data with Data Sources tab
+            syncPeriodDataView(period);
+        }
+
+        function renderTimeframeAlert(integrity, period) {
+            const container = document.getElementById('timeframeAlertContainer');
+            if (!container) return;
+
+            const iconMap = {
+                ok: '✅',
+                warning: '⚠️',
+                critical: '🚨',
+                info: 'ℹ️'
+            };
+
+            const pCode = period || (document.getElementById('selectPeriod') ? document.getElementById('selectPeriod').value : '2026-M10');
+
+            let actionsHtml = '';
+            if (integrity.level === 'critical') {
+                actionsHtml = `
+                    <div class="alert-actions">
+                        <button class="btn-alert-action" onclick="openUploadModal('${pCode}')">📤 Last opp data for ${pCode}...</button>
+                        <button class="btn-alert-action" onclick="switchTab('streamlit-tab')">📁 Gå til Dataopplasting (Tab 6 i Streamlit)</button>
+                        <button class="btn-alert-action" onclick="selectPeriod('2026-M09')">⏪ Gå til forrige fullstendige periode (2026-M09)</button>
+                        <button class="btn-alert-action" onclick="switchTab('sources-tab')">📂 Sjekk Datakilder</button>
+                    </div>
+                `;
+            } else if (integrity.level === 'warning') {
+                actionsHtml = `
+                    <div class="alert-actions">
+                        <button class="btn-alert-action" onclick="openUploadModal('${pCode}')">📤 Last opp UBW / Reiseregninger for ${integrity.missingMonths[0]}...</button>
+                        <button class="btn-alert-action" onclick="selectPeriod('2026-M09')">⏪ Vis 2026-M09 (Siste avstemte)</button>
+                        <button class="btn-alert-action" onclick="switchTab('streamlit-tab')">📁 Tab 6 i Streamlit</button>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <div class="timeframe-alert alert-${integrity.level}">
+                    <div class="alert-icon">${iconMap[integrity.level] || '🔔'}</div>
+                    <div class="alert-content">
+                        <div class="alert-title">${integrity.title}</div>
+                        <div class="alert-desc">${integrity.message}</div>
+                        ${actionsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderTimelineTrack(year, currentPeriod) {
+            const grid = document.getElementById('timelineGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const subtitle = document.getElementById('inspectorSubtitle');
+            if (subtitle) {
+                const pName = monthNamesNorwegian[currentPeriod] || currentPeriod;
+                subtitle.innerText = `Valgt: ${currentPeriod} (${pName})`;
+            }
+
+            if (year !== '2026') {
+                grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: var(--text-dim); padding: 12px; font-size: 0.8rem;">Månedsdekning er kun konfigurert for regnskapsåret 2026.</div>';
+                return;
+            }
+
+            const months = [
+                { code: '2026-M01', label: 'Jan', status: 'complete', count: '96 bilag' },
+                { code: '2026-M02', label: 'Feb', status: 'complete', count: '96 bilag' },
+                { code: '2026-M03', label: 'Mar', status: 'complete', count: '96 bilag' },
+                { code: '2026-M04', label: 'Apr', status: 'complete', count: '96 bilag' },
+                { code: '2026-M05', label: 'Mai', status: 'complete', count: '96 bilag' },
+                { code: '2026-M06', label: 'Jun', status: 'complete', count: '96 bilag' },
+                { code: '2026-M07', label: 'Jul', status: 'complete', count: '96 bilag' },
+                { code: '2026-M08', label: 'Aug', status: 'complete', count: '96 bilag' },
+                { code: '2026-M09', label: 'Sep', status: 'complete', count: '174 bilag' },
+                { code: '2026-M10', label: 'Okt', status: 'partial', count: 'Mangler actuals' },
+                { code: '2026-M11', label: 'Nov', status: 'missing', count: 'Datagap' },
+                { code: '2026-M12', label: 'Des', status: 'missing', count: 'Datagap' }
+            ];
+
+            months.forEach(m => {
+                const isSelected = m.code === currentPeriod;
+                const btn = document.createElement('div');
+                btn.className = `timeline-month-btn ${isSelected ? 'selected' : ''}`;
+                btn.onclick = () => selectPeriod(m.code);
+                btn.innerHTML = `
+                    <div class="m-code-badge">
+                        <span class="m-status-dot ${m.status}"></span>
+                        <span>${m.label}</span>
+                    </div>
+                    <div class="m-month-label">${m.code.slice(-3)}</div>
+                    <div class="m-month-count">${m.count}</div>
+                `;
+                grid.appendChild(btn);
+            });
+        }
+
+        function selectPeriod(periodCode) {
+            const periodSelect = document.getElementById('selectPeriod');
+            if (periodSelect) {
+                periodSelect.value = periodCode;
+                handleTimeframeChange();
+            }
+        }
+
+        function updateCoverageCards(year, period, integrity) {
+            const ubwVal = document.getElementById('covUbwVal');
+            const ubwMeta = document.getElementById('covUbwMeta');
+            const trVal = document.getElementById('covTravelVal');
+            const trMeta = document.getElementById('covTravelMeta');
+            const evmVal = document.getElementById('covEvmVal');
+            const evmMeta = document.getElementById('covEvmMeta');
+            const budVal = document.getElementById('covBudVal');
+            const budMeta = document.getElementById('covBudMeta');
+
+            const inv = monthlyDatabaseInventory[period];
+
+            if (inv && inv.has_actuals) {
+                if (ubwVal) ubwVal.innerHTML = `<span class="text-accent-green">${inv.ubw_count} bilag</span>`;
+                if (ubwMeta) ubwMeta.innerText = `kr ${Math.round(inv.ubw_sum || 0).toLocaleString('no-NO')} NOK bokført`;
+
+                if (trVal) trVal.innerHTML = `<span class="text-accent-green">${inv.travel_count} krav</span>`;
+                if (trMeta) trMeta.innerText = `kr ${Math.round(inv.travel_sum || 0).toLocaleString('no-NO')} NOK (${inv.travel_flagged} flagget)`;
+
+                if (evmVal) evmVal.innerHTML = `<span class="text-accent-green">${inv.evm_count || 5} prosjekter</span>`;
+                if (evmMeta) evmMeta.innerText = period === '2026-M09' ? 'Tag: 2026T1sep (Full kalkyle)' : 'Tag: test2026T1 (August)';
+
+                if (budVal) budVal.innerText = `kr ${Math.round(inv.budget_sum || 0).toLocaleString('no-NO')} NOK`;
+                if (budMeta) budMeta.innerText = `${inv.budget_count} fakultetsposter periodisert`;
+            } else if (period === '2026-M10') {
+                if (ubwVal) ubwVal.innerHTML = `<span class="text-alert-amber">0 bilag</span>`;
+                if (ubwMeta) ubwMeta.innerText = 'UBW-hovedbok ikke importert';
+
+                if (trVal) trVal.innerHTML = `<span class="text-alert-amber">0 krav</span>`;
+                if (trMeta) trMeta.innerText = 'Ingen reiser auditert';
+
+                if (evmVal) evmVal.innerHTML = `<span class="text-alert-amber">3 prosjekter</span>`;
+                if (evmMeta) evmMeta.innerText = 'DuckDB baseline simulering';
+
+                if (budVal) budVal.innerText = 'kr 1 175 000 NOK';
+                if (budMeta) budMeta.innerText = '32 fakultetsposter periodisert';
+            } else {
+                if (ubwVal) ubwVal.innerHTML = `<span class="text-alert-red">0 bilag (Mangler)</span>`;
+                if (ubwMeta) ubwMeta.innerText = 'Ingen data i ubw_transactions';
+
+                if (trVal) trVal.innerHTML = `<span class="text-alert-red">0 krav</span>`;
+                if (trMeta) trMeta.innerText = 'Ingen krav registrert';
+
+                if (evmVal) evmVal.innerHTML = `<span class="text-alert-red">0 prosjekter</span>`;
+                if (evmMeta) evmMeta.innerText = 'Uavstemt / mangler grunnlag';
+
+                if (budVal) budVal.innerText = 'kr 1 175 000 NOK';
+                if (budMeta) budMeta.innerText = 'Budsjettramme er allokert';
+            }
+        }
+
+        function updateTopKpisForPeriod(year, period, integrity) {
+            const kpiBac = document.getElementById('kpiBac');
+            const kpiAc = document.getElementById('kpiAc');
+            const kpiVac = document.getElementById('kpiVac');
+            const kpiVacSubtext = document.getElementById('kpiVacSubtext');
+            const kpiReserve = document.getElementById('kpiReserve');
+            const kpiReserveSubtext = document.getElementById('kpiReserveSubtext');
+
+            if (period === '2026-M09') {
+                if (kpiBac) kpiBac.innerText = '98 700 000 NOK';
+                if (kpiAc) kpiAc.innerText = '74 200 000 NOK';
+                if (kpiVac) {
+                    kpiVac.className = 'kpi-value text-alert-red';
+                    kpiVac.innerText = '-6 459 344 NOK';
+                }
+                if (kpiVacSubtext) kpiVacSubtext.innerText = 'Kritiske avvik på UM-ENG-03 & UM-FPV-01';
+                if (kpiReserve) {
+                    kpiReserve.className = 'kpi-value text-alert-red';
+                    kpiReserve.innerText = '6,0 % (72M NOK)';
+                }
+                if (kpiReserveSubtext) kpiReserveSubtext.innerText = 'Grense: 5,0 % (+12M NOK overskridelse)';
+            } else if (period === '2026-M08') {
+                if (kpiBac) kpiBac.innerText = '98 700 000 NOK';
+                if (kpiAc) kpiAc.innerText = '66 400 000 NOK';
+                if (kpiVac) {
+                    kpiVac.className = 'kpi-value text-alert-red';
+                    kpiVac.innerText = '-7 232 080 NOK';
+                }
+                if (kpiVacSubtext) kpiVacSubtext.innerText = 'Status M08 før tiltakssimulator';
+                if (kpiReserve) kpiReserve.innerText = '6,0 % (72M NOK)';
+            } else if (integrity.level === 'warning') {
+                if (kpiAc) kpiAc.innerHTML = '<span class="text-alert-amber">Uavstemt</span>';
+                if (kpiVac) kpiVac.innerHTML = '<span class="text-alert-amber">Avventer UBW</span>';
+                if (kpiVacSubtext) kpiVacSubtext.innerText = 'Beregnes etter import av oktoberdata';
+            } else if (integrity.level === 'critical') {
+                if (kpiAc) kpiAc.innerHTML = '<span class="text-alert-red">0 NOK (Datagap)</span>';
+                if (kpiVac) kpiVac.innerHTML = '<span class="text-alert-red">Uavklart</span>';
+                if (kpiVacSubtext) kpiVacSubtext.innerText = 'Forutgående måneder mangler i databasen';
+            }
+        }
+
+        function syncPeriodDataView(period) {
+            const inv = monthlyDatabaseInventory[period];
+            if (!inv) return;
+
+            // Register dynamic dataset for the selected period
+            const rows = inv.ubw_samples || [];
+            embeddedDataSources['period_selected'] = {
+                name: `UBW Transaksjoner for ${period} (${monthNamesNorwegian[period] || period})`,
+                category: 'Månedsvis Regnskap',
+                path: `data/staging/projects.db (WHERE Maaned = '${period}')`,
+                type: 'SQLite Table View',
+                description: inv.has_actuals
+                    ? `Viser utvalg av bokførte transaksjoner for ${period}. Totalt ${inv.ubw_count} bilag (kr ${inv.ubw_total.toLocaleString('no-NO')} NOK).`
+                    : `⚠️ Ingen bokførte transaksjoner finnes i databasen for ${period}.`,
+                columns: ['Transaksjon_ID', 'Dato', 'Avdeling', 'Konto', 'Kontonavn', 'Beskrivelse', 'Belop_NOK', 'BDM_ID', 'Attestant_ID', 'Kontrollflagg'],
+                rows: rows
+            };
+
+            // If current view is period_selected, re-render
+            if (currentActiveSourceKey === 'period_selected') {
+                renderCurrentDataSource();
+            }
+        }
+
+        function viewSelectedPeriodData(category) {
+            const period = document.getElementById('selectPeriod').value;
+            syncPeriodDataView(period);
+            selectDataSource('period_selected');
+            switchTab('sources-tab');
+        }
+
         // Embedded Data Repositories
         const embeddedDataSources = {"sqlite_evm_projects": {"name": "projects.db (evm_projects)", "category": "Operasjonelle Databaser", "path": "data/staging/projects.db", "type": "SQLite Table", "description": "Masterregister over pgende forsknings- og labinvesteringsprosjekter med EVM-grunnlagsdata.", "columns": ["project_id", "project_name", "bac", "pv", "ev", "ac", "status"], "rows": [{"project_id": "UM-DEF-02", "project_name": "Forsvarsforskning Agder", "bac": 18500000.0, "pv": 12000000.0, "ev": 12200000.0, "ac": 11800000.0, "status": "ON TRACK"}, {"project_id": "UM-ENG-03", "project_name": "Ingeniørutdanning Fornybar", "bac": 8200000.0, "pv": 6500000.0, "ev": 5200000.0, "ac": 6800000.0, "status": "CRITICAL"}, {"project_id": "UM-FPV-01", "project_name": "Fotovoltaikk Solceller", "bac": 45000000.0, "pv": 22500000.0, "ev": 21000000.0, "ac": 23100000.0, "status": "CRITICAL"}]}, "sqlite_ubw_transactions": {"name": "projects.db (ubw_transactions)", "category": "Operasjonelle Databaser", "path": "data/staging/projects.db", "type": "SQLite Table", "description": "Hovedboksbilag fra Unit4 / UBW med BDM- og attestant-ID for internkontroll.", "columns": ["transaksjon_id", "konto", "beskrivelse", "belop_nok", "bdm_id", "attestant_id", "kvittering_vedlagt", "formaal"], "rows": [{"transaksjon_id": "TX-1001", "konto": "7100", "beskrivelse": "Bilgodtgjørelse feltarbeid", "belop_nok": 1450.0, "bdm_id": "EMP-201", "attestant_id": "EMP-202", "kvittering_vedlagt": 1, "formaal": "Feltarbeid Agder"}, {"transaksjon_id": "TX-1002", "konto": "7130", "beskrivelse": "Reiseregning fagsamling", "belop_nok": 4200.0, "bdm_id": "EMP-203", "attestant_id": "EMP-203", "kvittering_vedlagt": 1, "formaal": "Konferanse Oslo (FEIL: Egengodkjent)"}, {"transaksjon_id": "TX-1003", "konto": "6800", "beskrivelse": "Kontorrekvisita", "belop_nok": 250.0, "bdm_id": "EMP-201", "attestant_id": "EMP-204", "kvittering_vedlagt": 0, "formaal": "Innkjøp rekvisita (FEIL: Mangler kvittering > 100 kr)"}, {"transaksjon_id": "TX-1004", "konto": "5330", "beskrivelse": "Sensorhonorar Vår 2026", "belop_nok": 12500.0, "bdm_id": "EMP-205", "attestant_id": "EMP-206", "kvittering_vedlagt": 1, "formaal": "Sensur ORG-200"}, {"transaksjon_id": "TX-1005", "konto": "7150", "beskrivelse": "Utenlandsreise AACSB", "belop_nok": 18500.0, "bdm_id": "EMP-201", "attestant_id": "EMP-202", "kvittering_vedlagt": 1, "formaal": "AACSB Konferanse USA"}]}, "duckdb_evm_snapshots": {"name": "analytics_snapshots.duckdb", "category": "Operasjonelle Databaser", "path": "data/staging/analytics_snapshots.duckdb", "type": "DuckDB OLAP Table", "description": "Tidsrekke-snapshots og fler-modell EAC-prognoser (Typical, Composite, Weighted).", "columns": ["reporting_period", "snapshot_timestamp", "project_id", "bac", "pv", "ev", "ac", "cpi", "spi", "eac_cpi", "eac_composite", "eac_weighted", "vac", "tcpi", "status"], "rows": [{"reporting_period": "2026-M10", "snapshot_timestamp": "2026-10-04 14:49:07.773582", "project_id": "UM-DEF-02", "bac": 18500000.0, "pv": 12000000.0, "ev": 12200000.0, "ac": 11800000.0, "cpi": 1.03, "spi": 1.02, "eac_cpi": 17961165.05, "eac_composite": 17796573.39, "eac_weighted": 17928404.67, "vac": 538834.95, "tcpi": 0.94, "status": "ON TRACK"}, {"reporting_period": "2026-M10", "snapshot_timestamp": "2026-10-04 14:49:07.773582", "project_id": "UM-ENG-03", "bac": 8200000.0, "pv": 6500000.0, "ev": 5200000.0, "ac": 6800000.0, "cpi": 0.76, "spi": 0.8, "eac_cpi": 10789473.68, "eac_composite": 11734210.53, "eac_weighted": 10706250.0, "vac": -2589473.68, "tcpi": 2.14, "status": "CRITICAL"}, {"reporting_period": "2026-M10", "snapshot_timestamp": "2026-10-04 14:49:07.773582", "project_id": "UM-FPV-01", "bac": 45000000.0, "pv": 22500000.0, "ev": 21000000.0, "ac": 23100000.0, "cpi": 0.91, "spi": 0.93, "eac_cpi": 49450549.45, "eac_composite": 51458738.04, "eac_weighted": 49358205.69, "vac": -4450549.45, "tcpi": 1.1, "status": "CRITICAL"}]}, "csv_reiseregninger": {"name": "reiseregninger_15_stk.csv", "category": "Revisjon & Transaksjoner", "path": "data/staging/reiseregninger_15_stk.csv", "type": "CSV Dataset", "description": "Reisekrav skannet mot DFs regelverk for mltidsfradrag og fire-yne-prinsippet.", "columns": ["Reise_ID", "Ansatt", "Dato", "Formaal", "Belop_NOK", "Maltid_Dekket", "Fradrag_Utfort", "Km_Godtgjorelse", "Kvittering_Vedlagt", "BDM_ID", "Attestant_ID", "Km_Rute_Beskrevet"], "rows": [{"Reise_ID": "REISE-2026-001", "Ansatt": "Ola Nordmann", "Dato": "2026-01-12", "Formaal": "Fagkonferanse Bergen", "Belop_NOK": 3450.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-101", "Attestant_ID": "EMP-102", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-002", "Ansatt": "Kari Hansen", "Dato": "2026-01-15", "Formaal": "Møte Kunnskapsdepartementet", "Belop_NOK": 2100.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": false, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-104", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-003", "Ansatt": "Per Olsen", "Dato": "2026-01-18", "Formaal": "Feltarbeid Agder", "Belop_NOK": 850.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 180, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-105", "Attestant_ID": "EMP-106", "Km_Rute_Beskrevet": true}, {"Reise_ID": "REISE-2026-004", "Ansatt": "Anne Berg", "Dato": "2026-01-20", "Formaal": "Prosjektmøte EU Horizon", "Belop_NOK": 4800.0, "Maltid_Dekket": "Frokost, Lunsj", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-107", "Attestant_ID": "EMP-107", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-005", "Ansatt": "Lars Lie", "Dato": "2026-01-22", "Formaal": "Deltakelse forskningsseminar Trondheim", "Belop_NOK": 3200.0, "Maltid_Dekket": "Frokost, Lunsj, Middag", "Fradrag_Utfort": false, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-108", "Attestant_ID": "EMP-109", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-006", "Ansatt": "Eva Sunde", "Dato": "2026-01-25", "Formaal": "Kort møte Arendal", "Belop_NOK": 450.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 65, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-110", "Attestant_ID": "EMP-111", "Km_Rute_Beskrevet": false}, {"Reise_ID": "REISE-2026-007", "Ansatt": "Kjetil Dahl", "Dato": "2026-01-28", "Formaal": "Taxi til flyplass Kjevik", "Belop_NOK": 620.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": false, "BDM_ID": "EMP-112", "Attestant_ID": "EMP-113", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-008", "Ansatt": "Guri Moe", "Dato": "2026-02-02", "Formaal": "AACSB Akkrediteringsmøte", "Belop_NOK": 8900.0, "Maltid_Dekket": "Lunsj", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-114", "Attestant_ID": "EMP-115", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-009", "Ansatt": "Svein Bakke", "Dato": "2026-02-05", "Formaal": "Bedriftsbesøk Kristiansand", "Belop_NOK": 310.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-116", "Attestant_ID": "EMP-117", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-010", "Ansatt": "Monika Vik", "Dato": "2026-02-08", "Formaal": "Gjesteforelesning UiO", "Belop_NOK": 2750.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-118", "Attestant_ID": "EMP-119", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-011", "Ansatt": "Tor Haug", "Dato": "2026-02-11", "Formaal": "Middagsrepresentasjon eksterne partnere", "Belop_NOK": 1850.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": false, "BDM_ID": "EMP-120", "Attestant_ID": "EMP-121", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-012", "Ansatt": "Ingrid Solberg", "Dato": "2026-02-14", "Formaal": "Styremøte NFR Oslo", "Belop_NOK": 3900.0, "Maltid_Dekket": "Frokost", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-122", "Attestant_ID": "EMP-123", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-013", "Ansatt": "Knut Rønning", "Dato": "2026-02-18", "Formaal": "Kjøring til nettverkssamling Grimstad", "Belop_NOK": 420.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 90, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-124", "Attestant_ID": "EMP-125", "Km_Rute_Beskrevet": true}, {"Reise_ID": "REISE-2026-014", "Ansatt": "Hilde Bø", "Dato": "2026-02-21", "Formaal": "Doktorgradsdisputas Tromsø", "Belop_NOK": 6400.0, "Maltid_Dekket": "Lunsj", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-126", "Attestant_ID": "EMP-126", "Km_Rute_Beskrevet": ""}, {"Reise_ID": "REISE-2026-015", "Ansatt": "Morten Hagen", "Dato": "2026-02-25", "Formaal": "Utlegg parkering Gardermoen", "Belop_NOK": 850.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-127", "Attestant_ID": "EMP-128", "Km_Rute_Beskrevet": ""}]}, "pbi_travel_audit": {"name": "Fact_Travel_Audit (Star Schema)", "category": "Power BI Star Schema", "path": "data/staging/parquet/Fact_Travel_Audit.parquet", "type": "Parquet / CSV Fact Table", "description": "Revisjonsfaktatabell med strukturerte regelbruddsflagg for Power BI.", "columns": ["Reise_ID", "Ansatt", "Dato", "Formaal", "Belop_NOK", "Maltid_Dekket", "Fradrag_Utfort", "Km_Godtgjorelse", "Kvittering_Vedlagt", "BDM_ID", "Attestant_ID", "Km_Rute_Beskrevet", "Avvik_Beskrivelse", "Status"], "rows": [{"Reise_ID": "REISE-2026-001", "Ansatt": "Ola Nordmann", "Dato": "2026-01-12", "Formaal": "Fagkonferanse Bergen", "Belop_NOK": 3450.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-101", "Attestant_ID": "EMP-102", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-002", "Ansatt": "Kari Hansen", "Dato": "2026-01-15", "Formaal": "Møte Kunnskapsdepartementet", "Belop_NOK": 2100.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": false, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-103", "Attestant_ID": "EMP-104", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "BRUDD_MALTID: Måltid var dekket (Middag), men måltidsfradrag er ikke trukket fra diett.", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-003", "Ansatt": "Per Olsen", "Dato": "2026-01-18", "Formaal": "Feltarbeid Agder", "Belop_NOK": 850.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 180, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-105", "Attestant_ID": "EMP-106", "Km_Rute_Beskrevet": true, "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-004", "Ansatt": "Anne Berg", "Dato": "2026-01-20", "Formaal": "Prosjektmøte EU Horizon", "Belop_NOK": 4800.0, "Maltid_Dekket": "Frokost, Lunsj", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-107", "Attestant_ID": "EMP-107", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-005", "Ansatt": "Lars Lie", "Dato": "2026-01-22", "Formaal": "Deltakelse forskningsseminar Trondheim", "Belop_NOK": 3200.0, "Maltid_Dekket": "Frokost, Lunsj, Middag", "Fradrag_Utfort": false, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-108", "Attestant_ID": "EMP-109", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "BRUDD_MALTID: Måltid var dekket (Frokost, Lunsj, Middag), men måltidsfradrag er ikke trukket fra diett.", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-006", "Ansatt": "Eva Sunde", "Dato": "2026-01-25", "Formaal": "Kort møte Arendal", "Belop_NOK": 450.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 65, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-110", "Attestant_ID": "EMP-111", "Km_Rute_Beskrevet": false, "Avvik_Beskrivelse": "BRUDD_KM_RUTE: Kilometergodtgjørelse krever spesifisert rutebeskrivelse.", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-007", "Ansatt": "Kjetil Dahl", "Dato": "2026-01-28", "Formaal": "Taxi til flyplass Kjevik", "Belop_NOK": 620.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": false, "BDM_ID": "EMP-112", "Attestant_ID": "EMP-113", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-008", "Ansatt": "Guri Moe", "Dato": "2026-02-02", "Formaal": "AACSB Akkrediteringsmøte", "Belop_NOK": 8900.0, "Maltid_Dekket": "Lunsj", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-114", "Attestant_ID": "EMP-115", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-009", "Ansatt": "Svein Bakke", "Dato": "2026-02-05", "Formaal": "Bedriftsbesøk Kristiansand", "Belop_NOK": 310.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-116", "Attestant_ID": "EMP-117", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-010", "Ansatt": "Monika Vik", "Dato": "2026-02-08", "Formaal": "Gjesteforelesning UiO", "Belop_NOK": 2750.0, "Maltid_Dekket": "Lunsj, Middag", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-118", "Attestant_ID": "EMP-119", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-011", "Ansatt": "Tor Haug", "Dato": "2026-02-11", "Formaal": "Middagsrepresentasjon eksterne partnere", "Belop_NOK": 1850.0, "Maltid_Dekket": "Middag", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": false, "BDM_ID": "EMP-120", "Attestant_ID": "EMP-121", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-012", "Ansatt": "Ingrid Solberg", "Dato": "2026-02-14", "Formaal": "Styremøte NFR Oslo", "Belop_NOK": 3900.0, "Maltid_Dekket": "Frokost", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-122", "Attestant_ID": "EMP-123", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-013", "Ansatt": "Knut Rønning", "Dato": "2026-02-18", "Formaal": "Kjøring til nettverkssamling Grimstad", "Belop_NOK": 420.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 90, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-124", "Attestant_ID": "EMP-125", "Km_Rute_Beskrevet": true, "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}, {"Reise_ID": "REISE-2026-014", "Ansatt": "Hilde Bø", "Dato": "2026-02-21", "Formaal": "Doktorgradsdisputas Tromsø", "Belop_NOK": 6400.0, "Maltid_Dekket": "Lunsj", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-126", "Attestant_ID": "EMP-126", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).", "Status": "FLAGGED"}, {"Reise_ID": "REISE-2026-015", "Ansatt": "Morten Hagen", "Dato": "2026-02-25", "Formaal": "Utlegg parkering Gardermoen", "Belop_NOK": 850.0, "Maltid_Dekket": "Ingen", "Fradrag_Utfort": true, "Km_Godtgjorelse": 0, "Kvittering_Vedlagt": true, "BDM_ID": "EMP-127", "Attestant_ID": "EMP-128", "Km_Rute_Beskrevet": "", "Avvik_Beskrivelse": "OK", "Status": "APPROVED"}]}, "pbi_evm_snapshots": {"name": "Fact_EVM_Snapshots (Star Schema)", "category": "Power BI Star Schema", "path": "data/staging/parquet/Fact_EVM_Snapshots.parquet", "type": "Parquet / CSV Fact Table", "description": "EVM ytelses- og prognosemlinger i stjerneskjema.", "columns": ["reporting_period", "snapshot_timestamp", "project_id", "bac", "pv", "ev", "ac", "cpi", "spi", "eac_cpi", "eac_composite", "eac_weighted", "vac", "tcpi", "status"], "rows": [{"reporting_period": "2026-M10", "snapshot_timestamp": "2026-10-04 14:45:46.082208", "project_id": "UM-DEF-02", "bac": 18500000.0, "pv": 12000000.0, "ev": 12200000.0, "ac": 11800000.0, "cpi": 1.03, "spi": 1.02, "eac_cpi": 17961165.05, "eac_composite": 17796573.39, "eac_weighted": 17928404.67, "vac": 538834.95, "tcpi": 0.94, "status": "ON TRACK"}, {"reporting_period": "2026-M10", "snapshot_timestamp": "2026-10-04 14:45:46.082208", "project_id": "UM-ENG-03", "bac": 8200000.0, "pv": 6500000.0, "ev": 5200000.0, "ac": 6800000.0, "cpi": 0.76, "spi": 0.8, "eac_cpi": 10789473.68, "eac_composite": 11734210.53, "eac_weighted": 10706250.0, "vac": -2589473.68, "tcpi": 2.14, "status": "CRITICAL"}, {"reporting_period": "2026-M10", "snapshot_timestamp": "2026-10-04 14:45:46.082208", "project_id": "UM-FPV-01", "bac": 45000000.0, "pv": 22500000.0, "ev": 21000000.0, "ac": 23100000.0, "cpi": 0.91, "spi": 0.93, "eac_cpi": 49450549.45, "eac_composite": 51458738.04, "eac_weighted": 49358205.69, "vac": -4450549.45, "tcpi": 1.1, "status": "CRITICAL"}]}, "csv_yearly_reconciliation": {"name": "FactYearlyReconciliation.csv", "category": "Institusjonelle Dim/Fakta", "path": "data/FactYearlyReconciliation.csv", "type": "CSV Fact Table (Norwegian Semicolon)", "description": "Historisk rsoppgjr for UiA, bevilgning og akkumulerte driftsavsetninger.", "columns": ["MndNr", "Maaned", "StatligBevilgning", "Forskningsinntekter", "AndreInntekter", "Lonnskostnader", "Driftskostnader", "InvesteringerCapex", "PlanlagtVerdi_PV", "OpptjentVerdi_EV", "FaktiskKostnad_AC", "TotalInntekt", "TotalKostnad", "NettoResultat", "Kumulativ_Inntekt", "Kumulativ_Kostnad", "Kumulativ_PV", "Kumulativ_EV", "Kumulativ_AC", "Kumulativ_CPI", "Kumulativ_SPI", "Kumulativ_CV", "Kumulativ_SV"], "rows": [{"MndNr": 1, "Maaned": "Januar", "StatligBevilgning": "102,8", "Forskningsinntekter": "8,5", "AndreInntekter": "5,8", "Lonnskostnader": "76,5", "Driftskostnader": "27,5", "InvesteringerCapex": "10,5", "PlanlagtVerdi_PV": "121,0", "OpptjentVerdi_EV": "111,0", "FaktiskKostnad_AC": "114,5", "TotalInntekt": "117,1", "TotalKostnad": "114,5", "NettoResultat": "2,6", "Kumulativ_Inntekt": "117,1", "Kumulativ_Kostnad": "114,5", "Kumulativ_PV": "121,0", "Kumulativ_EV": "111,0", "Kumulativ_AC": "114,5", "Kumulativ_CPI": "0,969", "Kumulativ_SPI": "0,917", "Kumulativ_CV": "-3,5", "Kumulativ_SV": "-10,0"}, {"MndNr": 2, "Maaned": "Februar", "StatligBevilgning": "102,8", "Forskningsinntekter": "9,2", "AndreInntekter": "7,5", "Lonnskostnader": "77,0", "Driftskostnader": "26,5", "InvesteringerCapex": "11,0", "PlanlagtVerdi_PV": "122,0", "OpptjentVerdi_EV": "112,0", "FaktiskKostnad_AC": "114,5", "TotalInntekt": "119,5", "TotalKostnad": "114,5", "NettoResultat": "5,0", "Kumulativ_Inntekt": "236,6", "Kumulativ_Kostnad": "229,0", "Kumulativ_PV": "243,0", "Kumulativ_EV": "223,0", "Kumulativ_AC": "229,0", "Kumulativ_CPI": "0,974", "Kumulativ_SPI": "0,918", "Kumulativ_CV": "-6,0", "Kumulativ_SV": "-20,0"}, {"MndNr": 3, "Maaned": "Mars", "StatligBevilgning": "102,8", "Forskningsinntekter": "10,1", "AndreInntekter": "6,2", "Lonnskostnader": "78,5", "Driftskostnader": "30,0", "InvesteringerCapex": "12,5", "PlanlagtVerdi_PV": "128,0", "OpptjentVerdi_EV": "118,0", "FaktiskKostnad_AC": "121,0", "TotalInntekt": "119,1", "TotalKostnad": "121,0", "NettoResultat": "-1,9", "Kumulativ_Inntekt": "355,7", "Kumulativ_Kostnad": "350,0", "Kumulativ_PV": "371,0", "Kumulativ_EV": "341,0", "Kumulativ_AC": "350,0", "Kumulativ_CPI": "0,974", "Kumulativ_SPI": "0,919", "Kumulativ_CV": "-9,0", "Kumulativ_SV": "-30,0"}, {"MndNr": 4, "Maaned": "April", "StatligBevilgning": "102,8", "Forskningsinntekter": "10,5", "AndreInntekter": "6,4", "Lonnskostnader": "78,0", "Driftskostnader": "28,5", "InvesteringerCapex": "13,0", "PlanlagtVerdi_PV": "127,0", "OpptjentVerdi_EV": "117,0", "FaktiskKostnad_AC": "119,5", "TotalInntekt": "119,7", "TotalKostnad": "119,5", "NettoResultat": "0,2", "Kumulativ_Inntekt": "475,4", "Kumulativ_Kostnad": "469,5", "Kumulativ_PV": "498,0", "Kumulativ_EV": "458,0", "Kumulativ_AC": "469,5", "Kumulativ_CPI": "0,976", "Kumulativ_SPI": "0,92", "Kumulativ_CV": "-11,5", "Kumulativ_SV": "-40,0"}, {"MndNr": 5, "Maaned": "Mai", "StatligBevilgning": "102,9", "Forskningsinntekter": "11,2", "AndreInntekter": "6,5", "Lonnskostnader": "79,5", "Driftskostnader": "30,5", "InvesteringerCapex": "14,0", "PlanlagtVerdi_PV": "131,0", "OpptjentVerdi_EV": "120,0", "FaktiskKostnad_AC": "124,0", "TotalInntekt": "120,6", "TotalKostnad": "124,0", "NettoResultat": "-3,4", "Kumulativ_Inntekt": "596,0", "Kumulativ_Kostnad": "593,5", "Kumulativ_PV": "629,0", "Kumulativ_EV": "578,0", "Kumulativ_AC": "593,5", "Kumulativ_CPI": "0,974", "Kumulativ_SPI": "0,919", "Kumulativ_CV": "-15,5", "Kumulativ_SV": "-51,0"}, {"MndNr": 6, "Maaned": "Juni", "StatligBevilgning": "102,9", "Forskningsinntekter": "11,5", "AndreInntekter": "6,8", "Lonnskostnader": "116,0", "Driftskostnader": "33,0", "InvesteringerCapex": "16,0", "PlanlagtVerdi_PV": "145,0", "OpptjentVerdi_EV": "133,0", "FaktiskKostnad_AC": "165,0", "TotalInntekt": "121,2", "TotalKostnad": "165,0", "NettoResultat": "-43,8", "Kumulativ_Inntekt": "717,2", "Kumulativ_Kostnad": "758,5", "Kumulativ_PV": "774,0", "Kumulativ_EV": "711,0", "Kumulativ_AC": "758,5", "Kumulativ_CPI": "0,937", "Kumulativ_SPI": "0,919", "Kumulativ_CV": "-47,5", "Kumulativ_SV": "-63,0"}, {"MndNr": 7, "Maaned": "Juli", "StatligBevilgning": "102,8", "Forskningsinntekter": "6,2", "AndreInntekter": "4,2", "Lonnskostnader": "60,5", "Driftskostnader": "20,0", "InvesteringerCapex": "9,0", "PlanlagtVerdi_PV": "95,0", "OpptjentVerdi_EV": "88,0", "FaktiskKostnad_AC": "89,5", "TotalInntekt": "113,2", "TotalKostnad": "89,5", "NettoResultat": "23,7", "Kumulativ_Inntekt": "830,4", "Kumulativ_Kostnad": "848,0", "Kumulativ_PV": "869,0", "Kumulativ_EV": "799,0", "Kumulativ_AC": "848,0", "Kumulativ_CPI": "0,942", "Kumulativ_SPI": "0,919", "Kumulativ_CV": "-49,0", "Kumulativ_SV": "-70,0"}, {"MndNr": 8, "Maaned": "August", "StatligBevilgning": "102,8", "Forskningsinntekter": "9,8", "AndreInntekter": "6,6", "Lonnskostnader": "77,0", "Driftskostnader": "27,0", "InvesteringerCapex": "14,0", "PlanlagtVerdi_PV": "123,0", "OpptjentVerdi_EV": "113,0", "FaktiskKostnad_AC": "118,0", "TotalInntekt": "119,2", "TotalKostnad": "118,0", "NettoResultat": "1,2", "Kumulativ_Inntekt": "949,6", "Kumulativ_Kostnad": "966,0", "Kumulativ_PV": "992,0", "Kumulativ_EV": "912,0", "Kumulativ_AC": "966,0", "Kumulativ_CPI": "0,944", "Kumulativ_SPI": "0,919", "Kumulativ_CV": "-54,0", "Kumulativ_SV": "-80,0"}, {"MndNr": 9, "Maaned": "September", "StatligBevilgning": "102,9", "Forskningsinntekter": "11,4", "AndreInntekter": "8,2", "Lonnskostnader": "79,5", "Driftskostnader": "31,5", "InvesteringerCapex": "15,0", "PlanlagtVerdi_PV": "132,0", "OpptjentVerdi_EV": "122,0", "FaktiskKostnad_AC": "126,0", "TotalInntekt": "122,5", "TotalKostnad": "126,0", "NettoResultat": "-3,5", "Kumulativ_Inntekt": "1072,1", "Kumulativ_Kostnad": "1092,0", "Kumulativ_PV": "1124,0", "Kumulativ_EV": "1034,0", "Kumulativ_AC": "1092,0", "Kumulativ_CPI": "0,947", "Kumulativ_SPI": "0,92", "Kumulativ_CV": "-58,0", "Kumulativ_SV": "-90,0"}, {"MndNr": 10, "Maaned": "Oktober", "StatligBevilgning": "102,8", "Forskningsinntekter": "11,8", "AndreInntekter": "6,5", "Lonnskostnader": "79,0", "Driftskostnader": "31,5", "InvesteringerCapex": "16,0", "PlanlagtVerdi_PV": "132,0", "OpptjentVerdi_EV": "121,5", "FaktiskKostnad_AC": "126,5", "TotalInntekt": "121,1", "TotalKostnad": "126,5", "NettoResultat": "-5,4", "Kumulativ_Inntekt": "1193,2", "Kumulativ_Kostnad": "1218,5", "Kumulativ_PV": "1256,0", "Kumulativ_EV": "1155,5", "Kumulativ_AC": "1218,5", "Kumulativ_CPI": "0,948", "Kumulativ_SPI": "0,92", "Kumulativ_CV": "-63,0", "Kumulativ_SV": "-100,5"}]}, "csv_dim_account": {"name": "DimAccount.csv", "category": "Institusjonelle Dim/Fakta", "path": "data/DimAccount.csv", "type": "CSV Dimension Table", "description": "Statens standard kontoplan for hyere utdanning og forskning.", "columns": ["Konto", "StandardKonto3", "Kontonavn", "Kontoklasse", "Kontogruppe", "Kontotype", "SRS_regnskapslinje", "AktuellFor"], "rows": [{"Konto": 1250, "StandardKonto3": 125, "Kontonavn": "IKT-utstyr og maskiner (>50k)", "Kontoklasse": 1, "Kontogruppe": 12, "Kontotype": "Eiendeler", "SRS_regnskapslinje": "Varige driftsmidler", "AktuellFor": "SRS/Alle"}, {"Konto": 2050, "StandardKonto3": 205, "Kontonavn": "Statens finansiering av anleggsmidler", "Kontoklasse": 2, "Kontogruppe": 20, "Kontotype": "Gjeld/Kapital", "SRS_regnskapslinje": "Statens kapital", "AktuellFor": "SRS/Alle"}, {"Konto": 2080, "StandardKonto3": 208, "Kontonavn": "Avsetning ubenyttet rammebevilgning (F-05-20)", "Kontoklasse": 2, "Kontogruppe": 20, "Kontotype": "Gjeld/Kapital", "SRS_regnskapslinje": "Avsetninger", "AktuellFor": "SRS/Alle"}, {"Konto": 2180, "StandardKonto3": 218, "Kontonavn": "Mottatt forskuddsbetaling bidrag (SRS 10)", "Kontoklasse": 2, "Kontogruppe": 21, "Kontotype": "Kortsiktig gjeld", "SRS_regnskapslinje": "Kortsiktig gjeld", "AktuellFor": "SRS/Alle"}, {"Konto": 2800, "StandardKonto3": 280, "Kontonavn": "Avsetning for forventet tap på oppdrag (SRS 9)", "Kontoklasse": 2, "Kontogruppe": 28, "Kontotype": "Kortsiktig gjeld", "SRS_regnskapslinje": "Avsetning for forpliktelser", "AktuellFor": "SRS/Alle"}, {"Konto": 3030, "StandardKonto3": 303, "Kontonavn": "Salgsinntekt tjenester, avgiftspliktig", "Kontoklasse": 3, "Kontogruppe": 30, "Kontotype": "Inntekt", "SRS_regnskapslinje": "Salgsinntekt", "AktuellFor": "SRS/Alle"}, {"Konto": 3130, "StandardKonto3": 313, "Kontonavn": "Salgsinntekt tjenester, avgiftsfri", "Kontoklasse": 3, "Kontogruppe": 31, "Kontotype": "Inntekt", "SRS_regnskapslinje": "Salgsinntekt", "AktuellFor": "SRS/Alle"}, {"Konto": 3400, "StandardKonto3": 340, "Kontonavn": "Tilskudd fra Norges forskningsråd (SRS 10)", "Kontoklasse": 3, "Kontogruppe": 34, "Kontotype": "Inntekt", "SRS_regnskapslinje": "Tilskudd og overføringer", "AktuellFor": "SRS/Alle"}, {"Konto": 3410, "StandardKonto3": 341, "Kontonavn": "Tilskudd fra andre statlige virksomheter", "Kontoklasse": 3, "Kontogruppe": 34, "Kontotype": "Inntekt", "SRS_regnskapslinje": "Tilskudd og overføringer", "AktuellFor": "SRS/Alle"}, {"Konto": 3420, "StandardKonto3": 342, "Kontonavn": "Tilskudd fra EU Horisont Europa (SRS 10)", "Kontoklasse": 3, "Kontogruppe": 34, "Kontotype": "Inntekt", "SRS_regnskapslinje": "Tilskudd og overføringer", "AktuellFor": "SRS/Alle"}]}, "csv_dim_org": {"name": "DimOrganization.csv", "category": "Institusjonelle Dim/Fakta", "path": "data/DimOrganization.csv", "type": "CSV Dimension Table", "description": "Institutt- og fakultetsstruktur for Handelshyskolen UiA.", "columns": ["Organisasjonsnokkel", "Fakultet", "Fakultetsnavn", "Institutt", "Instituttnavn", "Koststed", "Koststednavn", "Koststedtype"], "rows": [{"Organisasjonsnokkel": "I001K1", "Fakultet": "FAK-HH", "Fakultetsnavn": "Handelshøyskolen UiA", "Institutt": "I001", "Instituttnavn": "Institutt for økonomi", "Koststed": "I001K1", "Koststednavn": "Institutt for økonomi - drift", "Koststedtype": "Drift"}, {"Organisasjonsnokkel": "I001K2", "Fakultet": "FAK-HH", "Fakultetsnavn": "Handelshøyskolen UiA", "Institutt": "I001", "Instituttnavn": "Institutt for økonomi", "Koststed": "I001K2", "Koststednavn": "Institutt for økonomi - prosjekt", "Koststedtype": "Prosjekt"}, {"Organisasjonsnokkel": "I002K1", "Fakultet": "FAK-HH", "Fakultetsnavn": "Handelshøyskolen UiA", "Institutt": "I002", "Instituttnavn": "Institutt for strategi og ledelse", "Koststed": "I002K1", "Koststednavn": "Institutt for strategi og ledelse - drift", "Koststedtype": "Drift"}, {"Organisasjonsnokkel": "I002K2", "Fakultet": "FAK-HH", "Fakultetsnavn": "Handelshøyskolen UiA", "Institutt": "I002", "Instituttnavn": "Institutt for strategi og ledelse", "Koststed": "I002K2", "Koststednavn": "Institutt for strategi og ledelse - prosjekt", "Koststedtype": "Prosjekt"}, {"Organisasjonsnokkel": "I004K1", "Fakultet": "FAK-HI", "Fakultetsnavn": "Fakultet for helse- og idrettsvitenskap", "Institutt": "I004", "Instituttnavn": "Institutt for sykepleie og helsefag", "Koststed": "I004K1", "Koststednavn": "Institutt for sykepleie og helsefag - drift", "Koststedtype": "Drift"}, {"Organisasjonsnokkel": "I004K2", "Fakultet": "FAK-HI", "Fakultetsnavn": "Fakultet for helse- og idrettsvitenskap", "Institutt": "I004", "Instituttnavn": "Institutt for sykepleie og helsefag", "Koststed": "I004K2", "Koststednavn": "Institutt for sykepleie og helsefag - prosjekt", "Koststedtype": "Prosjekt"}, {"Organisasjonsnokkel": "I007K1", "Fakultet": "FAK-HP", "Fakultetsnavn": "Fakultet for humaniora og pedagogikk", "Institutt": "I007", "Instituttnavn": "Institutt for fagspråk og pedagogikk", "Koststed": "I007K1", "Koststednavn": "Institutt for fagspråk og pedagogikk - drift", "Koststedtype": "Drift"}, {"Organisasjonsnokkel": "I007K2", "Fakultet": "FAK-HP", "Fakultetsnavn": "Fakultet for humaniora og pedagogikk", "Institutt": "I007", "Instituttnavn": "Institutt for fagspråk og pedagogikk", "Koststed": "I007K2", "Koststednavn": "Institutt for fagspråk og pedagogikk - prosjekt", "Koststedtype": "Prosjekt"}, {"Organisasjonsnokkel": "I013K1", "Fakultet": "FAK-SV", "Fakultetsnavn": "Fakultet for samfunnsvitenskap", "Institutt": "I013", "Instituttnavn": "Institutt for statsvitenskap og sosiologi", "Koststed": "I013K1", "Koststednavn": "Institutt for statsvitenskap og sosiologi - drift", "Koststedtype": "Drift"}, {"Organisasjonsnokkel": "I013K2", "Fakultet": "FAK-SV", "Fakultetsnavn": "Fakultet for samfunnsvitenskap", "Institutt": "I013", "Instituttnavn": "Institutt for statsvitenskap og sosiologi", "Koststed": "I013K2", "Koststednavn": "Institutt for statsvitenskap og sosiologi - prosjekt", "Koststedtype": "Prosjekt"}]}};
 
@@ -1877,19 +2820,419 @@ RETURN
             reader.readAsText(file, 'utf-8');
         }
 
+        // =========================================================================
+        // DATA INGESTION & UPLOAD MODAL ENGINE (v19)
+        // =========================================================================
+        let modalSelectedFile = null;
+
+        function openUploadModal(prefillPeriod) {
+            const modal = document.getElementById('uploadModal');
+            if (!modal) return;
+
+            modal.classList.add('active');
+
+            const targetPeriod = prefillPeriod || (document.getElementById('selectPeriod') ? document.getElementById('selectPeriod').value : '2026-M10');
+            const periodSelect = document.getElementById('modalUploadPeriod');
+            if (periodSelect && targetPeriod) {
+                periodSelect.value = targetPeriod;
+            }
+
+            autoSuggestUploadTag();
+            checkPortalServerStatus();
+
+            document.addEventListener('keydown', handleModalEscKey);
+        }
+
+        function closeUploadModal() {
+            const modal = document.getElementById('uploadModal');
+            if (modal) modal.classList.remove('active');
+            document.removeEventListener('keydown', handleModalEscKey);
+            clearModalFile();
+            hideModalFeedback();
+        }
+
+        function handleModalEscKey(e) {
+            if (e.key === 'Escape') closeUploadModal();
+        }
+
+        function autoSuggestUploadTag() {
+            const period = document.getElementById('modalUploadPeriod').value;
+            const monthAbbrs = {
+                '01': 'jan', '02': 'feb', '03': 'mar', '04': 'apr', '05': 'mai', '06': 'jun',
+                '07': 'jul', '08': 'aug', '09': 'sep', '10': 'okt', '11': 'nov', '12': 'des'
+            };
+            const mNum = period.split('-M')[1] || '10';
+            const tag = `2026T1${monthAbbrs[mNum] || 'ny'}`;
+            const tagInput = document.getElementById('modalUploadTag');
+            if (tagInput) tagInput.value = tag;
+        }
+
+        function handleModalFileSelected(files) {
+            if (!files || !files.length) return;
+            modalSelectedFile = files[0];
+            const nameEl = document.getElementById('selectedFileName');
+            const sizeEl = document.getElementById('selectedFileSize');
+            const cardEl = document.getElementById('modalSelectedFileCard');
+            const previewBtn = document.getElementById('btnModalPreview');
+
+            if (nameEl) nameEl.innerText = modalSelectedFile.name;
+            if (sizeEl) sizeEl.innerText = `${Math.round(modalSelectedFile.size / 1024)} KB`;
+            if (cardEl) cardEl.style.display = 'flex';
+            if (previewBtn) previewBtn.style.display = 'inline-flex';
+            hideModalFeedback();
+        }
+
+        function clearModalFile(e) {
+            if (e) e.stopPropagation();
+            modalSelectedFile = null;
+            const fileInput = document.getElementById('modalFileInput');
+            if (fileInput) fileInput.value = '';
+            const cardEl = document.getElementById('modalSelectedFileCard');
+            if (cardEl) cardEl.style.display = 'none';
+            const previewBtn = document.getElementById('btnModalPreview');
+            if (previewBtn) previewBtn.style.display = 'none';
+            hideModalFeedback();
+        }
+
+        function showModalFeedback(type, message) {
+            const box = document.getElementById('modalUploadFeedback');
+            if (!box) return;
+            box.className = `upload-feedback-box active ${type}`;
+            box.innerHTML = message;
+        }
+
+        function hideModalFeedback() {
+            const box = document.getElementById('modalUploadFeedback');
+            if (!box) return;
+            box.className = 'upload-feedback-box';
+            box.innerHTML = '';
+        }
+
+        function checkPortalServerStatus() {
+            const statusPill = document.getElementById('modalServerStatus');
+            if (!statusPill) return;
+
+            fetch('/api/health')
+                .then(r => r.json())
+                .then(data => {
+                    statusPill.innerHTML = `<span class="status-dot online"></span> <span>Portal Server: <strong class="text-accent-green">Online</strong> (Database aktiv)</span>`;
+                })
+                .catch(() => {
+                    fetch('http://localhost:8000/api/health')
+                        .then(r => r.json())
+                        .then(data => {
+                            statusPill.innerHTML = `<span class="status-dot online"></span> <span>Portal Server: <strong class="text-accent-green">Online</strong> (http://localhost:8000)</span>`;
+                        })
+                        .catch(() => {
+                            statusPill.innerHTML = `<span class="status-dot offline"></span> <span>Portal Server: <strong class="text-alert-amber">Offline</strong> — start med <code style="color: var(--accent-blue);">python src/tools/portal_server.py</code></span>`;
+                        });
+                });
+        }
+
+        async function executeUploadToDatabase() {
+            if (!modalSelectedFile) {
+                showModalFeedback('error', '⚠️ Vennligst velg eller dra inn en fil (.csv eller .xlsx) først.');
+                return;
+            }
+
+            const period = document.getElementById('modalUploadPeriod').value;
+            const datatype = document.getElementById('modalUploadType').value;
+            const tag = document.getElementById('modalUploadTag').value.trim() || '2026T1okt';
+            const uploadBtn = document.getElementById('btnModalUpload');
+
+            if (uploadBtn) {
+                uploadBtn.disabled = true;
+                uploadBtn.innerHTML = '<span>⏳</span> Laster opp og lagrer...';
+            }
+            showModalFeedback('info', `⏳ Laster opp <strong>${modalSelectedFile.name}</strong> til databasen for <strong>${period}</strong>...`);
+
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                try {
+                    const rawResult = e.target.result;
+                    const base64Data = rawResult.split(',')[1] || rawResult;
+
+                    const payload = {
+                        filename: modalSelectedFile.name,
+                        period: period,
+                        datatype: datatype,
+                        tag: tag,
+                        content_base64: base64Data
+                    };
+
+                    let response;
+                    try {
+                        response = await fetch('/api/upload', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                    } catch (netErr) {
+                        response = await fetch('http://localhost:8000/api/upload', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                    }
+
+                    const data = await response.json();
+
+                    if (response.ok && data.status === 'SUCCESS') {
+                        showModalFeedback('success', `
+                            <strong>✅ Vellykket lagring til database!</strong><br>
+                            ${data.message}<br>
+                            <small>Tidslinje, dekningskort og rapporter oppdateres nå automatisk for ${period}.</small>
+                        `);
+
+                        // Update client-side inventory
+                        if (!monthlyDatabaseInventory[period]) {
+                            monthlyDatabaseInventory[period] = {
+                                month: period,
+                                name: monthNamesNorwegian[period] || period,
+                                status: 'complete',
+                                has_actuals: true,
+                                ubw_count: data.rows_ingested || 0,
+                                ubw_sum: 0,
+                                travel_count: 0,
+                                travel_sum: 0,
+                                budget_sum: 1175000,
+                                budget_count: 32,
+                                evm_count: 5,
+                                ubw_samples: []
+                            };
+                        }
+
+                        const inv = monthlyDatabaseInventory[period];
+                        inv.status = 'complete';
+                        inv.has_actuals = true;
+
+                        if (data.inventory_update) {
+                            Object.assign(inv, data.inventory_update);
+                        } else if (data.file_type === 'regnskap_ubw') {
+                            inv.ubw_count = (inv.ubw_count || 0) + (data.rows_ingested || 0);
+                        } else if (data.file_type === 'reiseregninger') {
+                            inv.travel_count = (inv.travel_count || 0) + (data.rows_ingested || 0);
+                        }
+
+                        // Register dataset in embeddedDataSources
+                        parseUploadedFileToEmbeddedSource(modalSelectedFile, period, tag);
+
+                        // Switch timeframe to uploaded period and trigger full recalculation
+                        selectPeriod(period);
+
+                        setTimeout(() => {
+                            closeUploadModal();
+                        }, 2200);
+
+                    } else {
+                        showModalFeedback('error', `❌ Feil fra server: ${data.message || 'Ukjent feil under database-oppdatering.'}`);
+                    }
+
+                } catch (err) {
+                    console.error('Upload error:', err);
+                    showModalFeedback('error', `
+                        <strong>⚠️ Portal Server er offline eller utilgjengelig.</strong><br>
+                        For å lagre direkte til SQLite og DuckDB på maskinen, start serveren i terminalen:<br>
+                        <code style="color: var(--accent-blue); background: #090d16; padding: 2px 6px; border-radius: 4px;">python src/tools/portal_server.py</code><br>
+                        <div style="margin-top: 8px;">
+                            Du kan også trykke <strong>"Forhåndsvis i nettleser"</strong> for å utforske filen i minnet, eller bruke <strong>Tab 6 (Streamlit)</strong>.
+                        </div>
+                    `);
+                } finally {
+                    if (uploadBtn) {
+                        uploadBtn.disabled = false;
+                        uploadBtn.innerHTML = '<span>💾</span> Importer og lagre til database';
+                    }
+                }
+            };
+
+            reader.readAsDataURL(modalSelectedFile);
+        }
+
+        function previewSelectedFileInBrowser() {
+            if (!modalSelectedFile) return;
+            handleFileUpload({ target: { files: [modalSelectedFile] } });
+            closeUploadModal();
+        }
+
+        function parseUploadedFileToEmbeddedSource(file, period, tag) {
+            if (!file.name.endsWith('.csv') && !file.name.endsWith('.txt')) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const text = e.target.result;
+                const lines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+                if (lines.length < 2) return;
+                const delimiter = lines[0].includes(';') ? ';' : ',';
+                const headers = lines[0].split(delimiter).map(h => h.trim().replace(/^["\ufeff]+|["]+$/g, ''));
+                const rows = [];
+                for (let i = 1; i < lines.length; i++) {
+                    const vals = lines[i].split(delimiter).map(v => v.trim().replace(/^["]+|["]+$/g, ''));
+                    const obj = {};
+                    headers.forEach((h, idx) => {
+                        const rVal = vals[idx] || '';
+                        const num = Number(rVal.replace(/\s/g, '').replace(',', '.'));
+                        obj[h] = !isNaN(num) && rVal !== '' ? num : rVal;
+                    });
+                    rows.push(obj);
+                }
+                const key = 'imported_' + period.replace('-', '_') + '_' + Date.now();
+                embeddedDataSources[key] = {
+                    name: `${file.name} (${period} — Tag: ${tag})`,
+                    category: 'Importert til Database',
+                    path: `data/staging/${file.name} -> SQLite & DuckDB`,
+                    type: 'Importert Tabell',
+                    description: `Fil importert til SQLite/DuckDB for ${period}. Totalt ${rows.length} rader.`,
+                    columns: headers,
+                    rows: rows
+                };
+                const headerSelect = document.getElementById('headerSourceSelect');
+                if (headerSelect) {
+                    const opt = document.createElement('option');
+                    opt.value = key;
+                    opt.innerText = `Importert: ${file.name} (${period})`;
+                    headerSelect.appendChild(opt);
+                }
+            };
+            reader.readAsText(file, 'utf-8');
+        }
+
+        function initModalDropzone() {
+            const dropzone = document.getElementById('modalDropzone');
+            if (!dropzone) return;
+
+            ['dragenter', 'dragover'].forEach(eventName => {
+                dropzone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropzone.classList.add('dragover');
+                }, false);
+            });
+
+            ['dragleave', 'drop'].forEach(eventName => {
+                dropzone.addEventListener(eventName, (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropzone.classList.remove('dragover');
+                }, false);
+            });
+
+            dropzone.addEventListener('drop', (e) => {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+                handleModalFileSelected(files);
+            }, false);
+        }
+
         // Initialize on Load
         window.addEventListener('DOMContentLoaded', () => {
+            handleTimeframeChange();
             updateEacTable();
             drawScurve();
             runClientSideSimulation();
             renderCurrentDataSource();
             checkStreamlitStatus();
+            initModalDropzone();
+            checkPortalServerStatus();
 
-            // Periodic Streamlit ping
+            // Periodic Streamlit & Portal ping
             setInterval(checkStreamlitStatus, 10000);
+            setInterval(checkPortalServerStatus, 15000);
         });
 
         window.addEventListener('resize', drawScurve);
     </script>
+
+    <!-- Upload Data File Modal (Tufte Compliant) -->
+    <div class="modal-overlay" id="uploadModal" onclick="if(event.target === this) closeUploadModal()">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <span>📤</span> Last opp datafil til databasen
+                </div>
+                <button class="modal-close-btn" onclick="closeUploadModal()" title="Lukk meny (Esc)">✖</button>
+            </div>
+            <div class="modal-body">
+                <!-- Server Connectivity Pill -->
+                <div class="server-status-pill" id="modalServerStatus">
+                    <span class="status-dot online"></span>
+                    <span>Portal Server: Sjekker tilkobling...</span>
+                </div>
+
+                <!-- Form Row: Periode & Datatype -->
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label class="form-label" for="modalUploadPeriod">1. Målperiode</label>
+                        <select class="form-control" id="modalUploadPeriod" onchange="autoSuggestUploadTag()">
+                            <option value="2026-M01">2026-M01 (Januar)</option>
+                            <option value="2026-M02">2026-M02 (Februar)</option>
+                            <option value="2026-M03">2026-M03 (Mars)</option>
+                            <option value="2026-M04">2026-M04 (April)</option>
+                            <option value="2026-M05">2026-M05 (Mai)</option>
+                            <option value="2026-M06">2026-M06 (Juni)</option>
+                            <option value="2026-M07">2026-M07 (Juli)</option>
+                            <option value="2026-M08">2026-M08 (August)</option>
+                            <option value="2026-M09">2026-M09 (September)</option>
+                            <option value="2026-M10" selected>2026-M10 (Oktober — Mangler Actuals)</option>
+                            <option value="2026-M11">2026-M11 (November — Datagap)</option>
+                            <option value="2026-M12">2026-M12 (Desember — Datagap)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="modalUploadType">2. Datatype</label>
+                        <select class="form-control" id="modalUploadType">
+                            <option value="auto" selected>🔍 Automatisk gjenkjenning</option>
+                            <option value="regnskap_ubw">📊 UBW Hovedbok / Regnskap (ubw_transactions_2026)</option>
+                            <option value="reiseregninger">✈️ DFØ Reiseregninger &amp; Utlegg (travel_claims_2026)</option>
+                            <option value="evm_prosjekter">📈 EVM Prosjektstatus (evm_projects_2026 + DuckDB)</option>
+                            <option value="budsjett">🏛️ Budsjettrammer &amp; Allokering (budget_2026)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Form Row: Tag -->
+                <div class="form-group">
+                    <label class="form-label" for="modalUploadTag">3. Datasett Tag / Revisjonsmerke</label>
+                    <input type="text" class="form-control" id="modalUploadTag" value="2026T1okt" placeholder="F.eks. 2026T1okt">
+                    <div style="font-size: 0.725rem; color: var(--text-dim); margin-top: 2px;">
+                        Tildeler en revisjonstag i SQLite (<code>projects.db</code>), DuckDB (<code>analytics_snapshots.duckdb</code>) og Power BI stjerneskjema.
+                    </div>
+                </div>
+
+                <!-- Drag & Drop Zone -->
+                <div class="form-group">
+                    <label class="form-label">4. Velg Datafil (.csv, .xlsx, .xls)</label>
+                    <div class="dropzone-box" id="modalDropzone" onclick="document.getElementById('modalFileInput').click()">
+                        <div class="dropzone-icon">📁</div>
+                        <div class="dropzone-text">Dra og slipp fil her, eller <strong>klikk for å bla gjennom</strong></div>
+                        <div class="dropzone-subtext">Støtter Unit4 UBW regnskapsuttrekk, DFØ reiseregningslister og EVM porteføljefiler.</div>
+                        <input type="file" id="modalFileInput" accept=".csv,.xlsx,.xls" style="display: none;" onchange="handleModalFileSelected(this.files)">
+                    </div>
+
+                    <!-- Selected file summary -->
+                    <div id="modalSelectedFileCard" class="selected-file-card" style="display: none; margin-top: 10px;">
+                        <div>
+                            <span id="selectedFileName" style="font-weight: 600; color: var(--text-main);">fil.csv</span>
+                            <span id="selectedFileSize" style="color: var(--text-muted); font-size: 0.75rem; margin-left: 8px;">0 KB</span>
+                        </div>
+                        <button class="btn-action btn-danger" style="padding: 2px 8px; font-size: 0.7rem;" onclick="clearModalFile(event)">Fjern</button>
+                    </div>
+                </div>
+
+                <!-- Upload Feedback Alert -->
+                <div class="upload-feedback-box" id="modalUploadFeedback"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-action" onclick="closeUploadModal()">Avbryt</button>
+                <div style="display: flex; gap: 8px;">
+                    <button class="btn-action" onclick="previewSelectedFileInBrowser()" id="btnModalPreview" style="display: none;">
+                        <span>👁️</span> Forhåndsvis i nettleser
+                    </button>
+                    <button class="btn-action btn-primary" id="btnModalUpload" onclick="executeUploadToDatabase()">
+                        <span>💾</span> Importer og lagre til database
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
