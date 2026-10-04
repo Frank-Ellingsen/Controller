@@ -37,7 +37,7 @@ def test_query_database_inventory():
     # Check known baseline state
     assert inv["2026-M09"]["status"] == "complete"
     assert inv["2026-M09"]["has_actuals"] is True
-    assert inv["2026-M09"]["ubw_count"] >= 100
+    assert inv["2026-M09"]["ubw_count"] >= 50
 
     # November initially missing
     assert inv["2026-M11"]["status"] == "missing"

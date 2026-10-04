@@ -2256,7 +2256,7 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
                 path: `data/staging/projects.db (WHERE Maaned = '${period}')`,
                 type: 'SQLite Table View',
                 description: inv.has_actuals
-                    ? `Viser utvalg av bokførte transaksjoner for ${period}. Totalt ${inv.ubw_count} bilag (kr ${inv.ubw_total.toLocaleString('no-NO')} NOK).`
+                    ? `Viser utvalg av bokførte transaksjoner for ${period}. Totalt ${inv.ubw_count} bilag (kr ${Math.round(inv.ubw_sum || inv.ubw_total || 0).toLocaleString('no-NO')} NOK).`
                     : `⚠️ Ingen bokførte transaksjoner finnes i databasen for ${period}.`,
                 columns: ['Transaksjon_ID', 'Dato', 'Avdeling', 'Konto', 'Kontonavn', 'Beskrivelse', 'Belop_NOK', 'BDM_ID', 'Attestant_ID', 'Kontrollflagg'],
                 rows: rows
@@ -2962,17 +2962,30 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
 
                     let response;
                     try {
-                        response = await fetch('/api/upload', {
+                        const endpoint = (window.location.origin && window.location.origin.includes('8000')) ? '/api/upload' : 'http://localhost:8000/api/upload';
+                        response = await fetch(endpoint, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(payload)
                         });
                     } catch (netErr) {
-                        response = await fetch('http://localhost:8000/api/upload', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
+                        try {
+                            response = await fetch('http://localhost:8000/api/upload', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload)
+                            });
+                        } catch (netErr2) {
+                            showModalFeedback('error', `
+                                <strong>⚠️ Portal Server er offline eller utilgjengelig.</strong><br>
+                                For å lagre direkte til SQLite og DuckDB på maskinen, start serveren i terminalen:<br>
+                                <code style="color: var(--accent-blue); background: #090d16; padding: 2px 6px; border-radius: 4px;">python src/tools/portal_server.py</code><br>
+                                <div style="margin-top: 8px;">
+                                    Du kan også trykke <strong>"Forhåndsvis i nettleser"</strong> for å utforske filen i minnet, eller bruke <strong>Tab 6 (Streamlit)</strong>.
+                                </div>
+                            `);
+                            return;
+                        }
                     }
 
                     const data = await response.json();
@@ -2984,41 +2997,46 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
                             <small>Tidslinje, dekningskort og rapporter oppdateres nå automatisk for ${period}.</small>
                         `);
 
-                        // Update client-side inventory
-                        if (!monthlyDatabaseInventory[period]) {
-                            monthlyDatabaseInventory[period] = {
-                                month: period,
-                                name: monthNamesNorwegian[period] || period,
-                                status: 'complete',
-                                has_actuals: true,
-                                ubw_count: data.rows_ingested || 0,
-                                ubw_sum: 0,
-                                travel_count: 0,
-                                travel_sum: 0,
-                                budget_sum: 1175000,
-                                budget_count: 32,
-                                evm_count: 5,
-                                ubw_samples: []
-                            };
+                        // Update client-side inventory safely
+                        try {
+                            if (!monthlyDatabaseInventory[period]) {
+                                monthlyDatabaseInventory[period] = {
+                                    month: period,
+                                    name: monthNamesNorwegian[period] || period,
+                                    status: 'complete',
+                                    has_actuals: true,
+                                    ubw_count: data.rows_ingested || 0,
+                                    ubw_sum: 0,
+                                    ubw_total: 0,
+                                    travel_count: 0,
+                                    travel_sum: 0,
+                                    budget_sum: 1175000,
+                                    budget_count: 32,
+                                    evm_count: 5,
+                                    ubw_samples: []
+                                };
+                            }
+
+                            const inv = monthlyDatabaseInventory[period];
+                            inv.status = 'complete';
+                            inv.has_actuals = true;
+
+                            if (data.inventory_update) {
+                                Object.assign(inv, data.inventory_update);
+                            } else if (data.file_type === 'regnskap_ubw') {
+                                inv.ubw_count = (inv.ubw_count || 0) + (data.rows_ingested || 0);
+                            } else if (data.file_type === 'reiseregninger') {
+                                inv.travel_count = (inv.travel_count || 0) + (data.rows_ingested || 0);
+                            }
+
+                            // Register dataset in embeddedDataSources
+                            parseUploadedFileToEmbeddedSource(modalSelectedFile, period, tag);
+
+                            // Switch timeframe to uploaded period and trigger full recalculation
+                            selectPeriod(period);
+                        } catch (uiErr) {
+                            console.warn('UI refresh note:', uiErr);
                         }
-
-                        const inv = monthlyDatabaseInventory[period];
-                        inv.status = 'complete';
-                        inv.has_actuals = true;
-
-                        if (data.inventory_update) {
-                            Object.assign(inv, data.inventory_update);
-                        } else if (data.file_type === 'regnskap_ubw') {
-                            inv.ubw_count = (inv.ubw_count || 0) + (data.rows_ingested || 0);
-                        } else if (data.file_type === 'reiseregninger') {
-                            inv.travel_count = (inv.travel_count || 0) + (data.rows_ingested || 0);
-                        }
-
-                        // Register dataset in embeddedDataSources
-                        parseUploadedFileToEmbeddedSource(modalSelectedFile, period, tag);
-
-                        // Switch timeframe to uploaded period and trigger full recalculation
-                        selectPeriod(period);
 
                         setTimeout(() => {
                             closeUploadModal();
@@ -3029,15 +3047,8 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
                     }
 
                 } catch (err) {
-                    console.error('Upload error:', err);
-                    showModalFeedback('error', `
-                        <strong>⚠️ Portal Server er offline eller utilgjengelig.</strong><br>
-                        For å lagre direkte til SQLite og DuckDB på maskinen, start serveren i terminalen:<br>
-                        <code style="color: var(--accent-blue); background: #090d16; padding: 2px 6px; border-radius: 4px;">python src/tools/portal_server.py</code><br>
-                        <div style="margin-top: 8px;">
-                            Du kan også trykke <strong>"Forhåndsvis i nettleser"</strong> for å utforske filen i minnet, eller bruke <strong>Tab 6 (Streamlit)</strong>.
-                        </div>
-                    `);
+                    console.error('Upload processing error:', err);
+                    showModalFeedback('error', `<strong>⚠️ Feil under behandling:</strong> ${err.message || err}`);
                 } finally {
                     if (uploadBtn) {
                         uploadBtn.disabled = false;
@@ -3123,6 +3134,32 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
             }, false);
         }
 
+        async function loadLiveDatabaseInventory() {
+            try {
+                let res;
+                try {
+                    res = await fetch('/api/inventory');
+                } catch (e) {
+                    res = await fetch('http://localhost:8000/api/inventory');
+                }
+                if (res && res.ok) {
+                    const data = await res.json();
+                    if (data && data.monthly_inventory) {
+                        Object.keys(data.monthly_inventory).forEach(k => {
+                            if (monthlyDatabaseInventory[k]) {
+                                Object.assign(monthlyDatabaseInventory[k], data.monthly_inventory[k]);
+                            } else {
+                                monthlyDatabaseInventory[k] = data.monthly_inventory[k];
+                            }
+                        });
+                        handleTimeframeChange();
+                    }
+                }
+            } catch (err) {
+                // Graceful fallback to embedded inventory
+            }
+        }
+
         // Initialize on Load
         window.addEventListener('DOMContentLoaded', () => {
             handleTimeframeChange();
@@ -3133,6 +3170,7 @@ const monthlyDatabaseInventory = {"2026-M01": {"month": "2026-M01", "name": "Jan
             checkStreamlitStatus();
             initModalDropzone();
             checkPortalServerStatus();
+            loadLiveDatabaseInventory();
 
             // Periodic Streamlit & Portal ping
             setInterval(checkStreamlitStatus, 10000);

@@ -53,6 +53,7 @@ def query_database_inventory(db_path: Path = None) -> dict:
             "has_actuals": False,
             "ubw_count": 0,
             "ubw_sum": 0.0,
+            "ubw_total": 0.0,
             "travel_count": 0,
             "travel_sum": 0.0,
             "travel_flagged": 0,
@@ -85,6 +86,7 @@ def query_database_inventory(db_path: Path = None) -> dict:
                 if m in inventory:
                     inventory[m]["ubw_count"] = int(row["cnt"])
                     inventory[m]["ubw_sum"] = float(row["total"])
+                    inventory[m]["ubw_total"] = float(row["total"])
                     if inventory[m]["ubw_count"] > 0:
                         inventory[m]["has_actuals"] = True
 

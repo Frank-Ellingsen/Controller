@@ -101,6 +101,17 @@ def ingest_data_file(
             df = henter_transaksjonsflagg(df)
 
         ensure_columns_exist(conn_sqlite, "ubw_transactions_2026", df)
+        try:
+            if "Transaksjon_ID" in df.columns:
+                ids = [str(x) for x in df["Transaksjon_ID"].dropna().unique()]
+                if ids:
+                    chunks = [ids[i:i + 500] for i in range(0, len(ids), 500)]
+                    for chk in chunks:
+                        ph = ",".join("?" * len(chk))
+                        conn_sqlite.execute(f"DELETE FROM ubw_transactions_2026 WHERE Transaksjon_ID IN ({ph})", chk)
+                    conn_sqlite.commit()
+        except Exception:
+            pass
         df.to_sql("ubw_transactions_2026", conn_sqlite, if_exists="append", index=False)
         
         # Primary ubw_transactions sync
@@ -134,6 +145,17 @@ def ingest_data_file(
             df["Kontrollflagg"] = df["Reise_ID"].map(lambda x: findings_map.get(x, "OK"))
 
         ensure_columns_exist(conn_sqlite, "travel_claims_2026", df)
+        try:
+            if "Reise_ID" in df.columns:
+                ids = [str(x) for x in df["Reise_ID"].dropna().unique()]
+                if ids:
+                    chunks = [ids[i:i + 500] for i in range(0, len(ids), 500)]
+                    for chk in chunks:
+                        ph = ",".join("?" * len(chk))
+                        conn_sqlite.execute(f"DELETE FROM travel_claims_2026 WHERE Reise_ID IN ({ph})", chk)
+                    conn_sqlite.commit()
+        except Exception:
+            pass
         df.to_sql("travel_claims_2026", conn_sqlite, if_exists="append", index=False)
 
     elif file_type == "evm_prosjekter":
@@ -148,6 +170,13 @@ def ingest_data_file(
         cols_evm_2026 = ['Project_ID', 'Project_Name', 'Avdeling', 'BAC_NOK', 'PV_NOK', 'EV_NOK', 'AC_NOK', 'Tag', 'Maaned', 'CPI', 'SPI', 'CV_NOK', 'SV_NOK', 'EAC_NOK', 'VAC_NOK', 'ETC_NOK', 'TCPI', 'Status']
         df_evm_sql = df[[c for c in cols_evm_2026 if c in df.columns]]
         ensure_columns_exist(conn_sqlite, "evm_projects_2026", df_evm_sql)
+        try:
+            m_val = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else None)
+            if m_val:
+                conn_sqlite.execute("DELETE FROM evm_projects_2026 WHERE Maaned = ? AND Tag = ?", [m_val, tag])
+                conn_sqlite.commit()
+        except Exception:
+            pass
         df_evm_sql.to_sql("evm_projects_2026", conn_sqlite, if_exists="append", index=False)
         
         # Primary evm_projects sync (only for baseline portfolio tag)
