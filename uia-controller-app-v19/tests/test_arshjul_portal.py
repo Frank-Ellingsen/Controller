@@ -51,7 +51,7 @@ def test_index_html_has_arshjul_tab():
 
     # 1. Tab button in nav
     assert 'switchTab(\'arshjul-tab\')' in content
-    assert '<span>📅 Årshjul &amp; Budsjett</span>' in content
+    assert '<span>📅 Årshjul Kalender</span>' in content or '<span>📅 Årshjul &amp; Budsjett</span>' in content
 
     # 2. Tab panel container
     assert 'id="arshjul-tab"' in content
@@ -59,12 +59,13 @@ def test_index_html_has_arshjul_tab():
     # 3. SheetJS script in head
     assert 'xlsx.full.min.js' in content
 
-    # 4. 4 Quarterly Milestone Cards
-    assert 'Q1: Årsoppgjør &amp; Rapportering' in content
-    assert '15. MARS' in content
-    assert 'Q2: 1. Tertial &amp; RNB' in content
-    assert 'Q3: 2. Tertial &amp; Modell' in content
-    assert 'Q4: Rammer &amp; Tildelingsbrev' in content
+    # 4. Circular Årshjul Wheel & 12-Month Calendar Grid
+    assert 'id="arshjulWheelSvg"' in content
+    assert 'id="arshjulCalendarGrid"' in content
+    assert 'id="arshjulInspectorCard"' in content
+    assert 'switchArshjulSubView' in content
+    assert 'selectArshjulMonth' in content
+    assert 'arshjulMonthDetails' in content
 
     # 5. Milestone & Check-off Tables
     assert 'id="arshjulAvsjekkTable"' in content
@@ -89,4 +90,5 @@ def test_v21_portal_has_arshjul_tab():
     content = portal_v21.read_text(encoding="utf-8")
     assert 'switchTab(\'arshjul-tab\')' in content
     assert 'id="arshjul-tab"' in content
+    assert 'arshjulWheelSvg' in content
     assert 'exportArshjulToExcel' in content
