@@ -1,0 +1,140 @@
+table Fact_Travel_Audit
+	lineageTag: b1b90dc0-b838-4f86-a089-56e916dc4647
+
+	column Reise_ID
+		dataType: string
+		lineageTag: 129f46b8-374d-4161-a0cb-546ada199eed
+		summarizeBy: none
+		sourceColumn: Reise_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ansatt
+		dataType: string
+		lineageTag: 70210018-ac41-4a38-b34b-cae12bab60eb
+		summarizeBy: none
+		sourceColumn: Ansatt
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dato
+		dataType: string
+		lineageTag: f92e4081-f5b8-49bc-9723-20e22403dd12
+		summarizeBy: none
+		sourceColumn: Dato
+
+		annotation SummarizationSetBy = Automatic
+
+	column Formaal
+		dataType: string
+		lineageTag: bd0f84a9-49b2-43b0-abc1-3b932fe62f59
+		summarizeBy: none
+		sourceColumn: Formaal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Belop_NOK
+		dataType: double
+		formatString: #,##0
+		lineageTag: 79a87197-c0d5-4e9d-84ae-aeb1acdbb4ae
+		summarizeBy: sum
+		sourceColumn: Belop_NOK
+
+		annotation SummarizationSetBy = Automatic
+
+	column Maltid_Dekket
+		dataType: string
+		lineageTag: f3fe8866-dbe8-411e-ac6b-0c01e041e29c
+		summarizeBy: none
+		sourceColumn: Maltid_Dekket
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fradrag_Utfort
+		dataType: boolean
+		lineageTag: f25802e0-6ca0-4a1d-98ba-2bc121af7b97
+		summarizeBy: none
+		sourceColumn: Fradrag_Utfort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Km_Godtgjorelse
+		dataType: int64
+		formatString: #,##0
+		lineageTag: dcbdb61a-4c35-4ac6-bf45-c0487d8ce2b8
+		summarizeBy: sum
+		sourceColumn: Km_Godtgjorelse
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kvittering_Vedlagt
+		dataType: boolean
+		lineageTag: 95339a46-1300-4810-a642-1d40fbf52587
+		summarizeBy: none
+		sourceColumn: Kvittering_Vedlagt
+
+		annotation SummarizationSetBy = Automatic
+
+	column BDM_ID
+		dataType: string
+		lineageTag: 0831c0ed-4438-4258-9c99-2c6b82e1fcde
+		summarizeBy: none
+		sourceColumn: BDM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attestant_ID
+		dataType: string
+		lineageTag: 4bbf26f2-cdc3-4a35-af8c-64034ebc6bc0
+		summarizeBy: none
+		sourceColumn: Attestant_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Km_Rute_Beskrevet
+		dataType: boolean
+		lineageTag: 92e8208a-d985-4fe2-8ded-bc3a630ee797
+		summarizeBy: none
+		sourceColumn: Km_Rute_Beskrevet
+
+		annotation SummarizationSetBy = Automatic
+
+	column Avvik_Beskrivelse
+		dataType: string
+		lineageTag: 0a47253f-5497-4f37-898d-e85c5a0d303d
+		summarizeBy: none
+		sourceColumn: Avvik_Beskrivelse
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: b3e54d80-c67b-433e-9844-8afdd4756d21
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Travel_Audit-partition = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\Fact_Travel_Audit.parquet")),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{
+				        {"Reise_ID", type text},
+				        {"Ansatt", type text},
+				        {"Dato", type text},
+				        {"Formaal", type text},
+				        {"Belop_NOK", type number},
+				        {"Maltid_Dekket", type text},
+				        {"Fradrag_Utfort", type logical},
+				        {"Km_Godtgjorelse", Int64.Type},
+				        {"Kvittering_Vedlagt", type logical},
+				        {"BDM_ID", type text},
+				        {"Attestant_ID", type text},
+				        {"Km_Rute_Beskrevet", type logical},
+				        {"Avvik_Beskrivelse", type text},
+				        {"Status", type text}
+				    })
+				in
+				    #"Changed Type"

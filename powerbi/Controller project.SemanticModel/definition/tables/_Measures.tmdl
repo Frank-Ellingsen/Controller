@@ -1,0 +1,177 @@
+table _Measures
+	lineageTag: 879b9ae5-863d-4bc0-acf3-b3060ca9e5f1
+
+	// ==========================================
+	// SECTION 1: CORE EVM BASE METRICS
+	// ==========================================
+
+	measure 'Total BAC' = SUM('Fact_EVM_Snapshots'[bac])
+		formatString: #,##0
+		displayFolder: '01 Core EVM'
+		lineageTag: 6bfeb659-a2d0-4016-9525-e9cf9c7812d8
+
+	measure 'Total PV' = SUM('Fact_EVM_Snapshots'[pv])
+		formatString: #,##0
+		displayFolder: '01 Core EVM'
+		lineageTag: f103a423-2555-4d3f-8203-111e0eeea672
+
+	measure 'Total EV' = SUM('Fact_EVM_Snapshots'[ev])
+		formatString: #,##0
+		displayFolder: '01 Core EVM'
+		lineageTag: 218420f4-b37d-47ed-b4d1-6b4fb0332fe3
+
+	measure 'Total AC' = SUM('Fact_EVM_Snapshots'[ac])
+		formatString: #,##0
+		displayFolder: '01 Core EVM'
+		lineageTag: ae475f65-e857-47ed-bf0f-47d2e956b19b
+
+	measure 'Cost Variance NOK' = [Total EV] - [Total AC]
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '01 Core EVM'
+		lineageTag: 32b5580f-9554-4de1-876f-d07c389bf2ef
+
+	measure 'Schedule Variance NOK' = [Total EV] - [Total PV]
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '01 Core EVM'
+		lineageTag: f1616326-008e-4ed4-b105-07acf79eadec
+
+	measure 'Portfolio CPI' = DIVIDE([Total EV], [Total AC], 1.0)
+		formatString: 0.00
+		displayFolder: '01 Core EVM'
+		lineageTag: e7f4585d-d7d6-421e-a531-4fc5cf85a353
+
+	measure 'Portfolio SPI' = DIVIDE([Total EV], [Total PV], 1.0)
+		formatString: 0.00
+		displayFolder: '01 Core EVM'
+		lineageTag: c5ef8a3a-5fb6-4172-8a69-6d75bcd1d572
+
+	// ==========================================
+	// SECTION 2: MULTI-MODEL EAC FORECASTING
+	// ==========================================
+
+	measure 'EAC Typical CPI' = DIVIDE([Total BAC], [Portfolio CPI], [Total BAC])
+		formatString: #,##0
+		displayFolder: '02 EAC Forecasting'
+		lineageTag: 90e80d69-a088-4506-a1bc-b62065a6df9a
+
+	measure 'EAC Composite CPI_SPI' = VAR RemainingWork = [Total BAC] - [Total EV] VAR CompositeIndex = [Portfolio CPI] * [Portfolio SPI] RETURN IF(CompositeIndex > 0, [Total AC] + DIVIDE(RemainingWork, CompositeIndex, RemainingWork), [Total BAC])
+		formatString: #,##0
+		displayFolder: '02 EAC Forecasting'
+		lineageTag: 3878842d-b60d-4c69-8d06-6ddc9db1f45e
+
+	measure 'EAC Weighted 80_20' = VAR RemainingWork = [Total BAC] - [Total EV] VAR WeightedIndex = 0.8 * [Portfolio CPI] + 0.2 * [Portfolio SPI] RETURN IF(WeightedIndex > 0, [Total AC] + DIVIDE(RemainingWork, WeightedIndex, RemainingWork), [Total BAC])
+		formatString: #,##0
+		displayFolder: '02 EAC Forecasting'
+		lineageTag: 65b7ab55-07c2-4bc7-9301-d29ba7de3812
+
+	measure 'EAC Selected Model' = VAR SelectedModel = SELECTEDVALUE('Dim_Model_Parameter'[ModelCode], "CPI") RETURN SWITCH(SelectedModel, "CPI", [EAC Typical CPI], "COMPOSITE", [EAC Composite CPI_SPI], "WEIGHTED", [EAC Weighted 80_20], [EAC Typical CPI])
+		formatString: #,##0
+		displayFolder: '02 EAC Forecasting'
+		lineageTag: f400c08a-8039-4d1b-8e13-56a88e15a7f4
+
+	measure 'VAC Selected Model' = [Total BAC] - [EAC Selected Model]
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '02 EAC Forecasting'
+		lineageTag: 3e8cb333-d679-4e3e-950f-df2a9fff5287
+
+	// ==========================================
+	// SECTION 3: TCPI & RISK INDICATORS
+	// ==========================================
+
+	measure 'TCPI Target BAC' = VAR RemainingWork = [Total BAC] - [Total EV] VAR RemainingFund = [Total BAC] - [Total AC] RETURN IF(RemainingFund > 0, DIVIDE(RemainingWork, RemainingFund, 9.99), 9.99)
+		formatString: 0.00
+		displayFolder: '03 TCPI & Risk'
+		lineageTag: 356d8054-8ff2-4150-84e6-344e388631f2
+
+	measure 'Project Risk Status' = VAR CurrentCPI = [Portfolio CPI] VAR CurrentSPI = [Portfolio SPI] VAR CurrentVAC = [VAC Selected Model] RETURN SWITCH(TRUE(), CurrentCPI < 0.85 || CurrentSPI < 0.85 || CurrentVAC < -1000000, "CRITICAL", CurrentCPI < 0.95 || CurrentSPI < 0.95 || CurrentVAC < -250000, "WARNING", "ON TRACK")
+		displayFolder: '03 TCPI & Risk'
+		lineageTag: 89afe147-2592-488f-bf44-d966d567abc9
+
+	measure 'Status Color Hex' = SWITCH([Project Risk Status], "CRITICAL", "#ef4444", "WARNING", "#f59e0b", "ON TRACK", "#34d399", "#94a3b8")
+		displayFolder: '03 TCPI & Risk'
+		lineageTag: 9091913a-697d-4555-b098-803bcafc6a23
+
+	// ==========================================
+	// SECTION 4: F-05-20 STATLIG DRIFTSAVSETNING
+	// ==========================================
+
+	measure 'Statlig Rammebevilgning NOK' = 1200000000
+		formatString: #,##0
+		displayFolder: '04 F-05-20 Reserve Cap'
+		lineageTag: 2341ad72-481c-46d1-8a6f-6b6ae86eb462
+
+	measure 'Reell Driftsavsetning NOK' = 72000000
+		formatString: #,##0
+		displayFolder: '04 F-05-20 Reserve Cap'
+		lineageTag: d3134194-bda8-453c-a1cd-6b55ff966a9d
+
+	measure 'Reserve Share Pct' = DIVIDE([Reell Driftsavsetning NOK], [Statlig Rammebevilgning NOK], 0)
+		formatString: 0.0%
+		displayFolder: '04 F-05-20 Reserve Cap'
+		lineageTag: 5e4a80d0-9a11-40ce-836d-45087998fa9d
+
+	measure 'Reserve Cap 5% Limit NOK' = [Statlig Rammebevilgning NOK] * 0.05
+		formatString: #,##0
+		displayFolder: '04 F-05-20 Reserve Cap'
+		lineageTag: 8c385eba-193d-406d-8f3c-57cc8aca8703
+
+	measure 'Reserve Cap Excess NOK' = MAX(0, [Reell Driftsavsetning NOK] - [Reserve Cap 5% Limit NOK])
+		formatString: #,##0
+		displayFolder: '04 F-05-20 Reserve Cap'
+		lineageTag: 511267ab-904e-4a87-9d0e-0b7731d693c6
+
+	measure 'F-05-20 Status Flag' = IF([Reserve Cap Excess NOK] > 0, "DISPENSASJON PÅKREVD", "INNENFOR GRENSE")
+		displayFolder: '04 F-05-20 Reserve Cap'
+		lineageTag: 6305835f-f437-4e10-8bf4-7b5487e24235
+
+	// ==========================================
+	// SECTION 5: DFØ TRAVEL AUDIT & UBW LEDGER
+	// ==========================================
+
+	measure 'Total Scanned Claims Count' = COUNTROWS('Fact_Travel_Audit')
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: 5a822694-491d-4549-b353-ee0f051a88a3
+
+	measure 'Flagged Claims Count' = CALCULATE(COUNTROWS('Fact_Travel_Audit'), 'Fact_Travel_Audit'[Status] = "FLAGGED")
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: 4c3622b1-7368-43c4-900d-6c7e854e422d
+
+	measure 'Total Flagged Amount NOK' = CALCULATE(SUM('Fact_Travel_Audit'[Belop_NOK]), 'Fact_Travel_Audit'[Status] = "FLAGGED")
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: 95995a65-5b75-4bab-b5c9-dbc61f36119a
+
+	measure 'Self-Approval Breach Amount NOK' = CALCULATE(SUM('Fact_Travel_Audit'[Belop_NOK]), SEARCH("Egengodkjenning", 'Fact_Travel_Audit'[Avvik_Beskrivelse], 1, 0) > 0)
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: d9ca603e-5586-4dc1-8d50-a712825c0d7a
+
+	measure 'Total UBW Transactions Count' = COUNTROWS('Fact_UBW_Audit')
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: 81092117-e642-460a-8f94-46c41018bff7
+
+	measure 'Total UBW Amount NOK' = SUM('Fact_UBW_Audit'[belop_nok])
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: 25322113-c78b-4a74-9404-082493670a5d
+
+	measure 'Flagged UBW Transactions Count' = CALCULATE(COUNTROWS('Fact_UBW_Audit'), 'Fact_UBW_Audit'[Kontrollflagg] <> "OK")
+		formatString: #,##0
+		displayFolder: '05 Compliance & Audit'
+		lineageTag: 039a65cd-5b22-43dd-8ea8-7c36b4ec0f63
+
+	column _Placeholder
+		dataType: string
+		isHidden
+		lineageTag: ed7b4106-2d35-4537-b277-05b68ef6da1f
+		summarizeBy: none
+		sourceColumn: _Placeholder
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures-partition = m
+		mode: import
+		source = let Source = #table({"_Placeholder"}, {{1}}) in Source

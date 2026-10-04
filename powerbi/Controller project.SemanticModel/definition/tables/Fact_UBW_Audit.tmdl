@@ -1,0 +1,94 @@
+table Fact_UBW_Audit
+	lineageTag: 18f1ee89-b816-4f4c-8d91-d36de8ff6e87
+
+	column transaksjon_id
+		dataType: string
+		lineageTag: cd07f925-2bd3-4801-8797-9f6121ee2e5b
+		summarizeBy: none
+		sourceColumn: transaksjon_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column konto
+		dataType: string
+		lineageTag: 9e0fa220-49ee-4d5d-9cf0-f296e20f6d49
+		summarizeBy: none
+		sourceColumn: konto
+
+		annotation SummarizationSetBy = Automatic
+
+	column beskrivelse
+		dataType: string
+		lineageTag: e1874ffa-c5ce-4573-8029-7bc76ad67510
+		summarizeBy: none
+		sourceColumn: beskrivelse
+
+		annotation SummarizationSetBy = Automatic
+
+	column belop_nok
+		dataType: double
+		formatString: #,##0
+		lineageTag: 224a2dd3-9cca-4def-a875-b4f6d6366eeb
+		summarizeBy: sum
+		sourceColumn: belop_nok
+
+		annotation SummarizationSetBy = Automatic
+
+	column bdm_id
+		dataType: string
+		lineageTag: 5a587b87-9776-4c0b-8a21-3f299ecad4a2
+		summarizeBy: none
+		sourceColumn: bdm_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column attestant_id
+		dataType: string
+		lineageTag: c3feae6c-83fa-4ab1-87b6-18db21f0c8c4
+		summarizeBy: none
+		sourceColumn: attestant_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column kvittering_vedlagt
+		dataType: int64
+		lineageTag: 56d7148c-7c0c-42b2-9cb0-b0e5962fe83a
+		summarizeBy: none
+		sourceColumn: kvittering_vedlagt
+
+		annotation SummarizationSetBy = Automatic
+
+	column formaal
+		dataType: string
+		lineageTag: bf94b287-9483-4b05-9653-490064340791
+		summarizeBy: none
+		sourceColumn: formaal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kontrollflagg
+		dataType: string
+		lineageTag: a1fb72c2-a0a0-48e6-beef-e87aab5d2a53
+		summarizeBy: none
+		sourceColumn: Kontrollflagg
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_UBW_Audit-partition = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\Fact_UBW_Audit.parquet")),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{
+				        {"transaksjon_id", type text},
+				        {"konto", type text},
+				        {"beskrivelse", type text},
+				        {"belop_nok", type number},
+				        {"bdm_id", type text},
+				        {"attestant_id", type text},
+				        {"kvittering_vedlagt", Int64.Type},
+				        {"formaal", type text},
+				        {"Kontrollflagg", type text}
+				    })
+				in
+				    #"Changed Type"

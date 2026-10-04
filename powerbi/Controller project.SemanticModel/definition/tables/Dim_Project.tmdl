@@ -1,0 +1,79 @@
+table Dim_Project
+	lineageTag: 5ef6f222-294b-4d98-a3fe-54ebe3311e34
+
+	column project_id
+		dataType: string
+		lineageTag: 9c0d5d64-3873-460c-9e02-84c6b59d3f9e
+		summarizeBy: none
+		sourceColumn: project_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column project_name
+		dataType: string
+		lineageTag: 250d6e32-db06-496a-b1bd-425e0c8fe619
+		summarizeBy: none
+		sourceColumn: project_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bac
+		dataType: double
+		formatString: #,##0
+		lineageTag: 3b236af3-bf2b-42ac-a0ba-d3a75dbaf91c
+		summarizeBy: sum
+		sourceColumn: bac
+
+		annotation SummarizationSetBy = Automatic
+
+	column pv
+		dataType: double
+		formatString: #,##0
+		lineageTag: ca046c9b-94dc-4b48-b303-a96710bc601d
+		summarizeBy: sum
+		sourceColumn: pv
+
+		annotation SummarizationSetBy = Automatic
+
+	column ev
+		dataType: double
+		formatString: #,##0
+		lineageTag: cbc620de-d987-4cef-9d9b-41aaea9612d8
+		summarizeBy: sum
+		sourceColumn: ev
+
+		annotation SummarizationSetBy = Automatic
+
+	column ac
+		dataType: double
+		formatString: #,##0
+		lineageTag: 77bbe218-50ec-4592-bde8-81c4966ba2c7
+		summarizeBy: sum
+		sourceColumn: ac
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 9c31bbb8-bd6c-4dca-a9a2-36819efcde98
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Project-partition = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\Dim_Project.parquet")),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{
+				        {"project_id", type text},
+				        {"project_name", type text},
+				        {"bac", type number},
+				        {"pv", type number},
+				        {"ev", type number},
+				        {"ac", type number},
+				        {"status", type text}
+				    })
+				in
+				    #"Changed Type"

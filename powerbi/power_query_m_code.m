@@ -1,13 +1,14 @@
 // ===============================================================================
 // Power Query (M) Load & Transformation Scripts for UiA Controller App
-// Ingests Parquet & CSV files from data/staging/parquet/ into Power BI Desktop
+// Ingests Parquet files from data/staging/parquet/ into Power BI Desktop
+// Base Path: C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\
 // ===============================================================================
 
 // -------------------------------------------------------------------------------
 // 1. Fact_EVM_Snapshots Query
 // -------------------------------------------------------------------------------
 let
-    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\md_files\uia-controller-app-v12\uia-controller-app\data\staging\parquet\",
+    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\",
     SourceFile = SourceFolder & "Fact_EVM_Snapshots.parquet",
     Source = Parquet.Document(File.Contents(SourceFile)),
     #"Changed Type" = Table.TransformColumnTypes(Source,{
@@ -34,31 +35,62 @@ in
 // 2. Dim_Project Query
 // -------------------------------------------------------------------------------
 let
-    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\md_files\uia-controller-app-v12\uia-controller-app\data\staging\parquet\",
+    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\",
     SourceFile = SourceFolder & "Dim_Project.parquet",
     Source = Parquet.Document(File.Contents(SourceFile)),
     #"Changed Type" = Table.TransformColumnTypes(Source,{
         {"project_id", type text},
         {"project_name", type text},
-        {"department", type text},
-        {"pm_name", type text},
-        {"bac", type number}
+        {"bac", type number},
+        {"pv", type number},
+        {"ev", type number},
+        {"ac", type number},
+        {"status", type text}
     })
 in
     #"Changed Type"
 
 // -------------------------------------------------------------------------------
-// 3. Fact_Travel_Audit Query
+// 3. Fact_UBW_Audit Query
 // -------------------------------------------------------------------------------
 let
-    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\md_files\uia-controller-app-v12\uia-controller-app\data\staging\parquet\",
+    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\",
+    SourceFile = SourceFolder & "Fact_UBW_Audit.parquet",
+    Source = Parquet.Document(File.Contents(SourceFile)),
+    #"Changed Type" = Table.TransformColumnTypes(Source,{
+        {"transaksjon_id", type text},
+        {"konto", type text},
+        {"beskrivelse", type text},
+        {"belop_nok", type number},
+        {"bdm_id", type text},
+        {"attestant_id", type text},
+        {"kvittering_vedlagt", Int64.Type},
+        {"formaal", type text},
+        {"Kontrollflagg", type text}
+    })
+in
+    #"Changed Type"
+
+// -------------------------------------------------------------------------------
+// 4. Fact_Travel_Audit Query
+// -------------------------------------------------------------------------------
+let
+    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\",
     SourceFile = SourceFolder & "Fact_Travel_Audit.parquet",
     Source = Parquet.Document(File.Contents(SourceFile)),
     #"Changed Type" = Table.TransformColumnTypes(Source,{
         {"Reise_ID", type text},
-        {"Ansatt_Navn", type text},
-        {"Enhet", type text},
+        {"Ansatt", type text},
+        {"Dato", type text},
+        {"Formaal", type text},
         {"Belop_NOK", type number},
+        {"Maltid_Dekket", type text},
+        {"Fradrag_Utfort", type logical},
+        {"Km_Godtgjorelse", Int64.Type},
+        {"Kvittering_Vedlagt", type logical},
+        {"BDM_ID", type text},
+        {"Attestant_ID", type text},
+        {"Km_Rute_Beskrevet", type logical},
         {"Avvik_Beskrivelse", type text},
         {"Status", type text}
     })
@@ -66,14 +98,14 @@ in
     #"Changed Type"
 
 // -------------------------------------------------------------------------------
-// 4. Dim_Date Query
+// 5. Dim_Date Query
 // -------------------------------------------------------------------------------
 let
-    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\md_files\uia-controller-app-v12\uia-controller-app\data\staging\parquet\",
+    SourceFolder = "C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\",
     SourceFile = SourceFolder & "Dim_Date.parquet",
     Source = Parquet.Document(File.Contents(SourceFile)),
     #"Changed Type" = Table.TransformColumnTypes(Source,{
-        {"Date", type date},
+        {"Date", type datetime},
         {"Year", Int64.Type},
         {"Month", Int64.Type},
         {"MonthName", type text},
@@ -84,7 +116,7 @@ in
     #"Changed Type"
 
 // -------------------------------------------------------------------------------
-// 5. Dim_Model_Parameter Query (Disconnected Slicer Table)
+// 6. Dim_Model_Parameter Query (Disconnected Slicer Table)
 // -------------------------------------------------------------------------------
 let
     ModelTable = #table(
@@ -97,3 +129,11 @@ let
     )
 in
     ModelTable
+
+// -------------------------------------------------------------------------------
+// 7. _Measures Query (Empty Container Table)
+// -------------------------------------------------------------------------------
+let
+    Source = #table({"_Placeholder"}, {{1}})
+in
+    Source

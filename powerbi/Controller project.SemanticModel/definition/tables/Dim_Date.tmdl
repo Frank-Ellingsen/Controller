@@ -1,0 +1,72 @@
+table Dim_Date
+	lineageTag: 9f1598a3-740f-4e73-afb1-de90c048c216
+
+	column Date
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: fc824b96-e585-414b-8322-94809844a8fd
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 564960c1-ef91-4e8d-90c6-10e9fe76c528
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dcece00-58a3-4204-92c7-2be0c1a15805
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 9e998bb4-55e5-40af-acca-1a5fafb88d90
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReportingPeriod
+		dataType: string
+		lineageTag: d48df9f9-9c8a-4ac8-b3d3-6fecad2ba69c
+		summarizeBy: none
+		sourceColumn: ReportingPeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 943f0c28-265e-4d40-aa37-d18f61d61ada
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Date-partition = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents("C:\Users\frank\Desktop\UIA-Controller\data\staging\parquet\Dim_Date.parquet")),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{
+				        {"Date", type datetime},
+				        {"Year", Int64.Type},
+				        {"Month", Int64.Type},
+				        {"MonthName", type text},
+				        {"ReportingPeriod", type text},
+				        {"Quarter", Int64.Type}
+				    })
+				in
+				    #"Changed Type"

@@ -1,0 +1,41 @@
+table Dim_Model_Parameter
+	lineageTag: 57f0b0c0-976a-43d3-8db2-2ae39827de51
+
+	column ModelCode
+		dataType: string
+		lineageTag: c0d75dbe-4cbd-4c19-8a1a-1fa6535765c0
+		summarizeBy: none
+		sourceColumn: ModelCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModelName
+		dataType: string
+		lineageTag: 9b28a420-9a9c-4363-a4c2-e824a59a3c21
+		summarizeBy: none
+		sourceColumn: ModelName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 8de031e3-ee3e-418a-a324-89d038f70990
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Model_Parameter-partition = m
+		mode: import
+		source =
+				let
+				    ModelTable = #table(
+				        type table [ModelCode = text, ModelName = text, Description = text],
+				        {
+				            {"CPI", "Typisk CPI Modell", "BAC / CPI — Forutsetter at historisk kostnadseffektivitet fortsetter"},
+				            {"COMPOSITE", "Sammensatt CPI x SPI Modell", "AC + (BAC - EV)/(CPI*SPI) — Tar hensyn til fremdriftsavvik"},
+				            {"WEIGHTED", "Vektet 80/20 Modell", "AC + (BAC - EV)/(0.8 CPI + 0.2 SPI) — Vekter kostnad 80% og fremdrift 20%"}
+				        }
+				    )
+				in
+				    ModelTable
