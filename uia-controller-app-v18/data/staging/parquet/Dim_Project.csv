@@ -1,0 +1,4 @@
+project_id,project_name,bac,pv,ev,ac,status
+UM-DEF-02,Forsvarsforskning Agder,18500000.0,12000000.0,12200000.0,11800000.0,ON TRACK
+UM-ENG-03,Ingeniørutdanning Fornybar,8200000.0,6500000.0,5200000.0,6800000.0,CRITICAL
+UM-FPV-01,Fotovoltaikk Solceller,45000000.0,22500000.0,21000000.0,23100000.0,CRITICAL
