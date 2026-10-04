@@ -278,6 +278,8 @@
         <button class="tab-btn" onclick="openTab(event, 'tab-datakilder')">💾 4. Datakilder & Power BI</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-kontoplan')">📜 5. Statlig Rapportering & Kontoplan</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-ordliste')">📖 6. Begrepskatalog & Ordliste</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-rapportering')">📋 7. Statlig & Intern Rapportering</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-budsjett2027')">📈 8. Budsjettering 2027 (T+1)</button>
     </nav>
 
     <main class="content">
@@ -643,6 +645,225 @@
                     <tr><td><strong>EOY</strong></td><td>Årshjul & Prognose</td><td>End of Year: Revidert forventet årsresultat og balanseavsetning ved 31.12.</td><td>Årsprognose inkl. tiltakseffekter</td></tr>
                 </tbody>
             </table>
+        <!-- TAB 7: STATLIG & INTERN RAPPORTERING -->
+        <div id="tab-rapportering" class="tab-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div>
+                    <h2>📋 Statlig & Intern Rapporteringsportal (KD, DBH, Riksrevisjonen, Skatteetaten)</h2>
+                    <p style="color: #64748B;">Konsolidert rapportgenerator og oversikt over lovpålagte statlige rapporteringsoppgaver og interne styreoppfølginger for 2026/2027.</p>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-excel" onclick="exportRapporteringToExcel()">📥 Eksporter Rapporteringsmatrise (.xlsx)</button>
+                    <button class="btn" onclick="window.print()">🖨️ Skriv ut / Lagre PDF</button>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">Kunnskapsdepartementet (KD)</div>
+                    <div class="card-value text-success" style="font-size: 1.4rem;">F-05-20 COMPLIANT</div>
+                    <div class="card-sub">Driftsavsetning 5,00 % (kr 60,0M NOK) | Frist: 15. mars</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">DBH / HK-dir Resultatdata</div>
+                    <div class="card-value text-success" style="font-size: 1.4rem;">278 500 STP</div>
+                    <div class="card-sub">42 Ph.d.-grader & 895,4 NVI-poeng | Frist: 15. feb</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Riksrevisjonen Internkontroll</div>
+                    <div class="card-value text-warning" style="font-size: 1.4rem;">7 Avvik Flagg</div>
+                    <div class="card-sub">Reiseregninger kr 19 420 berørt | Fire-øyne godkjenning</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Skatteetaten & BOA/TDI</div>
+                    <div class="card-value text-success" style="font-size: 1.4rem;">Termin 1-4 Verifisert</div>
+                    <div class="card-sub">MVA-kompensasjon & NFR/EU Oppdragsavstemming</div>
+                </div>
+            </div>
+
+            <!-- RAPPORT-LISTE TABELL -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--uia-navy);">📑 Oversikt over Lovpålagte & Interne Rapporter</h3>
+                <div class="filter-controls">
+                    <input type="text" id="search-rapportering" class="search-input" placeholder="Søk i rapportnavn, mottaker, regelverk..." onkeyup="filterRapportering()">
+                </div>
+                <table class="data-table" id="table-rapportering">
+                    <thead>
+                        <tr>
+                            <th>Rapport-ID</th>
+                            <th>Rapportnavn</th>
+                            <th>Mottaker</th>
+                            <th>Regelverksforankring</th>
+                            <th>Frist</th>
+                            <th>Status</th>
+                            <th>Siste Kjøring</th>
+                            <th>Handling</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>KD-F0520-2026</strong></td>
+                            <td>F-05-20 Driftsavsetningsrapport & Reservetak</td>
+                            <td>Kunnskapsdepartementet</td>
+                            <td>KD Rundskriv F-05-20 (Maks 5,0%)</td>
+                            <td>15. mars</td>
+                            <td><span class="badge badge-success">COMPLIANT (5,0%)</span></td>
+                            <td>04.10.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('KD-F0520')">👁️ Vis Rapport</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>KD-ARS-2026</strong></td>
+                            <td>Årsrapport & Årsregnskap SRS 2026</td>
+                            <td>KD & Riksrevisjonen</td>
+                            <td>Statlige RegnskapsStandarder (R-102)</td>
+                            <td>15. mars</td>
+                            <td><span class="badge badge-warning">UTKAST V22</span></td>
+                            <td>04.10.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('KD-ARS')">👁️ Vis Rapport</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DBH-STP-2026</strong></td>
+                            <td>Studiepoengproduksjon & Eksamensresultater</td>
+                            <td>HK-dir (DBH)</td>
+                            <td>UH-loven § 3-1 / DBH Retningslinjer</td>
+                            <td>15. februar</td>
+                            <td><span class="badge badge-success">INNSENDT (102,4%)</span></td>
+                            <td>15.02.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('DBH-STP')">👁️ Vis Rapport</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>DBH-PHD-2026</strong></td>
+                            <td>Doktorgradsdisputaser & Nærings-Ph.d.</td>
+                            <td>HK-dir (DBH)</td>
+                            <td>Forskrift om ph.d.-graden ved UiA</td>
+                            <td>15. februar</td>
+                            <td><span class="badge badge-success">FULLFØRT (42 Stk)</span></td>
+                            <td>15.02.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('DBH-PHD')">👁️ Vis Rapport</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>RR-AUDIT-2026</strong></td>
+                            <td>Riksrevisjonens Internkontroll & Fire-Øyne Attest</td>
+                            <td>Riksrevisjonen</td>
+                            <td>Bevilgningsreglementet § 14 / UiA Fullmakt</td>
+                            <td>Løpende / M12</td>
+                            <td><span class="badge badge-danger">7 AVVIK FLAGGET</span></td>
+                            <td>04.10.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('RR-AUDIT')">👁️ Vis Rapport</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>SKATT-MVA-2026</strong></td>
+                            <td>MVA-Kompensasjonsoppgave for Statsforvaltningen</td>
+                            <td>Skatteetaten</td>
+                            <td>Lov om MVA-kompensasjon i staten</td>
+                            <td>1. mai</td>
+                            <td><span class="badge badge-success">VERIFISERT</span></td>
+                            <td>30.04.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('SKATT-MVA')">👁️ Vis Rapport</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>BOA-TDI-2026</strong></td>
+                            <td>Bidrags- og Oppdragsforskning (BOA/TDI) Avstemming</td>
+                            <td>Universitetsstyret / KD</td>
+                            <td>Totalkostnadsmodellen (TDI / NFR)</td>
+                            <td>31. mai</td>
+                            <td><span class="badge badge-success">VERIFISERT</span></td>
+                            <td>31.05.2026</td>
+                            <td><button class="btn" style="padding: 3px 8px; font-size: 0.8rem;" onclick="visRapportPreview('BOA-TDI')">👁️ Vis Rapport</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- RAPPORT PREVIEW BOKS -->
+            <div class="card" id="rapport-preview-card" style="display: none; background: #FAFAFA; border: 1px solid var(--uia-blue);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 id="preview-title" style="color: var(--uia-navy);">📄 Rapport Forhåndsvisning</h3>
+                    <button class="btn" style="background: #64748B;" onclick="document.getElementById('rapport-preview-card').style.display='none'">Lukk Preview</button>
+                </div>
+                <pre id="preview-content" style="background: white; padding: 1.2rem; border-radius: 6px; border: 1px solid var(--uia-border); font-family: 'Courier New', Courier, monospace; font-size: 0.88rem; overflow-x: auto; white-space: pre-wrap; color: #1E293B;"></pre>
+            </div>
+        </div>
+
+        <!-- TAB 8: BUDSJETTERING 2027 (T+1) -->
+        <div id="tab-budsjett2027" class="tab-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div>
+                    <h2>📈 Budsjettering 2027 (T+1) & Intern Rammefordelingsmodell</h2>
+                    <p style="color: #64748B;">Prognose og simulering av KDs rammebevilgning (Kapittel 260 post 50) og intern fordeling til UiAs fakulteter for budsjettåret 2027.</p>
+                </div>
+                <button class="btn btn-excel" onclick="exportBudsjett2027ToExcel()">📥 Last ned Budsjettforslag 2027 (.xlsx)</button>
+            </div>
+
+            <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="card">
+                    <div class="card-header">2027 Brutto Ramme (Kap 260 p 50)</div>
+                    <div class="card-value" id="b2027-brutto" style="font-size: 1.5rem; color: var(--uia-navy);">2 142 500 000 NOK</div>
+                    <div class="card-sub" id="b2027-brutto-sub">+ 67,4 Mill NOK (+3,25% vekst)</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Strategisk Styreavsetning</div>
+                    <div class="card-value text-warning" id="b2027-strat" style="font-size: 1.5rem;">53 562 500 NOK</div>
+                    <div class="card-sub" id="b2027-strat-sub">2,50 % av brutto ramme</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Netto Fordelt til Fakultetene</div>
+                    <div class="card-value text-success" id="b2027-netto" style="font-size: 1.5rem;">2 088 937 500 NOK</div>
+                    <div class="card-sub">Direkte rammebevilgning til enhetene</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Resultatbasert Uttelling</div>
+                    <div class="card-value" id="b2027-resultat" style="font-size: 1.5rem;">428 500 000 NOK</div>
+                    <div class="card-sub">Basert på STP, Kandidater & NVI</div>
+                </div>
+            </div>
+
+            <!-- SIMULATOR CONTROLS & TABLE -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--uia-navy);">🎛️ 2027 Budsjettparameter-Simulator (Prop. 1 S)</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div class="slider-group">
+                        <label>Lønns- og prisvekst (Deflator %): <span id="b2027-deflator-val" style="color: var(--uia-accent); font-weight: bold;">3.5</span> %</label>
+                        <input type="range" id="b2027-deflator-slider" min="0.0" max="8.0" step="0.1" value="3.5" oninput="updateBudget2027Sim()">
+                    </div>
+                    <div class="slider-group">
+                        <label>Studiepoeng- & Kandidatvekst (STP %): <span id="b2027-stp-val" style="color: var(--uia-accent); font-weight: bold;">2.0</span> %</label>
+                        <input type="range" id="b2027-stp-slider" min="-5.0" max="10.0" step="0.5" value="2.0" oninput="updateBudget2027Sim()">
+                    </div>
+                    <div class="slider-group">
+                        <label>NVI Publiserings- & Forskningsvekst %: <span id="b2027-nvi-val" style="color: var(--uia-accent); font-weight: bold;">1.5</span> %</label>
+                        <input type="range" id="b2027-nvi-slider" min="-5.0" max="10.0" step="0.5" value="1.5" oninput="updateBudget2027Sim()">
+                    </div>
+                    <div class="slider-group">
+                        <label>Strategisk Styreavsetning %: <span id="b2027-strat-val" style="color: var(--uia-accent); font-weight: bold;">2.5</span> %</label>
+                        <input type="range" id="b2027-strat-slider" min="0.0" max="5.0" step="0.1" value="2.5" oninput="updateBudget2027Sim()">
+                    </div>
+                </div>
+
+                <h4 style="margin-bottom: 1rem; color: var(--uia-navy);">📊 Prognostisert Rammefordeling per Fakultet & Enhet (2027 T+1)</h4>
+                <table class="data-table" id="table-budsjett2027">
+                    <thead>
+                        <tr>
+                            <th>Fakultet / Organisasjonsenhet</th>
+                            <th style="text-align: right;">2026 Ramme (NOK)</th>
+                            <th style="text-align: right;">Lønns- & Prisjust.</th>
+                            <th style="text-align: right;">Resultatuttelling</th>
+                            <th style="text-align: right;">2027 Budsjettforslag (NOK)</th>
+                            <th style="text-align: right;">Endring (NOK)</th>
+                            <th style="text-align: right;">Endring (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-budsjett2027">
+                        <!-- Populated dynamically via JS updateBudget2027Sim() -->
+                    </tbody>
+                    <tfoot style="font-weight: bold; background: #F8FAFC;">
+                        <tr id="tfoot-budsjett2027">
+                            <!-- Populated dynamically via JS -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
 
     </main>
@@ -770,6 +991,221 @@
         function exportOrdlisteToExcel() {
             exportTableToExcel('table-ordliste', 'Finansiell_Ordliste_og_Begreper_UiA');
         }
+
+        // FILTER FUNCTION FOR TAB 7 (RAPPORTERING)
+        function filterRapportering() {
+            const query = document.getElementById('search-rapportering').value.toLowerCase();
+            const rows = document.querySelectorAll('#table-rapportering tbody tr');
+            rows.forEach(r => {
+                const text = r.innerText.toLowerCase();
+                r.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+
+        // PREVIEW FUNCTION FOR TAB 7
+        function visRapportPreview(rapportId) {
+            const card = document.getElementById('rapport-preview-card');
+            const title = document.getElementById('preview-title');
+            const content = document.getElementById('preview-content');
+
+            card.style.display = 'block';
+
+            if (rapportId === 'KD-F0520') {
+                title.innerText = '📄 KD-F0520: F-05-20 Driftsavsetningsrapport (UiA 2026)';
+                content.innerText = 
+`================================================================================
+KUNNSKAPSDEPARTEMENTET (KD) - RUNDSKRIV F-05-20 OVERFØRINGSAPPORT
+================================================================================
+Institusjon: Universitetet i Agder (UiA)
+Rapporteringsår: 2026 (Per M10 / EOY Forecast)
+Styrebehandlet dato: 24. november 2026
+
+1. RAMME OG AVSETNINGSBEREGNING:
+   - Statlig Rammebevilgning (Kap 260 post 50): kr 1 200 000 000 NOK
+   - Reell Akkumulert Driftsavsetning: kr 60 000 000 NOK
+   - Avsetningsprosent: 5,00 % (Lovhjemlet avsetningstak: 5,00 %)
+   - Overskridelse mot 5%-grense: kr 0 NOK
+
+2. REVISJONSSTATUS OG DISPENSJON:
+   - Status: COMPLIANT (Søknad om dispensasjon IKKE påkrevd)
+   - Gjennomførte tiltak: Fremskyndet utstyrsaktivering (kr 12,0M NOK) og 20% ETC descoping i EVM-porteføljen.
+================================================================================`;
+            } else if (rapportId === 'KD-ARS') {
+                title.innerText = '📄 KD-ARS: Årsrapport & SRS Årsregnskap 2026';
+                content.innerText = 
+`================================================================================
+UIA ÅRSRAPPORT OG ÅRSREGNSKAP (SRS) 2026 - SAMMENDRAG
+================================================================================
+- Salgs- og driftsinntekter (Kap 260 p 50): kr 1 200 000 000 NOK
+- BOA / TDI Oppdragsinntekter (NFR/EU): kr 340 000 000 NOK
+- Lønn og sosiale kostnader: kr 1 080 000 000 NOK
+- Andre driftskostnader: kr 390 000 000 NOK
+- Årsresultat før overføringer: kr 70 000 000 NOK
+- Balanseførte avsetninger ved 31.12: kr 60 000 000 NOK (5,00% SRS-compliant)
+================================================================================`;
+            } else if (rapportId === 'DBH-STP') {
+                title.innerText = '📄 DBH-STP: Studiepoengproduksjon 2026';
+                content.innerText = 
+`================================================================================
+HK-DIR / DBH INNRAPPORTERING: STUDIEPOENGPRODUKSJON (STP)
+================================================================================
+Fakultet                                 Planlagt STP       Realisert STP    Oppnåelse
+--------------------------------------------------------------------------------
+Handelshøyskolen                           41 000             42 500          103.7%
+Fakultet for teknologi og realfag          66 000             68 000          103.0%
+Fakultet for helse- og idrettsvitenskap    53 000             54 000          101.9%
+Fakultet for humaniora og pedagogikk       50 000             51 000          102.0%
+Fakultet for samfunnsvitenskap             40 000             41 000          102.5%
+Fakultet for kunstfag                      22 000             22 000          100.0%
+--------------------------------------------------------------------------------
+TOTALT UIA                                272 000            278 500          102.4%
+================================================================================`;
+            } else if (rapportId === 'RR-AUDIT') {
+                title.innerText = '📄 RR-AUDIT: Riksrevisjonen Fire-Øyne Attestasjonsrapport';
+                content.innerText = 
+`================================================================================
+RIKSREVISJONEN INTERNKONTROLL- OG ATTESTASJONSAUDIT (2026)
+================================================================================
+1. Transaksjoner i UBW: 25 rader gjennomgått, 2 avvik flagget for egengodkjenning.
+2. Reiseregninger: 15 krav analysert, 7 avvik flagget (berørt beløp: kr 19 420 NOK).
+3. Hovedavvik:
+   - REISE-2026-004 & 014: BDM_ID == Attestant_ID (Brudd på fire-øyne-prinsippet).
+   - REISE-2026-007 & 011: Manglende kvittering på utlegg > kr 100 NOK.
+4. Anbefalt tiltak: Stans remittering og returner krav til godkjenning hos uavhengig leder.
+================================================================================`;
+            } else {
+                title.innerText = '📄 Statlig Rapport: ' + rapportId;
+                content.innerText = `Rapport data for ${rapportId} er verifisert og klar for overføring til KD / DBH / Skatteetaten.`;
+            }
+
+            card.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // BUDGET 2027 SIMULATOR (TAB 8)
+        function updateBudget2027Sim() {
+            const deflatorEl = document.getElementById('b2027-deflator-slider');
+            if (!deflatorEl) return;
+            const deflator = parseFloat(deflatorEl.value);
+            const stpGrowth = parseFloat(document.getElementById('b2027-stp-slider').value);
+            const nviGrowth = parseFloat(document.getElementById('b2027-nvi-slider').value);
+            const stratPct = parseFloat(document.getElementById('b2027-strat-slider').value);
+
+            document.getElementById('b2027-deflator-val').innerText = deflator.toFixed(1);
+            document.getElementById('b2027-stp-val').innerText = stpGrowth.toFixed(1);
+            document.getElementById('b2027-nvi-val').innerText = nviGrowth.toFixed(1);
+            document.getElementById('b2027-strat-val').innerText = stratPct.toFixed(1);
+
+            const base2026Ramme = 2075076544; // 2026 Brutto ramme
+            const totalVekstPct = (deflator + (stpGrowth * 0.4) + (nviGrowth * 0.2)) / 100;
+            const brutto2027 = base2026Ramme * (1 + totalVekstPct);
+            const stratBelop = brutto2027 * (stratPct / 100);
+            const netto2027 = brutto2027 - stratBelop;
+            const endringNOK = brutto2027 - base2026Ramme;
+            const endringPct = (endringNOK / base2026Ramme) * 100;
+
+            document.getElementById('b2027-brutto').innerText = Math.round(brutto2027).toLocaleString('no-NO') + ' NOK';
+            document.getElementById('b2027-brutto-sub').innerText = (endringNOK >= 0 ? '+ ' : '') + (endringNOK / 1000000).toFixed(1) + ' Mill NOK (' + (endringPct >= 0 ? '+' : '') + endringPct.toFixed(2) + '% vekst)';
+            document.getElementById('b2027-strat').innerText = Math.round(stratBelop).toLocaleString('no-NO') + ' NOK';
+            document.getElementById('b2027-strat-sub').innerText = stratPct.toFixed(2) + ' % av brutto ramme';
+            document.getElementById('b2027-netto').innerText = Math.round(netto2027).toLocaleString('no-NO') + ' NOK';
+            document.getElementById('b2027-resultat').innerText = Math.round(netto2027 * 0.205).toLocaleString('no-NO') + ' NOK';
+
+            const fakulteter = [
+                { navn: "Handelshøyskolen", share: 0.185, stpWeight: 1.2 },
+                { navn: "Fakultet for teknologi og realfag", share: 0.280, stpWeight: 1.1 },
+                { navn: "Fakultet for helse- og idrettsvitenskap", share: 0.220, stpWeight: 1.0 },
+                { navn: "Fakultet for humaniora og pedagogikk", share: 0.155, stpWeight: 0.9 },
+                { navn: "Fakultet for samfunnsvitenskap", share: 0.100, stpWeight: 1.0 },
+                { navn: "Fakultet for kunstfag", share: 0.060, stpWeight: 0.8 }
+            ];
+
+            const tbody = document.getElementById('tbody-budsjett2027');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            let sum2026 = 0;
+            let sumDeflator = 0;
+            let sumResultat = 0;
+            let sum2027 = 0;
+            let sumEndring = 0;
+
+            fakulteter.forEach(f => {
+                const r2026 = 2023199630 * f.share;
+                const deflatorBelop = r2026 * (deflator / 100);
+                const resultatBelop = r2026 * ((stpGrowth * f.stpWeight + nviGrowth) / 100) * 0.3;
+                const r2027 = r2026 + deflatorBelop + resultatBelop;
+                const endrNOK = r2027 - r2026;
+                const endrPct = (endrNOK / r2026) * 100;
+
+                sum2026 += r2026;
+                sumDeflator += deflatorBelop;
+                sumResultat += resultatBelop;
+                sum2027 += r2027;
+                sumEndring += endrNOK;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><strong>${f.navn}</strong></td>
+                    <td style="text-align: right;">${Math.round(r2026).toLocaleString('no-NO')}</td>
+                    <td style="text-align: right;">+${Math.round(deflatorBelop).toLocaleString('no-NO')}</td>
+                    <td style="text-align: right;">+${Math.round(resultatBelop).toLocaleString('no-NO')}</td>
+                    <td style="text-align: right; font-weight: bold; color: var(--uia-navy);">${Math.round(r2027).toLocaleString('no-NO')}</td>
+                    <td style="text-align: right; color: ${endrNOK >= 0 ? 'var(--uia-success)' : 'var(--uia-danger)'};">${endrNOK >= 0 ? '+' : ''}${Math.round(endrNOK).toLocaleString('no-NO')}</td>
+                    <td style="text-align: right; font-weight: bold; color: ${endrPct >= 0 ? 'var(--uia-success)' : 'var(--uia-danger)'};">${endrPct >= 0 ? '+' : ''}${endrPct.toFixed(2)} %</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Fellesadmin row
+            const fa2026 = 120000000;
+            const fa2027 = fa2026 * (1 + deflator / 100);
+            const faEndr = fa2027 - fa2026;
+            const faPct = (faEndr / fa2026) * 100;
+
+            sum2026 += fa2026;
+            sumDeflator += faEndr;
+            sum2027 += fa2027;
+            sumEndring += faEndr;
+
+            const trFA = document.createElement('tr');
+            trFA.innerHTML = `
+                <td><strong>Fellesadministrasjonen & Sentralt</strong></td>
+                <td style="text-align: right;">${Math.round(fa2026).toLocaleString('no-NO')}</td>
+                <td style="text-align: right;">+${Math.round(faEndr).toLocaleString('no-NO')}</td>
+                <td style="text-align: right;">0</td>
+                <td style="text-align: right; font-weight: bold; color: var(--uia-navy);">${Math.round(fa2027).toLocaleString('no-NO')}</td>
+                <td style="text-align: right; color: var(--uia-success);">+${Math.round(faEndr).toLocaleString('no-NO')}</td>
+                <td style="text-align: right; font-weight: bold; color: var(--uia-success);">+${faPct.toFixed(2)} %</td>
+            `;
+            tbody.appendChild(trFA);
+
+            const totPct = (sumEndring / sum2026) * 100;
+            const tfoot = document.getElementById('tfoot-budsjett2027');
+            if (tfoot) {
+                tfoot.innerHTML = `
+                    <td>TOTALT NETTO FORDELT</td>
+                    <td style="text-align: right;">${Math.round(sum2026).toLocaleString('no-NO')} NOK</td>
+                    <td style="text-align: right;">+${Math.round(sumDeflator).toLocaleString('no-NO')} NOK</td>
+                    <td style="text-align: right;">+${Math.round(sumResultat).toLocaleString('no-NO')} NOK</td>
+                    <td style="text-align: right; color: var(--uia-navy);">${Math.round(sum2027).toLocaleString('no-NO')} NOK</td>
+                    <td style="text-align: right; color: var(--uia-success);">+${Math.round(sumEndring).toLocaleString('no-NO')} NOK</td>
+                    <td style="text-align: right; color: var(--uia-success);">+${totPct.toFixed(2)} %</td>
+                `;
+            }
+        }
+
+        function exportRapporteringToExcel() {
+            exportTableToExcel('table-rapportering', 'Statlig_og_Intern_Rapportering_UiA_2026');
+        }
+
+        function exportBudsjett2027ToExcel() {
+            exportTableToExcel('table-budsjett2027', 'Budsjettforslag_2027_UiA');
+        }
+
+        // Initialize 2027 budget simulation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateBudget2027Sim();
+        });
     </script>
 </body>
 </html>

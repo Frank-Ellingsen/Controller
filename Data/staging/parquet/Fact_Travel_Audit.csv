@@ -1,13 +1,16 @@
-Reise_ID,Ansatt,Dato,Maaned,Formaal,Belop_NOK,Maltid_Dekket,Fradrag_Utfort,Km_Godtgjorelse,Kvittering_Vedlagt,BDM_ID,Attestant_ID,Km_Rute_Beskrevet,Kontrollflagg,Tag,Avvik_Beskrivelse,Status
-REISE-2026-101,Ola Nordmann,2026-01-12,2026-M01,Fagkonferanse Bergen,3450.0,"Lunsj, Middag",True,0,True,EMP-101,EMP-102,True,OK,test2026T1,OK,APPROVED
-REISE-2026-102,Kari Hansen,2026-01-15,2026-M01,Møte Kunnskapsdepartementet,2100.0,Middag,False,0,True,EMP-103,EMP-104,True,BRUDD_MALTID,test2026T1,"BRUDD_MALTID: Måltid var dekket (Middag), men måltidsfradrag er ikke trukket fra diett.",FLAGGED
-REISE-2026-103,Per Olsen,2026-02-18,2026-M02,Feltarbeid Agder,1250.0,Ingen,True,180,True,EMP-105,EMP-106,True,OK,test2026T1,OK,APPROVED
-REISE-2026-104,Anne Berg,2026-02-20,2026-M02,Prosjektmøte EU Horizon,4800.0,"Frokost, Lunsj",True,0,True,EMP-107,EMP-107,True,BRUDD_FIRE_OYNE,test2026T1,BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).,FLAGGED
-REISE-2026-105,Lars Lie,2026-03-22,2026-M03,Forskningsseminar Trondheim,3200.0,"Frokost, Lunsj, Middag",False,0,True,EMP-108,EMP-109,True,BRUDD_MALTID,test2026T1,"BRUDD_MALTID: Måltid var dekket (Frokost, Lunsj, Middag), men måltidsfradrag er ikke trukket fra diett.",FLAGGED
-REISE-2026-106,Eva Sunde,2026-04-10,2026-M04,Kort møte Arendal,450.0,Ingen,True,65,True,EMP-110,EMP-111,False,BRUDD_KM_RUTE,test2026T1,BRUDD_KM_RUTE: Kilometergodtgjørelse krever spesifisert rutebeskrivelse.,FLAGGED
-REISE-2026-107,Kjetil Dahl,2026-04-28,2026-M04,Taxi til flyplass Kjevik,620.0,Ingen,True,0,False,EMP-112,EMP-113,True,BRUDD_KVITTERING,test2026T1,BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.,FLAGGED
-REISE-2026-108,Guri Moe,2026-05-14,2026-M05,AACSB Akkrediteringsmøte,8900.0,Lunsj,True,0,True,EMP-114,EMP-115,True,OK,test2026T1,OK,APPROVED
-REISE-2026-109,Monika Vik,2026-06-02,2026-M06,Styreseminar Grimstad,2750.0,Middag,True,120,True,EMP-116,EMP-117,True,OK,test2026T1,OK,APPROVED
-REISE-2026-110,Tor Haug,2026-06-25,2026-M06,Middagsrepresentasjon,1850.0,Ingen,True,0,False,EMP-118,EMP-119,True,BRUDD_KVITTERING,test2026T1,BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.,FLAGGED
-REISE-2026-111,Hilde Bø,2026-07-15,2026-M07,Disputas Tromsø,6400.0,Lunsj,True,0,True,EMP-120,EMP-120,True,BRUDD_FIRE_OYNE,test2026T1,BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).,FLAGGED
-REISE-2026-112,Svein Bakke,2026-08-20,2026-M08,Bedriftsbesøk Kristiansand,310.0,Ingen,True,45,True,EMP-121,EMP-122,True,OK,test2026T1,OK,APPROVED
+Reise_ID,Ansatt,Dato,Formaal,Belop_NOK,Maltid_Dekket,Fradrag_Utfort,Km_Godtgjorelse,Kvittering_Vedlagt,BDM_ID,Attestant_ID,Km_Rute_Beskrevet,Avvik_Beskrivelse,Status
+REISE-2026-001,Ola Nordmann,2026-01-12,Fagkonferanse Bergen,3450.0,"Lunsj, Middag",True,0,True,EMP-101,EMP-102,,OK,APPROVED
+REISE-2026-002,Kari Hansen,2026-01-15,Møte Kunnskapsdepartementet,2100.0,Middag,False,0,True,EMP-103,EMP-104,,"BRUDD_MALTID: Måltid var dekket (Middag), men måltidsfradrag er ikke trukket fra diett.",FLAGGED
+REISE-2026-003,Per Olsen,2026-01-18,Feltarbeid Agder,850.0,Ingen,True,180,True,EMP-105,EMP-106,True,OK,APPROVED
+REISE-2026-004,Anne Berg,2026-01-20,Prosjektmøte EU Horizon,4800.0,"Frokost, Lunsj",True,0,True,EMP-107,EMP-107,,BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).,FLAGGED
+REISE-2026-005,Lars Lie,2026-01-22,Deltakelse forskningsseminar Trondheim,3200.0,"Frokost, Lunsj, Middag",False,0,True,EMP-108,EMP-109,,"BRUDD_MALTID: Måltid var dekket (Frokost, Lunsj, Middag), men måltidsfradrag er ikke trukket fra diett.",FLAGGED
+REISE-2026-006,Eva Sunde,2026-01-25,Kort møte Arendal,450.0,Ingen,True,65,True,EMP-110,EMP-111,False,BRUDD_KM_RUTE: Kilometergodtgjørelse krever spesifisert rutebeskrivelse.,FLAGGED
+REISE-2026-007,Kjetil Dahl,2026-01-28,Taxi til flyplass Kjevik,620.0,Ingen,True,0,False,EMP-112,EMP-113,,BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.,FLAGGED
+REISE-2026-008,Guri Moe,2026-02-02,AACSB Akkrediteringsmøte,8900.0,Lunsj,True,0,True,EMP-114,EMP-115,,OK,APPROVED
+REISE-2026-009,Svein Bakke,2026-02-05,Bedriftsbesøk Kristiansand,310.0,Ingen,True,0,True,EMP-116,EMP-117,,OK,APPROVED
+REISE-2026-010,Monika Vik,2026-02-08,Gjesteforelesning UiO,2750.0,"Lunsj, Middag",True,0,True,EMP-118,EMP-119,,OK,APPROVED
+REISE-2026-011,Tor Haug,2026-02-11,Middagsrepresentasjon eksterne partnere,1850.0,Middag,True,0,False,EMP-120,EMP-121,,BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.,FLAGGED
+REISE-2026-012,Ingrid Solberg,2026-02-14,Styremøte NFR Oslo,3900.0,Frokost,True,0,True,EMP-122,EMP-123,,OK,APPROVED
+REISE-2026-013,Knut Rønning,2026-02-18,Kjøring til nettverkssamling Grimstad,420.0,Ingen,True,90,True,EMP-124,EMP-125,True,OK,APPROVED
+REISE-2026-014,Hilde Bø,2026-02-21,Doktorgradsdisputas Tromsø,6400.0,Lunsj,True,0,True,EMP-126,EMP-126,,BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).,FLAGGED
+REISE-2026-015,Morten Hagen,2026-02-25,Utlegg parkering Gardermoen,850.0,Ingen,True,0,True,EMP-127,EMP-128,,OK,APPROVED
