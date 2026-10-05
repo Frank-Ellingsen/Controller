@@ -1,0 +1,6 @@
+# GitHub Pages Configuration
+include:
+  - "Controller Mappe"
+  - "Kunnskapsbase"
+  - "Regelverk"
+  - ".nojekyll"

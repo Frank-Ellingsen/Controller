@@ -1,5 +1,6 @@
 import os
 import json
+import urllib.parse
 
 HTML_TEMPLATE = """<!DOCTYPE html>
 <html lang="no">
@@ -145,8 +146,9 @@ def process_directory(target_dir):
         if subdirs_list:
             folders_items = []
             for d in subdirs_list:
+                d_quoted = urllib.parse.quote(d)
                 folders_items.append(f'''
-                <a href="{d}/index.html" class="folder-card">
+                <a href="{d_quoted}/index.html" class="folder-card">
                     <div class="folder-info">
                         <span>📁</span>
                         <span>{d}</span>
@@ -175,14 +177,15 @@ def process_directory(target_dir):
                 
                 size_str = f"{size_b / 1024:.1f} KB" if size_b < 1024*1024 else f"{size_b / (1024*1024):.2f} MB"
                 icon = get_icon(f)
+                f_quoted = urllib.parse.quote(f)
                 
                 table_rows.append(f'''
                 <tr>
                     <td style="width: 40px; text-align: center; font-size: 1.1rem;">{icon}</td>
-                    <td><a href="{f}" class="file-name" target="_blank">{f}</a></td>
+                    <td><a href="{f_quoted}" class="file-name" target="_blank">{f}</a></td>
                     <td class="num-col">{size_str}</td>
                     <td style="width: 120px; text-align: right;">
-                        <a href="{f}" download class="btn-download">📥 Last ned</a>
+                        <a href="{f_quoted}" download class="btn-download">📥 Last ned</a>
                     </td>
                 </tr>''')
             
