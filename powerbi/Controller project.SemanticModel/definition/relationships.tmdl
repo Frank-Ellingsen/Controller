@@ -3,8 +3,8 @@ relationship Fact_EVM_Snapshots_Dim_Project
 	toColumn: Dim_Project.project_id
 
 relationship Fact_EVM_Snapshots_Dim_Date
-	fromCardinality: many
+	crossFilteringBehavior: bothDirections
 	toCardinality: many
 	fromColumn: Fact_EVM_Snapshots.reporting_period
 	toColumn: Dim_Date.ReportingPeriod
-	crossFilteringBehavior: bothDirections
+

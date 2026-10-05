@@ -7,11 +7,11 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Dim_Project","Dim_Date","Dim_Model_Parameter","Fact_EVM_Snapshots","Fact_UBW_Audit","Fact_Travel_Audit","_Measures"]
-
 annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Dim_Project","Dim_Date","Dim_Model_Parameter","Fact_EVM_Snapshots","Fact_UBW_Audit","Fact_Travel_Audit","_Measures"]
 
 ref table Dim_Project
 ref table Dim_Date
@@ -22,3 +22,4 @@ ref table Fact_Travel_Audit
 ref table _Measures
 
 ref cultureInfo en-US
+

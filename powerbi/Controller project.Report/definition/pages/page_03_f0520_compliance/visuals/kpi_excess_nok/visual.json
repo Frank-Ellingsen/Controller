@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "kpi_excess_nok",
   "position": {
     "x": 1480,
     "y": 130,
-    "width": 400,
+    "z": 1,
     "height": 130,
-    "z": 1
+    "width": 400
   },
   "visual": {
     "visualType": "card",
@@ -30,7 +30,6 @@
           ]
         }
       }
-    },
-    "objects": {}
+    }
   }
 }

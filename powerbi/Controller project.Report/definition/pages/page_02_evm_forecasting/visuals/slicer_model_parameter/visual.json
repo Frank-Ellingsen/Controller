@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "slicer_model_parameter",
   "position": {
     "x": 40,
     "y": 280,
-    "width": 400,
+    "z": 1,
     "height": 740,
-    "z": 1
+    "width": 400
   },
   "visual": {
     "visualType": "slicer",
@@ -25,12 +25,12 @@
                   "Property": "ModelName"
                 }
               },
-              "queryRef": "Dim_Model_Parameter.ModelName"
+              "queryRef": "Dim_Model_Parameter.ModelName",
+              "active": true
             }
           ]
         }
       }
-    },
-    "objects": {}
+    }
   }
 }
