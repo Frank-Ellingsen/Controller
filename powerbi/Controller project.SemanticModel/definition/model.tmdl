@@ -9,7 +9,7 @@ model Model
 
 annotation PBI_QueryOrder = ["Dim_Project","Dim_Date","Dim_Model_Parameter","Fact_EVM_Snapshots","Fact_UBW_Audit","Fact_Travel_Audit","_Measures"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 

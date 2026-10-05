@@ -1,10 +1,10 @@
 table Dim_Date
-	lineageTag: 08f130de-12ba-4598-a18a-5772ebb7e71b
+	lineageTag: 65037db5-a3a4-414a-9f0f-4dbc324a36d6
 
 	column Date
 		dataType: dateTime
 		formatString: yyyy-MM-dd
-		lineageTag: 318831ac-08c9-4d2b-85e7-4ae6b79ff1b3
+		lineageTag: 743f0f21-62cb-4ae6-b090-dbac92a25371
 		summarizeBy: none
 		sourceColumn: Date
 
@@ -14,7 +14,7 @@ table Dim_Date
 	column Year
 		dataType: int64
 		formatString: 0
-		lineageTag: e543f08c-ced7-4fc2-a520-4f76c95a0813
+		lineageTag: 1451b428-224e-403b-8035-7918e046a67a
 		summarizeBy: none
 		sourceColumn: Year
 
@@ -23,7 +23,7 @@ table Dim_Date
 	column Month
 		dataType: int64
 		formatString: 0
-		lineageTag: 6c90b10b-373d-487b-b907-6819fa8d0aa0
+		lineageTag: 62db6a0b-4d71-48e1-915a-f7b475f9a263
 		summarizeBy: none
 		sourceColumn: Month
 
@@ -31,7 +31,7 @@ table Dim_Date
 
 	column MonthName
 		dataType: string
-		lineageTag: f0fea11a-8f9b-4b90-bdf3-023eeb35ac52
+		lineageTag: cd8285bf-e84f-421d-98e3-1d556423b3da
 		summarizeBy: none
 		sourceColumn: MonthName
 		sortByColumn: Month
@@ -40,7 +40,7 @@ table Dim_Date
 
 	column ReportingPeriod
 		dataType: string
-		lineageTag: 52985958-6165-4bcd-bda1-d3f7661d820e
+		lineageTag: daf7dd57-b65f-416c-b040-0c903746a392
 		summarizeBy: none
 		sourceColumn: ReportingPeriod
 
@@ -49,7 +49,7 @@ table Dim_Date
 	column Quarter
 		dataType: int64
 		formatString: 0
-		lineageTag: 18691d32-9db0-4089-adca-ab218df263b5
+		lineageTag: 7ef4da3f-ca80-4b02-81aa-488240896ac4
 		summarizeBy: none
 		sourceColumn: Quarter
 

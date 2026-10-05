@@ -811,7 +811,7 @@ def generate_model_tmdl():
 
 annotation PBI_QueryOrder = ["Dim_Project","Dim_Date","Dim_Model_Parameter","Fact_EVM_Snapshots","Fact_UBW_Audit","Fact_Travel_Audit","_Measures"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -830,6 +830,13 @@ ref cultureInfo en-US
 def main():
     print("=== Generating TMDL Semantic Model for Power BI PBIP ===")
     TABLES_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Clean out any leftover or orphaned TMDL table files (e.g. LocalDateTable_*)
+    for old_file in TABLES_DIR.glob("*.tmdl"):
+        try:
+            old_file.unlink()
+        except Exception as e:
+            print(f"  - Warning removing {old_file}: {e}")
     
     tables = {
         "Dim_Project.tmdl": generate_dim_project(),
