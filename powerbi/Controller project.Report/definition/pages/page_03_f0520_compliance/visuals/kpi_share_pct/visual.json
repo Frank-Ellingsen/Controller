@@ -10,7 +10,27 @@
   },
   "visual": {
     "visualType": "card",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Reserve Share Pct"
+                }
+              },
+              "queryRef": "_Measures.Reserve Share Pct"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

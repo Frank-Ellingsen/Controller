@@ -1,6 +1,6 @@
 """
 Generates complete Power BI Report Pages and Visual Containers in PBIP format
-for 'powerbi/Controller project.Report' conforming to Microsoft Fabric PBIP standards.
+conforming to Microsoft Fabric PBIP schema requirements (including queryState).
 """
 
 import os
@@ -292,6 +292,75 @@ def build_visual_json(v, page_name):
     v_type = v["type"]
     pos = v["position"]
     
+    query_state = {}
+    
+    if "measure" in v:
+        m_name = v["measure"].strip("[]")
+        query_state = {
+            "Values": {
+                "projections": [
+                    {
+                        "field": {
+                            "Measure": {
+                                "Expression": {
+                                    "SourceRef": {
+                                        "Entity": "_Measures"
+                                    }
+                                },
+                                "Property": m_name
+                            }
+                        },
+                        "queryRef": f"_Measures.{m_name}"
+                    }
+                ]
+            }
+        }
+    elif "columns" in v:
+        projections = []
+        for col_spec in v["columns"]:
+            entity, prop = col_spec.split("[")
+            prop = prop.rstrip("]")
+            projections.append({
+                "field": {
+                    "Column": {
+                        "Expression": {
+                            "SourceRef": {
+                                "Entity": entity
+                            }
+                        },
+                        "Property": prop
+                    }
+                },
+                "queryRef": f"{entity}.{prop}"
+            })
+        query_state = {
+            "Values": {
+                "projections": projections
+            }
+        }
+    elif "column" in v:
+        entity, prop = v["column"].split("[")
+        prop = prop.rstrip("]")
+        query_state = {
+            "Values": {
+                "projections": [
+                    {
+                        "field": {
+                            "Column": {
+                                "Expression": {
+                                    "SourceRef": {
+                                        "Entity": entity
+                                    }
+                                },
+                                "Property": prop
+                            }
+                        },
+                        "queryRef": f"{entity}.{prop}"
+                    }
+                ]
+            }
+        }
+
     vis_obj = {
         "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
         "name": v_name,
@@ -304,7 +373,9 @@ def build_visual_json(v, page_name):
         },
         "visual": {
             "visualType": v_type,
-            "query": {},
+            "query": {
+                "queryState": query_state
+            },
             "objects": {}
         }
     }
@@ -331,7 +402,6 @@ def build_visual_json(v, page_name):
 def generate_powerbi_reports():
     print("=== START: Generating Power BI Report Pages & Visual Containers ===")
     
-    # 1. Clean existing pages directory except base files
     if PAGES_DIR.exists():
         shutil.rmtree(PAGES_DIR)
     PAGES_DIR.mkdir(parents=True, exist_ok=True)

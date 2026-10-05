@@ -10,7 +10,27 @@
   },
   "visual": {
     "visualType": "slicer",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Model_Parameter"
+                    }
+                  },
+                  "Property": "ModelName"
+                }
+              },
+              "queryRef": "Dim_Model_Parameter.ModelName"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

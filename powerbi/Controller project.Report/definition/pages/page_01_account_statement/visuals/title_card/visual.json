@@ -10,7 +10,9 @@
   },
   "visual": {
     "visualType": "textbox",
-    "query": {},
+    "query": {
+      "queryState": {}
+    },
     "objects": {
       "general": [
         {

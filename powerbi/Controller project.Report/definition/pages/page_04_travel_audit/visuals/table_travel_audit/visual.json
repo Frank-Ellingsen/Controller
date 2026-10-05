@@ -10,7 +10,131 @@
   },
   "visual": {
     "visualType": "tableEx",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Reise_ID"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Reise_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Ansatt"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Ansatt"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Dato"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Dato"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Formaal"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Formaal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Belop_NOK"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Belop_NOK"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "BDM_ID"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.BDM_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Attestant_ID"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Attestant_ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Avvik_Beskrivelse"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Avvik_Beskrivelse"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Travel_Audit"
+                    }
+                  },
+                  "Property": "Status"
+                }
+              },
+              "queryRef": "Fact_Travel_Audit.Status"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

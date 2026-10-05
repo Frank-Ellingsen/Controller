@@ -10,7 +10,131 @@
   },
   "visual": {
     "visualType": "tableEx",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "project_id"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.project_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "reporting_period"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.reporting_period"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "bac"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.bac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "ac"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.ac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "cpi"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.cpi"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "spi"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.spi"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "eac_cpi"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.eac_cpi"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "eac_composite"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.eac_composite"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_EVM_Snapshots"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "Fact_EVM_Snapshots.status"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

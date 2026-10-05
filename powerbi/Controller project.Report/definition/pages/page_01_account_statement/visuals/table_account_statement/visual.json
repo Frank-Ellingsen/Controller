@@ -10,7 +10,105 @@
   },
   "visual": {
     "visualType": "tableEx",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "project_id"
+                }
+              },
+              "queryRef": "Dim_Project.project_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "project_name"
+                }
+              },
+              "queryRef": "Dim_Project.project_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "bac"
+                }
+              },
+              "queryRef": "Dim_Project.bac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "pv"
+                }
+              },
+              "queryRef": "Dim_Project.pv"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "ev"
+                }
+              },
+              "queryRef": "Dim_Project.ev"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "ac"
+                }
+              },
+              "queryRef": "Dim_Project.ac"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Project"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "Dim_Project.status"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

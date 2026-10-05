@@ -10,7 +10,118 @@
   },
   "visual": {
     "visualType": "tableEx",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "transaksjon_id"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.transaksjon_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "konto"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.konto"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "beskrivelse"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.beskrivelse"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "belop_nok"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.belop_nok"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "bdm_id"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.bdm_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "attestant_id"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.attestant_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "formaal"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.formaal"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_UBW_Audit"
+                    }
+                  },
+                  "Property": "Kontrollflagg"
+                }
+              },
+              "queryRef": "Fact_UBW_Audit.Kontrollflagg"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

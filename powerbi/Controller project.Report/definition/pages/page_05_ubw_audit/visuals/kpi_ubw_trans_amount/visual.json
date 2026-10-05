@@ -10,7 +10,27 @@
   },
   "visual": {
     "visualType": "card",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total UBW Amount NOK"
+                }
+              },
+              "queryRef": "_Measures.Total UBW Amount NOK"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

@@ -10,7 +10,27 @@
   },
   "visual": {
     "visualType": "card",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Reell Driftsavsetning NOK"
+                }
+              },
+              "queryRef": "_Measures.Reell Driftsavsetning NOK"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }

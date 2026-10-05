@@ -10,7 +10,27 @@
   },
   "visual": {
     "visualType": "card",
-    "query": {},
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Self-Approval Breach Amount NOK"
+                }
+              },
+              "queryRef": "_Measures.Self-Approval Breach Amount NOK"
+            }
+          ]
+        }
+      }
+    },
     "objects": {}
   }
 }
