@@ -1,5 +1,5 @@
 """
-Streamlit Web Dashboard for UiA Controlling App (v23)
+Streamlit Web Dashboard for UiA Controlling App (v24)
 Interactive financial controlling interface with Account Statement reporting,
 preskriptiv tiltakssimulator, EOY balance forecasting, EVM project performance, and travel audit center.
 Run via: uv run streamlit run src/tools/app.py
@@ -26,14 +26,14 @@ DUCKDB_PATH = BASE_DIR / "data" / "staging" / "analytics_snapshots.duckdb"
 
 # Streamlit Page Config
 st.set_page_config(
-    page_title="UiA Financial Controlling & Account Statement Dashboard",
+    page_title="UiA Financial Controlling & Account Statement Dashboard (v24)",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-st.title("🏛️ Universitetet i Agder (UiA) - Finansiell Controller Dashboard")
-st.caption("Interaktivt verktøy for Account Statement rapportering, F-05-20 avsetningskontroll, EVM-prosjektstyring, tiltakssimulering og internkontroll (v23)")
+st.title("🏛️ Universitetet i Agder (UiA) - Finansiell Controller Dashboard (v24)")
+st.caption("Interaktivt verktøy for Account Statement rapportering, F-05-20 avsetningskontroll, EVM-prosjektstyring, tiltakssimulering og internkontroll (v24)")
 
 # Sidebar - Interaktiv Tiltakssimulator
 st.sidebar.header("⚙️ Preskriptiv Tiltakssimulator")
