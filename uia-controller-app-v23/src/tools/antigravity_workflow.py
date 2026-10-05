@@ -45,7 +45,7 @@ def execute_monthly_close_v23(
     if db_path is None:
         db_path = str(DEFAULT_DB_PATH)
     if travel_csv_path is None:
-        travel_csv_path = str(DEFAULT_TRAVEL_CSV_PATH) if Path(DEFAULT_TRAVEL_CSV_PATH).exists() else str(BASE_DIR / "data" / "staging" / "reiseregninger_15_stk.csv")
+        travel_csv_path = str(DEFAULT_TRAVEL_CSV_PATH)
     if duckdb_path is None:
         duckdb_path = str(DEFAULT_DUCKDB_PATH)
     if parquet_dir is None:
