@@ -8,7 +8,7 @@ Uses relative Path(__file__) resolution.
 
 from pathlib import Path
 import pandas as pd
-import json
+import numpy as np
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_STAGING_DIR = BASE_DIR / "data" / "staging"
