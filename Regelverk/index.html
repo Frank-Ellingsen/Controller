@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regelverk | UiA Controlling</title>
+    <style>
+        :root {
+            --uia-navy: #002B49;
+            --uia-blue: #005A9C;
+            --uia-accent: #E35205;
+            --uia-light: #F8FAFC;
+            --uia-dark: #1E293B;
+            --uia-border: #E2E8F0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--uia-light); color: var(--uia-dark); line-height: 1.5; min-height: 100vh; display: flex; flex-direction: column; }
+        header { background-color: var(--uia-navy); color: white; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .header-title { font-size: 1.25rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; }
+        .btn-home { background-color: var(--uia-accent); color: white; text-decoration: none; padding: 0.45rem 1rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+        .btn-home:hover { background-color: #c84400; }
+        .container { max-width: 1200px; width: 95%; margin: 2rem auto; flex: 1; }
+        .breadcrumb { margin-bottom: 1.5rem; font-size: 0.9rem; color: #64748B; }
+        .breadcrumb a { color: var(--uia-blue); text-decoration: none; font-weight: 500; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .summary-bar { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+        .summary-card { background: white; border: 1px solid var(--uia-border); border-radius: 8px; padding: 1rem 1.5rem; flex: 1; min-width: 180px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+        .summary-card .label { font-size: 0.8rem; text-transform: uppercase; color: #64748B; font-weight: 600; letter-spacing: 0.5px; }
+        .summary-card .value { font-size: 1.5rem; font-weight: 700; color: var(--uia-navy); margin-top: 0.25rem; }
+        .search-box { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--uia-border); font-size: 0.95rem; margin-bottom: 1.5rem; outline: none; transition: border-color 0.2s; }
+        .search-box:focus { border-color: var(--uia-blue); }
+        .section-title { font-size: 1.1rem; font-weight: 600; color: var(--uia-navy); margin-bottom: 1rem; border-bottom: 2px solid var(--uia-navy); padding-bottom: 0.3rem; }
+        .grid-folders { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .folder-card { background: white; border: 1px solid var(--uia-border); border-left: 4px solid var(--uia-blue); border-radius: 8px; padding: 1rem; text-decoration: none; color: var(--uia-dark); transition: transform 0.15s, box-shadow 0.15s; display: flex; align-items: center; justify-content: space-between; }
+        .folder-card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08); border-left-color: var(--uia-accent); }
+        .folder-info { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; }
+        .file-table-container { background: white; border: 1px solid var(--uia-border); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); margin-bottom: 2rem; }
+        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
+        th { background-color: #F1F5F9; color: var(--uia-navy); padding: 0.75rem 1rem; font-weight: 600; border-bottom: 1px solid var(--uia-border); }
+        td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--uia-border); vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: #F8FAFC; }
+        .file-name { font-weight: 500; color: var(--uia-navy); text-decoration: none; word-break: break-word; }
+        .file-name:hover { color: var(--uia-blue); text-decoration: underline; }
+        .num-col { text-align: right; font-variant-numeric: tabular-nums; color: #64748B; }
+        .btn-download { background: var(--uia-blue); color: white; padding: 0.35rem 0.75rem; border-radius: 4px; text-decoration: none; font-size: 0.8rem; font-weight: 600; display: inline-block; }
+        .btn-download:hover { background: var(--uia-navy); }
+        footer { background: white; border-top: 1px solid var(--uia-border); text-align: center; padding: 1.5rem; font-size: 0.85rem; color: #64748B; margin-top: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-title">🏛️ Universitetet i Agder | Regelverk</div>
+        <a href="../index.html" class="btn-home">🏠 Tilbake til Hovedportalen</a>
+    </header>
+    
+    <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Hovedportal</a> / <a href="index.html">Regelverk</a></div>
+        
+        <div class="summary-bar">
+            <div class="summary-card">
+                <div class="label">Undermapper</div>
+                <div class="value">1</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Dokumenter & Filer</div>
+                <div class="value">14</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Samlet Størrelse</div>
+                <div class="value">9.31 MB</div>
+            </div>
+        </div>
+
+        <input type="text" id="file-search" class="search-box" placeholder="🔍 Søk etter filnavn i denne mappen..." onkeyup="filterFiles()">
+
+        
+            <div class="section-title">📁 Undermapper (1)</div>
+            <div class="grid-folders">
+                
+                <a href="notater/index.html" class="folder-card">
+                    <div class="folder-info">
+                        <span>📁</span>
+                        <span>notater</span>
+                    </div>
+                    <span style="color: #94A3B8;">→</span>
+                </a>
+            </div>
+
+        
+            <div class="section-title">📄 Dokumenter og Datafiler (14)</div>
+            <div class="file-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;"></th>
+                            <th>Filnavn</th>
+                            <th style="text-align: right;">Størrelse</th>
+                            <th style="text-align: right;">Handling</th>
+                        </tr>
+                    </thead>
+                    <tbody id="file-table-body">
+                        
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="Controller - UIA.pdf" class="file-name" target="_blank">Controller - UIA.pdf</a></td>
+                    <td class="num-col">98.5 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Controller - UIA.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="Reglement for økonomistyring i staten.pdf" class="file-name" target="_blank">Reglement for økonomistyring i staten.pdf</a></td>
+                    <td class="num-col">621.4 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Reglement for økonomistyring i staten.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="Statens Kontoplan 2026.pdf" class="file-name" target="_blank">Statens Kontoplan 2026.pdf</a></td>
+                    <td class="num-col">1014.5 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Statens Kontoplan 2026.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="UiA_alle_kontrollpunkter.pdf" class="file-name" target="_blank">UiA_alle_kontrollpunkter.pdf</a></td>
+                    <td class="num-col">71.5 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="UiA_alle_kontrollpunkter.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="UiA_regelverksmatrise_okonomi.xlsx" class="file-name" target="_blank">UiA_regelverksmatrise_okonomi.xlsx</a></td>
+                    <td class="num-col">19.6 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="UiA_regelverksmatrise_okonomi.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="UiA_regelverksmatrise_okonomi_med_tiltak.xlsx" class="file-name" target="_blank">UiA_regelverksmatrise_okonomi_med_tiltak.xlsx</a></td>
+                    <td class="num-col">12.1 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="UiA_regelverksmatrise_okonomi_med_tiltak.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="UiA_regelverksmatrise_okonomi_med_trafikklys.xlsx" class="file-name" target="_blank">UiA_regelverksmatrise_okonomi_med_trafikklys.xlsx</a></td>
+                    <td class="num-col">20.9 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="UiA_regelverksmatrise_okonomi_med_trafikklys.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="UiA_sammendrag_okonomi.pdf" class="file-name" target="_blank">UiA_sammendrag_okonomi.pdf</a></td>
+                    <td class="num-col">102.7 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="UiA_sammendrag_okonomi.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="arsrapport-2025-uia-web.pdf" class="file-name" target="_blank">arsrapport-2025-uia-web.pdf</a></td>
+                    <td class="num-col">2.05 MB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="arsrapport-2025-uia-web.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="controller_manual.md" class="file-name" target="_blank">controller_manual.md</a></td>
+                    <td class="num-col">63.1 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="controller_manual.md" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="interne-hovedregler-for-virksomhets--og-okonomiforvaltning.pdf" class="file-name" target="_blank">interne-hovedregler-for-virksomhets--og-okonomiforvaltning.pdf</a></td>
+                    <td class="num-col">457.7 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="interne-hovedregler-for-virksomhets--og-okonomiforvaltning.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="srs-alle-kombinert-pr-desember-2025.pdf" class="file-name" target="_blank">srs-alle-kombinert-pr-desember-2025.pdf</a></td>
+                    <td class="num-col">4.41 MB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="srs-alle-kombinert-pr-desember-2025.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="vedlegg-krav-til-arsrapport-for-statlige-universiteter-og-hoyskoler-2024.pdf" class="file-name" target="_blank">vedlegg-krav-til-arsrapport-for-statlige-universiteter-og-hoyskoler-2024.pdf</a></td>
+                    <td class="num-col">269.4 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="vedlegg-krav-til-arsrapport-for-statlige-universiteter-og-hoyskoler-2024.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="virksomhets-og-okonomiinstruks-for-uh-2025.pdf" class="file-name" target="_blank">virksomhets-og-okonomiinstruks-for-uh-2025.pdf</a></td>
+                    <td class="num-col">167.4 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="virksomhets-og-okonomiinstruks-for-uh-2025.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+    <footer>
+        Universitetet i Agder — Controlling & Financial Management Portal | Generert for GitHub Pages
+    </footer>
+
+    <script>
+        function filterFiles() {
+            const query = document.getElementById('file-search').value.toLowerCase();
+            const rows = document.querySelectorAll('#file-table-body tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(query) ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
