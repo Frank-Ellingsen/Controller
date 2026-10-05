@@ -273,8 +273,9 @@
                        oninput="switchToGlobalSearchTab(this.value)" 
                        style="padding: 0.45rem 1rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.4); background: rgba(255,255,255,0.2); color: white; width: 290px; font-size: 0.85rem; outline: none;">
             </div>
-            <a href="Controller Mappe/" target="_blank" class="btn" style="background-color: var(--uia-accent); padding: 0.45rem 0.9rem; font-size: 0.85rem;">📁 Controller Mappe</a>
-            <a href="Kunnskapsbase/" target="_blank" class="btn" style="background-color: var(--uia-blue); padding: 0.45rem 0.9rem; font-size: 0.85rem;">📚 Kunnskapsbase</a>
+            <a href="Controller%20Mappe/index.html" target="_blank" class="btn" style="background-color: var(--uia-accent); padding: 0.45rem 0.9rem; font-size: 0.85rem;">📁 Controller Mappe</a>
+            <a href="Kunnskapsbase/index.html" target="_blank" class="btn" style="background-color: var(--uia-blue); padding: 0.45rem 0.9rem; font-size: 0.85rem;">📚 Kunnskapsbase</a>
+            <a href="Regelverk/index.html" target="_blank" class="btn" style="background-color: #475569; padding: 0.45rem 0.9rem; font-size: 0.85rem;">📜 Regelverk</a>
             <span style="font-size: 0.85rem; margin-left: 0.5rem;">Rapporteringsperiode: <strong>2026-M10</strong></span>
         </div>
     </header>
@@ -739,10 +740,10 @@
             <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--uia-accent);">
                 <p style="font-size: 0.9rem; color: #64748B; margin-bottom: 1rem;">Gå direkte til virksomhetens maler, TDI-kalkyler, SRS-konteringsregler, håndbok og kunnskapsbase.</p>
                 <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-                    <a href="Controller Mappe/" target="_blank" class="btn" style="background-color: var(--uia-accent);">📁 Controller Mappe (Hovedmappe)</a>
-                    <a href="Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/" target="_blank" class="btn" style="background-color: var(--uia-navy);">📖 Controllerhåndbok (6 Moduler)</a>
-                    <a href="Kunnskapsbase/" target="_blank" class="btn" style="background-color: var(--uia-blue);">📚 Kunnskapsbase (Lovverk & Regnskap)</a>
-                    <a href="Regelverk/" target="_blank" class="btn" style="background-color: #475569;">📜 Regelverk & Instruksarkiv</a>
+                    <a href="Controller%20Mappe/index.html" target="_blank" class="btn" style="background-color: var(--uia-accent);">📁 Controller Mappe (Hovedmappe)</a>
+                    <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/index.html" target="_blank" class="btn" style="background-color: var(--uia-navy);">📖 Controllerhåndbok (6 Moduler)</a>
+                    <a href="Kunnskapsbase/index.html" target="_blank" class="btn" style="background-color: var(--uia-blue);">📚 Kunnskapsbase (Lovverk & Regnskap)</a>
+                    <a href="Regelverk/index.html" target="_blank" class="btn" style="background-color: #475569;">📜 Regelverk & Instruksarkiv</a>
                 </div>
             </div>
 
@@ -1559,14 +1560,14 @@ RIKSREVISJONEN INTERNKONTROLL- OG ATTESTASJONSAUDIT (2026)
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
                             <div>
                                 <h4 style="color: var(--uia-navy); font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-                                    ${icon} <a href="${m.path}" target="_blank" style="color: var(--uia-navy); text-decoration: underline;">${m.title}</a>
+                                    ${icon} <a href="${encodeURI(m.path)}" target="_blank" style="color: var(--uia-navy); text-decoration: underline;">${m.title}</a>
                                 </h4>
                                 <p style="font-size: 0.8rem; color: #64748B; margin-top: 2px;">📍 Sti: <code>${m.path}</code></p>
                             </div>
                             <div style="display: flex; gap: 0.5rem; align-items: center;">
                                 <span class="badge" style="background: #E2E8F0; color: #1E293B;">${m.category}</span>
                                 <span class="badge badge-warning">${sizeKb} KB</span>
-                                <a href="${m.path}" target="_blank" class="btn" style="padding: 3px 10px; font-size: 0.75rem; background-color: var(--uia-accent);">Åpne Fil ↗</a>
+                                <a href="${encodeURI(m.path)}" target="_blank" class="btn" style="padding: 3px 10px; font-size: 0.75rem; background-color: var(--uia-accent);">Åpne Fil ↗</a>
                             </div>
                         </div>
                         <p style="font-size: 0.85rem; color: #334155; margin-top: 0.6rem; background: #F8FAFC; padding: 0.6rem; border-radius: 4px;">
