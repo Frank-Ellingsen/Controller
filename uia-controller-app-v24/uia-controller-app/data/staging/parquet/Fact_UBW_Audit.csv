@@ -1,0 +1,93 @@
+transaksjon_id,konto,beskrivelse,belop_nok,bdm_id,attestant_id,kvittering_vedlagt,formaal,Kontrollflagg
+TX-1001,7100,Bilgodtgjørelse feltarbeid,1450.0,EMP-201,EMP-202,1,Feltarbeid Agder,OK
+TX-1002,7130,Reiseregning fagsamling,4200.0,EMP-203,EMP-203,1,Konferanse Oslo (FEIL: Egengodkjent),BRUDD: Egengodkjent (BDM == Attestant)
+TX-1003,6800,Kontorrekvisita,250.0,EMP-201,EMP-204,0,Innkjøp rekvisita (FEIL: Mangler kvittering > 100 kr),BRUDD: Mangler kvittering (>100 NOK)
+TX-1004,5330,Sensorhonorar Vår 2026,12500.0,EMP-205,EMP-206,1,Sensur ORG-200,OK
+TX-1005,7150,Utenlandsreise AACSB,18500.0,EMP-201,EMP-202,1,AACSB Konferanse USA,OK
+TX-9001,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),40471.27,EMP-114,EMP-108,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
+TX-9002,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Helse- og Idrettsvitenskap),2352.61,EMP-110,EMP-112,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9003,5000,Fast Lønn - Sept 2026 (Fellesadministrasjon),55209.04,EMP-103,EMP-110,1,Fast Lønn - Sept 2026 (Fellesadministrasjon),OK
+TX-9004,3400,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),-69957.11,EMP-104,EMP-114,1,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),OK
+TX-9005,7130,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),4001.14,EMP-107,EMP-102,1,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),OK
+TX-9006,6800,Kontorrekvisita - Sept 2026 (Handelshøyskolen),1437.32,EMP-101,EMP-107,1,Kontorrekvisita - Sept 2026 (Handelshøyskolen),OK
+TX-9007,5330,Sensorhonorarer - Sept 2026 (Teknologi og Realfag),10574.2,EMP-104,EMP-113,1,Sensorhonorarer - Sept 2026 (Teknologi og Realfag),OK
+TX-9008,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),36720.74,EMP-114,EMP-102,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
+TX-9009,7150,Utenlandsreise fagkonferanse - Sept 2026 (Teknologi og Realfag),19717.25,EMP-102,EMP-110,1,Utenlandsreise fagkonferanse - Sept 2026 (Teknologi og Realfag),OK
+TX-9010,5330,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),13873.48,EMP-103,EMP-114,1,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9011,5000,Fast Lønn - Sept 2026 (Teknologi og Realfag),52415.69,EMP-108,EMP-106,1,Fast Lønn - Sept 2026 (Teknologi og Realfag),OK
+TX-9012,6800,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),1656.08,EMP-114,EMP-114,1,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9013,6800,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),1653.4,EMP-113,EMP-112,1,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9014,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Teknologi og Realfag),2622.02,EMP-103,EMP-101,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Teknologi og Realfag),OK
+TX-9015,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Handelshøyskolen),1540.99,EMP-103,EMP-103,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Handelshøyskolen),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9016,3400,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),-68249.95,EMP-108,EMP-102,1,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),OK
+TX-9017,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),37499.56,EMP-106,EMP-107,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),OK
+TX-9018,3400,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),-66484.24,EMP-106,EMP-114,1,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),OK
+TX-9019,5330,Sensorhonorarer - Sept 2026 (Handelshøyskolen),14679.81,EMP-114,EMP-101,1,Sensorhonorarer - Sept 2026 (Handelshøyskolen),OK
+TX-9020,6300,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),40769.1,EMP-112,EMP-107,1,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9021,5330,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),14606.23,EMP-106,EMP-110,1,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9022,7130,Reiseregning fagsamling - Sept 2026 (Fellesadministrasjon),4110.92,EMP-105,EMP-110,0,Reiseregning fagsamling - Sept 2026 (Fellesadministrasjon),BRUDD: Mangler kvittering (>100 NOK)
+TX-9023,5000,Fast Lønn - Sept 2026 (Helse- og Idrettsvitenskap),33978.54,EMP-114,EMP-107,1,Fast Lønn - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9024,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),26674.19,EMP-113,EMP-110,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),OK
+TX-9025,5000,Fast Lønn - Sept 2026 (Fellesadministrasjon),47562.74,EMP-107,EMP-101,1,Fast Lønn - Sept 2026 (Fellesadministrasjon),OK
+TX-9026,5330,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),10720.77,EMP-106,EMP-107,1,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),OK
+TX-9027,3400,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),-63625.84,EMP-113,EMP-103,1,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),OK
+TX-9028,6300,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),29647.66,EMP-110,EMP-110,1,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9029,7130,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),6023.57,EMP-106,EMP-102,1,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),OK
+TX-9030,3400,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),-66317.71,EMP-101,EMP-101,1,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9031,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),40275.43,EMP-105,EMP-110,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
+TX-9032,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),35790.77,EMP-111,EMP-107,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),OK
+TX-9033,6800,Kontorrekvisita - Sept 2026 (Handelshøyskolen),1636.17,EMP-107,EMP-104,1,Kontorrekvisita - Sept 2026 (Handelshøyskolen),OK
+TX-9034,3400,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),-50275.78,EMP-111,EMP-114,1,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),OK
+TX-9035,5330,Sensorhonorarer - Sept 2026 (Teknologi og Realfag),12088.76,EMP-113,EMP-113,1,Sensorhonorarer - Sept 2026 (Teknologi og Realfag),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9036,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),3924.37,EMP-104,EMP-106,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
+TX-9037,6800,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),1409.25,EMP-108,EMP-106,1,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9038,7150,Utenlandsreise fagkonferanse - Sept 2026 (Helse- og Idrettsvitenskap),23189.63,EMP-109,EMP-105,1,Utenlandsreise fagkonferanse - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9039,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),26748.68,EMP-104,EMP-106,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),OK
+TX-9040,3400,Oppdragsinntekter BOA - Sept 2026 (Teknologi og Realfag),-46096.77,EMP-111,EMP-110,1,Oppdragsinntekter BOA - Sept 2026 (Teknologi og Realfag),OK
+TX-9041,7130,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),4455.32,EMP-104,EMP-104,1,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9042,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),6115.09,EMP-112,EMP-101,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
+TX-9043,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),3974.75,EMP-111,EMP-112,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
+TX-9044,3400,Oppdragsinntekter BOA - Sept 2026 (Teknologi og Realfag),-46628.5,EMP-102,EMP-101,1,Oppdragsinntekter BOA - Sept 2026 (Teknologi og Realfag),OK
+TX-9045,5330,Sensorhonorarer - Sept 2026 (Handelshøyskolen),12140.21,EMP-112,EMP-111,1,Sensorhonorarer - Sept 2026 (Handelshøyskolen),OK
+TX-9046,6800,Kontorrekvisita - Sept 2026 (Handelshøyskolen),2296.11,EMP-111,EMP-112,1,Kontorrekvisita - Sept 2026 (Handelshøyskolen),OK
+TX-9047,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),41503.99,EMP-107,EMP-102,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
+TX-9048,6800,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),1726.83,EMP-105,EMP-103,1,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),OK
+TX-9049,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),31478.39,EMP-108,EMP-108,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9050,6300,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),29630.96,EMP-109,EMP-105,1,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9051,5330,Sensorhonorarer - Sept 2026 (Handelshøyskolen),14965.63,EMP-112,EMP-101,1,Sensorhonorarer - Sept 2026 (Handelshøyskolen),OK
+TX-9052,5330,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),10475.13,EMP-103,EMP-108,1,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),OK
+TX-9053,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),43780.71,EMP-110,EMP-110,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9054,6300,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),44385.45,EMP-101,EMP-108,1,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9055,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),2151.26,EMP-112,EMP-112,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9056,6800,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),1581.19,EMP-105,EMP-102,1,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),OK
+TX-9057,6300,Kontorleie & Strøm - Sept 2026 (Teknologi og Realfag),31639.32,EMP-107,EMP-108,1,Kontorleie & Strøm - Sept 2026 (Teknologi og Realfag),OK
+TX-9058,7150,Utenlandsreise fagkonferanse - Sept 2026 (Handelshøyskolen),20078.03,EMP-110,EMP-104,0,Utenlandsreise fagkonferanse - Sept 2026 (Handelshøyskolen),BRUDD: Mangler kvittering (>100 NOK)
+TX-9059,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),3850.61,EMP-103,EMP-109,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
+TX-9060,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),4248.73,EMP-114,EMP-104,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
+TX-9061,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),39562.78,EMP-108,EMP-106,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
+TX-9062,5330,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),9055.05,EMP-110,EMP-105,1,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),OK
+TX-9063,3400,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),-59704.24,EMP-113,EMP-103,1,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),OK
+TX-9064,5000,Fast Lønn - Sept 2026 (Fellesadministrasjon),54535.67,EMP-107,EMP-103,1,Fast Lønn - Sept 2026 (Fellesadministrasjon),OK
+TX-9065,5000,Fast Lønn - Sept 2026 (Helse- og Idrettsvitenskap),38388.93,EMP-101,EMP-111,1,Fast Lønn - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9066,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),2810.83,EMP-107,EMP-101,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),OK
+TX-9067,6800,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),1317.49,EMP-105,EMP-101,1,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),OK
+TX-9068,3400,Oppdragsinntekter BOA - Sept 2026 (Teknologi og Realfag),-54009.08,EMP-114,EMP-113,1,Oppdragsinntekter BOA - Sept 2026 (Teknologi og Realfag),OK
+TX-9069,7150,Utenlandsreise fagkonferanse - Sept 2026 (Teknologi og Realfag),21208.85,EMP-103,EMP-101,1,Utenlandsreise fagkonferanse - Sept 2026 (Teknologi og Realfag),OK
+TX-9070,3400,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),-65604.32,EMP-111,EMP-111,1,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9071,7130,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),3419.92,EMP-104,EMP-104,1,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),BRUDD: Egengodkjent (BDM == Attestant)
+TX-9072,5330,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),13057.12,EMP-102,EMP-105,1,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9073,7130,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),5531.46,EMP-101,EMP-109,1,Reiseregning fagsamling - Sept 2026 (Handelshøyskolen),OK
+TX-9074,5000,Fast Lønn - Sept 2026 (Teknologi og Realfag),32177.98,EMP-106,EMP-107,1,Fast Lønn - Sept 2026 (Teknologi og Realfag),OK
+TX-9075,5000,Fast Lønn - Sept 2026 (Teknologi og Realfag),49829.34,EMP-104,EMP-112,1,Fast Lønn - Sept 2026 (Teknologi og Realfag),OK
+TX-9076,6800,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),1438.46,EMP-109,EMP-113,1,Kontorrekvisita - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9077,3400,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),-53056.74,EMP-111,EMP-101,1,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9078,3400,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),-75888.39,EMP-113,EMP-112,1,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9079,7150,Utenlandsreise fagkonferanse - Sept 2026 (Fellesadministrasjon),13342.55,EMP-104,EMP-111,1,Utenlandsreise fagkonferanse - Sept 2026 (Fellesadministrasjon),OK
+TX-9080,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),44457.42,EMP-114,EMP-103,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
+TX-9081,5000,Fast Lønn - Sept 2026 (Teknologi og Realfag),36190.57,EMP-102,EMP-103,1,Fast Lønn - Sept 2026 (Teknologi og Realfag),OK
+TX-9082,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),29307.79,EMP-111,EMP-112,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),OK
+TX-9083,5330,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),11457.31,EMP-106,EMP-103,1,Sensorhonorarer - Sept 2026 (Fellesadministrasjon),OK
+TX-9084,3400,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),-77273.08,EMP-113,EMP-110,1,Oppdragsinntekter BOA - Sept 2026 (Fellesadministrasjon),OK
+TX-9085,3400,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),-55581.5,EMP-111,EMP-104,1,Oppdragsinntekter BOA - Sept 2026 (Helse- og Idrettsvitenskap),OK
+TX-9086,6800,Kontorrekvisita - Sept 2026 (Handelshøyskolen),2044.87,EMP-111,EMP-114,1,Kontorrekvisita - Sept 2026 (Handelshøyskolen),OK
+TX-9087,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),2458.76,EMP-114,EMP-113,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),OK
