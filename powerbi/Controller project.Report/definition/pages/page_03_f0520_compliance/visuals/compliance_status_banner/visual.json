@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "compliance_status_banner",
+  "position": {
+    "x": 40,
+    "y": 280,
+    "width": 1840,
+    "height": 740,
+    "z": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "query": {},
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Status F-05-20 Overf\u00f8ringsrapport",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "16pt",
+                      "color": "#F8FAFC"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "kpi_ubw_trans_count",
+  "position": {
+    "x": 40,
+    "y": 130,
+    "width": 560,
+    "height": 130,
+    "z": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {},
+    "objects": {}
+  }
+}

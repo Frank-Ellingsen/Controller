@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "d733e5a945ef89a02f8b",
-  "displayName": "Page 1",
+  "name": "page_04_travel_audit",
+  "displayName": "\ud83d\udd0d Internkontroll Reiseregninger",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920

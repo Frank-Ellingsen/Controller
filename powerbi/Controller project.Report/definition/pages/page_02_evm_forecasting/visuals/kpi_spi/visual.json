@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "kpi_spi",
+  "position": {
+    "x": 400,
+    "y": 130,
+    "width": 340,
+    "height": 130,
+    "z": 1
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {},
+    "objects": {}
+  }
+}

@@ -3,13 +3,8 @@ relationship Fact_EVM_Snapshots_Dim_Project
 	toColumn: Dim_Project.project_id
 
 relationship Fact_EVM_Snapshots_Dim_Date
-	crossFilteringBehavior: bothDirections
+	fromCardinality: many
 	toCardinality: many
 	fromColumn: Fact_EVM_Snapshots.reporting_period
 	toColumn: Dim_Date.ReportingPeriod
-
-relationship 48792e5b-f9ed-408b-b91a-25b06c92dc11
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dim_Date.Date
-	toColumn: LocalDateTable_e98e644e-dd24-4cf7-98de-09a63bc142d2.Date
-
+	crossFilteringBehavior: bothDirections

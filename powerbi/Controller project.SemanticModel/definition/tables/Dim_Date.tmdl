@@ -1,25 +1,21 @@
 table Dim_Date
-	lineageTag: 908efcc7-b113-47b5-a45b-8868a1d0a896
+	lineageTag: 08f130de-12ba-4598-a18a-5772ebb7e71b
 
 	column Date
 		dataType: dateTime
 		formatString: yyyy-MM-dd
-		lineageTag: 8ee720eb-73ad-435f-98de-4976193d41ed
+		lineageTag: 318831ac-08c9-4d2b-85e7-4ae6b79ff1b3
 		summarizeBy: none
 		sourceColumn: Date
 
-		variation Variation
-			isDefault
-			relationship: 48792e5b-f9ed-408b-b91a-25b06c92dc11
-			defaultHierarchy: LocalDateTable_e98e644e-dd24-4cf7-98de-09a63bc142d2.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
+		annotation UnderlyingDateTimeDataType = Date
 
 	column Year
 		dataType: int64
 		formatString: 0
-		lineageTag: 5487eba3-2e70-4184-a644-4892f8edb2c7
-		summarizeBy: sum
+		lineageTag: e543f08c-ced7-4fc2-a520-4f76c95a0813
+		summarizeBy: none
 		sourceColumn: Year
 
 		annotation SummarizationSetBy = Automatic
@@ -27,15 +23,15 @@ table Dim_Date
 	column Month
 		dataType: int64
 		formatString: 0
-		lineageTag: 8ac53197-e080-4270-90c2-56bf56c0563b
-		summarizeBy: sum
+		lineageTag: 6c90b10b-373d-487b-b907-6819fa8d0aa0
+		summarizeBy: none
 		sourceColumn: Month
 
 		annotation SummarizationSetBy = Automatic
 
 	column MonthName
 		dataType: string
-		lineageTag: 75d251e5-239f-4cfc-a885-b056aaa40dc3
+		lineageTag: f0fea11a-8f9b-4b90-bdf3-023eeb35ac52
 		summarizeBy: none
 		sourceColumn: MonthName
 		sortByColumn: Month
@@ -44,7 +40,7 @@ table Dim_Date
 
 	column ReportingPeriod
 		dataType: string
-		lineageTag: 6a51dd14-ded9-41c3-93a8-588880cb0b6b
+		lineageTag: 52985958-6165-4bcd-bda1-d3f7661d820e
 		summarizeBy: none
 		sourceColumn: ReportingPeriod
 
@@ -53,8 +49,8 @@ table Dim_Date
 	column Quarter
 		dataType: int64
 		formatString: 0
-		lineageTag: 3d5f4d3e-0200-430e-b803-0b3ef5dcfd47
-		summarizeBy: sum
+		lineageTag: 18691d32-9db0-4089-adca-ab218df263b5
+		summarizeBy: none
 		sourceColumn: Quarter
 
 		annotation SummarizationSetBy = Automatic
@@ -74,4 +70,3 @@ table Dim_Date
 				    })
 				in
 				    #"Changed Type"
-
