@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "kpi_ubw_flagged_count",
   "position": {
     "x": 1280,
     "y": 130,
-    "z": 1,
+    "width": 600,
     "height": 130,
-    "width": 600
+    "z": 1
   },
   "visual": {
     "visualType": "card",
@@ -30,6 +30,7 @@
           ]
         }
       }
-    }
+    },
+    "objects": {}
   }
 }

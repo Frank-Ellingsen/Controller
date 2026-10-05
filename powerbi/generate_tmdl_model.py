@@ -628,32 +628,67 @@ def generate_measures_table():
     content = f"""table _Measures
 \tlineageTag: {uid()}
 
-\tmeasure 'Total BAC' = SUM('Fact_EVM_Snapshots'[bac])
+\tmeasure 'Total Budget' = SUM('Fact_EVM_Snapshots'[bac])
 \t\tformatString: #,##0
 \t\tdisplayFolder: '01 Core EVM'
 \t\tlineageTag: {uid()}
 
-\tmeasure 'Total PV' = SUM('Fact_EVM_Snapshots'[pv])
+\tmeasure 'Budget YTD' = SUM('Fact_EVM_Snapshots'[pv])
 \t\tformatString: #,##0
 \t\tdisplayFolder: '01 Core EVM'
 \t\tlineageTag: {uid()}
 
-\tmeasure 'Total EV' = SUM('Fact_EVM_Snapshots'[ev])
+\tmeasure 'Progress Value' = SUM('Fact_EVM_Snapshots'[ev])
 \t\tformatString: #,##0
 \t\tdisplayFolder: '01 Core EVM'
 \t\tlineageTag: {uid()}
 
-\tmeasure 'Total AC' = SUM('Fact_EVM_Snapshots'[ac])
+\tmeasure 'Actual YTD' = SUM('Fact_EVM_Snapshots'[ac])
 \t\tformatString: #,##0
 \t\tdisplayFolder: '01 Core EVM'
 \t\tlineageTag: {uid()}
 
-\tmeasure 'Cost Variance NOK' = [Total EV] - [Total AC]
+\tmeasure 'Cost Variance' = [Progress Value] - [Actual YTD]
 \t\tformatString: +#,##0;-#,##0;0
 \t\tdisplayFolder: '01 Core EVM'
 \t\tlineageTag: {uid()}
 
-\tmeasure 'Schedule Variance NOK' = [Total EV] - [Total PV]
+\tmeasure 'Forecast' = DIVIDE([Total Budget], [Portfolio CPI], [Total Budget])
+\t\tformatString: #,##0
+\t\tdisplayFolder: '02 EAC Forecasting'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Forecast Variance' = [Total Budget] - [Forecast]
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '02 EAC Forecasting'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Total BAC' = [Total Budget]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '01 Core EVM'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Total PV' = [Budget YTD]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '01 Core EVM'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Total EV' = [Progress Value]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '01 Core EVM'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Total AC' = [Actual YTD]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '01 Core EVM'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Cost Variance NOK' = [Cost Variance]
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '01 Core EVM'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Schedule Variance NOK' = [Progress Value] - [Budget YTD]
 \t\tformatString: +#,##0;-#,##0;0
 \t\tdisplayFolder: '01 Core EVM'
 \t\tlineageTag: {uid()}

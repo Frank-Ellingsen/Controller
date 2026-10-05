@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "kpi_vac",
   "position": {
     "x": 1140,
     "y": 130,
-    "z": 1,
+    "width": 360,
     "height": 130,
-    "width": 360
+    "z": 1
   },
   "visual": {
     "visualType": "card",
@@ -22,14 +22,15 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "VAC Selected Model"
+                  "Property": "Forecast Variance"
                 }
               },
-              "queryRef": "_Measures.VAC Selected Model"
+              "queryRef": "_Measures.Forecast Variance"
             }
           ]
         }
       }
-    }
+    },
+    "objects": {}
   }
 }

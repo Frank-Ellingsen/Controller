@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "page_02_evm_forecasting",
-  "displayName": "📈 EVM Prosjektstyring & EAC",
+  "displayName": "\ud83d\udcc8 EVM Prosjektstyring & EAC",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920

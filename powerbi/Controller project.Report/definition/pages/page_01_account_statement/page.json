@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "page_01_account_statement",
-  "displayName": "📊 Account Statement & Balanse",
+  "displayName": "\ud83d\udcca Account Statement & Balanse",
   "displayOption": "FitToPage",
   "height": 1080,
   "width": 1920

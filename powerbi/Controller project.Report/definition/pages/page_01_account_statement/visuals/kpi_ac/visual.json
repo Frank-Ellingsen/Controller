@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "kpi_ac",
   "position": {
     "x": 940,
     "y": 130,
-    "z": 1,
+    "width": 280,
     "height": 130,
-    "width": 280
+    "z": 1
   },
   "visual": {
     "visualType": "card",
@@ -22,14 +22,15 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total AC"
+                  "Property": "Actual YTD"
                 }
               },
-              "queryRef": "_Measures.Total AC"
+              "queryRef": "_Measures.Actual YTD"
             }
           ]
         }
       }
-    }
+    },
+    "objects": {}
   }
 }

@@ -1,9 +1,9 @@
 table Dim_Model_Parameter
-	lineageTag: d32007eb-9227-437d-bb41-00e37311b7b9
+	lineageTag: 9c37b0f8-dbd9-4278-b24c-957d9d46705c
 
 	column ModelCode
 		dataType: string
-		lineageTag: 784ac221-0f2c-42ad-8da1-5bc1a2b2783e
+		lineageTag: 2f4a6f8d-6b4d-4ebd-84ef-263f06e79f14
 		summarizeBy: none
 		sourceColumn: ModelCode
 
@@ -11,7 +11,7 @@ table Dim_Model_Parameter
 
 	column ModelName
 		dataType: string
-		lineageTag: 8841354e-b014-482a-83e2-bbdec5d0d822
+		lineageTag: 3ca2bba7-b052-4fb3-84d3-e24243ee5e09
 		summarizeBy: none
 		sourceColumn: ModelName
 
@@ -19,7 +19,7 @@ table Dim_Model_Parameter
 
 	column Description
 		dataType: string
-		lineageTag: 1c0dfbb0-6c8c-4d2e-aa98-2095113243a0
+		lineageTag: 07f13ea6-c069-4743-b2d9-51a16dd3533a
 		summarizeBy: none
 		sourceColumn: Description
 
@@ -39,4 +39,3 @@ table Dim_Model_Parameter
 				    )
 				in
 				    ModelTable
-

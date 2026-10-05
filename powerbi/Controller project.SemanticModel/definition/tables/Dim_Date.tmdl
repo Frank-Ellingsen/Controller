@@ -1,21 +1,20 @@
 table Dim_Date
-	lineageTag: 65037db5-a3a4-414a-9f0f-4dbc324a36d6
+	lineageTag: 95c0271f-004d-40c2-b03e-aaf49ec1cbca
 
 	column Date
 		dataType: dateTime
 		formatString: yyyy-MM-dd
-		lineageTag: 743f0f21-62cb-4ae6-b090-dbac92a25371
+		lineageTag: 45077a41-9fbe-4915-a323-f94655ffaf1d
 		summarizeBy: none
 		sourceColumn: Date
 
 		annotation SummarizationSetBy = Automatic
-
 		annotation UnderlyingDateTimeDataType = Date
 
 	column Year
 		dataType: int64
 		formatString: 0
-		lineageTag: 1451b428-224e-403b-8035-7918e046a67a
+		lineageTag: 15ccd7e4-5006-4d7c-80bb-1d5744e83685
 		summarizeBy: none
 		sourceColumn: Year
 
@@ -24,7 +23,7 @@ table Dim_Date
 	column Month
 		dataType: int64
 		formatString: 0
-		lineageTag: 62db6a0b-4d71-48e1-915a-f7b475f9a263
+		lineageTag: 22f4466c-8e05-4913-842a-b30553f4365f
 		summarizeBy: none
 		sourceColumn: Month
 
@@ -32,7 +31,7 @@ table Dim_Date
 
 	column MonthName
 		dataType: string
-		lineageTag: cd8285bf-e84f-421d-98e3-1d556423b3da
+		lineageTag: 2954f58c-060e-40c9-8a79-788a3b17e551
 		summarizeBy: none
 		sourceColumn: MonthName
 		sortByColumn: Month
@@ -41,7 +40,7 @@ table Dim_Date
 
 	column ReportingPeriod
 		dataType: string
-		lineageTag: daf7dd57-b65f-416c-b040-0c903746a392
+		lineageTag: 876cbc00-af91-4b48-ab48-e684a3ad3716
 		summarizeBy: none
 		sourceColumn: ReportingPeriod
 
@@ -50,7 +49,7 @@ table Dim_Date
 	column Quarter
 		dataType: int64
 		formatString: 0
-		lineageTag: 7ef4da3f-ca80-4b02-81aa-488240896ac4
+		lineageTag: 52b753be-9b1d-439a-8937-e24eac5df5bc
 		summarizeBy: none
 		sourceColumn: Quarter
 
@@ -71,4 +70,3 @@ table Dim_Date
 				    })
 				in
 				    #"Changed Type"
-

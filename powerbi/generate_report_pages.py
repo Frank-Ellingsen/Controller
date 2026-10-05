@@ -32,43 +32,43 @@ PAGES_SPEC = [
                 "name": "kpi_bac",
                 "position": {"x": 40, "y": 130, "width": 280, "height": 130},
                 "type": "card",
-                "title": "Total Budget (BAC)",
-                "measure": "[Total BAC]"
+                "title": "Total Budget",
+                "measure": "[Total Budget]"
             },
             {
                 "name": "kpi_pv",
                 "position": {"x": 340, "y": 130, "width": 280, "height": 130},
                 "type": "card",
-                "title": "Budget YTD (PV)",
-                "measure": "[Total PV]"
+                "title": "Budget YTD",
+                "measure": "[Budget YTD]"
             },
             {
                 "name": "kpi_ev",
                 "position": {"x": 640, "y": 130, "width": 280, "height": 130},
                 "type": "card",
-                "title": "Progress Value (EV)",
-                "measure": "[Total EV]"
+                "title": "Progress Value",
+                "measure": "[Progress Value]"
             },
             {
                 "name": "kpi_ac",
                 "position": {"x": 940, "y": 130, "width": 280, "height": 130},
                 "type": "card",
-                "title": "Actual YTD (AC)",
-                "measure": "[Total AC]"
+                "title": "Actual YTD",
+                "measure": "[Actual YTD]"
             },
             {
                 "name": "kpi_cv",
                 "position": {"x": 1240, "y": 130, "width": 280, "height": 130},
                 "type": "card",
-                "title": "Cost Variance (CV)",
-                "measure": "[Cost Variance NOK]"
+                "title": "Cost Variance",
+                "measure": "[Cost Variance]"
             },
             {
                 "name": "kpi_eac",
                 "position": {"x": 1540, "y": 130, "width": 340, "height": 130},
                 "type": "card",
-                "title": "Forecast (EAC)",
-                "measure": "[EAC Typical CPI]"
+                "title": "Forecast",
+                "measure": "[Forecast]"
             },
             {
                 "name": "table_account_statement",
@@ -115,8 +115,8 @@ PAGES_SPEC = [
                 "name": "kpi_vac",
                 "position": {"x": 1140, "y": 130, "width": 360, "height": 130},
                 "type": "card",
-                "title": "Sluttavvik (VAC)",
-                "measure": "[VAC Selected Model]"
+                "title": "Forecast Variance",
+                "measure": "[Forecast Variance]"
             },
             {
                 "name": "kpi_tcpi",

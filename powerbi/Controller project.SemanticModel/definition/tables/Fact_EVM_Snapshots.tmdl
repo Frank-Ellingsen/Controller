@@ -1,9 +1,9 @@
 table Fact_EVM_Snapshots
-	lineageTag: cee5aff8-b2db-4032-a2fd-74993a9c9626
+	lineageTag: de18b5a6-4f84-4d0d-bcc7-9faa75a50705
 
 	column reporting_period
 		dataType: string
-		lineageTag: bd5ea13f-5251-4411-8e0a-f9f5f24390c3
+		lineageTag: 2c05c642-4324-415f-af1d-da0e997dc47b
 		summarizeBy: none
 		sourceColumn: reporting_period
 
@@ -12,7 +12,7 @@ table Fact_EVM_Snapshots
 	column snapshot_timestamp
 		dataType: dateTime
 		formatString: yyyy-MM-dd HH:mm:ss
-		lineageTag: 9f6727c7-ac97-4846-adaf-b59445e856a6
+		lineageTag: 5b558508-edc1-4479-9558-bf7b5180ea30
 		summarizeBy: none
 		sourceColumn: snapshot_timestamp
 
@@ -20,7 +20,7 @@ table Fact_EVM_Snapshots
 
 	column project_id
 		dataType: string
-		lineageTag: 20152def-c191-4002-bfbe-831c98ec11e1
+		lineageTag: d794acd0-f5ca-4e20-9c74-8d4545710400
 		summarizeBy: none
 		sourceColumn: project_id
 
@@ -29,7 +29,7 @@ table Fact_EVM_Snapshots
 	column bac
 		dataType: double
 		formatString: #,##0
-		lineageTag: cf9036ac-53ae-4217-ac77-e821da4a61a2
+		lineageTag: c7078612-006e-457c-af6e-c3403eba7fcb
 		summarizeBy: sum
 		sourceColumn: bac
 
@@ -38,7 +38,7 @@ table Fact_EVM_Snapshots
 	column pv
 		dataType: double
 		formatString: #,##0
-		lineageTag: de7f1235-fe4e-4022-88a1-add2c3c4a2de
+		lineageTag: 2f7811c4-6c5a-4050-ba26-07c73f3f95ec
 		summarizeBy: sum
 		sourceColumn: pv
 
@@ -47,7 +47,7 @@ table Fact_EVM_Snapshots
 	column ev
 		dataType: double
 		formatString: #,##0
-		lineageTag: b467889a-3028-4aec-b16b-cab65bad784d
+		lineageTag: c647faa3-dfaa-4297-b946-1a512d66d458
 		summarizeBy: sum
 		sourceColumn: ev
 
@@ -56,7 +56,7 @@ table Fact_EVM_Snapshots
 	column ac
 		dataType: double
 		formatString: #,##0
-		lineageTag: 91a0afa8-0984-477d-967a-d942404de7c2
+		lineageTag: 2bc60729-ad25-4545-8cba-5589371027b6
 		summarizeBy: sum
 		sourceColumn: ac
 
@@ -65,7 +65,7 @@ table Fact_EVM_Snapshots
 	column cpi
 		dataType: double
 		formatString: 0.00
-		lineageTag: 0dec70e0-4daa-44ea-8763-a42892fc289d
+		lineageTag: 12f65e14-c0a1-4ff8-86f5-8fe28997780f
 		summarizeBy: average
 		sourceColumn: cpi
 
@@ -74,7 +74,7 @@ table Fact_EVM_Snapshots
 	column spi
 		dataType: double
 		formatString: 0.00
-		lineageTag: a23cdeb6-3228-405d-b08e-f70cf60fd632
+		lineageTag: 4251a396-edb0-4a8c-bec2-9145f4b1288c
 		summarizeBy: average
 		sourceColumn: spi
 
@@ -83,7 +83,7 @@ table Fact_EVM_Snapshots
 	column eac_cpi
 		dataType: double
 		formatString: #,##0
-		lineageTag: 305afd0f-cd39-4755-9b11-9f413e3f81ca
+		lineageTag: 44511802-fcaf-43e0-8c82-6b53799fe0b9
 		summarizeBy: sum
 		sourceColumn: eac_cpi
 
@@ -92,7 +92,7 @@ table Fact_EVM_Snapshots
 	column eac_composite
 		dataType: double
 		formatString: #,##0
-		lineageTag: a8f477d8-09dd-4480-905d-e4e19cc6471a
+		lineageTag: ffe89a68-cf4b-4945-be40-30bbc377171c
 		summarizeBy: sum
 		sourceColumn: eac_composite
 
@@ -101,7 +101,7 @@ table Fact_EVM_Snapshots
 	column eac_weighted
 		dataType: double
 		formatString: #,##0
-		lineageTag: c2618d68-b52b-4b8a-b7bb-c962e33b093d
+		lineageTag: 8d45f908-ff96-4413-a249-8696d0be4f2b
 		summarizeBy: sum
 		sourceColumn: eac_weighted
 
@@ -110,7 +110,7 @@ table Fact_EVM_Snapshots
 	column vac
 		dataType: double
 		formatString: #,##0
-		lineageTag: 8cbe24a0-7cc4-4ee1-980b-e86ae9a8538b
+		lineageTag: 41b03697-f87e-4879-96e1-0bfd2abe9340
 		summarizeBy: sum
 		sourceColumn: vac
 
@@ -119,7 +119,7 @@ table Fact_EVM_Snapshots
 	column tcpi
 		dataType: double
 		formatString: 0.00
-		lineageTag: cb2d0134-3ca2-4501-be02-397a4afb4a26
+		lineageTag: befdac0f-eaec-454d-8cf6-a69040f90042
 		summarizeBy: average
 		sourceColumn: tcpi
 
@@ -127,7 +127,7 @@ table Fact_EVM_Snapshots
 
 	column status
 		dataType: string
-		lineageTag: e4adebdb-24ff-4a3e-8dd2-736d17aff129
+		lineageTag: e772a339-a40e-46d7-9d2b-337503e51331
 		summarizeBy: none
 		sourceColumn: status
 
@@ -157,4 +157,3 @@ table Fact_EVM_Snapshots
 				    })
 				in
 				    #"Changed Type"
-

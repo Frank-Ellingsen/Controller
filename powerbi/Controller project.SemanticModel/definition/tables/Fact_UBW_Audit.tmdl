@@ -1,9 +1,9 @@
 table Fact_UBW_Audit
-	lineageTag: e08da089-6a2d-4255-a452-db6b718a4484
+	lineageTag: ada2681f-0b4d-4600-b2c0-df88bec4e4ba
 
 	column transaksjon_id
 		dataType: string
-		lineageTag: ff44a101-ed39-4b00-a3db-942c3b9b039c
+		lineageTag: c51c1ecd-e8aa-431c-a5d6-46a3f182f3be
 		summarizeBy: none
 		sourceColumn: transaksjon_id
 
@@ -11,7 +11,7 @@ table Fact_UBW_Audit
 
 	column konto
 		dataType: string
-		lineageTag: 45a3fb6e-9b37-4949-9c08-4d7c7449ccfb
+		lineageTag: 5d620ccb-1c35-4c90-a32f-5f2b1bc19d0c
 		summarizeBy: none
 		sourceColumn: konto
 
@@ -19,7 +19,7 @@ table Fact_UBW_Audit
 
 	column beskrivelse
 		dataType: string
-		lineageTag: 4c0467bf-2217-4694-836e-e6f53469a1d0
+		lineageTag: 1f825dda-424e-4dc7-9261-b145a21daa5b
 		summarizeBy: none
 		sourceColumn: beskrivelse
 
@@ -28,7 +28,7 @@ table Fact_UBW_Audit
 	column belop_nok
 		dataType: double
 		formatString: #,##0
-		lineageTag: 02d5b190-3a5e-40f0-a32d-7fb223c7f0d1
+		lineageTag: 637118cb-5025-437d-af96-921dacc9e60a
 		summarizeBy: sum
 		sourceColumn: belop_nok
 
@@ -36,7 +36,7 @@ table Fact_UBW_Audit
 
 	column bdm_id
 		dataType: string
-		lineageTag: 1dd3ae2b-921b-40d9-a2f3-af78f2c357e9
+		lineageTag: 6a661b43-a704-4293-9077-2ba11e9029a8
 		summarizeBy: none
 		sourceColumn: bdm_id
 
@@ -44,7 +44,7 @@ table Fact_UBW_Audit
 
 	column attestant_id
 		dataType: string
-		lineageTag: 6b99104c-af42-404e-8021-b8ab05d71ef7
+		lineageTag: ef9a13a2-225a-4212-befb-464c2fce8b11
 		summarizeBy: none
 		sourceColumn: attestant_id
 
@@ -52,7 +52,7 @@ table Fact_UBW_Audit
 
 	column kvittering_vedlagt
 		dataType: int64
-		lineageTag: c2c6bd6b-c408-40c3-b4ca-eec633eac168
+		lineageTag: 1afd2c27-ca86-4178-99bb-cb2cd2fabc5a
 		summarizeBy: none
 		sourceColumn: kvittering_vedlagt
 
@@ -60,7 +60,7 @@ table Fact_UBW_Audit
 
 	column formaal
 		dataType: string
-		lineageTag: 947a771a-bb08-4458-b079-2f4a082f7529
+		lineageTag: 1b42a978-9820-40af-ba05-ed8573f803dd
 		summarizeBy: none
 		sourceColumn: formaal
 
@@ -68,7 +68,7 @@ table Fact_UBW_Audit
 
 	column Kontrollflagg
 		dataType: string
-		lineageTag: 6bad6781-e08a-4bda-9194-2dcfb91890ca
+		lineageTag: 6da4c7ca-dfa6-4c07-92ca-5e48d309c1f2
 		summarizeBy: none
 		sourceColumn: Kontrollflagg
 
@@ -92,4 +92,3 @@ table Fact_UBW_Audit
 				    })
 				in
 				    #"Changed Type"
-

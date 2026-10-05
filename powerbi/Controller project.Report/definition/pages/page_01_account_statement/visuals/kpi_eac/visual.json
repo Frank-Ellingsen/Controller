@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
   "name": "kpi_eac",
   "position": {
     "x": 1540,
     "y": 130,
-    "z": 1,
+    "width": 340,
     "height": 130,
-    "width": 340
+    "z": 1
   },
   "visual": {
     "visualType": "card",
@@ -22,14 +22,15 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "EAC Typical CPI"
+                  "Property": "Forecast"
                 }
               },
-              "queryRef": "_Measures.EAC Typical CPI"
+              "queryRef": "_Measures.Forecast"
             }
           ]
         }
       }
-    }
+    },
+    "objects": {}
   }
 }
