@@ -14,14 +14,17 @@ import base64
 import sqlite3
 import sys
 import os
+import uuid
 from pathlib import Path
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse
 
 # Base directories
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DB_PATH = BASE_DIR / "data" / "staging" / "projects.db"
 DEFAULT_DUCKDB_PATH = BASE_DIR / "data" / "staging" / "analytics_snapshots.duckdb"
 DEFAULT_STAGING_DIR = BASE_DIR / "data" / "staging"
+DEFAULT_PARQUET_DIR = BASE_DIR / "data" / "staging" / "parquet"
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 
 MONTH_NAMES_NO = {
     "2026-M01": "Januar 2026",
@@ -174,17 +177,6 @@ class PortalRequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(BASE_DIR), **kwargs)
 
-    def end_headers(self):
-        # Enable CORS for local testing and web portal fetch requests
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
-        super().end_headers()
-
-    def do_OPTIONS(self):
-        self.send_response(204)
-        self.end_headers()
-
     def send_json_response(self, status_code: int, data: dict):
         self.send_response(status_code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -221,16 +213,26 @@ class PortalRequestHandler(http.server.SimpleHTTPRequestHandler):
         path = parsed.path
 
         if path == "/api/upload":
-            content_length = int(self.headers.get("Content-Length", 0))
+            try:
+                content_length = int(self.headers.get("Content-Length", 0))
+            except ValueError:
+                self.send_json_response(400, {"status": "ERROR", "message": "Ugyldig Content-Length."})
+                return
             if content_length <= 0:
                 self.send_json_response(400, {"status": "ERROR", "message": "Tom forespørsel."})
+                return
+            if content_length > MAX_UPLOAD_BYTES:
+                self.send_json_response(413, {"status": "ERROR", "message": "Filen overskrider maksimal størrelse på 10 MB."})
                 return
 
             body = self.rfile.read(content_length)
             try:
                 payload = json.loads(body.decode("utf-8"))
-            except Exception as e:
+            except (UnicodeDecodeError, json.JSONDecodeError) as e:
                 self.send_json_response(400, {"status": "ERROR", "message": f"Ugyldig JSON payload: {e}"})
+                return
+            if not isinstance(payload, dict):
+                self.send_json_response(400, {"status": "ERROR", "message": "JSON payload må være et objekt."})
                 return
 
             filename = payload.get("filename", f"upload_{os.getpid()}.csv")
@@ -239,6 +241,20 @@ class PortalRequestHandler(http.server.SimpleHTTPRequestHandler):
             period = payload.get("period", "2026-M10")
             datatype = payload.get("datatype") # e.g. "regnskap_ubw", "reiseregninger", etc.
             tag = payload.get("tag")
+
+            if not isinstance(filename, str) or Path(filename).name != filename or any(sep in filename for sep in ("/", "\\")):
+                self.send_json_response(400, {"status": "ERROR", "message": "Ugyldig filnavn."})
+                return
+            suffix = Path(filename).suffix.lower()
+            if suffix not in {".csv", ".xlsx", ".xls"}:
+                self.send_json_response(400, {"status": "ERROR", "message": "Filformatet må være CSV eller Excel."})
+                return
+            if not isinstance(period, str) or len(period) != 8 or not period.startswith("2026-M") or not period[-2:].isdigit() or not 1 <= int(period[-2:]) <= 12:
+                self.send_json_response(400, {"status": "ERROR", "message": "Ugyldig rapporteringsperiode."})
+                return
+            if not isinstance(tag, (str, type(None))) or not isinstance(datatype, (str, type(None))):
+                self.send_json_response(400, {"status": "ERROR", "message": "Ugyldig tag eller datatype."})
+                return
 
             if not tag:
                 # Generate default tag based on period, e.g. 2026-M10 -> 2026T1okt
@@ -249,18 +265,29 @@ class PortalRequestHandler(http.server.SimpleHTTPRequestHandler):
 
             # Save uploaded file into staging directory
             DEFAULT_STAGING_DIR.mkdir(parents=True, exist_ok=True)
-            target_path = DEFAULT_STAGING_DIR / filename
+            target_path = DEFAULT_STAGING_DIR / f"upload_{uuid.uuid4().hex}{suffix}"
 
             try:
                 if content_b64:
-                    file_bytes = base64.b64decode(content_b64)
+                    if not isinstance(content_b64, str):
+                        raise ValueError("content_base64 må være tekst.")
+                    try:
+                        file_bytes = base64.b64decode(content_b64, validate=True)
+                    except ValueError:
+                        self.send_json_response(400, {"status": "ERROR", "message": "Ugyldig Base64 filinnhold."})
+                        return
+                    if len(file_bytes) > MAX_UPLOAD_BYTES:
+                        self.send_json_response(413, {"status": "ERROR", "message": "Filen overskrider maksimal størrelse på 10 MB."})
+                        return
                     target_path.write_bytes(file_bytes)
                 elif raw_text:
+                    if not isinstance(raw_text, str):
+                        raise ValueError("content_text må være tekst.")
                     target_path.write_text(raw_text, encoding="utf-8")
                 else:
                     self.send_json_response(400, {"status": "ERROR", "message": "Mangler filinnhold (content_base64 eller content_text)."})
                     return
-            except Exception as e:
+            except (OSError, ValueError) as e:
                 self.send_json_response(500, {"status": "ERROR", "message": f"Kunne ikke lagre fil til disk: {e}"})
                 return
 
@@ -272,6 +299,7 @@ class PortalRequestHandler(http.server.SimpleHTTPRequestHandler):
                     tag=tag,
                     db_path=str(DEFAULT_DB_PATH),
                     duckdb_path=str(DEFAULT_DUCKDB_PATH),
+                    parquet_dir=str(DEFAULT_PARQUET_DIR),
                     period=period,
                     file_type_override=datatype if datatype != "auto" else None
                 )
@@ -295,16 +323,21 @@ class PortalRequestHandler(http.server.SimpleHTTPRequestHandler):
                     "filename": filename,
                     "message": f"Feil under datainnlesing / database-oppdatering: {e}"
                 })
+            finally:
+                try:
+                    target_path.unlink(missing_ok=True)
+                except OSError as e:
+                    print(f"Could not remove temporary upload {target_path}: {e}")
             return
 
         self.send_json_response(404, {"status": "ERROR", "message": "Ukjent API-endepunkt."})
 
-def run_server(port: int = 8000, directory: Path = BASE_DIR):
+def run_server(port: int = 8000, directory: Path = BASE_DIR, host: str = "127.0.0.1"):
     """Starts the Portal HTTP Server."""
     os.chdir(str(directory))
     handler = PortalRequestHandler
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", port), handler) as httpd:
+    with socketserver.TCPServer((host, port), handler) as httpd:
         print(f"UiA Controller Portal Server running at http://localhost:{port}/")
         print(f"Web Dashboard: http://localhost:{port}/index.html")
         print(f"API Endpoints: http://localhost:{port}/api/health , /api/inventory , /api/upload")
@@ -315,4 +348,5 @@ def run_server(port: int = 8000, directory: Path = BASE_DIR):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
-    run_server(port=port)
+    host = os.environ.get("HOST", "127.0.0.1")
+    run_server(port=port, host=host)

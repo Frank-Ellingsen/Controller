@@ -24,6 +24,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run Tests
+        run: |
+          python -m pytest -q
+
       - name: Run Month-End Close Workflow
         run: |
           python src/tools/antigravity_workflow.py

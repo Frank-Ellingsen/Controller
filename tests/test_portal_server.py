@@ -11,6 +11,7 @@ import threading
 import socket
 import socketserver
 import http.client
+import shutil
 from pathlib import Path
 from urllib.request import urlopen, Request
 import pytest
@@ -21,6 +22,7 @@ tools_dir = Path(__file__).resolve().parent.parent / "src" / "tools"
 sys.path.insert(0, str(tools_dir))
 
 from portal_server import query_database_inventory, PortalRequestHandler, DEFAULT_DB_PATH
+import portal_server
 
 def get_free_port():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -43,7 +45,20 @@ def test_query_database_inventory():
     assert inv["2026-M11"]["status"] == "missing"
 
 @pytest.fixture(scope="module")
-def portal_test_server():
+def portal_test_server(tmp_path_factory):
+    test_data_dir = tmp_path_factory.mktemp("portal-data")
+    test_db_path = test_data_dir / "projects.db"
+    shutil.copy2(DEFAULT_DB_PATH, test_db_path)
+    test_duckdb_path = test_data_dir / "analytics_snapshots.duckdb"
+    if portal_server.DEFAULT_DUCKDB_PATH.exists():
+        shutil.copy2(portal_server.DEFAULT_DUCKDB_PATH, test_duckdb_path)
+
+    patch = pytest.MonkeyPatch()
+    patch.setattr(portal_server, "DEFAULT_DB_PATH", test_db_path)
+    patch.setattr(portal_server, "DEFAULT_DUCKDB_PATH", test_duckdb_path)
+    patch.setattr(portal_server, "DEFAULT_STAGING_DIR", test_data_dir / "staging")
+    patch.setattr(portal_server, "DEFAULT_PARQUET_DIR", test_data_dir / "parquet")
+
     port = get_free_port()
     socketserver.TCPServer.allow_reuse_address = True
     httpd = socketserver.TCPServer(("127.0.0.1", port), PortalRequestHandler)
@@ -52,6 +67,7 @@ def portal_test_server():
     yield f"http://127.0.0.1:{port}"
     httpd.shutdown()
     httpd.server_close()
+    patch.undo()
 
 def test_api_health(portal_test_server):
     url = f"{portal_test_server}/api/health"
@@ -105,16 +121,32 @@ def test_api_upload_flow(portal_test_server):
         assert result["tag"] == "2026T1test_okt"
 
     # Verify rows in database
-    conn = sqlite3.connect(str(DEFAULT_DB_PATH))
+    conn = sqlite3.connect(str(portal_server.DEFAULT_DB_PATH))
     df_check = pd.read_sql_query("SELECT * FROM ubw_transactions_2026 WHERE Tag = '2026T1test_okt'", conn)
     assert len(df_check) == 2
     assert "TX-TEST-901" in df_check["Transaksjon_ID"].values
-
-    # Clean up test rows and staging file
-    conn.execute("DELETE FROM ubw_transactions_2026 WHERE Tag = '2026T1test_okt'")
-    conn.commit()
     conn.close()
 
-    test_staging_file = DEFAULT_DB_PATH.parent / "test_upload_oktober_2026.csv"
-    if test_staging_file.exists():
-        test_staging_file.unlink()
+    assert not list((portal_server.DEFAULT_STAGING_DIR).glob("upload_*"))
+
+def test_api_upload_rejects_path_traversal(portal_test_server):
+    payload = {
+        "filename": "..\\..\\README.md",
+        "content_text": "not a data file",
+        "period": "2026-M10"
+    }
+    req = Request(
+        f"{portal_test_server}/api/upload",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"}
+    )
+    with pytest.raises(Exception) as error:
+        urlopen(req, timeout=5)
+    assert getattr(error.value, "code", None) == 400
+
+def test_api_upload_rejects_oversized_request(portal_test_server):
+    parsed = http.client.HTTPConnection("127.0.0.1", int(portal_test_server.rsplit(":", 1)[1]), timeout=5)
+    parsed.request("POST", "/api/upload", headers={"Content-Length": "10485761"})
+    response = parsed.getresponse()
+    assert response.status == 413
+    parsed.close()

@@ -7,6 +7,7 @@ import openpyxl
 APP_TOOLS = Path(__file__).resolve().parent.parent / "src" / "tools"
 sys.path.append(str(APP_TOOLS))
 
+import generate_excel_report
 from powerbi_exporter import export_powerbi_data_model
 from generate_excel_report import create_excel_report
 
@@ -21,9 +22,11 @@ def test_powerbi_parquet_exporter(tmp_path):
         assert os.path.exists(filepath)
         assert os.path.getsize(filepath) > 0
 
-def test_excel_reporter_generation():
+def test_excel_reporter_generation(tmp_path, monkeypatch):
+    report_file = tmp_path / "UiA_Controller_Maanedsoppgjoer_2026-M10.xlsx"
+    monkeypatch.setattr(generate_excel_report, "OUTPUT_DIR", tmp_path)
+    monkeypatch.setattr(generate_excel_report, "OUTPUT_FILE", report_file)
     create_excel_report()
-    report_file = Path(__file__).resolve().parent.parent / "data" / "reports" / "UiA_Controller_Maanedsoppgjoer_2026-M10.xlsx"
     assert report_file.exists()
     assert report_file.stat().st_size > 0
     

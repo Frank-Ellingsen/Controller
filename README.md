@@ -180,7 +180,7 @@ UIA-Controller/
 ├── Regelverk/                      # Statutory regulations, circulars & audit matrices
 │   ├── notater/                    # Condensed Norwegian public sector controlling notes
 │   └── *.pdf, *.xlsx               # DFØ circulars, SRS, F-05-20, UiA control matrices
-└── tests/                          # Automated pytest verification suite (13 test cases)
+└── tests/                          # Automated pytest verification suite
 ```
 
 ---

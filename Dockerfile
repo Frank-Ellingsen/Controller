@@ -24,5 +24,5 @@ COPY . .
 # Expose port for local dashboard server
 EXPOSE 8000
 
-# Default command: Run month-end close workflow and start web dashboard server
-CMD python src/tools/antigravity_workflow.py && python -m http.server 8000
+# Serve the dashboard and its API from the same origin.
+CMD ["python", "src/tools/portal_server.py"]

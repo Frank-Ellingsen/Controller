@@ -10,13 +10,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src" / "tools")
 
 import openpyxl
 import pytest
-from generate_excel_datamodel import create_excel_datamodel, EXCEL_FILE_PRIMARY, EXCEL_FILE_SECONDARY
+import generate_excel_datamodel as excel_datamodel
 
-def test_excel_datamodel_generation():
+def test_excel_datamodel_generation(tmp_path, monkeypatch):
+    primary_path = tmp_path / "UiA_Controller_DataModel_2026.xlsx"
+    secondary_path = tmp_path / "reports" / "UiA_Controller_DataModel_2026.xlsx"
+    secondary_path.parent.mkdir()
+    monkeypatch.setattr(excel_datamodel, "EXCEL_FILE_PRIMARY", primary_path)
+    monkeypatch.setattr(excel_datamodel, "EXCEL_FILE_SECONDARY", secondary_path)
+
     # 1. Run generation
-    filepath = create_excel_datamodel()
+    filepath = excel_datamodel.create_excel_datamodel()
     assert os.path.exists(filepath), "Primary Excel Data Model file was not created"
-    assert os.path.exists(EXCEL_FILE_SECONDARY), "Secondary report mirror file was not created"
+    assert os.path.exists(secondary_path), "Secondary report mirror file was not created"
     
     # 2. Verify Workbook and Sheets
     wb = openpyxl.load_workbook(filepath, data_only=False)

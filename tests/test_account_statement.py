@@ -69,7 +69,8 @@ def test_export_account_statements(tmp_path):
 def test_execute_monthly_close_v23(tmp_path):
     # Test v23 pipeline execution
     p_dir = str(tmp_path / "parquet")
-    execute_monthly_close_v23(parquet_dir=p_dir)
+    duckdb_path = str(tmp_path / "analytics_snapshots.duckdb")
+    execute_monthly_close_v23(parquet_dir=p_dir, duckdb_path=duckdb_path)
     
     assert (tmp_path / "parquet" / "Fact_Account_Statement_ProjectControls.parquet").exists()
     assert (tmp_path / "parquet" / "Fact_Account_Statement_UiA.parquet").exists()
