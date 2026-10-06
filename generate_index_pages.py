@@ -236,4 +236,45 @@ process_directory("Kunnskapsbase")
 print("Processing Regelverk...")
 process_directory("Regelverk")
 
+# Generate root-level entry pages for Controller Mappe and Kunnskapsbase
+import re
+
+def update_root_pages():
+    if os.path.exists("Controller Mappe/index.html"):
+        with open("Controller Mappe/index.html", "r", encoding="utf-8") as f:
+            content = f.read()
+        content = content.replace('<a href="../index.html" class="btn-home">', '<a href="index.html" class="btn-home">')
+        content = content.replace('<div class="breadcrumb"><a href="../index.html">Hovedportal</a> / <a href="index.html">Controller Mappe</a></div>', '<div class="breadcrumb"><a href="index.html">Hovedportal</a> / <span>Controller Mappe</span></div>')
+        content = content.replace('href="Controllerhaandbok_Komplett_Mappestruktur/index.html"', 'href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/index.html"')
+        
+        tbody_start = content.find('<tbody id="file-table-body">')
+        tbody_end = content.find('</tbody>')
+        if tbody_start != -1 and tbody_end != -1:
+            tbody = content[tbody_start:tbody_end]
+            def repl_cm(m):
+                fn = m.group(1)
+                if fn.startswith('Controller%20Mappe/'):
+                    return m.group(0)
+                return f'href="Controller%20Mappe/{fn}"'
+            tbody_fixed = re.sub(r'href="([^"]+)"', repl_cm, tbody)
+            content = content[:tbody_start] + tbody_fixed + content[tbody_end:]
+            
+        with open("conroller_mappe.html", "w", encoding="utf-8") as f:
+            f.write(content)
+        print("Generated root conroller_mappe.html")
+
+    if os.path.exists("Kunnskapsbase/index.html"):
+        with open("Kunnskapsbase/index.html", "r", encoding="utf-8") as f:
+            content = f.read()
+        content = content.replace('<a href="../index.html" class="btn-home">', '<a href="index.html" class="btn-home">')
+        content = content.replace('<div class="breadcrumb"><a href="../index.html">Hovedportal</a> / <a href="index.html">Kunnskapsbase</a></div>', '<div class="breadcrumb"><a href="index.html">Hovedportal</a> / <span>Kunnskapsbase</span></div>')
+        content = content.replace('href="Statlig%20virksomhet/index.html"', 'href="Kunnskapsbase/Statlig%20virksomhet/index.html"')
+        content = content.replace('href="Opprett_Controlller_Mapper.ps1"', 'href="Kunnskapsbase/Opprett_Controlller_Mapper.ps1"')
+        
+        with open("kunnskap.html", "w", encoding="utf-8") as f:
+            f.write(content)
+        print("Generated root kunnskap.html")
+
+update_root_pages()
+
 print("All index pages generated successfully!")
