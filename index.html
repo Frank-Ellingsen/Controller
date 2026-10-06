@@ -288,6 +288,7 @@
         <button class="tab-btn" onclick="openTab(event, 'tab-kontoplan')">📜 5. Statlig Rapportering & Kontoplan</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-ordliste')">📖 6. Begrepskatalog & Ordliste</button>
         <button class="tab-btn" id="btn-tab-globalsearch" onclick="openTab(event, 'tab-globalsearch')">🔍 7. Global Prosjektsøk (439 Filer)</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-arshjul-sjekkliste')">🗓️ 8. Årskalender & Sjekkliste</button>
     </nav>
 
     <div class="card" id="timeframe-picker-bar" style="margin: 1.5rem auto 0; max-width: 1400px; width: calc(100% - 2rem); background: white; border: 1px solid var(--uia-border); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
@@ -956,6 +957,243 @@
             </table>
         </div>
 
+    
+        <!-- TAB 8: ÅRSKALENDER & INTERAKTIV SJEKKLISTE -->
+        <div id="tab-arshjul-sjekkliste" class="tab-panel">
+            
+            <!-- HEADER SECTION -->
+            <div class="card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--uia-navy);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h2 style="color: var(--uia-navy); font-size: 1.4rem; margin: 0; display: flex; align-items: center; gap: 10px;">
+                            🗓️ Statlig Årskalender & Kontrollsjekkliste (UiA)
+                        </h2>
+                        <p style="font-size: 0.85rem; color: #64748B; margin-top: 0.3rem; margin-bottom: 0;">
+                            Interaktiv 12-måneders kalender med drill-down til operative kontrollaktiviteter. Forankret i <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Controller%20H%C3%A5ndbok.md" target="_blank" style="color: var(--uia-blue); font-weight: 600; text-decoration: underline;">Controllerhåndboken</a>, Bestemmelsene § 2.4/2.5, F-05-20 og SRS 1–25.
+                        </p>
+                    </div>
+                    <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+                        <button class="btn btn-excel" onclick="exportChecklistToExcel()">📥 Eksporter Kalender (.xlsx)</button>
+                        <button class="btn" style="background-color: #64748B;" onclick="resetChecklistState()">🔄 Nullstill Checkboxes</button>
+                        <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Controller%20H%C3%A5ndbok.md" target="_blank" class="btn" style="background-color: var(--uia-accent);">📖 Controller Håndbok (MD)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OVERORDNET KPI STATS -->
+            <div class="card-grid" style="margin-bottom: 1.5rem;">
+                <div class="card" style="border-left: 4px solid var(--uia-navy);">
+                    <div class="card-header">Totalt Kontrollpunkter</div>
+                    <div class="card-value" id="cal-kpi-total">24</div>
+                    <div class="card-sub">Statlige frister & internkontroller</div>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--uia-success);">
+                    <div class="card-header">Fullført / Godkjent</div>
+                    <div class="card-value text-success" id="cal-kpi-done">0</div>
+                    <div class="card-sub" id="cal-kpi-pct-sub">
+                        <div style="background: #E2E8F0; border-radius: 10px; height: 8px; width: 100%; margin-top: 4px; overflow: hidden;">
+                            <div id="cal-kpi-progress-bar" style="background: var(--uia-success); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--uia-warning);">
+                    <div class="card-header">Pågår / Active</div>
+                    <div class="card-value text-warning" id="cal-kpi-inprogress">0</div>
+                    <div class="card-sub">Månedlige & tertialvise rutiner</div>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--uia-danger);">
+                    <div class="card-header">Høyrisiko & Avvik (R1–R7)</div>
+                    <div class="card-value text-danger" id="cal-kpi-risk">7</div>
+                    <div class="card-sub">Krever spesiell oppfølging</div>
+                </div>
+            </div>
+
+            <!-- VISUAL 12-MONTH YEAR CALENDAR GRID -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
+                    <h3 style="color: var(--uia-navy); font-size: 1.1rem; margin: 0; display: flex; align-items: center; gap: 8px;">
+                        📆 Årskalender 2026 – Velg en måned for drill-down
+                    </h3>
+                    <small style="color: #64748B;">Klikk på et månedskort for å filtrere sjekklisten nedenfor</small>
+                </div>
+
+                <div class="card-grid" id="year-calendar-grid" style="grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem;">
+                    <!-- Rendered dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- DRILL-DOWN FILTER & CONTROL BAR -->
+            <div class="card" id="checklist-section" style="margin-bottom: 1.5rem; padding: 1.25rem; border-top: 3px solid var(--uia-blue);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="color: var(--uia-navy); font-size: 1.1rem; margin: 0; display: flex; align-items: center; gap: 8px;" id="drilldown-title">
+                            📋 Detaljert Kontrollsjekkliste (Alle 12 Måneder)
+                        </h3>
+                        <p style="font-size: 0.8rem; color: #64748B; margin-top: 0.2rem; margin-bottom: 0;">Status og oppgaver blir filtrert automatisk ved valg i kalenderen.</p>
+                    </div>
+
+                    <!-- MONTH SELECTOR PILLS -->
+                    <div style="display: flex; gap: 0.3rem; flex-wrap: wrap;" id="month-pills-container">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; justify-content: space-between; pt-2; border-top: 1px solid var(--uia-border);">
+                    <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; align-items: center; margin-top: 0.5rem;">
+                        
+                        <label style="font-size: 0.85rem; font-weight: 600; color: var(--uia-navy);">
+                            🏷️ Fagområde:
+                            <select id="cal-filter-category" onchange="filterChecklist()" style="padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--uia-border); font-size: 0.85rem; margin-left: 0.3rem;">
+                                <option value="ALL">Alle Fagområder</option>
+                                <option value="Styringsdialog">Styringsdialog</option>
+                                <option value="Statsregnskap">Statsregnskap</option>
+                                <option value="Budsjett">Budsjett & Prognose</option>
+                                <option value="BOA / Forskning">BOA / EU Forskning</option>
+                                <option value="Internkontroll">Internkontroll & Audit</option>
+                                <option value="Regnskap">Regnskap & SRS</option>
+                            </select>
+                        </label>
+
+                        <label style="font-size: 0.85rem; font-weight: 600; color: var(--uia-navy);">
+                            👤 Ansvarlig Rolle:
+                            <select id="cal-filter-role" onchange="filterChecklist()" style="padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--uia-border); font-size: 0.85rem; margin-left: 0.3rem;">
+                                <option value="ALL">Alle Roller</option>
+                                <option value="Universitetsdirektør">Universitetsdirektør</option>
+                                <option value="Økonomidirektør">Økonomidirektør</option>
+                                <option value="Seksjonssjef Regnskap">Seksjonssjef Regnskap</option>
+                                <option value="Prosjektcontroller">Prosjektcontroller</option>
+                                <option value="Prosjektleder">Prosjektleder (PL)</option>
+                                <option value="Instituttleder">Instituttleder / BAO</option>
+                            </select>
+                        </label>
+
+                        <label style="font-size: 0.85rem; font-weight: 600; color: var(--uia-navy);">
+                            🚦 Status:
+                            <select id="cal-filter-status" onchange="filterChecklist()" style="padding: 0.4rem 0.6rem; border-radius: 6px; border: 1px solid var(--uia-border); font-size: 0.85rem; margin-left: 0.3rem;">
+                                <option value="ALL">Alle Statuser</option>
+                                <option value="Fullført">Fullført 🟢</option>
+                                <option value="Pågår">Pågår 🟡</option>
+                                <option value="Planlagt">Planlagt ⚪</option>
+                                <option value="Avvik">Avvik 🔴</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div style="display: flex; gap: 0.6rem; align-items: center; margin-top: 0.5rem;">
+                        <input type="text" id="cal-search-input" placeholder="🔍 Søk i oppgave, hjemmel eller fil..." oninput="filterChecklist()" class="search-input" style="width: 260px; padding: 0.4rem 0.8rem;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHECKLIST DATA TABLE -->
+            <div class="card" style="margin-bottom: 2rem; overflow-x: auto;">
+                <table class="data-table" id="table-checklist">
+                    <thead>
+                        <tr>
+                            <th style="width: 40px; text-align: center;">✓</th>
+                            <th style="width: 70px;">ID</th>
+                            <th style="width: 110px;">Frist / Periode</th>
+                            <th style="min-width: 280px;">Oppgave & Kontrollaktivitet</th>
+                            <th style="width: 130px;">Fagområde</th>
+                            <th style="min-width: 180px;">Hjemmel / Regelverk</th>
+                            <th style="min-width: 150px;">Ansvarlig Rolle</th>
+                            <th style="width: 110px;">Status</th>
+                            <th style="min-width: 240px;">Underliggende Dokumenter & Lenker</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-checklist">
+                        <!-- Dynamic rendering via Javascript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- UNDERLYING DOCUMENT & TEMPLATE LIBRARY DIRECTORY -->
+            <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--uia-blue);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="color: var(--uia-navy); font-size: 1.15rem; margin: 0;">📁 Katalog over Underliggende Dokumenter, Maler & Instrukser</h3>
+                        <p style="font-size: 0.85rem; color: #64748B; margin-top: 0.25rem; margin-bottom: 0;">Direkte lenker til alle originale Excel-modeller, Word-maler, PDF-instrukser og PowerShell-skript i <code>Controllerhaandbok_Komplett_Mappestruktur</code>.</p>
+                    </div>
+                    <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/index.html" target="_blank" class="btn" style="background-color: var(--uia-navy);">📂 Åpne Hele Mappestrukturen (Modul 1-6)</a>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;">
+                    
+                    <div style="background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid var(--uia-border);">
+                        <h4 style="color: var(--uia-navy); font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+                            📘 01. Overordnet Regelverk & Styring
+                        </h4>
+                        <ul style="list-style: none; font-size: 0.85rem; line-height: 1.6; padding-left: 0;">
+                            <li>📖 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Controller%20H%C3%A5ndbok.md" target="_blank" style="color: var(--uia-blue); font-weight: 600;">Controller Håndbok.md</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/01_Overordnet_Regelverk_og_Styring/01.1_Statlig_Regelverk/Reglement_for_oekonomistyring_i_staten.pdf" target="_blank">Reglement for Økonomistyring i Staten.pdf</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/01_Overordnet_Regelverk_og_Styring/01.2_UH_Instrukser/Virksomhets_og_Oekonomiinstruks_UH_2025.pdf" target="_blank">Virksomhets- og Økonomiinstruks UH 2025.pdf</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/01_Overordnet_Regelverk_og_Styring/01.3_Interne_Hovedregler/Interne_Hovedregler_for_Virksomhets_og_Oekonomiforvaltning.pdf" target="_blank">UiA Interne Hovedregler.pdf</a></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid var(--uia-border);">
+                        <h4 style="color: var(--uia-navy); font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+                            🔑 02. Fullmakter, Roller & Delegasjon
+                        </h4>
+                        <ul style="list-style: none; font-size: 0.85rem; line-height: 1.6; padding-left: 0;">
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.1_BDM_og_Fullmaktsmatrise/BDM_og_Fullmaktsmatrise.xlsx" target="_blank">BDM_og_Fullmaktsmatrise.xlsx</a></li>
+                            <li>🔵 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.2_Funksjonsskille_og_Attestasjon/Rutine_BDM_Attestasjon_Varemottak.docx" target="_blank">Rutine BDM, Attestasjon & Varemottak.docx</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.3_Habilitet_og_Etikk/Habilitet_og_Egenattestasjonssperre_Retningslinje.pdf" target="_blank">Habilitet & Egenattestasjonssperre Retningslinje.pdf</a></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid var(--uia-border);">
+                        <h4 style="color: var(--uia-navy); font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+                            📊 03. Budsjettering & Økonomioppfølging
+                        </h4>
+                        <ul style="list-style: none; font-size: 0.85rem; line-height: 1.6; padding-left: 0;">
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Aarshjul_og_Frister_UH_Oekonomi.xlsx" target="_blank">Aarshjul_og_Frister_UH_Oekonomi.xlsx</a></li>
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Budsjett_og_Prognosemodell-v2.xlsx" target="_blank">Budsjett_og_Prognosemodell-v2.xlsx</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/03_Budsjettering_og_Okonomioppfolging/03.3_Avsetninger_og_Ubenyttede_Midler/Retningslinje_Avsetninger_og_Ubenyttede_Midler.pdf" target="_blank">Retningslinje F-05-20 Avsetninger.pdf</a></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid var(--uia-border);">
+                        <h4 style="color: var(--uia-navy); font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+                            📜 04. Regnskap (SRS) & Kontoplan (R-102)
+                        </h4>
+                        <ul style="list-style: none; font-size: 0.85rem; line-height: 1.6; padding-left: 0;">
+                            <li>🔵 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Sjekkliste_Aarsavslutning_Oekonomi_Master.docx" target="_blank">Sjekkliste_Aarsavslutning_Oekonomi_Master.docx</a></li>
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Beregning_og_Avstemming_Valuta_Agio_Disagio.xlsx" target="_blank">Valuta Agio/Disagio Beregning.xlsx</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/04_Regnskap_SRS_og_Kontoplan/04.1_Statens_Kontoplan/Statens_Kontoplan_2026.pdf" target="_blank">Statens Kontoplan R-102 (PDF)</a></li>
+                            <li>🔵 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Aarsrapport_Del_IV_Styring_og_Kontroll_Mal.docx" target="_blank">Årsrapport Del IV Styring og Kontroll Mal.docx</a></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid var(--uia-border);">
+                        <h4 style="color: var(--uia-navy); font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+                            🔬 05. Prosjektøkonomi & BOA (SRS 9/10)
+                        </h4>
+                        <ul style="list-style: none; font-size: 0.85rem; line-height: 1.6; padding-left: 0;">
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/TDI_Kalkylemodell_BOA-v2.xlsx" target="_blank">TDI_Kalkylemodell_BOA-v2.xlsx</a></li>
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Horisont_Europa_Dagsats_og_Timeberegning.xlsx" target="_blank">EU Horizon Europe Dagsats Beregning.xlsx</a></li>
+                            <li>🔵 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Maanedlig_Timeliste_Horisont_Europa.docx" target="_blank">Månedlig Timeliste EU Horisont Europa.docx</a></li>
+                            <li>🔴 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Navigasjonskart_for_prosjektøkonomi.pdf" target="_blank">Navigasjonskart for Prosjektøkonomi (PDF)</a></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid var(--uia-border);">
+                        <h4 style="color: var(--uia-navy); font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 6px;">
+                            🛡️ 06. Internkontroll & Risikostyring
+                        </h4>
+                        <ul style="list-style: none; font-size: 0.85rem; line-height: 1.6; padding-left: 0;">
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Aarsplan_Internkontroll_UH.xlsx" target="_blank">Aarsplan_Internkontroll_UH.xlsx</a></li>
+                            <li>🔵 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Sjekkliste_Internkontroll_Statlig_Okonomistyring.docx" target="_blank">Sjekkliste Internkontroll Statlig Økonomistyring.docx</a></li>
+                            <li>🟢 <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/06_Internkontroll_Risikostyring_og_Revisjon/06.2_Risikovurdering_og_Rapportering/Risikomatrise_BOA_og_Institutt.xlsx" target="_blank">Risikomatrise BOA & Institutt (XLSX)</a></li>
+                            <li>⚡ <a href="Controller%20Mappe/Controllerhaandbok_Komplett_Mappestruktur/Opprett_Controlller_Mapper.ps1" target="_blank">Opprett_Controlller_Mapper.ps1</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
     <footer>
@@ -1585,6 +1823,619 @@ RIKSREVISJONEN INTERNKONTROLL- OG ATTESTASJONSAUDIT (2026)
             runGlobalProjectSearch();
         });
     </script>
+<script>
+
+        // =========================================================================
+        // 12-MONTH YEAR CALENDAR & INTERACTIVE CHECKLIST ENGINE
+        // =========================================================================
+        const CALENDAR_MONTHS_CONFIG = [
+            { code: 'Jan', name: 'Januar', quarter: 'Q1', desc: 'Tildelingsbrev & Årsrapport' },
+            { code: 'Feb', name: 'Februar', quarter: 'Q1', desc: 'Endelig SRS Regnskap' },
+            { code: 'Mar', name: 'Mars', quarter: 'Q1', desc: 'Årsrapport & F-05-20' },
+            { code: 'Apr', name: 'April', quarter: 'Q2', desc: 'T1 Forberedelser' },
+            { code: 'Mai', name: 'Mai', quarter: 'Q2', desc: 'Tertialrapport T1 (EAC)' },
+            { code: 'Jun', name: 'Juni', quarter: 'Q2', desc: 'BOA TDI-revisjon' },
+            { code: 'Jul', name: 'Juli', quarter: 'Q3', desc: 'Sommeroppgjør & Balanse' },
+            { code: 'Aug', name: 'August', quarter: 'Q3', desc: 'T2 Forberedelser' },
+            { code: 'Sep', name: 'September', quarter: 'Q3', desc: 'Tertialrapport T2 & kto 786' },
+            { code: 'Okt', name: 'Oktober', quarter: 'Q4', desc: 'Statsbudsjett (Gul bok)' },
+            { code: 'Nov', name: 'November', quarter: 'Q4', desc: 'Risikovurdering S x K' },
+            { code: 'Des', name: 'Desember', quarter: 'Q4', desc: 'Internt Budsjett vedtak' }
+        ];
+
+        const CALENDAR_CHECKLIST_DATA = [
+            {
+                id: 'A-01',
+                month: 'Jan',
+                periodGroup: 'Årlig',
+                title: 'Mottak og gjennomgang av årlig Tildelingsbrev fra KD',
+                desc: 'Gjennomgå rammebevilgninger (Kap. 260 post 50), styringsparametre, øremerkinger, resultatkrav og rapporteringsplikter for nytt regnskapsår.',
+                category: 'Styringsdialog',
+                hjemmel: 'KD / Virksomhets- og Økonomiinstruks § 3',
+                role: 'Universitetsdirektør / Økonomidirektør',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Virksomhetsinstruks 2025.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/01_Overordnet_Regelverk_og_Styring/01.2_UH_Instrukser/Virksomhets_og_Oekonomiinstruks_UH_2025.pdf', type: 'pdf' },
+                    { name: 'Controller Håndbok.md (Kap. 1)', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Controller Håndbok.md', type: 'md' }
+                ]
+            },
+            {
+                id: 'A-02',
+                month: 'Feb',
+                periodGroup: 'Årlig',
+                title: 'Oversendelse av endelig årsregnskap med noter (SRS)',
+                desc: 'Avlegge periodisert virksomhetsregnskap i henhold til SRS 1–25. Avstemme balanseposter, periodiseringer og overføringsrapport til DFØ/KD.',
+                category: 'Statsregnskap',
+                hjemmel: 'KD / DFØ / SRS 1 Presentasjon',
+                role: 'Seksjonssjef Regnskap / Regnskapscontroller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Sjekkliste Årsavslutning Master.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Sjekkliste_Aarsavslutning_Oekonomi_Master.docx', type: 'docx' },
+                    { name: 'SRS Alle Kombinert (PDF)', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/04_Regnskap_SRS_og_Kontoplan/04.2_Regnskapsstandarder_SRS/SRS_Alle_Kombinert_Desember_2025.pdf', type: 'pdf' }
+                ]
+            },
+            {
+                id: 'A-03',
+                month: 'Mar',
+                periodGroup: 'Årlig',
+                title: 'Behandling og oversendelse av årsrapport (Del I–VI)',
+                desc: 'Styrebehandling av virksomhetens årsrapport. Inkluderer Del IV Styring og kontroll med vurdering av internkontroll, måloppnåelse og Riksrevisjonsoppfølging.',
+                category: 'Styringsdialog',
+                hjemmel: 'KD Tildelingsbrev / UHL § 10',
+                role: 'Universitetsstyret / Universitetsdirektør',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Årsrapport Del IV Mal.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Aarsrapport_Del_IV_Styring_og_Kontroll_Mal.docx', type: 'docx' },
+                    { name: 'Krav til Årsrapport UH.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/01_Overordnet_Regelverk_og_Styring/01.2_UH_Instrukser/Vedlegg_Krav_til_Aarsrapport_UH.pdf', type: 'pdf' }
+                ]
+            },
+            {
+                id: 'A-04',
+                month: 'Mar',
+                periodGroup: 'Årlig',
+                title: 'Rapportering på ubenyttede bevilgningsmidler (5 %-grensen F-05-20)',
+                desc: 'Beregne akkumulert ubrukt bevilgning ved årets slutt. Rapportere overskridelser utover 5 %-taket og utarbeide særskilt avsetningsbegrunnelse.',
+                category: 'Budsjett',
+                hjemmel: 'Finansdepartementet F-05-20 / Bestemmelsene 3.3',
+                role: 'Controller / Økonomidirektør',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Retningslinje Avsetninger F-05-20.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/03_Budsjettering_og_Okonomioppfolging/03.3_Avsetninger_og_Ubenyttede_Midler/Retningslinje_Avsetninger_og_Ubenyttede_Midler.pdf', type: 'pdf' },
+                    { name: 'Controller Håndbok.md (Kap. 3)', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Controller Håndbok.md', type: 'md' }
+                ]
+            },
+            {
+                id: 'A-05',
+                month: 'Mai',
+                periodGroup: 'T1',
+                title: 'Tertialrapport T1 (M1–M4) med avviksanalyse og prognose',
+                desc: 'Gjennomføre periodisert avviksanalyse (skille mellom tidsavvik og reelle kostnadsavvik). Utarbeide oppdatert årsprognose (EAC) til Universitetsstyret.',
+                category: 'Budsjett',
+                hjemmel: 'UH-instruksen § 4.3 / Bestemmelsene 2.4',
+                role: 'Prosjektcontroller / Økonomidirektør',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Budsjett og Prognosemodell v2.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Budsjett_og_Prognosemodell-v2.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'A-06',
+                month: 'Jun',
+                periodGroup: 'Halvårlig',
+                title: 'Halvårlig BOA-prosjektgjennomgang og TDI-revisjon',
+                desc: 'Gjennomgang av alle eksternt finansierte prosjekter (NFR/EU). Verifisere timelister (215-dagers regelen), overhead-dekning og oppdatert fullføringsgrad.',
+                category: 'BOA / Forskning',
+                hjemmel: 'Interne Hovedregler / SRS 9 & 10',
+                role: 'Prosjektleder / Prosjektcontroller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'TDI Kalkylemodell BOA v2.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/TDI_Kalkylemodell_BOA-v2.xlsx', type: 'xlsx' },
+                    { name: 'BOA Project Lifecycle Overview.png', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/BOA_Research_Project_Lifecycle_Overview.png', type: 'png' }
+                ]
+            },
+            {
+                id: 'A-07',
+                month: 'Sep',
+                periodGroup: 'T2',
+                title: 'Tertialrapport T2 (M1–M8) og tapsavsetning konto 786',
+                desc: 'Gjennomføre T2-rapport. Vurdere forventet underskudd på prosjekter og umiddelbart avsette for tap på konto 786 mot kortsiktig avsetning i balansen.',
+                category: 'Budsjett',
+                hjemmel: 'SRS 9 pkt. 17 / SRS 10 pkt. 12',
+                role: 'Prosjektcontroller / Prosjektleder',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Rutine Tapsavsetning Konto 786.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/05_Prosjektokonomi_og_BOA/05.4_Prosjektslutt_og_Tapsavsetning/Rutine_Prosjektslutt_og_Tapsavsetning_Konto786.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'A-08',
+                month: 'Okt',
+                periodGroup: 'Årlig',
+                title: 'Gjennomgang av Regjeringens Statsbudsjett (Gul bok)',
+                desc: 'Analysere regjeringens budsjettforslag for UH-sektoren. Beregne forventet endring i basisbevilgning, pris/lønnsdefilator og resultatbasert uttelling.',
+                category: 'Budsjett',
+                hjemmel: 'Stortinget / KD Tildelingspraksis',
+                role: 'Økonomidirektør / Lead Controller',
+                defaultStatus: 'Pågår',
+                docs: [
+                    { name: 'Tildeling og Internfordeling Notat.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/03_Budsjettering_og_Okonomioppfolging/03.1_Tildeling_og_Internfordeling/Tildeling_og_Internfordeling_Notat.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'A-09',
+                month: 'Nov',
+                periodGroup: 'Årlig',
+                title: 'Årlig risikovurdering og oppdatering av risikomatrise (S x K)',
+                desc: 'Kartlegge risikofaktorer for måloppnåelse, misligheter og regnskapsfeil. Beregne risikotall (Sannsynlighet 1-5 x Konsekvens 1-5) og vedta risikotiltak.',
+                category: 'Internkontroll',
+                hjemmel: 'Bestemmelsene kap. 2.4 b / Reglementet § 14',
+                role: 'Instituttleder / BAO-leder / Controller',
+                defaultStatus: 'Planlagt',
+                docs: [
+                    { name: 'Risikomatrise BOA og Institutt.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/06_Internkontroll_Risikostyring_og_Revisjon/06.2_Risikovurdering_og_Rapportering/Risikomatrise_BOA_og_Institutt.xlsx', type: 'xlsx' },
+                    { name: 'Controller Håndbok.md (Kap. 6)', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Controller Håndbok.md', type: 'md' }
+                ]
+            },
+            {
+                id: 'A-10',
+                month: 'Des',
+                periodGroup: 'Årlig',
+                title: 'Styrets vedtak om Internt Budsjett for kommende regnskapsår',
+                desc: 'Formell styrebehandling og fordeling av rammebevilgning til fakulteter og fellesadministrasjon basert på UiAs internfordelingsmodell.',
+                category: 'Budsjett',
+                hjemmel: 'Universitets- og høyskoleloven (UHL) § 10-1',
+                role: 'Universitetsstyret / Universitetsdirektør',
+                defaultStatus: 'Planlagt',
+                docs: [
+                    { name: 'Interne Hovedregler for Økonomi.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/01_Overordnet_Regelverk_og_Styring/01.3_Interne_Hovedregler/Interne_Hovedregler_for_Virksomhets_og_Oekonomiforvaltning.pdf', type: 'pdf' }
+                ]
+            },
+            {
+                id: 'K-01',
+                month: 'Månedlig',
+                periodGroup: 'Månedlig',
+                title: 'Månedlig balanseavstemming (kto 192, 218, 250, 290)',
+                desc: 'Avstemme bankinnskudd statskassen (konto 192), ikke-inntektsførte bidrag (konto 218), koordinator-mellomværende (konto 250) og kortsiktig gjeld.',
+                category: 'Regnskap',
+                hjemmel: 'Bestemmelsene § 4.4.6 / SRS 10',
+                role: 'Seksjonssjef Regnskap / Regnskapscontroller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Balanseavstemming Månedlig.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/04_Regnskap_SRS_og_Kontoplan/04.3_Bokforing_og_Avstemming/Balanseavstemming_Maanedlig.xlsx', type: 'xlsx' },
+                    { name: 'Valuta Agio/Disagio Avstemming.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Beregning_og_Avstemming_Valuta_Agio_Disagio.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'K-02',
+                month: 'Månedlig',
+                periodGroup: 'Løpende',
+                title: 'Attestasjons- og BDM-kontroll (To-manns-prinsipp & funksjonsskille)',
+                desc: 'Kontrollere at bestilling, attestasjon og BDM-godkjenning utføres av minst to ulike personer. Verifisere at hjemmel, budsjettdekning og forsvarlighet foreligger.',
+                category: 'Internkontroll',
+                hjemmel: 'Bestemmelsene § 2.5.2',
+                role: 'Prosjektcontroller / BDM-holder / Attestant',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Rutine BDM, Attestasjon & Varemottak.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.2_Funksjonsskille_og_Attestasjon/Rutine_BDM_Attestasjon_Varemottak.docx', type: 'docx' },
+                    { name: 'BDM og Fullmaktsmatrise.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.1_BDM_og_Fullmaktsmatrise/BDM_og_Fullmaktsmatrise.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'K-03',
+                month: 'Månedlig',
+                periodGroup: 'Månedlig',
+                title: 'Oppfølging og kontroll av timelister (215 dagers divisor i EU)',
+                desc: 'Månedlig kontroll av førte timer på BOA-prosjekter. Omregning fra timer til dagsverk i EU Horisont Europa basert på fast årlig divisor 215 dager.',
+                category: 'BOA / Forskning',
+                hjemmel: 'Horisont Europa MGA Art. 6 / UH-instruksen § 4.2',
+                role: 'Prosjektleder / Prosjektcontroller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Månedlig Timeliste Horisont Europa.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Maanedlig_Timeliste_Horisont_Europa.docx', type: 'docx' },
+                    { name: 'EU Dagsats Beregning.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Horisont_Europa_Dagsats_og_Timeberegning.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'K-04',
+                month: 'Månedlig',
+                periodGroup: 'Månedlig',
+                title: 'Kontroll av masterdata (kontonummer og leverandører)',
+                desc: 'Verifisere at registrering og endring av leverandørers og ansattes bankkontonummere (stamdata) utelukkende foretas av personell uten BDM-fullmakt.',
+                category: 'Regnskap',
+                hjemmel: 'Bestemmelsene § 3.7.3.3 / § 5.2.4',
+                role: 'Seksjonssjef Regnskap',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Internkontrollmanual Transaksjonskontroll.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/06_Internkontroll_Risikostyring_og_Revisjon/06.1_Internkontrollrutiner/Internkontrollmanual_Transaksjonskontroll.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'K-07',
+                month: 'Tertialvis',
+                periodGroup: 'Løpende',
+                title: 'Kontroll av videreformidling i EU-prosjekter (konto 250)',
+                desc: 'Sikre at utbetalinger til eksterne konsortiumpartnere føres som gjennomstrømmingsposter i balansen (konto 250) og ALDRI inntekts- eller kostnadsføres.',
+                category: 'BOA / Forskning',
+                hjemmel: 'SRS 10 pkt. 23 / Bestemmelsene § 3.6.3',
+                role: 'Prosjektcontroller / Prosjektleder',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Redegjørelse CFS Horisont Europa.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Redegoerelse_CFS_Horisont_Europa.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'K-08',
+                month: 'Des',
+                periodGroup: 'Årlig',
+                title: 'Revisjon av BDM-delegeringer og fullmaktsmatrise',
+                desc: 'Årlig gjennomgang av alle skriftlige BDM-delegeringsbrev, bestillingsfullmakter og attestantroller. Oppdatere sentralt fullmaktsregister.',
+                category: 'Internkontroll',
+                hjemmel: 'Interne Hovedregler § 1.2 / Bestemmelsene § 2.5',
+                role: 'Dekan / Universitetsdirektør',
+                defaultStatus: 'Planlagt',
+                docs: [
+                    { name: 'BDM og Fullmaktsmatrise.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.1_BDM_og_Fullmaktsmatrise/BDM_og_Fullmaktsmatrise.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'K-10',
+                month: 'Månedlig',
+                periodGroup: 'Månedlig',
+                title: 'Gjennomgang av egenattestasjonssperre og reiseregninger',
+                desc: 'Stikkprøvekontroll i DFØ/UBW for å sikre at ingen godkjenner egne reiser, refusjoner eller utlegg. Kontroll av to-personerskontroll.',
+                category: 'Internkontroll',
+                hjemmel: 'Bestemmelsene § 2.5.2.1',
+                role: 'Lead Controller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Habilitet & Egenattestasjonssperre.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/02_Fullmakter_Roller_og_Delegasjon/02.3_Habilitet_og_Etikk/Habilitet_og_Egenattestasjonssperre_Retningslinje.pdf', type: 'pdf' }
+                ]
+            },
+            {
+                id: 'K-11',
+                month: 'Jan',
+                periodGroup: 'Årlig',
+                title: 'Rapportering av internkontroll i Årsrapport Del IV',
+                desc: 'Utarbeide Universitetsstyrets samlede vurdering av om virksomhetens internkontroll fungerer tilfredsstillende og er risikotilpasset.',
+                category: 'Styringsdialog',
+                hjemmel: 'Krav til årsrapport del IV / Bestemmelsene § 2.4',
+                role: 'Universitetsdirektør',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Årsrapport Del IV Mal.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Aarsrapport_Del_IV_Styring_og_Kontroll_Mal.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'K-12',
+                month: 'Løpende',
+                periodGroup: 'Løpende',
+                title: 'Oppfølging av Riksrevisjonens merknader og CFS',
+                desc: 'Følge opp Riksrevisjonens årlige revisjonsberetning og tilhørende Certificate on the Financial Statements (CFS) revisjonsattester for EU-prosjekter.',
+                category: 'Internkontroll',
+                hjemmel: 'Bestemmelsene § 1.6.1 / EU Horizon Europe MGA',
+                role: 'Økonomidirektør / Prosjektcontroller',
+                defaultStatus: 'Pågår',
+                docs: [
+                    { name: 'Beredskapsplan Misligheter & Revisjon.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/06_Internkontroll_Risikostyring_og_Revisjon/06.3_Misligheter_og_Revisjon/Beredskapsplan_Misligheter_og_Revisjonsoppfolging.pdf', type: 'pdf' },
+                    { name: 'Redegjørelse CFS Horisont Europa.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Redegoerelse_CFS_Horisont_Europa.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'R-01',
+                month: 'Søknad',
+                periodGroup: 'Løpende',
+                title: 'Kvalitetssikring av TDI-kalkyle før BOA-søknad (Risiko R1)',
+                desc: 'Kontrollere at direkte lønn, sosiale kostnader, feltarbeid og indirekte overhead (TDI) beregnes korrekt før innsending for å unngå underdekning.',
+                category: 'BOA / Forskning',
+                hjemmel: 'Bestemmelsene § 2.4 / UH-instruksen § 5.1',
+                role: 'Prosjektleder / Prosjektcontroller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'TDI Kalkylemodell BOA v2.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/TDI_Kalkylemodell_BOA-v2.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'R-02',
+                month: 'Kontrakt',
+                periodGroup: 'Løpende',
+                title: 'Kontraktsklassifisering SRS 9 (Oppdrag) vs SRS 10 (Bidrag) (Risiko R2)',
+                desc: 'Obligatorisk klassifiseringssjekkliste ved prosjektopprettelse for å skille mellom bidragsforskning (SRS 10) og oppdragsforskning med fortjeneste (SRS 9).',
+                category: 'BOA / Forskning',
+                hjemmel: 'SRS 9 pkt. 19 / SRS 10 pkt. 4',
+                role: 'Prosjektcontroller / Kontraktsrådgiver',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Klassifiseringssjekkliste Bidrag/Oppdrag.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/05_Prosjektokonomi_og_BOA/05.1_Klassifisering_SRS9_SRS10/Klassifiseringssjekkliste_Bidrag_Oppdrag.docx', type: 'docx' },
+                    { name: 'Konteringsmatrise SRS9 SRS10.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Konteringsmatrise_SRS9_SRS10.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'R-04',
+                month: 'Månedlig',
+                periodGroup: 'Månedlig',
+                title: 'Påminnelse og eskalering ved manglende timelister (Risiko R4)',
+                desc: 'Månedlig utsending av påminnelser og eskalering til instituttleder hvis vitenskapelig ansatte ikke fører timer på eksternt finansierte prosjekter.',
+                category: 'BOA / Forskning',
+                hjemmel: 'Bestemmelsene § 5.2 / UH-instruksen § 4.2',
+                role: 'Prosjektleder / Instituttleder',
+                defaultStatus: 'Pågår',
+                docs: [
+                    { name: 'Månedlig Timeliste Horisont Europa.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Maanedlig_Timeliste_Horisont_Europa.docx', type: 'docx' }
+                ]
+            },
+            {
+                id: 'R-06',
+                month: 'Des',
+                periodGroup: 'Årlig',
+                title: 'Årlig avstemming og valutajustering Agio/Disagio (Risiko R6)',
+                desc: 'Beregne agio/disagio på EU-prosjekter ved kalenderårets slutt. Føre valutavariasjoner iht. SRS 1, SRS 10 og kontoplan R-102 på konto 8060/8160.',
+                category: 'Regnskap',
+                hjemmel: 'SRS 1 / SRS 10 / Bestemmelsene § 3.6.3',
+                role: 'Seksjonssjef Regnskap / Prosjektcontroller',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Notat Agio Disagio EU Prosjekter.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Notat_Agio_Disagio_EU_Prosjekter.docx', type: 'docx' },
+                    { name: 'Valuta Agio/Disagio Beregning.xlsx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Beregning_og_Avstemming_Valuta_Agio_Disagio.xlsx', type: 'xlsx' }
+                ]
+            },
+            {
+                id: 'R-07',
+                month: 'Løpende',
+                periodGroup: 'Årlig',
+                title: 'Sikre kontrollspor og 10-års arkiveringsplikt (Risiko R7)',
+                desc: 'Påse at alle bilag, timelister, BDM-godkjenninger, avtaler og prosjektrapporter arkiveres elektronisk i henhold til 10-års oppbevaringskrav.',
+                category: 'Internkontroll',
+                hjemmel: 'Bestemmelsene kap. 4.4.10.2',
+                role: 'Prosjektleder / Arkivansvarlig',
+                defaultStatus: 'Fullført',
+                docs: [
+                    { name: 'Sjekkliste Internkontroll Statlig Økonomistyring.docx', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Sjekkliste_Internkontroll_Statlig_Okonomistyring.docx', type: 'docx' },
+                    { name: 'Navigasjonskart for Prosjektøkonomi.pdf', path: 'Controller Mappe/Controllerhaandbok_Komplett_Mappestruktur/Navigasjonskart_for_prosjektøkonomi.pdf', type: 'pdf' }
+                ]
+            }
+        ];
+
+        let selectedActiveMonth = 'ALL';
+
+        function getSavedChecklistState() {
+            try {
+                const saved = localStorage.getItem('uia_calendar_checklist_state_v1');
+                return saved ? JSON.parse(saved) : {};
+            } catch (e) {
+                return {};
+            }
+        }
+
+        function saveChecklistState(state) {
+            try {
+                localStorage.setItem('uia_calendar_checklist_state_v1', JSON.stringify(state));
+            } catch (e) {}
+        }
+
+        function renderYearCalendarGrid() {
+            const grid = document.getElementById('year-calendar-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const savedState = getSavedChecklistState();
+
+            CALENDAR_MONTHS_CONFIG.forEach(m => {
+                // Find tasks for this month
+                const monthTasks = CALENDAR_CHECKLIST_DATA.filter(t => t.month === m.code);
+                const totalTasks = monthTasks.length;
+                let doneTasks = 0;
+
+                monthTasks.forEach(t => {
+                    const isChecked = savedState[t.id] !== undefined ? savedState[t.id] : (t.defaultStatus === 'Fullført');
+                    if (isChecked) doneTasks++;
+                });
+
+                const isSelected = selectedActiveMonth === m.code;
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.padding = '1rem';
+                card.style.cursor = 'pointer';
+                card.style.border = isSelected ? '2px solid var(--uia-accent)' : '1px solid var(--uia-border)';
+                card.style.background = isSelected ? '#FFFBF5' : 'white';
+                card.style.transition = 'all 0.2s ease';
+                card.onclick = () => selectMonthDrilldown(m.code);
+
+                const statusBadgeClass = doneTasks === totalTasks && totalTasks > 0 ? 'badge-success' : doneTasks > 0 ? 'badge-warning' : 'badge-danger';
+                const statusText = totalTasks === 0 ? 'Ingen faste frister' : `${doneTasks}/${totalTasks} Fullført`;
+
+                card.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                        <strong style="color: var(--uia-navy); font-size: 1.05rem;">${m.name}</strong>
+                        <span class="badge" style="background: #E2E8F0; color: var(--uia-navy); font-size: 0.7rem;">${m.quarter}</span>
+                    </div>
+                    <div style="font-size: 0.8rem; color: #64748B; min-height: 2.2em; margin-bottom: 0.6rem;">${m.desc}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="badge ${statusBadgeClass}">${statusText}</span>
+                        <small style="color: var(--uia-blue); font-weight: 600;">Drill-down →</small>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function renderMonthPills() {
+            const container = document.getElementById('month-pills-container');
+            if (!container) return;
+
+            let html = `<button class="btn" style="padding: 4px 10px; font-size: 0.8rem; background-color: ${selectedActiveMonth === 'ALL' ? 'var(--uia-navy)' : '#64748B'};" onclick="selectMonthDrilldown('ALL')">Alle Måneder</button>`;
+            
+            CALENDAR_MONTHS_CONFIG.forEach(m => {
+                const active = selectedActiveMonth === m.code;
+                html += `<button class="btn" style="padding: 4px 9px; font-size: 0.78rem; background-color: ${active ? 'var(--uia-accent)' : '#94A3B8'};" onclick="selectMonthDrilldown('${m.code}')">${m.code}</button>`;
+            });
+
+            html += `<button class="btn" style="padding: 4px 9px; font-size: 0.78rem; background-color: ${selectedActiveMonth === 'Månedlig' ? 'var(--uia-blue)' : '#94A3B8'};" onclick="selectMonthDrilldown('Månedlig')">Månedlig</button>`;
+            html += `<button class="btn" style="padding: 4px 9px; font-size: 0.78rem; background-color: ${selectedActiveMonth === 'Løpende' ? 'var(--uia-blue)' : '#94A3B8'};" onclick="selectMonthDrilldown('Løpende')">Løpende</button>`;
+
+            container.innerHTML = html;
+        }
+
+        function selectMonthDrilldown(monthCode) {
+            selectedActiveMonth = monthCode;
+            
+            const titleElem = document.getElementById('drilldown-title');
+            if (titleElem) {
+                if (monthCode === 'ALL') {
+                    titleElem.innerHTML = '📋 Detaljert Kontrollsjekkliste (Alle 12 Måneder)';
+                } else {
+                    const mObj = CALENDAR_MONTHS_CONFIG.find(m => m.code === monthCode);
+                    const name = mObj ? mObj.name : monthCode;
+                    titleElem.innerHTML = `🔍 Detaljert Kontrollsjekkliste for: <strong>${name.toUpperCase()}</strong>`;
+                }
+            }
+
+            renderYearCalendarGrid();
+            renderMonthPills();
+            renderChecklistTable();
+
+            const sec = document.getElementById('checklist-section');
+            if (sec && monthCode !== 'ALL') {
+                sec.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function renderChecklistTable() {
+            const tbody = document.getElementById('tbody-checklist');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            const savedState = getSavedChecklistState();
+
+            const categoryFilter = document.getElementById('cal-filter-category')?.value || 'ALL';
+            const roleFilter = document.getElementById('cal-filter-role')?.value || 'ALL';
+            const statusFilter = document.getElementById('cal-filter-status')?.value || 'ALL';
+            const searchQuery = (document.getElementById('cal-search-input')?.value || '').trim().toLowerCase();
+
+            let totalCount = 0;
+            let doneCount = 0;
+            let inProgressCount = 0;
+            let riskCount = 0;
+
+            CALENDAR_CHECKLIST_DATA.forEach((item) => {
+                const isChecked = savedState[item.id] !== undefined ? savedState[item.id] : (item.defaultStatus === 'Fullført');
+                const currentStatus = savedState[item.id + '_status'] || item.defaultStatus;
+
+                // Month / Drill-down Filter
+                if (selectedActiveMonth !== 'ALL') {
+                    if (selectedActiveMonth === 'Månedlig' || selectedActiveMonth === 'Løpende') {
+                        if (item.month !== selectedActiveMonth && item.periodGroup !== selectedActiveMonth) return;
+                    } else {
+                        if (item.month !== selectedActiveMonth) return;
+                    }
+                }
+
+                if (categoryFilter !== 'ALL' && item.category !== categoryFilter) return;
+                if (roleFilter !== 'ALL' && !item.role.includes(roleFilter)) return;
+                if (statusFilter !== 'ALL' && currentStatus !== statusFilter) return;
+
+                if (searchQuery) {
+                    const matchText = (item.id + ' ' + item.title + ' ' + item.desc + ' ' + item.category + ' ' + item.hjemmel + ' ' + item.role).toLowerCase();
+                    if (!matchText.includes(searchQuery)) return;
+                }
+
+                totalCount++;
+                if (isChecked) doneCount++;
+                if (currentStatus === 'Pågår') inProgressCount++;
+                if (item.id.startsWith('R-') || currentStatus === 'Avvik') riskCount++;
+
+                const tr = document.createElement('tr');
+                tr.style.background = isChecked ? '#F8FAFC' : 'white';
+
+                const docLinksHtml = item.docs.map(doc => {
+                    let icon = '📄';
+                    let bg = '#E2E8F0';
+                    let col = '#1E293B';
+                    if (doc.type === 'xlsx') { icon = '📊'; bg = '#E6F4EA'; col = '#137333'; }
+                    else if (doc.type === 'docx') { icon = '📝'; bg = '#E0F2FE'; col = '#0369A1'; }
+                    else if (doc.type === 'pdf') { icon = '🔴'; bg = '#FCE8E6'; col = '#C5221F'; }
+                    else if (doc.type === 'md') { icon = '📖'; bg = '#FEF7E0'; col = '#B06000'; }
+                    else if (doc.type === 'png') { icon = '🖼️'; bg = '#F3E8FF'; col = '#6B21A8'; }
+                    
+                    return `<a href="${doc.path}" target="_blank" class="badge" style="background:${bg}; color:${col}; margin-right:4px; margin-bottom:4px; text-decoration:none; display:inline-flex; align-items:center; gap:4px; padding:3px 7px;" title="Åpne ${doc.name}">${icon} ${doc.name}</a>`;
+                }).join(' ');
+
+                tr.innerHTML = `
+                    <td style="text-align: center;">
+                        <input type="checkbox" id="chk_${item.id}" ${isChecked ? 'checked' : ''} onchange="toggleChecklistItem('${item.id}', this.checked)" style="transform: scale(1.2); cursor: pointer;">
+                    </td>
+                    <td><strong style="color: var(--uia-navy);">${item.id}</strong></td>
+                    <td><span class="badge" style="background: #F1F5F9; color: var(--uia-navy); font-weight: 600;">${item.month}</span></td>
+                    <td>
+                        <div style="font-weight: 600; color: var(--uia-navy); ${isChecked ? 'text-decoration: line-through; opacity: 0.7;' : ''}">${item.title}</div>
+                        <div style="font-size: 0.8rem; color: #64748B; margin-top: 2px;">${item.desc}</div>
+                    </td>
+                    <td><span class="badge badge-success" style="background: #E2E8F0; color: #334155;">${item.category}</span></td>
+                    <td><small style="color: #475569; font-weight: 500;">${item.hjemmel}</small></td>
+                    <td><small style="color: #475569; font-weight: 600;">${item.role}</small></td>
+                    <td>
+                        <select onchange="changeChecklistStatus('${item.id}', this.value)" style="padding: 2px 6px; border-radius: 4px; border: 1px solid var(--uia-border); font-size: 0.75rem; font-weight: bold;">
+                            <option value="Fullført" ${currentStatus === 'Fullført' ? 'selected' : ''}>Fullført 🟢</option>
+                            <option value="Pågår" ${currentStatus === 'Pågår' ? 'selected' : ''}>Pågår 🟡</option>
+                            <option value="Planlagt" ${currentStatus === 'Planlagt' ? 'selected' : ''}>Planlagt ⚪</option>
+                            <option value="Avvik" ${currentStatus === 'Avvik' ? 'selected' : ''}>Avvik 🔴</option>
+                        </select>
+                    </td>
+                    <td>${docLinksHtml}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Update KPI summary numbers
+            const pct = totalCount > 0 ? Math.round((doneCount / totalCount) * 100) : 0;
+            if (document.getElementById('cal-kpi-total')) document.getElementById('cal-kpi-total').innerText = totalCount;
+            if (document.getElementById('cal-kpi-done')) document.getElementById('cal-kpi-done').innerText = `${doneCount} (${pct}%)`;
+            if (document.getElementById('cal-kpi-inprogress')) document.getElementById('cal-kpi-inprogress').innerText = inProgressCount;
+            if (document.getElementById('cal-kpi-risk')) document.getElementById('cal-kpi-risk').innerText = riskCount;
+            if (document.getElementById('cal-kpi-progress-bar')) document.getElementById('cal-kpi-progress-bar').style.width = pct + '%';
+        }
+
+        function toggleChecklistItem(id, isChecked) {
+            const savedState = getSavedChecklistState();
+            savedState[id] = isChecked;
+            if (isChecked) savedState[id + '_status'] = 'Fullført';
+            saveChecklistState(savedState);
+            renderYearCalendarGrid();
+            renderChecklistTable();
+        }
+
+        function changeChecklistStatus(id, newStatus) {
+            const savedState = getSavedChecklistState();
+            savedState[id + '_status'] = newStatus;
+            savedState[id] = (newStatus === 'Fullført');
+            saveChecklistState(savedState);
+            renderYearCalendarGrid();
+            renderChecklistTable();
+        }
+
+        function filterChecklist() {
+            renderChecklistTable();
+        }
+
+        function resetChecklistState() {
+            if (confirm('Vil du nullstille alle avsjekker i sjekklisten?')) {
+                localStorage.removeItem('uia_calendar_checklist_state_v1');
+                renderYearCalendarGrid();
+                renderChecklistTable();
+            }
+        }
+
+        function exportChecklistToExcel() {
+            exportTableToExcel('table-checklist', 'Interaktiv_Arskalender_og_Sjekkliste_UiA_2026');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderYearCalendarGrid();
+            renderMonthPills();
+            renderChecklistTable();
+        });
+
+</script>
 </body>
 
 </html>
