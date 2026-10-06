@@ -959,7 +959,207 @@
             </table>
         </div>
 
-    
+        <!-- TAB 6: BEGREPSKATAOG & ORDLISTE -->
+        <div id="tab-ordliste" class="tab-panel">
+            <h2>📖 Begrepskatalog & Økonomisk Ordliste (Statlig Controller & Project Controlling)</h2>
+            <p style="color: #64748B; margin-bottom: 1.5rem;">Standardiserte faglige definisjoner, akronymer og regnskapsmessige begreper for UH-sektoren, statlig økonomistyring og prosjektcontrolling.</p>
+
+            <div class="card-grid" style="margin-bottom: 1.5rem;">
+                <div class="card">
+                    <div class="card-header">Totalt Begreper</div>
+                    <div class="card-value">22 Faglige Uttrykk</div>
+                    <div class="card-sub"><span class="badge badge-success">UH & Statlig Standard</span> Definert iht. SRS & Bestemmelsene</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Kategorier</div>
+                    <div class="card-value">5 Hovedområder</div>
+                    <div class="card-sub">BOA, EVM, SRS, Fullmakter, Valuta</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">Krav om Regelverk</div>
+                    <div class="card-value">100% Forankret</div>
+                    <div class="card-sub">Bestemmelsene, SRS 1-25 & DFØ</div>
+                </div>
+            </div>
+
+            <div class="filter-controls">
+                <input type="text" id="search-ordliste" class="search-input" placeholder="Søk i begreper, forkortelser, kategorier eller forklaringer..." onkeyup="filterOrdliste()">
+                <button class="btn btn-excel" onclick="exportOrdlisteToExcel()">📥 Eksporter Ordliste til Excel (.xlsx)</button>
+            </div>
+
+            <table class="data-table" id="table-ordliste">
+                <thead>
+                    <tr>
+                        <th>Begrep / Akronym</th>
+                        <th>Fullstendig Navn (Norsk / Engelsk)</th>
+                        <th>Kategori</th>
+                        <th>Definisjon & Faglige Føringsregler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>BOA</strong></td>
+                        <td>Bidrags- og oppdragsaktivitet</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">BOA & Prosjekt</span></td>
+                        <td>Eksternfinansierte forsknings-, utdanning- og formidlingsprosjekter finansiert av NFR, EU, regionalt forskningsfond eller private oppdragsgivere.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TDI</strong></td>
+                        <td>Total Direkt og Indirekte kostnadskalkyle</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Kalkyle & Prosjekt</span></td>
+                        <td>Standardisert beregningsmodell i UH-sektoren for prising av prosjekter. Omfatter direkte lønn (inkl. sosiale kostnader), direkte drift og beregnet overhead (infrastruktur/leiesteder).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SRS 9</strong></td>
+                        <td>Statlig RegnskapsStandard 9 – Oppdragsvirksomhet</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Regnskap & SRS</span></td>
+                        <td>Gjelder eksterne oppdrag med direkte motytelse/leveransekrav. Inntekt resultatføres i taktom at ytelsen leveres (fullføringsgrad). Underskudd kostnadsføres uavkortet på konto 786.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SRS 10</strong></td>
+                        <td>Statlig RegnskapsStandard 10 – Bidragsaktivitet</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Regnskap & SRS</span></td>
+                        <td>Gjelder forskningsstøtte uten krav til kommersiell motytelse (f.eks. NFR/EU bidrag). Inntekt innregnes i taktom godkjente, faktiske påløpte kostnader oppstår.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BAC</strong></td>
+                        <td>Budget at Completion (Totalt Prosjektbudsjett)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Styring</span></td>
+                        <td>Den totale godkjente budsjettrammen for hele prosjektets levetid. Utgjør målestokken for beregning av Earned Value (EV = BAC × % utført).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EAC</strong></td>
+                        <td>Estimate at Completion (Sluttkostnadsprognose)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Styring</span></td>
+                        <td>Forventet totalkostnad ved prosjektslutt basert på hittil påløpte kostnader (AC) og oppdatert gjenstående estimat (ETC). Formel: EAC = AC + ETC.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ETC</strong></td>
+                        <td>Estimate to Complete (Gjenstående Kostnadsbehov)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Styring</span></td>
+                        <td>Beregnet forventet kostnad for å fullføre alle gjenstående arbeidspakker fra rapporteringsdato fram til prosjektslutt.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>EV</strong></td>
+                        <td>Earned Value (Opptjent Verdi)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Styring</span></td>
+                        <td>Verdien av faktisk utført arbeid målt i opprinnelig budsjetterte kroner. Formel: EV = BAC × Reell fremdrifts-% (Physic Completion).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PV</strong></td>
+                        <td>Planned Value (Planlagt Verdi)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Styring</span></td>
+                        <td>Den godkjente budsjetterte verdien av arbeidet som etter den opprinnelige prosjektplanen skulle vært utført per rapporteringsdato.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AC</strong></td>
+                        <td>Actual Cost (Faktisk Påløpt Kostnad)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Styring</span></td>
+                        <td>De faktiske regnskapsførte kostnadene (timer, reiser, utstyr, overhead) som er påløpt for å utføre arbeidet fram til statusdato.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CPI</strong></td>
+                        <td>Cost Performance Index (Kostnadseffektivitet)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Nøkkeltall</span></td>
+                        <td>Indeks for kostnadseffektivitet (CPI = EV / AC). CPI > 1.0 betyr lavere kostnad enn budsjettert; CPI &lt; 1.0 indikerer overskridelse og budsjettsprekking.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SPI</strong></td>
+                        <td>Schedule Performance Index (Fremdriftsindeks)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">EVM & Nøkkeltall</span></td>
+                        <td>Indeks for tidsfremdrift (SPI = EV / PV). SPI > 1.0 betyr at prosjektet ligger foran skjema; SPI &lt; 1.0 indikerer tidsforsinkelse.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>BDM</strong></td>
+                        <td>Budsjettdisponeringsmyndighet</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Fullmakter & Kontroll</span></td>
+                        <td>Skriftlig delegert fullmakt fra Universitetsdirektør/Dekan til å forplikte virksomheten økonomisk og godkjenne fakturaer og bilag (Krav om funksjonsskille).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Attestasjon</strong></td>
+                        <td>Faglig og saklig bekreftelse (To-manns-kontroll)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Fullmakter & Kontroll</span></td>
+                        <td>Bekreftelse fra uavhengig saksbehandler/attestant på at varer/tjenester er mottatt iht. avtale før godkjenning av BDM. Kan aldri utføres av samme person som BDM.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F-05-20</strong></td>
+                        <td>Driftsavsetningsregel for Statlige Virksomheter</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Statlig Regnskap</span></td>
+                        <td>Finansdepartementets retningslinje som begrenser overføring av ubrukte driftsmidler til 5.0% av årsbevilgningen. Beløp utover 5.0% inndras hvis det ikke foreligger godkjent tiltaksplan.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agio / Disagio</strong></td>
+                        <td>Valutagevinst og Valutatap</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Statlig Regnskap</span></td>
+                        <td>Regnskapsmessig valutajustering ved innbetalinger og balanseføring i fremmed valuta (f.eks. EUR i EU Horisont Europa). Føres på finansposter eller spesifikk avsetningskonto.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CFS</strong></td>
+                        <td>Certificate on the Financial Statements</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Revisjon & EU</span></td>
+                        <td>Revisorattestasjon og revisjonsberetning krevd av Europakommisjonen for EU Horizon Europe-prosjekter ved samlede faktiske direkte kostnader ≥ 430 000 EUR.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nettoføring</strong></td>
+                        <td>MVA-nettoføringsordning i staten</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Statlig Regnskap</span></td>
+                        <td>Statlig ordning hvor merverdiavgift på kjøp av varer og tjenester bokføres direkte mot statskassens mva-konto, slik at MVA ikke belaster virksomhetens driftsbudsjett.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-102</strong></td>
+                        <td>Statens Standard Kontoplan</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Statlig Regnskap</span></td>
+                        <td>Obligatorisk statlig kontoplan fastsatt av Finansdepartementet, inndelt i kontoklasser 1–8 for å sikre konsistent rapportering til Statsregnskapet.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DBH / HK-dir</strong></td>
+                        <td>Database for statistikk om høyere utdanning</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Rapportering</span></td>
+                        <td>Nasjonalt dataregister administrert av HK-dir for rapportering av studiepoeng, ph.d.-grader, publiseringspoeng (NVI) og personaldata for statlig rammefordeling.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NVI</strong></td>
+                        <td>Norsk vitenskapelig indeks (Publiseringspoeng)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Rapportering</span></td>
+                        <td>System for vekting og registrering av vitenskapelige publikasjoner i Cristin/NVA som danner grunnlag for den resultatbaserte forskningsutdelingen i statlig bevilgning.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Internkontroll</strong></td>
+                        <td>Målrettet styring og egenkontroll (§ 4 i Reglementet)</td>
+                        <td><span class="badge" style="background: #E2E8F0; color: #1E293B;">Fullmakter & Kontroll</span></td>
+                        <td>Prosess fastsatt av styre og ledelse for å sikre målrettet og effektiv drift, pålitelig rapportering og overholdelse av gjeldende lover, regler og instrukser.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TAB 7: GLOBAL PROSJEKTSØK -->
+        <div id="tab-globalsearch" class="tab-panel">
+            <h2>🔍 Global Prosjektsøk & Dokumentindeks (439 Filer)</h2>
+            <p style="color: #64748B; margin-bottom: 1.5rem;">Søk på tvers av alle prosjektfiler, maler, rapporter, kildekode, data, Excel-modeller og håndbøker i UiA Controller-portalen.</p>
+
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <input type="text" id="global-search-input" class="search-box" style="margin-bottom: 0; flex: 1; min-width: 280px;" placeholder="🔍 Skriv inn søkeord (f.eks. SRS 10, TDI, Agio, Power BI, BDM, 2026-M10)..." oninput="runGlobalProjectSearch()">
+                    <span id="global-search-count-badge" class="badge badge-success" style="font-size: 0.9rem; padding: 0.5rem 1rem;">439 Kilder Funnet</span>
+                </div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;">
+                    <span style="font-size: 0.85rem; font-weight: 600; color: var(--uia-navy); margin-right: 0.25rem;">Kategorier:</span>
+                    <button class="btn cat-pill" style="background-color: var(--uia-navy); padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('ALLE', this)">Alle (439)</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Controller Mappe (Maler & Modeller)', this)">📁 Controller Mappe</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Controllerhåndbok (6 Moduler)', this)">📖 Controllerhåndbok</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Kunnskapsbase', this)">📚 Kunnskapsbase</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Regelverk & Instrukser', this)">📜 Regelverk</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Data, Excel & Parquet', this)">💾 Data & Excel</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Power BI & DAX Architecture', this)">⚡ Power BI & DAX</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Kildekode & Automasjon (Python)', this)">🐍 Python & Skripter</button>
+                    <button class="btn cat-pill" style="background-color: #475569; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onclick="filterSearchCategory('Dokumentasjon & Konfigurasjon', this)">⚙️ Konfigurasjon</button>
+                </div>
+            </div>
+
+            <div id="global-search-results"></div>
+        </div>
+
         <!-- TAB 8: ÅRSKALENDER & INTERAKTIV SJEKKLISTE -->
         <div id="tab-arshjul-sjekkliste" class="tab-panel">
             
@@ -1211,8 +1411,17 @@
             const tabBtns = document.querySelectorAll('.tab-btn');
             tabBtns.forEach(b => b.classList.remove('active'));
 
-            document.getElementById(tabId).classList.add('active');
-            evt.currentTarget.classList.add('active');
+            const targetPanel = document.getElementById(tabId);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+
+            if (tabId === 'tab-globalsearch' && typeof runGlobalProjectSearch === 'function') {
+                runGlobalProjectSearch();
+            }
         }
 
         // ACCOUNT STATEMENT TOGGLE (TAB 1)
