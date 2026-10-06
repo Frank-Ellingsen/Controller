@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controllerhaandbok_Komplett_Mappestruktur | UiA Controlling</title>
+    <title>Controller Mappe | UiA Controlling</title>
     <style>
         :root {
             --uia-navy: #002B49;
@@ -50,79 +50,188 @@
 </head>
 <body>
     <header>
-        <div class="header-title">🏛️ Universitetet i Agder | Controllerhaandbok_Komplett_Mappestruktur</div>
-        <a href="../../index.html" class="btn-home">🏠 Tilbake til Hovedportalen</a>
+        <div class="header-title">🏛️ Universitetet i Agder | Controller Mappe</div>
+        <a href="../index.html" class="btn-home">🏠 Tilbake til Hovedportalen</a>
     </header>
     
     <div class="container">
-        <div class="breadcrumb"><a href="../../index.html">Hovedportal</a> / <a href="../index.html">Controller Mappe</a> / <a href="index.html">Controllerhaandbok_Komplett_Mappestruktur</a></div>
+        <div class="breadcrumb"><a href="../index.html">Hovedportal</a> / <a href="index.html">Controller Mappe</a></div>
         
         <div class="summary-bar">
             <div class="summary-card">
                 <div class="label">Undermapper</div>
-                <div class="value">6</div>
+                <div class="value">1</div>
             </div>
             <div class="summary-card">
                 <div class="label">Dokumenter & Filer</div>
-                <div class="value">0</div>
+                <div class="value">16</div>
             </div>
             <div class="summary-card">
                 <div class="label">Samlet Størrelse</div>
-                <div class="value">0.00 MB</div>
+                <div class="value">16.97 MB</div>
             </div>
         </div>
 
         <input type="text" id="file-search" class="search-box" placeholder="🔍 Søk etter filnavn i denne mappen..." onkeyup="filterFiles()">
 
         
-            <div class="section-title">📁 Undermapper (6)</div>
+            <div class="section-title">📁 Undermapper (1)</div>
             <div class="grid-folders">
                 
-                <a href="01_Overordnet_Regelverk_og_Styring/index.html" class="folder-card">
+                <a href="Controllerhaandbok_Komplett_Mappestruktur/index.html" class="folder-card">
                     <div class="folder-info">
                         <span>📁</span>
-                        <span>01_Overordnet_Regelverk_og_Styring</span>
-                    </div>
-                    <span style="color: #94A3B8;">→</span>
-                </a>
-                <a href="02_Fullmakter_Roller_og_Delegasjon/index.html" class="folder-card">
-                    <div class="folder-info">
-                        <span>📁</span>
-                        <span>02_Fullmakter_Roller_og_Delegasjon</span>
-                    </div>
-                    <span style="color: #94A3B8;">→</span>
-                </a>
-                <a href="03_Budsjettering_og_Okonomioppfolging/index.html" class="folder-card">
-                    <div class="folder-info">
-                        <span>📁</span>
-                        <span>03_Budsjettering_og_Okonomioppfolging</span>
-                    </div>
-                    <span style="color: #94A3B8;">→</span>
-                </a>
-                <a href="04_Regnskap_SRS_og_Kontoplan/index.html" class="folder-card">
-                    <div class="folder-info">
-                        <span>📁</span>
-                        <span>04_Regnskap_SRS_og_Kontoplan</span>
-                    </div>
-                    <span style="color: #94A3B8;">→</span>
-                </a>
-                <a href="05_Prosjektokonomi_og_BOA/index.html" class="folder-card">
-                    <div class="folder-info">
-                        <span>📁</span>
-                        <span>05_Prosjektokonomi_og_BOA</span>
-                    </div>
-                    <span style="color: #94A3B8;">→</span>
-                </a>
-                <a href="06_Internkontroll_Risikostyring_og_Revisjon/index.html" class="folder-card">
-                    <div class="folder-info">
-                        <span>📁</span>
-                        <span>06_Internkontroll_Risikostyring_og_Revisjon</span>
+                        <span>Controllerhaandbok_Komplett_Mappestruktur</span>
                     </div>
                     <span style="color: #94A3B8;">→</span>
                 </a>
             </div>
 
-        <div class="section-title">📄 Ingen direkte filer i denne mappen</div>
+        
+            <div class="section-title">📄 Dokumenter og Datafiler (16)</div>
+            <div class="file-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 40px;"></th>
+                            <th>Filnavn</th>
+                            <th style="text-align: right;">Størrelse</th>
+                            <th style="text-align: right;">Handling</th>
+                        </tr>
+                    </thead>
+                    <tbody id="file-table-body">
+                        
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="Aarshjul_og_Frister_UH_Oekonomi.xlsx" class="file-name" target="_blank">Aarshjul_og_Frister_UH_Oekonomi.xlsx</a></td>
+                    <td class="num-col">7.2 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Aarshjul_og_Frister_UH_Oekonomi.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="Aarsplan_Internkontroll_UH.xlsx" class="file-name" target="_blank">Aarsplan_Internkontroll_UH.xlsx</a></td>
+                    <td class="num-col">7.8 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Aarsplan_Internkontroll_UH.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="Aarsrapport_Del_IV_Styring_og_Kontroll_Mal.docx" class="file-name" target="_blank">Aarsrapport_Del_IV_Styring_og_Kontroll_Mal.docx</a></td>
+                    <td class="num-col">40.2 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Aarsrapport_Del_IV_Styring_og_Kontroll_Mal.docx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">🖼️</td>
+                    <td><a href="BOA_Research_Project_Lifecycle_Overview.png" class="file-name" target="_blank">BOA_Research_Project_Lifecycle_Overview.png</a></td>
+                    <td class="num-col">3.58 MB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="BOA_Research_Project_Lifecycle_Overview.png" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="Beregning_og_Avstemming_Valuta_Agio_Disagio.xlsx" class="file-name" target="_blank">Beregning_og_Avstemming_Valuta_Agio_Disagio.xlsx</a></td>
+                    <td class="num-col">6.8 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Beregning_og_Avstemming_Valuta_Agio_Disagio.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="Budsjett_og_Prognosemodell-v2.xlsx" class="file-name" target="_blank">Budsjett_og_Prognosemodell-v2.xlsx</a></td>
+                    <td class="num-col">6.0 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Budsjett_og_Prognosemodell-v2.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="Horisont_Europa_Dagsats_og_Timeberegning.xlsx" class="file-name" target="_blank">Horisont_Europa_Dagsats_og_Timeberegning.xlsx</a></td>
+                    <td class="num-col">6.7 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Horisont_Europa_Dagsats_og_Timeberegning.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="Konteringsmatrise_SRS9_SRS10.xlsx" class="file-name" target="_blank">Konteringsmatrise_SRS9_SRS10.xlsx</a></td>
+                    <td class="num-col">7.2 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Konteringsmatrise_SRS9_SRS10.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="Maanedlig_Timeliste_Horisont_Europa.docx" class="file-name" target="_blank">Maanedlig_Timeliste_Horisont_Europa.docx</a></td>
+                    <td class="num-col">37.9 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Maanedlig_Timeliste_Horisont_Europa.docx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📕</td>
+                    <td><a href="Navigasjonskart_for_prosjekt%C3%B8konomi.pdf" class="file-name" target="_blank">Navigasjonskart_for_prosjektøkonomi.pdf</a></td>
+                    <td class="num-col">13.09 MB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Navigasjonskart_for_prosjekt%C3%B8konomi.pdf" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="Notat_Agio_Disagio_EU_Prosjekter.docx" class="file-name" target="_blank">Notat_Agio_Disagio_EU_Prosjekter.docx</a></td>
+                    <td class="num-col">40.3 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Notat_Agio_Disagio_EU_Prosjekter.docx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="Redegoerelse_CFS_Horisont_Europa.docx" class="file-name" target="_blank">Redegoerelse_CFS_Horisont_Europa.docx</a></td>
+                    <td class="num-col">38.7 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Redegoerelse_CFS_Horisont_Europa.docx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="Sjekkliste_Aarsavslutning_Oekonomi_Master.docx" class="file-name" target="_blank">Sjekkliste_Aarsavslutning_Oekonomi_Master.docx</a></td>
+                    <td class="num-col">40.9 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Sjekkliste_Aarsavslutning_Oekonomi_Master.docx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📄</td>
+                    <td><a href="Sjekkliste_Internkontroll_Statlig_Okonomistyring.docx" class="file-name" target="_blank">Sjekkliste_Internkontroll_Statlig_Okonomistyring.docx</a></td>
+                    <td class="num-col">39.7 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="Sjekkliste_Internkontroll_Statlig_Okonomistyring.docx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📊</td>
+                    <td><a href="TDI_Kalkylemodell_BOA-v2.xlsx" class="file-name" target="_blank">TDI_Kalkylemodell_BOA-v2.xlsx</a></td>
+                    <td class="num-col">7.0 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="TDI_Kalkylemodell_BOA-v2.xlsx" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 40px; text-align: center; font-size: 1.1rem;">📁</td>
+                    <td><a href="conroller_mappe.html" class="file-name" target="_blank">conroller_mappe.html</a></td>
+                    <td class="num-col">15.8 KB</td>
+                    <td style="width: 120px; text-align: right;">
+                        <a href="conroller_mappe.html" download class="btn-download">📥 Last ned</a>
+                    </td>
+                </tr>
+                    </tbody>
+                </table>
+            </div>
     </div>
 
     <footer>
