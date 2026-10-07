@@ -283,14 +283,16 @@
 
     <nav class="tab-bar">
         <button class="tab-btn active" onclick="openTab(event, 'tab-frontpage')">📊 1. Totaler YTD & Drilldown</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-arshjul')">📅 1. Årshjul & Account Statement</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-arshjul')">📅 2. Årshjul & Account Statement</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-maaned')">🔍 3. Månedsoppgjør & Audit</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-evm')">📊 4. EVM & Tiltakssimulator</button>
         <button class="tab-btn" onclick="openTab(event, 'tab-datakilder')">💾 5. Datakilder & Power BI</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-kontoplan')">📜 6. Statlig Rapportering & Kontoplan</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-ordliste')">📖 7. Begrepskatalog & Ordliste</button>
-        <button class="tab-btn" id="btn-tab-globalsearch" onclick="openTab(event, 'tab-globalsearch')">🔍 8. Global Prosjektsøk (439 Filer)</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab-arshjul-sjekkliste')">🗓️ 9. Årskalender & Sjekkliste</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-kontoplan')">📜 6. Statlig Kontoplan</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-rapportering')">🏛️ 7. Statlig Rapportering & SRS</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-budsjett2027')">📈 8. Budsjett 2027 Simulator</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-ordliste')">📖 9. Begrepskatalog & Ordliste</button>
+        <button class="tab-btn" id="btn-tab-globalsearch" onclick="openTab(event, 'tab-globalsearch')">🔍 10. Global Prosjektsøk (439 Filer)</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab-arshjul-sjekkliste')">🗓️ 11. Årskalender & Sjekkliste</button>
     </nav>
 
     <div class="card" id="timeframe-picker-bar" style="margin: 1.5rem auto 0; max-width: 1400px; width: calc(100% - 2rem); background: white; border: 1px solid var(--uia-border); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
@@ -2269,7 +2271,7 @@ RIKSREVISJONEN INTERNKONTROLL- OG ATTESTASJONSAUDIT (2026)
             if (matches.length === 0) {
                 resultsContainer.innerHTML = `
                     <div class="card" style="text-align: center; padding: 2rem; color: #64748B;">
-                        <h3>🔎 Ingen filer eller emner matchet "${query}"`</h3>
+                        <h3>🔎 Ingen filer eller emner matchet "${query}"</h3>
                         <p style="margin-top: 0.5rem;">Prøv å søke etter andre emner som "SRS 10", "TDI", "215 dager", "agio", "BDM", "Power BI" eller velg en annen kategori.</p>
                     </div>
                 `;
