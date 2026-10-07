@@ -296,13 +296,13 @@
     <div class="card" id="timeframe-picker-bar" style="margin: 1.5rem auto 0; max-width: 1400px; width: calc(100% - 2rem); background: white; border: 1px solid var(--uia-border); border-radius: 10px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
         <div class="filter-controls" style="margin-bottom: 0.75rem;">
             <label style="font-weight: 600; color: var(--uia-navy);">År
-                <select id="selectYear" style="margin-left: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--uia-border);">
+                <select id="selectYear" style="margin-left: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--uia-border);" onchange="handleTimeframeChange()">
                     <option value="2026" selected>2026</option>
                     <option value="2027">2027</option>
                 </select>
             </label>
             <label style="font-weight: 600; color: var(--uia-navy);">Periode
-                <select id="selectPeriod" style="margin-left: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--uia-border);">
+                <select id="selectPeriod" style="margin-left: 0.5rem; padding: 0.5rem 0.75rem; border-radius: 6px; border: 1px solid var(--uia-border);" onchange="handleTimeframeChange()">
                     <option value="2026-M01">2026-M01</option>
                     <option value="2026-M02">2026-M02</option>
                     <option value="2026-M03">2026-M03</option>
@@ -349,28 +349,28 @@
             <div class="card-grid">
                 <div class="card">
                     <div class="card-header">Total Ramme FY 2026</div>
-                    <div class="card-value">2 075,1 Mill</div>
+                    <div class="card-value" id="kpi-total-ramme">2 075,1 Mill</div>
                     <div class="card-sub">Brutto årsbudsjett Kap 260.50 + BOA</div>
                 </div>
                 <div class="card">
                     <div class="card-header">Budsjett YTD (Jan-Okt)</div>
-                    <div class="card-value">1 729,3 Mill</div>
+                    <div class="card-value" id="kpi-budsjett-ytd">1 729,3 Mill</div>
                     <div class="card-sub">Periodisert ramme (10/12 måneder)</div>
                 </div>
                 <div class="card">
                     <div class="card-header">Regnskap YTD (Jan-Okt)</div>
-                    <div class="card-value text-success">1 703,5 Mill</div>
+                    <div class="card-value text-success" id="kpi-regnskap-ytd">1 703,5 Mill</div>
                     <div class="card-sub">Påløpte kostnader (SRS-regnskap)</div>
                 </div>
                 <div class="card">
                     <div class="card-header">Avvik YTD (Jan-Okt)</div>
-                    <div class="card-value text-success">+25,8 Mill</div>
-                    <div class="card-sub">Underforbruk / Innsparing (1.49%)</div>
+                    <div class="card-value text-success" id="kpi-avvik-ytd">+25,8 Mill</div>
+                    <div class="card-sub" id="kpi-avvik-sub">Underforbruk / Innsparing (1.49%)</div>
                 </div>
                 <div class="card">
                     <div class="card-header">Prognose EOY (31.12)</div>
-                    <div class="card-value text-success">2 044,3 Mill</div>
-                    <div class="card-sub">Forventet sluttavvik: <strong>+30,8 Mill (1.48%)</strong></div>
+                    <div class="card-value text-success" id="kpi-prognose-eoy">2 044,3 Mill</div>
+                    <div class="card-sub" id="kpi-prognose-sub">Forventet sluttavvik: <strong>+30,8 Mill (1.48%)</strong></div>
                 </div>
             </div>
 
@@ -380,21 +380,21 @@
                 
                 <div class="bar-wrapper">
                     <div class="bar-label">
-                        <span>Budsjett YTD Oct (1 729,3 MNOK) vs. Regnskap YTD Oct (1 703,5 MNOK)</span>
-                        <span class="text-success">Innsparing YTD: +25,8 MNOK (+1.49%)</span>
+                        <span id="bar1-title">Budsjett YTD Oct (1 729,3 MNOK) vs. Regnskap YTD Oct (1 703,5 MNOK)</span>
+                        <span id="bar1-badge" class="text-success">Innsparing YTD: +25,8 MNOK (+1.49%)</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill bg-success" style="width: 98.5%;"></div>
+                        <div id="bar1-fill" class="bar-fill bg-success" style="width: 98.5%;"></div>
                     </div>
                 </div>
 
                 <div class="bar-wrapper">
                     <div class="bar-label">
-                        <span>Total Ramme 2026 (2 075,1 MNOK) vs. Prognose EOY (2 044,3 MNOK)</span>
-                        <span class="text-success">Forventet Årsoverskudd: +30,8 MNOK (+1.48%)</span>
+                        <span id="bar2-title">Total Ramme 2026 (2 075,1 MNOK) vs. Prognose EOY (2 044,3 MNOK)</span>
+                        <span id="bar2-badge" class="text-success">Forventet Årsoverskudd: +30,8 MNOK (+1.48%)</span>
                     </div>
                     <div class="bar-bg">
-                        <div class="bar-fill bg-blue" style="width: 98.52%;"></div>
+                        <div id="bar2-fill" class="bar-fill bg-blue" style="width: 98.52%;"></div>
                     </div>
                 </div>
             </div>
@@ -1509,6 +1509,178 @@
     </footer>
 
     <script>
+        // DRILLDOWN DATA MATRIX FOR FRONTPAGE
+        const drilldownData = [
+            { code: "ADM", name: "Fellesadministrasjon & Fellestjenester (ADM)", totalB: 456.5, ytdB: 380.4, ytdA: 366.6, pVal: 370.8, cVar: 13.8, eoyF: 440.1, eoyV: 16.4 },
+            { code: "FELLES", name: "Særkostnader & Fellesutgifter (FELLES)", totalB: 495.9, ytdB: 413.3, ytdA: 411.8, pVal: 412.2, cVar: 1.5, eoyF: 494.0, eoyV: 1.9 },
+            { code: "HELS", name: "Fakultet for helse- og idrettsvitenskap (HELS)", totalB: 207.5, ytdB: 172.9, ytdA: 167.3, pVal: 169.0, cVar: 5.6, eoyF: 200.8, eoyV: 6.7 },
+            { code: "HH", name: "Handelshøyskolen (HH)", totalB: 134.9, ytdB: 112.4, ytdA: 110.9, pVal: 111.4, cVar: 1.5, eoyF: 133.1, eoyV: 1.8 },
+            { code: "HUM", name: "Fakultet for humaniora og pedagogikk (HUM)", totalB: 211.7, ytdB: 176.4, ytdA: 174.1, pVal: 174.8, cVar: 2.3, eoyF: 209.1, eoyV: 2.6 },
+            { code: "KUNST", name: "Fakultet for kunstfag (KUNST)", totalB: 103.8, ytdB: 86.5, ytdA: 84.5, pVal: 85.1, cVar: 2.0, eoyF: 101.4, eoyV: 2.4 },
+            { code: "SAMF", name: "Fakultet for samfunnsvitenskap (SAMF)", totalB: 170.2, ytdB: 141.8, ytdA: 138.7, pVal: 139.6, cVar: 3.1, eoyF: 166.5, eoyV: 3.7 },
+            { code: "TN", name: "Fakultet for teknologi og realfag (TN)", totalB: 294.7, ytdB: 245.6, ytdA: 249.6, pVal: 248.4, cVar: -4.0, eoyF: 299.4, eoyV: -4.7 }
+        ];
+
+        function renderFrontpageDrilldown() {
+            const filterElem = document.getElementById('faculty-filter');
+            const searchElem = document.getElementById('frontpage-search');
+            if (!filterElem || !searchElem) return;
+
+            const filterCode = filterElem.value;
+            const searchTxt = searchElem.value.toLowerCase().trim();
+            const tbody = document.getElementById('frontpage-statement-body');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+
+            let filtered = drilldownData;
+            if (filterCode !== 'ALL') {
+                filtered = drilldownData.filter(d => d.code === filterCode);
+            }
+
+            if (searchTxt) {
+                filtered = filtered.filter(d => d.name.toLowerCase().includes(searchTxt) || d.code.toLowerCase().includes(searchTxt));
+            }
+
+            let sumB = 0, sumYtdB = 0, sumYtdA = 0, sumPval = 0, sumCvar = 0, sumEoyF = 0, sumEoyV = 0;
+
+            filtered.forEach(item => {
+                sumB += item.totalB;
+                sumYtdB += item.ytdB;
+                sumYtdA += item.ytdA;
+                sumPval += item.pVal;
+                sumCvar += item.cVar;
+                sumEoyF += item.eoyF;
+                sumEoyV += item.eoyV;
+
+                const row = document.createElement('tr');
+                const cVarBadge = item.cVar >= 0 
+                    ? `<span class="badge badge-success">+${item.cVar.toFixed(1).replace('.', ',')} Mill</span>` 
+                    : `<span class="badge badge-danger">${item.cVar.toFixed(1).replace('.', ',')} Mill</span>`;
+                const eoyVBadge = item.eoyV >= 0 
+                    ? `<span class="badge badge-success">+${item.eoyV.toFixed(1).replace('.', ',')} Mill</span>` 
+                    : `<span class="badge badge-danger">${item.eoyV.toFixed(1).replace('.', ',')} Mill</span>`;
+
+                row.innerHTML = `
+                    <td><strong>${item.name}</strong></td>
+                    <td style="text-align: right;">${item.totalB.toFixed(1).replace('.', ',')}</td>
+                    <td style="text-align: right;">${item.ytdB.toFixed(1).replace('.', ',')}</td>
+                    <td style="text-align: right;">${item.ytdA.toFixed(1).replace('.', ',')}</td>
+                    <td style="text-align: right;">${item.pVal.toFixed(1).replace('.', ',')}</td>
+                    <td style="text-align: right;">${cVarBadge}</td>
+                    <td style="text-align: right;">${item.eoyF.toFixed(1).replace('.', ',')}</td>
+                    <td style="text-align: right;">${eoyVBadge}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            // TOTAL ROW
+            const totRow = document.createElement('tr');
+            totRow.style.fontWeight = 'bold';
+            totRow.style.backgroundColor = '#F8FAFC';
+            const totCvarBadge = sumCvar >= 0 
+                ? `<span class="badge badge-success">+${sumCvar.toFixed(1).replace('.', ',')} Mill</span>` 
+                : `<span class="badge badge-danger">${sumCvar.toFixed(1).replace('.', ',')} Mill</span>`;
+            const totEoyVBadge = sumEoyV >= 0 
+                ? `<span class="badge badge-success">+${sumEoyV.toFixed(1).replace('.', ',')} Mill</span>` 
+                : `<span class="badge badge-danger">${sumEoyV.toFixed(1).replace('.', ',')} Mill</span>`;
+
+            const labelText = filterCode === 'ALL' ? 'TOTALT UIA BRUTTO RAMME' : `TOTALT FOR VALGT ENHET (${filterCode})`;
+
+            totRow.innerHTML = `
+                <td><strong>${labelText}</strong></td>
+                <td style="text-align: right;"><strong>${sumB.toFixed(1).replace('.', ',')}</strong></td>
+                <td style="text-align: right;"><strong>${sumYtdB.toFixed(1).replace('.', ',')}</strong></td>
+                <td style="text-align: right;"><strong>${sumYtdA.toFixed(1).replace('.', ',')}</strong></td>
+                <td style="text-align: right;"><strong>${sumPval.toFixed(1).replace('.', ',')}</strong></td>
+                <td style="text-align: right;"><strong>${totCvarBadge}</strong></td>
+                <td style="text-align: right;"><strong>${sumEoyF.toFixed(1).replace('.', ',')}</strong></td>
+                <td style="text-align: right;"><strong>${totEoyVBadge}</strong></td>
+            `;
+            tbody.appendChild(totRow);
+
+            // Update KPI cards dynamically
+            const totalRammeElem = document.getElementById('kpi-total-ramme');
+            const budsjettYtdElem = document.getElementById('kpi-budsjett-ytd');
+            const regnskapYtdElem = document.getElementById('kpi-regnskap-ytd');
+            const avvikYtdElem = document.getElementById('kpi-avvik-ytd');
+            const avvikSubElem = document.getElementById('kpi-avvik-sub');
+            const prognoseEoyElem = document.getElementById('kpi-prognose-eoy');
+            const prognoseSubElem = document.getElementById('kpi-prognose-sub');
+
+            if (totalRammeElem) totalRammeElem.innerText = `${sumB.toFixed(1).replace('.', ',')} Mill`;
+            if (budsjettYtdElem) budsjettYtdElem.innerText = `${sumYtdB.toFixed(1).replace('.', ',')} Mill`;
+            if (regnskapYtdElem) regnskapYtdElem.innerText = `${sumYtdA.toFixed(1).replace('.', ',')} Mill`;
+            
+            if (avvikYtdElem) {
+                avvikYtdElem.innerText = `${sumCvar >= 0 ? '+' : ''}${sumCvar.toFixed(1).replace('.', ',')} Mill`;
+                avvikYtdElem.className = sumCvar >= 0 ? 'card-value text-success' : 'card-value text-danger';
+            }
+            if (avvikSubElem) {
+                const pct = sumYtdB > 0 ? (sumCvar / sumYtdB) * 100 : 0;
+                avvikSubElem.innerText = `Underforbruk / Innsparing (${pct.toFixed(2)}%)`;
+            }
+
+            if (prognoseEoyElem) {
+                prognoseEoyElem.innerText = `${sumEoyF.toFixed(1).replace('.', ',')} Mill`;
+                prognoseEoyElem.className = sumEoyV >= 0 ? 'card-value text-success' : 'card-value text-danger';
+            }
+            if (prognoseSubElem) {
+                const eoyPct = sumB > 0 ? (sumEoyV / sumB) * 100 : 0;
+                prognoseSubElem.innerHTML = `Forventet sluttavvik: <strong>${sumEoyV >= 0 ? '+' : ''}${sumEoyV.toFixed(1).replace('.', ',')} Mill (${eoyPct.toFixed(2)}%)</strong>`;
+            }
+
+            // Update progress bars
+            const bar1Title = document.getElementById('bar1-title');
+            const bar1Badge = document.getElementById('bar1-badge');
+            const bar1Fill = document.getElementById('bar1-fill');
+
+            const bar2Title = document.getElementById('bar2-title');
+            const bar2Badge = document.getElementById('bar2-badge');
+            const bar2Fill = document.getElementById('bar2-fill');
+
+            if (bar1Title) bar1Title.innerText = `Budsjett YTD Oct (${sumYtdB.toFixed(1).replace('.', ',')} MNOK) vs. Regnskap YTD Oct (${sumYtdA.toFixed(1).replace('.', ',')} MNOK)`;
+            if (bar1Badge) {
+                const pct1 = sumYtdB > 0 ? (sumCvar / sumYtdB) * 100 : 0;
+                bar1Badge.innerText = `Innsparing YTD: ${sumCvar >= 0 ? '+' : ''}${sumCvar.toFixed(1).replace('.', ',')} MNOK (${pct1 >= 0 ? '+' : ''}${pct1.toFixed(2)}%)`;
+                bar1Badge.className = sumCvar >= 0 ? 'text-success' : 'text-danger';
+            }
+            if (bar1Fill) {
+                const width1 = sumYtdB > 0 ? Math.min(100, Math.max(0, (sumYtdA / sumYtdB) * 100)) : 0;
+                bar1Fill.style.width = width1.toFixed(2) + '%';
+            }
+
+            if (bar2Title) bar2Title.innerText = `Total Ramme 2026 (${sumB.toFixed(1).replace('.', ',')} MNOK) vs. Prognose EOY (${sumEoyF.toFixed(1).replace('.', ',')} MNOK)`;
+            if (bar2Badge) {
+                const pct2 = sumB > 0 ? (sumEoyV / sumB) * 100 : 0;
+                bar2Badge.innerText = `Forventet Årsoverskudd: ${sumEoyV >= 0 ? '+' : ''}${sumEoyV.toFixed(1).replace('.', ',')} MNOK (${pct2 >= 0 ? '+' : ''}${pct2.toFixed(2)}%)`;
+                bar2Badge.className = sumEoyV >= 0 ? 'text-success' : 'text-danger';
+            }
+            if (bar2Fill) {
+                const width2 = sumB > 0 ? Math.min(100, Math.max(0, (sumEoyF / sumB) * 100)) : 0;
+                bar2Fill.style.width = width2.toFixed(2) + '%';
+            }
+        }
+
+        function filterFrontpageDrilldown() {
+            renderFrontpageDrilldown();
+        }
+
+        function exportFrontpageToExcel() {
+            const table = document.getElementById('table-frontpage-statement');
+            if (typeof XLSX !== 'undefined') {
+                const wb = XLSX.utils.table_to_book(table, { sheet: "UiA_Account_Statement_2026" });
+                XLSX.writeFile(wb, 'Totalt_Budsjett_og_Regnskap_YTD_Oct_2026_UiA.xlsx');
+            } else {
+                let html = table.outerHTML;
+                let blob = new Blob(['\ufeff' + html], { type: 'application/vnd.ms-excel' });
+                let url = URL.createObjectURL(blob);
+                let a = document.createElement('a');
+                a.href = url;
+                a.download = 'Totalt_Budsjett_og_Regnskap_YTD_Oct_2026_UiA.xls';
+                a.click();
+            }
+        }
+
         // TAB NAVIGATION
         function openTab(evt, tabId) {
             const tabPanels = document.querySelectorAll('.tab-panel');
@@ -2747,6 +2919,7 @@ RIKSREVISJONEN INTERNKONTROLL- OG ATTESTASJONSAUDIT (2026)
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            renderFrontpageDrilldown();
             renderYearCalendarGrid();
             renderMonthPills();
             renderChecklistTable();
