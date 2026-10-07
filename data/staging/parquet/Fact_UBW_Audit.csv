@@ -1,7 +1,7 @@
 transaksjon_id,konto,beskrivelse,belop_nok,bdm_id,attestant_id,kvittering_vedlagt,formaal,Kontrollflagg
 TX-1001,7100,Bilgodtgjørelse feltarbeid,1450.0,EMP-201,EMP-202,1,Feltarbeid Agder,OK
 TX-1002,7130,Reiseregning fagsamling,4200.0,EMP-203,EMP-203,1,Konferanse Oslo (FEIL: Egengodkjent),BRUDD: Egengodkjent (BDM == Attestant)
-TX-1003,6800,Kontorrekvisita,250.0,EMP-201,EMP-204,0,Innkjøp rekvisita (FEIL: Mangler kvittering > 100 kr),OK
+TX-1003,6800,Kontorrekvisita,250.0,EMP-201,EMP-204,0,Innkjøp rekvisita (FEIL: Mangler kvittering > 100 kr),BRUDD: Mangler kvittering (>100 NOK)
 TX-1004,5330,Sensorhonorar Vår 2026,12500.0,EMP-205,EMP-206,1,Sensur ORG-200,OK
 TX-1005,7150,Utenlandsreise AACSB,18500.0,EMP-201,EMP-202,1,AACSB Konferanse USA,OK
 TX-9001,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),40471.27,EMP-114,EMP-108,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
@@ -25,7 +25,7 @@ TX-9018,3400,Oppdragsinntekter BOA - Sept 2026 (Handelshøyskolen),-66484.24,EMP
 TX-9019,5330,Sensorhonorarer - Sept 2026 (Handelshøyskolen),14679.81,EMP-114,EMP-101,1,Sensorhonorarer - Sept 2026 (Handelshøyskolen),OK
 TX-9020,6300,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),40769.1,EMP-112,EMP-107,1,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),OK
 TX-9021,5330,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),14606.23,EMP-106,EMP-110,1,Sensorhonorarer - Sept 2026 (Helse- og Idrettsvitenskap),OK
-TX-9022,7130,Reiseregning fagsamling - Sept 2026 (Fellesadministrasjon),4110.92,EMP-105,EMP-110,0,Reiseregning fagsamling - Sept 2026 (Fellesadministrasjon),OK
+TX-9022,7130,Reiseregning fagsamling - Sept 2026 (Fellesadministrasjon),4110.92,EMP-105,EMP-110,0,Reiseregning fagsamling - Sept 2026 (Fellesadministrasjon),BRUDD: Mangler kvittering (>100 NOK)
 TX-9023,5000,Fast Lønn - Sept 2026 (Helse- og Idrettsvitenskap),33978.54,EMP-114,EMP-107,1,Fast Lønn - Sept 2026 (Helse- og Idrettsvitenskap),OK
 TX-9024,6300,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),26674.19,EMP-113,EMP-110,1,Kontorleie & Strøm - Sept 2026 (Fellesadministrasjon),OK
 TX-9025,5000,Fast Lønn - Sept 2026 (Fellesadministrasjon),47562.74,EMP-107,EMP-101,1,Fast Lønn - Sept 2026 (Fellesadministrasjon),OK
@@ -61,7 +61,7 @@ TX-9054,6300,Kontorleie & Strøm - Sept 2026 (Helse- og Idrettsvitenskap),44385.
 TX-9055,7100,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),2151.26,EMP-112,EMP-112,1,Bilgodtgjørelse feltarbeid - Sept 2026 (Fellesadministrasjon),BRUDD: Egengodkjent (BDM == Attestant)
 TX-9056,6800,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),1581.19,EMP-105,EMP-102,1,Kontorrekvisita - Sept 2026 (Teknologi og Realfag),OK
 TX-9057,6300,Kontorleie & Strøm - Sept 2026 (Teknologi og Realfag),31639.32,EMP-107,EMP-108,1,Kontorleie & Strøm - Sept 2026 (Teknologi og Realfag),OK
-TX-9058,7150,Utenlandsreise fagkonferanse - Sept 2026 (Handelshøyskolen),20078.03,EMP-110,EMP-104,0,Utenlandsreise fagkonferanse - Sept 2026 (Handelshøyskolen),OK
+TX-9058,7150,Utenlandsreise fagkonferanse - Sept 2026 (Handelshøyskolen),20078.03,EMP-110,EMP-104,0,Utenlandsreise fagkonferanse - Sept 2026 (Handelshøyskolen),BRUDD: Mangler kvittering (>100 NOK)
 TX-9059,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),3850.61,EMP-103,EMP-109,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
 TX-9060,7130,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),4248.73,EMP-114,EMP-104,1,Reiseregning fagsamling - Sept 2026 (Teknologi og Realfag),OK
 TX-9061,5000,Fast Lønn - Sept 2026 (Handelshøyskolen),39562.78,EMP-108,EMP-106,1,Fast Lønn - Sept 2026 (Handelshøyskolen),OK
@@ -167,11 +167,11 @@ TX-10073,5330,Sensorhonorarer - Okt 2026 (Handelshøyskolen),14931.64,EMP-109,EM
 TX-10074,6800,Kontorrekvisita - Okt 2026 (Fellesadministrasjon),2572.9,EMP-111,EMP-118,1,Kontorrekvisita - Okt 2026 (Fellesadministrasjon),OK
 TX-10075,5330,Sensorhonorarer - Okt 2026 (Teknologi og Realfag),14895.38,EMP-106,EMP-119,1,Sensorhonorarer - Okt 2026 (Teknologi og Realfag),OK
 TX-10076,5000,Fast Lønn - Okt 2026 (Fellesadministrasjon),51068.34,EMP-118,EMP-104,1,Fast Lønn - Okt 2026 (Fellesadministrasjon),OK
-TX-10077,7100,Bilgodtgjørelse feltarbeid - Okt 2026 (Teknologi og Realfag),13397.15,EMP-109,EMP-114,0,Bilgodtgjørelse feltarbeid - Okt 2026 (Teknologi og Realfag),OK
+TX-10077,7100,Bilgodtgjørelse feltarbeid - Okt 2026 (Teknologi og Realfag),13397.15,EMP-109,EMP-114,0,Bilgodtgjørelse feltarbeid - Okt 2026 (Teknologi og Realfag),BRUDD: Mangler kvittering (>100 NOK)
 TX-10078,5330,Sensorhonorarer - Okt 2026 (Teknologi og Realfag),19838.92,EMP-104,EMP-114,1,Sensorhonorarer - Okt 2026 (Teknologi og Realfag),OK
 TX-10079,3400,Oppdragsinntekter BOA - Okt 2026 (Teknologi og Realfag),-34203.76,EMP-116,EMP-106,0,Oppdragsinntekter BOA - Okt 2026 (Teknologi og Realfag),OK
 TX-10080,5330,Sensorhonorarer - Okt 2026 (Helse- og Idrettsvitenskap),7584.85,EMP-118,EMP-108,1,Sensorhonorarer - Okt 2026 (Helse- og Idrettsvitenskap),OK
-TX-10081,7100,Bilgodtgjørelse feltarbeid - Okt 2026 (Fellesadministrasjon),16731.97,EMP-117,EMP-116,0,Bilgodtgjørelse feltarbeid - Okt 2026 (Fellesadministrasjon),OK
+TX-10081,7100,Bilgodtgjørelse feltarbeid - Okt 2026 (Fellesadministrasjon),16731.97,EMP-117,EMP-116,0,Bilgodtgjørelse feltarbeid - Okt 2026 (Fellesadministrasjon),BRUDD: Mangler kvittering (>100 NOK)
 TX-10082,3400,Oppdragsinntekter BOA - Okt 2026 (Fellesadministrasjon),-73755.36,EMP-119,EMP-118,1,Oppdragsinntekter BOA - Okt 2026 (Fellesadministrasjon),OK
 TX-10083,6800,Kontorrekvisita - Okt 2026 (Handelshøyskolen),18787.83,EMP-105,EMP-117,1,Kontorrekvisita - Okt 2026 (Handelshøyskolen),OK
 TX-10084,6800,Kontorrekvisita - Okt 2026 (Fellesadministrasjon),21701.93,EMP-112,EMP-115,1,Kontorrekvisita - Okt 2026 (Fellesadministrasjon),OK
@@ -182,7 +182,7 @@ TX-10088,5000,Fast Lønn - Okt 2026 (Helse- og Idrettsvitenskap),41365.01,EMP-11
 TX-10089,5330,Sensorhonorarer - Okt 2026 (Handelshøyskolen),8393.43,EMP-107,EMP-114,1,Sensorhonorarer - Okt 2026 (Handelshøyskolen),OK
 TX-10090,5330,Sensorhonorarer - Okt 2026 (Teknologi og Realfag),7908.79,EMP-114,EMP-108,1,Sensorhonorarer - Okt 2026 (Teknologi og Realfag),OK
 TX-10091,7150,Utenlandsreise fagkonferanse - Okt 2026 (Handelshøyskolen),23574.3,EMP-106,EMP-111,1,Utenlandsreise fagkonferanse - Okt 2026 (Handelshøyskolen),OK
-TX-10092,5330,Sensorhonorarer - Okt 2026 (Handelshøyskolen),7670.19,EMP-108,EMP-102,0,Sensorhonorarer - Okt 2026 (Handelshøyskolen),OK
+TX-10092,5330,Sensorhonorarer - Okt 2026 (Handelshøyskolen),7670.19,EMP-108,EMP-102,0,Sensorhonorarer - Okt 2026 (Handelshøyskolen),BRUDD: Mangler kvittering (>100 NOK)
 TX-10093,7100,Bilgodtgjørelse feltarbeid - Okt 2026 (Fellesadministrasjon),13758.65,EMP-108,EMP-103,1,Bilgodtgjørelse feltarbeid - Okt 2026 (Fellesadministrasjon),OK
 TX-10094,5000,Fast Lønn - Okt 2026 (Handelshøyskolen),39384.69,EMP-117,EMP-103,1,Fast Lønn - Okt 2026 (Handelshøyskolen),OK
 TX-TEST-901,5000,Oktober Lønnskjøring,45000.0,EMP-102,EMP-201,1,Lønn oktober,OK

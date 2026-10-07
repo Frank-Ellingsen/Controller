@@ -1,12 +1,12 @@
 """
-DuckDB Analytics & Time-Series Snapshotting Tool for UiA Controlling App (v19)
-Provides time-series snapshotting and advanced multi-model EAC forecasting with tag support (test2026T1, 2026T1sep).
+DuckDB Analytics & Time-Series Snapshotting Tool for UiA Controlling App (v25)
+Provides time-series snapshotting and advanced multi-model EAC forecasting with tag support.
 Uses relative Path(__file__) resolution.
 """
 
 from pathlib import Path
-import sqlite3
 import duckdb
+import sqlite3
 import pandas as pd
 from datetime import datetime
 
@@ -20,8 +20,9 @@ def init_duckdb_snapshots(duckdb_path: str = None) -> str:
         duckdb_path = str(DEFAULT_DUCKDB_PATH)
         
     con = duckdb.connect(duckdb_path)
+    con.execute("DROP TABLE IF EXISTS evm_snapshots")
     con.execute("""
-        CREATE TABLE IF NOT EXISTS evm_snapshots (
+        CREATE TABLE evm_snapshots (
             reporting_period VARCHAR,
             snapshot_timestamp TIMESTAMP,
             project_id VARCHAR,
@@ -45,54 +46,33 @@ def init_duckdb_snapshots(duckdb_path: str = None) -> str:
     con.close()
     return duckdb_path
 
-def snapshot_evm_data(sqlite_path: str = None, duckdb_path: str = None, period: str = "2026-M10", tag: str = None) -> pd.DataFrame:
+def snapshot_evm_data(sqlite_path: str = None, duckdb_path: str = None, period: str = "2026-M08", tag: str = None) -> pd.DataFrame:
     if sqlite_path is None:
         sqlite_path = str(DEFAULT_SQLITE_PATH)
     if duckdb_path is None:
-        duckdb_path = str(DEFAULT_DUCKDB_PATH)
-        
-    init_duckdb_snapshots(duckdb_path)
+        duckdb_path = init_duckdb_snapshots(duckdb_path)
+    else:
+        init_duckdb_snapshots(duckdb_path)
 
-    csv_file = None
-    if tag == "2026T1sep":
-        csv_file = DEFAULT_STAGING_DIR / "evm_prosjekter_september_2026_2026T1sep.csv"
-    elif tag == "test2026T1":
-        csv_file = DEFAULT_STAGING_DIR / "evm_prosjekter_2026_test2026T1.csv"
-    elif tag:
-        candidates = list(DEFAULT_STAGING_DIR.glob(f"evm_prosjekter_*_{tag}.csv"))
-        if candidates: csv_file = candidates[0]
-
-    if csv_file and csv_file.exists():
-        df = pd.read_csv(csv_file)
-        for c in df.columns:
-            cl = c.lower()
-            if cl.startswith("pv"): df = df.rename(columns={c: "pv"})
-            elif cl.startswith("ev"): df = df.rename(columns={c: "ev"})
-            elif cl.startswith("ac"): df = df.rename(columns={c: "ac"})
-            elif cl == "project_id": df = df.rename(columns={c: "project_id"})
-            elif cl == "project_name": df = df.rename(columns={c: "project_name"})
-            elif cl == "bac_nok" or cl == "bac": df = df.rename(columns={c: "bac"})
+    csv_evm = DEFAULT_STAGING_DIR / f"evm_prosjekter_2026_{tag}.csv" if tag else None
+    if csv_evm and csv_evm.exists():
+        df = pd.read_csv(csv_evm)
+        df = df.rename(columns={
+            "Project_ID": "project_id",
+            "Project_Name": "project_name",
+            "BAC_NOK": "bac",
+            "PV_Aug_NOK": "pv",
+            "EV_Aug_NOK": "ev",
+            "AC_Aug_NOK": "ac"
+        })
     else:
         conn = sqlite3.connect(sqlite_path)
         try:
-            if tag in ["test2026T1", "2026T1sep"] or period in ["2026-M08", "2026-M09"]:
-                if tag:
-                    df = pd.read_sql_query("SELECT * FROM evm_projects_2026 WHERE Tag = ?", conn, params=[tag])
-                    if df.empty:
-                        df = pd.read_sql_query("SELECT * FROM evm_projects_2026", conn)
-                else:
-                    df = pd.read_sql_query("SELECT * FROM evm_projects_2026", conn)
-            else:
-                df = pd.read_sql_query("SELECT * FROM evm_projects", conn)
+            target_table = "evm_projects_2026" if tag else "evm_projects"
+            df = pd.read_sql_query(f"SELECT * FROM {target_table}", conn)
         except Exception:
             df = pd.read_sql_query("SELECT * FROM evm_projects", conn)
         conn.close()
-        for c in df.columns:
-            cl = c.lower()
-            if cl.startswith("pv"): df = df.rename(columns={c: "pv"})
-            elif cl.startswith("ev"): df = df.rename(columns={c: "ev"})
-            elif cl.startswith("ac"): df = df.rename(columns={c: "ac"})
-            elif cl.startswith("bac"): df = df.rename(columns={c: "bac"})
 
     df.columns = [c.lower() for c in df.columns]
 
@@ -119,7 +99,7 @@ def snapshot_evm_data(sqlite_path: str = None, duckdb_path: str = None, period: 
         etc = round(eac_cpi - ac, 2)
         remaining_work = bac - ev
         remaining_fund = bac - ac
-        tcpi = round(remaining_work / remaining_fund, 2) if remaining_fund > 0 else 1.0
+        tcpi = round(remaining_work / remaining_fund, 2) if remaining_fund > 0 else 9.99
 
         status = "CRITICAL" if (cpi < 0.85 or spi < 0.85 or vac < -1000000) else ("WARNING" if (cpi < 0.95 or spi < 0.95) else "ON TRACK")
 
@@ -141,17 +121,13 @@ def snapshot_evm_data(sqlite_path: str = None, duckdb_path: str = None, period: 
             'etc': etc,
             'tcpi': tcpi,
             'status': status,
-            'tag': tag
+            'tag': tag or "baseline"
         })
 
     res_df = pd.DataFrame(results)
 
-    # Store in DuckDB
     con = duckdb.connect(duckdb_path)
-    if tag:
-        con.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND tag = ?", [period, tag])
-    else:
-        con.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND (tag IS NULL OR tag = '')", [period])
+    con.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND tag = ?", [period, tag or "baseline"])
     con.register("df_view", res_df)
     con.execute("INSERT INTO evm_snapshots SELECT * FROM df_view")
     con.close()
@@ -163,47 +139,27 @@ def query_eac_forecasting_models(duckdb_path: str = None, tag: str = None) -> pd
         duckdb_path = str(DEFAULT_DUCKDB_PATH)
         
     con = duckdb.connect(duckdb_path)
-    if tag:
-        query = f"""
-            SELECT 
-                project_id,
-                project_name,
-                bac,
-                ac,
-                cpi,
-                spi,
-                eac_cpi AS eac_typical_cpi,
-                eac_composite AS eac_cpi_spi,
-                eac_weighted AS eac_weighted_80_20,
-                tcpi,
-                status
-            FROM evm_snapshots
-            WHERE tag = '{tag}'
-            QUALIFY ROW_NUMBER() OVER(PARTITION BY project_id ORDER BY snapshot_timestamp DESC) = 1
-        """
-    else:
-        query = """
-            SELECT 
-                project_id,
-                project_name,
-                bac,
-                ac,
-                cpi,
-                spi,
-                eac_cpi AS eac_typical_cpi,
-                eac_composite AS eac_cpi_spi,
-                eac_weighted AS eac_weighted_80_20,
-                tcpi,
-                status
-            FROM evm_snapshots
-            QUALIFY ROW_NUMBER() OVER(PARTITION BY project_id ORDER BY snapshot_timestamp DESC) = 1
-        """
-    df = con.execute(query).fetchdf()
+    df = con.execute("""
+        SELECT 
+            project_id,
+            reporting_period,
+            bac,
+            ac,
+            cpi,
+            spi,
+            eac_cpi AS eac_typical_cpi,
+            eac_composite AS eac_cpi_spi,
+            eac_weighted AS eac_weighted_80_20,
+            tcpi,
+            status
+        FROM evm_snapshots
+        ORDER BY project_id, reporting_period
+    """).fetchdf()
     con.close()
     return df
 
 if __name__ == "__main__":
     db_duck = init_duckdb_snapshots()
-    snapshot_df = snapshot_evm_data(period="2026-M09", tag="2026T1sep")
-    print("=== DuckDB Time-Series Snapshot & Multi-Model EAC Forecast (September 2026 - tag: 2026T1sep) ===")
-    print(query_eac_forecasting_models(tag="2026T1sep"))
+    snapshot_df = snapshot_evm_data(period="2026-M08", tag="test2026T1")
+    print("=== DuckDB Time-Series Snapshot & Multi-Model EAC Forecast (2026 - tag: test2026T1) ===")
+    print(query_eac_forecasting_models())

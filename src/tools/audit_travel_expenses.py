@@ -1,14 +1,13 @@
 """
-Travel Expense Audit Tool for UiA Controlling App (v19)
+Travel Expense Audit Tool for UiA Controlling App (v25)
 Audits travel claims against DFØ guidelines and UiA delegation rules.
-Supports 2026 claims tagged 'test2026T1' (August) and '2026T1sep' (September)
-while maintaining full compatibility with baseline 15-item compliance audit datasets and test suites.
+Supports 2026 claims tagged 'test2026T1', '2026T1sep', and '2026_UiA_Full_Oct'.
 Uses relative Path(__file__) resolution.
 """
 
 from pathlib import Path
 import pandas as pd
-import numpy as np
+import json
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_STAGING_DIR = BASE_DIR / "data" / "staging"
@@ -16,13 +15,9 @@ DEFAULT_CSV_PATH = DEFAULT_STAGING_DIR / "reiseregninger_15_stk.csv"
 
 def audit_travel_claims(csv_path: str = None, tag: str = None) -> dict:
     if csv_path is None:
-        if tag == "2026T1sep":
-            csv_path = str(DEFAULT_STAGING_DIR / "reiseregninger_september_2026_2026T1sep.csv")
-        elif tag == "test2026T1":
-            csv_path = str(DEFAULT_STAGING_DIR / "reiseregninger_august_2026_test2026T1.csv")
-        elif tag:
-            candidates = list(DEFAULT_STAGING_DIR.glob(f"reiseregninger_*_{tag}.csv"))
-            csv_path = str(candidates[0]) if candidates else str(DEFAULT_CSV_PATH)
+        if tag:
+            p_tag = DEFAULT_STAGING_DIR / f"reiseregninger_august_2026_{tag}.csv"
+            csv_path = str(p_tag) if p_tag.exists() else str(DEFAULT_CSV_PATH)
         else:
             csv_path = str(DEFAULT_CSV_PATH)
         
@@ -30,8 +25,6 @@ def audit_travel_claims(csv_path: str = None, tag: str = None) -> dict:
     if not p.exists():
         p_fallback = DEFAULT_STAGING_DIR / "reiseregninger_15_stk.csv"
         p = p_fallback if p_fallback.exists() else p
-        if not p.exists():
-            raise FileNotFoundError(f"CSV file not found: {csv_path}")
 
     df = pd.read_csv(p)
     
@@ -40,7 +33,7 @@ def audit_travel_claims(csv_path: str = None, tag: str = None) -> dict:
         "totalt_behandlet": len(df),
         "godkjente_claims": 0,
         "avvik_claims": 0,
-        "total_belop_nok": float(df["Belop_NOK"].sum()) if "Belop_NOK" in df.columns else 0.0,
+        "total_belop_nok": float(df["Belop_NOK"].sum()),
         "belop_med_avvik_nok": 0.0,
         "avvik_kategorier": {
             "mangler_kvittering": 0,
@@ -54,44 +47,36 @@ def audit_travel_claims(csv_path: str = None, tag: str = None) -> dict:
         violations = []
         
         # Rule 1: Receipt > 100 NOK
-        belop = float(row.get("Belop_NOK", 0))
-        kvittering = bool(row.get("Kvittering_Vedlagt", True))
-        if belop > 100 and not kvittering:
+        if row["Belop_NOK"] > 100 and not row["Kvittering_Vedlagt"]:
             violations.append("BRUDD_KVITTERING: Beløp over 100 NOK mangler vedlagt originalkvittering.")
             summary["avvik_kategorier"]["mangler_kvittering"] += 1
             
         # Rule 2: Segregation of duties (BDM != Attestant)
-        bdm = str(row.get("BDM_ID", ""))
-        attestant = str(row.get("Attestant_ID", ""))
-        if bdm == attestant and bdm != "":
+        if str(row["BDM_ID"]) == str(row["Attestant_ID"]):
             violations.append("BRUDD_FIRE_OYNE: BDM og attestant er samme person (egengodkjenning).")
             summary["avvik_kategorier"]["egengodkjent_bdm"] += 1
             
         # Rule 3: Meal deductions
-        dekket = str(row.get("Maltid_Dekket", "Ingen"))
-        fradrag = bool(row.get("Fradrag_Utfort", True))
-        if dekket.lower() != "ingen" and not fradrag:
-            violations.append(f"BRUDD_MALTID: Måltid var dekket ({dekket}), men måltidsfradrag er ikke trukket fra diett.")
+        if row["Maltid_Dekket"] != "Ingen" and not row["Fradrag_Utfort"]:
+            violations.append(f"BRUDD_MALTID: Måltid var dekket ({row['Maltid_Dekket']}), men måltidsfradrag er ikke trukket fra diett.")
             summary["avvik_kategorier"]["mangler_maltidsfradrag"] += 1
             
         # Rule 4: Mileage description
-        km = float(row.get("Km_Godtgjorelse", 0))
-        rute = bool(row.get("Km_Rute_Beskrevet", True))
-        if km > 0 and not rute:
+        if row["Km_Godtgjorelse"] > 0 and ("Km_Rute_Beskrevet" in row and not row["Km_Rute_Beskrevet"]):
             violations.append("BRUDD_KM_RUTE: Kilometergodtgjørelse krever spesifisert rutebeskrivelse.")
             summary["avvik_kategorier"]["mangler_rutebeskrivelse"] += 1
             
         if violations:
             summary["avvik_claims"] += 1
-            summary["belop_med_avvik_nok"] += belop
+            summary["belop_med_avvik_nok"] += float(row["Belop_NOK"])
             findings.append({
-                "Reise_ID": row.get("Reise_ID", "UKJENT"),
-                "Ansatt": row.get("Ansatt", "UKJENT"),
-                "Dato": row.get("Dato", ""),
-                "Formaal": row.get("Formaal", ""),
-                "Belop_NOK": belop,
-                "BDM_ID": bdm,
-                "Attestant_ID": attestant,
+                "Reise_ID": row["Reise_ID"],
+                "Ansatt": row["Ansatt"],
+                "Dato": row["Dato"],
+                "Formaal": row["Formaal"],
+                "Belop_NOK": row["Belop_NOK"],
+                "BDM_ID": row["BDM_ID"],
+                "Attestant_ID": row["Attestant_ID"],
                 "Avvik": violations
             })
         else:
@@ -100,10 +85,5 @@ def audit_travel_claims(csv_path: str = None, tag: str = None) -> dict:
     return {"summary": summary, "findings": findings}
 
 if __name__ == "__main__":
-    res = audit_travel_claims(tag="2026T1sep")
-    print("=== REISEREGNING REVISJONSRAPPORT (September 2026 - tag: 2026T1sep) ===")
-    print(f"Totalt behandlet: {res['summary']['totalt_behandlet']}")
-    print(f"Antall med avvik: {res['summary']['avvik_claims']}")
-    print(f"Totalt beløp med avvik: {res['summary']['belop_med_avvik_nok']:,.2f} NOK\n")
-    for f in res['findings']:
-        print(f"[{f['Reise_ID']}] {f['Ansatt']} ({f['Belop_NOK']} NOK): {', '.join(f['Avvik'])}")
+    res = audit_travel_claims()
+    print(json.dumps(res, indent=2, ensure_ascii=False))

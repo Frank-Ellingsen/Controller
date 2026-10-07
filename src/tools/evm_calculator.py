@@ -1,14 +1,14 @@
 """
-Enhanced EVM Calculator for UiA Controlling App (v19)
+Enhanced EVM Calculator for UiA Controlling App (v25)
 Integrates directly with SQLite database (projects.db) or CSV staging files.
-Supports dataset tags 'test2026T1' (August) and '2026T1sep' (September)
+Supports dataset tags 'test2026T1' (August), '2026T1sep' (September), and '2026_UiA_Full_Oct'
 while maintaining full backwards compatibility with baseline portfolio models and tests.
 Uses relative Path(__file__) resolution.
 """
 
 from pathlib import Path
-import sqlite3
 import pandas as pd
+import sqlite3
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DEFAULT_DB_PATH = BASE_DIR / "data" / "staging" / "projects.db"
@@ -17,9 +17,7 @@ DEFAULT_STAGING_DIR = BASE_DIR / "data" / "staging"
 def calculate_evm_from_db(db_path: str = None, table_name: str = None, tag: str = None) -> pd.DataFrame:
     """
     Beregner fullstendige EVM-nøkkeltall (CPI, SPI, CV, SV, EAC, VAC, ETC, TCPI).
-    Hvis tag='2026T1sep', benyttes September-datasettet.
-    Hvis tag='test2026T1' eller table_name='evm_projects_2026', benyttes 2026 August-datasettet.
-    Standard er 'evm_projects' fra SQLite projects.db (3 prosjekter).
+    Standard leser 'evm_projects' fra SQLite projects.db (3 baseline-prosjekter).
     """
     if db_path is None:
         db_path = str(DEFAULT_DB_PATH)
@@ -28,12 +26,13 @@ def calculate_evm_from_db(db_path: str = None, table_name: str = None, tag: str 
     csv_file = None
     if tag == "2026T1sep" or (table_name and "sep" in table_name):
         csv_file = DEFAULT_STAGING_DIR / "evm_prosjekter_september_2026_2026T1sep.csv"
-    elif tag == "test2026T1" or (table_name and "2026" in table_name):
-        csv_file = DEFAULT_STAGING_DIR / "evm_prosjekter_2026_test2026T1.csv"
+    elif tag in ["test2026T1", "2026_UiA_Full_Oct"] or (table_name and "2026" in table_name):
+        p_oct = DEFAULT_STAGING_DIR / f"evm_prosjekter_2026_{tag}.csv"
+        p_aug = DEFAULT_STAGING_DIR / "evm_prosjekter_2026_test2026T1.csv"
+        csv_file = p_oct if p_oct.exists() else (p_aug if p_aug.exists() else None)
 
     if csv_file and csv_file.exists():
         df = pd.read_csv(csv_file)
-        # Normalize month-specific columns (PV_Sep_NOK, PV_Aug_NOK, etc.) to pv, ev, ac
         for c in df.columns:
             cl = c.lower()
             if cl.startswith("pv"): df = df.rename(columns={c: "pv"})
@@ -41,9 +40,9 @@ def calculate_evm_from_db(db_path: str = None, table_name: str = None, tag: str 
             elif cl.startswith("ac"): df = df.rename(columns={c: "ac"})
             elif cl == "project_id": df = df.rename(columns={c: "project_id"})
             elif cl == "project_name": df = df.rename(columns={c: "project_name"})
-            elif cl == "bac_nok" or cl == "bac": df = df.rename(columns={c: "bac"})
+            elif cl in ["bac_nok", "bac"]: df = df.rename(columns={c: "bac"})
     elif p.exists():
-        target_table = table_name if table_name else ("evm_projects_2026" if tag in ["test2026T1", "2026T1sep"] else "evm_projects")
+        target_table = table_name if table_name else ("evm_projects_2026" if tag else "evm_projects")
         conn = sqlite3.connect(str(p))
         try:
             if tag:
@@ -71,16 +70,16 @@ def calculate_evm_from_db(db_path: str = None, table_name: str = None, tag: str 
     # Calculate EVM Metrics
     df['cpi'] = (df['ev'] / df['ac']).round(2)
     df['spi'] = (df['ev'] / df['pv']).round(2)
-    df['cv'] = (df['ev'] - df['ac']).round(2)
-    df['sv'] = (df['ev'] - df['pv']).round(2)
+    df['cv'] = df['ev'] - df['ac']
+    df['sv'] = df['ev'] - df['pv']
     df['eac'] = (df['bac'] / df['cpi']).round(2)
-    df['vac'] = (df['bac'] - df['eac']).round(2)
-    df['etc'] = (df['eac'] - df['ac']).round(2)
-    
-    # TCPI = (BAC - EV) / (BAC - AC)
-    df['tcpi'] = ((df['bac'] - df['ev']) / (df['bac'] - df['ac'])).round(2)
+    df['vac'] = df['bac'] - df['eac']
+    df['etc'] = df['eac'] - df['ac']
 
-    # Determine status
+    remaining_work = df['bac'] - df['ev']
+    remaining_fund = df['bac'] - df['ac']
+    df['tcpi'] = (remaining_work / remaining_fund).round(2)
+
     def determine_status(row):
         if row['cpi'] < 0.85 or row['spi'] < 0.85 or row['vac'] < -1000000:
             return "CRITICAL"
@@ -90,7 +89,7 @@ def calculate_evm_from_db(db_path: str = None, table_name: str = None, tag: str 
 
     df['status'] = df.apply(determine_status, axis=1)
 
-    # Provide uppercase aliases for backwards compatibility with tests and dashboard consumers
+    # Upper case aliases for backward compatibility with tests & templates
     df['CPI'] = df['cpi']
     df['SPI'] = df['spi']
     df['CV'] = df['cv']
@@ -102,6 +101,16 @@ def calculate_evm_from_db(db_path: str = None, table_name: str = None, tag: str 
     df['Status'] = df['status']
 
     return df
+
+def determine_status(row):
+    cpi = row.get('cpi', row.get('CPI', 1.0))
+    spi = row.get('spi', row.get('SPI', 1.0))
+    vac = row.get('vac', row.get('VAC', 0.0))
+    if cpi < 0.85 or spi < 0.85 or vac < -1000000:
+        return "CRITICAL"
+    elif cpi < 0.95 or spi < 0.95:
+        return "WARNING"
+    return "ON TRACK"
 
 def generate_evm_report(db_path: str = None, tag: str = None, table_name: str = None) -> str:
     target_table = table_name or ("evm_projects_2026" if tag in ["test2026T1", "2026T1sep"] else None)
@@ -123,4 +132,4 @@ def generate_evm_report(db_path: str = None, tag: str = None, table_name: str = 
     return "\n".join(output)
 
 if __name__ == "__main__":
-    print(generate_evm_report(tag="2026T1sep"))
+    print(generate_evm_report())

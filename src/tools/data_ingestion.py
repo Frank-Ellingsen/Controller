@@ -1,7 +1,7 @@
 """
-Data Ingestion Tool for UiA Controlling App (v19)
+Data Ingestion Tool for UiA Controlling App (v25)
 Handles dynamic uploading and ingestion of new data files (Regnskap/UBW, Reiseregninger, EVM, Budsjett)
-into SQLite (projects.db) and DuckDB (analytics_snapshots.duckdb) with custom tags (e.g., 2026T1sep).
+into SQLite (projects.db) and DuckDB (analytics_snapshots.duckdb) with custom tags (e.g., 2026T1sep, 2026_UiA_Full_Oct).
 """
 
 from pathlib import Path
@@ -66,30 +66,14 @@ def ingest_data_file(
 
     # Read DataFrame
     if p.suffix == ".csv":
-        # Support both comma and semicolon
-        try:
-            df = pd.read_csv(p, sep=None, engine='python')
-        except Exception:
-            df = pd.read_csv(p)
+        df = pd.read_csv(p)
     elif p.suffix in [".xlsx", ".xls"]:
         df = pd.read_excel(p)
     else:
         raise ValueError(f"Filformat {p.suffix} støttes ikke.")
 
-    valid_types = ["regnskap_ubw", "reiseregninger", "evm_prosjekter", "budsjett"]
-    if file_type_override and file_type_override in valid_types:
-        file_type = file_type_override
-    else:
-        file_type = detect_file_type(df, p.name)
-
+    file_type = file_type_override or detect_file_type(df, p.name)
     df["Tag"] = tag
-    if period:
-        df["Maaned"] = period
-    elif "Maaned" not in df.columns and "Dato" in df.columns:
-        try:
-            df["Maaned"] = pd.to_datetime(df["Dato"]).dt.strftime('%Y-M%m')
-        except Exception:
-            pass
 
     conn_sqlite = sqlite3.connect(db_path)
     inserted_rows = len(df)
@@ -101,17 +85,6 @@ def ingest_data_file(
             df = henter_transaksjonsflagg(df)
 
         ensure_columns_exist(conn_sqlite, "ubw_transactions_2026", df)
-        try:
-            if "Transaksjon_ID" in df.columns:
-                ids = [str(x) for x in df["Transaksjon_ID"].dropna().unique()]
-                if ids:
-                    chunks = [ids[i:i + 500] for i in range(0, len(ids), 500)]
-                    for chk in chunks:
-                        ph = ",".join("?" * len(chk))
-                        conn_sqlite.execute(f"DELETE FROM ubw_transactions_2026 WHERE Transaksjon_ID IN ({ph})", chk)
-                    conn_sqlite.commit()
-        except Exception:
-            pass
         df.to_sql("ubw_transactions_2026", conn_sqlite, if_exists="append", index=False)
         
         # Primary ubw_transactions sync
@@ -127,7 +100,8 @@ def ingest_data_file(
             df_sync['kvittering_vedlagt'] = True
 
         cols_primary = ['transaksjon_id', 'konto', 'beskrivelse', 'belop_nok', 'bdm_id', 'attestant_id', 'kvittering_vedlagt', 'formaal']
-        df_primary = df_sync[[c for c in cols_primary if c in df_sync.columns]]
+        cols_present = [c for c in cols_primary if c in df_sync.columns]
+        df_primary = df_sync[cols_present]
         
         df_primary.to_sql("ubw_transactions_temp", conn_sqlite, if_exists="replace", index=False)
         conn_sqlite.execute("""
@@ -145,17 +119,6 @@ def ingest_data_file(
             df["Kontrollflagg"] = df["Reise_ID"].map(lambda x: findings_map.get(x, "OK"))
 
         ensure_columns_exist(conn_sqlite, "travel_claims_2026", df)
-        try:
-            if "Reise_ID" in df.columns:
-                ids = [str(x) for x in df["Reise_ID"].dropna().unique()]
-                if ids:
-                    chunks = [ids[i:i + 500] for i in range(0, len(ids), 500)]
-                    for chk in chunks:
-                        ph = ",".join("?" * len(chk))
-                        conn_sqlite.execute(f"DELETE FROM travel_claims_2026 WHERE Reise_ID IN ({ph})", chk)
-                    conn_sqlite.commit()
-        except Exception:
-            pass
         df.to_sql("travel_claims_2026", conn_sqlite, if_exists="append", index=False)
 
     elif file_type == "evm_prosjekter":
@@ -167,29 +130,22 @@ def ingest_data_file(
             elif col.startswith("AC_"): rename_dict[col] = "AC_NOK"
         df = df.rename(columns=rename_dict)
 
-        cols_evm_2026 = ['Project_ID', 'Project_Name', 'Avdeling', 'BAC_NOK', 'PV_NOK', 'EV_NOK', 'AC_NOK', 'Tag', 'Maaned', 'CPI', 'SPI', 'CV_NOK', 'SV_NOK', 'EAC_NOK', 'VAC_NOK', 'ETC_NOK', 'TCPI', 'Status']
+        cols_evm_2026 = ['Project_ID', 'Project_Name', 'Avdeling', 'BAC_NOK', 'PV_NOK', 'EV_NOK', 'AC_NOK', 'Tag', 'CPI', 'SPI', 'CV_NOK', 'SV_NOK', 'EAC_NOK', 'VAC_NOK', 'ETC_NOK', 'TCPI', 'Status']
         df_evm_sql = df[[c for c in cols_evm_2026 if c in df.columns]]
         ensure_columns_exist(conn_sqlite, "evm_projects_2026", df_evm_sql)
-        try:
-            m_val = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else None)
-            if m_val:
-                conn_sqlite.execute("DELETE FROM evm_projects_2026 WHERE Maaned = ? AND Tag = ?", [m_val, tag])
-                conn_sqlite.commit()
-        except Exception:
-            pass
         df_evm_sql.to_sql("evm_projects_2026", conn_sqlite, if_exists="append", index=False)
         
-        # Primary evm_projects sync (only for baseline portfolio tag)
-        if tag == "baseline":
-            df_sync = df.rename(columns={
-                'Project_ID': 'project_id', 'Project_Name': 'project_name',
-                'BAC_NOK': 'bac', 'PV_NOK': 'pv', 'EV_NOK': 'ev', 'AC_NOK': 'ac',
-                'Status': 'status'
-            })
-            cols_primary = ['project_id', 'project_name', 'bac', 'pv', 'ev', 'ac', 'status']
-            cols_present = [c for c in cols_primary if c in df_sync.columns]
-            df_primary = df_sync[cols_present]
-            df_primary.to_sql("evm_projects", conn_sqlite, if_exists="replace", index=False)
+        # Primary evm_projects sync
+        df_sync = df.rename(columns={
+            'Project_ID': 'project_id', 'Project_Name': 'project_name',
+            'BAC_NOK': 'bac', 'PV_NOK': 'pv', 'EV_NOK': 'ev', 'AC_NOK': 'ac',
+            'Status': 'status'
+        })
+        cols_primary = ['project_id', 'project_name', 'bac', 'pv', 'ev', 'ac', 'status']
+        cols_present = [c for c in cols_primary if c in df_sync.columns]
+        df_primary = df_sync[cols_present]
+        
+        df_primary.to_sql("evm_projects", conn_sqlite, if_exists="replace", index=False)
 
         # Snapshot in DuckDB
         con_duck = duckdb.connect(duckdb_path)
@@ -203,8 +159,8 @@ def ingest_data_file(
             )
         """)
         
-        ret_period = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else "2026-M09")
-        con_duck.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND tag = ?", [ret_period, tag])
+        rep_period = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else "2026-M09")
+        con_duck.execute("DELETE FROM evm_snapshots WHERE reporting_period = ? AND tag = ?", [rep_period, tag])
         
         now = datetime.now()
         duck_rows = []
@@ -229,7 +185,7 @@ def ingest_data_file(
             p_name = str(r.get('Project_Name', r.get('project_name', 'Prosjekt')))
             
             duck_rows.append((
-                ret_period, now, p_id, p_name, bac, pv, ev, ac,
+                rep_period, now, p_id, p_name, bac, pv, ev, ac,
                 cpi, spi, eac_cpi, eac_comp, eac_weight, vac, etc, tcpi,
                 status, tag
             ))
@@ -250,12 +206,10 @@ def ingest_data_file(
     except Exception as e:
         print(f"Parquet re-export note: {e}")
 
-    ret_period = period or (str(df['Maaned'].iloc[0]) if 'Maaned' in df.columns else None)
     return {
         "filename": p.name,
         "file_type": file_type,
         "tag": tag,
-        "period": ret_period,
         "rows_ingested": inserted_rows,
         "status": "SUCCESS"
     }

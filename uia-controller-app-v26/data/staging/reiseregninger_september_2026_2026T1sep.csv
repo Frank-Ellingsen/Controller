@@ -1,0 +1,8 @@
+Reise_ID,Ansatt,Dato,Maaned,Formaal,Belop_NOK,Maltid_Dekket,Fradrag_Utfort,Km_Godtgjorelse,Kvittering_Vedlagt,BDM_ID,Attestant_ID,Km_Rute_Beskrevet,Kontrollflagg,Tag
+REISE-2026-SEP-01,Ola Nordmann,2026-09-04,2026-M09,Forskningskonferanse Bergen,3850.0,"Lunsj, Middag",True,0,True,EMP-101,EMP-102,True,OK,2026T1sep
+REISE-2026-SEP-02,Kari Hansen,2026-09-09,2026-M09,Møte Kunnskapsdepartementet,2400.0,Middag,False,0,True,EMP-103,EMP-104,True,BRUDD_MALTID,2026T1sep
+REISE-2026-SEP-03,Per Olsen,2026-09-12,2026-M09,Feltarbeid Agder,920.0,Ingen,True,210,True,EMP-105,EMP-106,True,OK,2026T1sep
+REISE-2026-SEP-04,Anne Berg,2026-09-16,2026-M09,Prosjektmøte EU Horizon,5200.0,"Frokost, Lunsj",True,0,True,EMP-107,EMP-107,True,BRUDD_FIRE_OYNE,2026T1sep
+REISE-2026-SEP-05,Lars Lie,2026-09-21,2026-M09,Forskningsseminar Trondheim,3600.0,"Frokost, Lunsj, Middag",False,0,True,EMP-108,EMP-109,True,BRUDD_MALTID,2026T1sep
+REISE-2026-SEP-06,Eva Sunde,2026-09-25,2026-M09,Møte Arendal Kommune,580.0,Ingen,True,85,True,EMP-110,EMP-111,False,BRUDD_KM_RUTE,2026T1sep
+REISE-2026-SEP-07,Kjetil Dahl,2026-09-28,2026-M09,Taxi til Kjevik Lufthavn,750.0,Ingen,True,0,False,EMP-112,EMP-113,True,BRUDD_KVITTERING,2026T1sep
