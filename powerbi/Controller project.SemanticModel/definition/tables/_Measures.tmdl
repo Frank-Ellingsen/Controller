@@ -1,187 +1,267 @@
 table _Measures
-	lineageTag: 11f5b223-1511-45c9-a9c2-4f39f72b9291
+	lineageTag: 96a7f460-7623-44fe-8c8e-afdf81561d91
 
 	measure 'Total Budget' = SUM('Fact_EVM_Snapshots'[bac])
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: 1d77e3e4-78ba-444c-b070-e347bacd78ad
+		lineageTag: 298ae5b2-f71e-4851-82c9-4ae5c703b53e
 
 	measure 'Budget YTD' = SUM('Fact_EVM_Snapshots'[pv])
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: 2889421c-918e-42d2-9f91-49d02e6e450c
+		lineageTag: 5a16c465-d5d3-47d7-b593-f322606101a6
 
 	measure 'Progress Value' = SUM('Fact_EVM_Snapshots'[ev])
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: e4f6c4b3-39af-4d70-b870-cf2ab2094d8c
+		lineageTag: 0822f01b-148b-4bb4-a7a0-c71e4008385a
 
 	measure 'Actual YTD' = SUM('Fact_EVM_Snapshots'[ac])
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: 606573d7-8441-4630-9d99-80abca385a45
+		lineageTag: 2381a446-497a-4e6d-a393-006918616722
 
 	measure 'Cost Variance' = [Progress Value] - [Actual YTD]
 		formatString: +#,##0;-#,##0;0
 		displayFolder: '01 Core EVM'
-		lineageTag: 38f18edb-5398-46e0-8ac4-d10b7deeca7d
+		lineageTag: fb22856f-12b8-42b5-805e-fccdc29bed2b
 
 	measure 'Forecast' = DIVIDE([Total Budget], [Portfolio CPI], [Total Budget])
 		formatString: #,##0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: b7f8b45f-d44c-45b2-a027-8c464a22b23d
+		lineageTag: 868310eb-9207-4a28-aa7b-65bb02bcbd72
 
 	measure 'Forecast Variance' = [Total Budget] - [Forecast]
 		formatString: +#,##0;-#,##0;0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: 5909717f-18dc-4817-b641-4ece3047673d
+		lineageTag: d46430c1-23cd-4996-b0c5-56b3daf1806f
 
 	measure 'Total BAC' = [Total Budget]
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: 81d37382-98fd-456c-b573-b313e2e0fab4
+		lineageTag: 97a04754-a42a-42f6-860e-3d1ecd961e96
 
 	measure 'Total PV' = [Budget YTD]
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: 39dad0b0-88b2-4870-abb3-bd5563f6c36b
+		lineageTag: 4a46434f-df8e-4c26-96d8-4b4d900829f3
 
 	measure 'Total EV' = [Progress Value]
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: 86b379f8-ef9a-4d3a-a075-fe82c8b0ca82
+		lineageTag: 1bbd5454-6919-4209-a0af-37907ed40ba2
 
 	measure 'Total AC' = [Actual YTD]
 		formatString: #,##0
 		displayFolder: '01 Core EVM'
-		lineageTag: e3d4bfca-ed8a-4f2a-854c-cfdabf7b3ffe
+		lineageTag: c50f65ed-6813-4c64-9a56-113ac5dfc66b
 
 	measure 'Cost Variance NOK' = [Cost Variance]
 		formatString: +#,##0;-#,##0;0
 		displayFolder: '01 Core EVM'
-		lineageTag: baee9dbc-1f38-49b3-84f8-a26e0eada452
+		lineageTag: 3cd37cdc-9896-4ee0-869f-1fd05a3aa65b
 
 	measure 'Schedule Variance NOK' = [Progress Value] - [Budget YTD]
 		formatString: +#,##0;-#,##0;0
 		displayFolder: '01 Core EVM'
-		lineageTag: 40ee2494-7f1e-466d-9aee-948ab9ea0cc6
+		lineageTag: 753c3462-a922-4e1d-85a2-014c64bef492
 
 	measure 'Portfolio CPI' = DIVIDE([Total EV], [Total AC], 1.0)
 		formatString: 0.00
 		displayFolder: '01 Core EVM'
-		lineageTag: afb946eb-1326-4a6f-954b-7a82bbbb4483
+		lineageTag: 5ce64de6-d14b-4517-be30-29432697b646
 
 	measure 'Portfolio SPI' = DIVIDE([Total EV], [Total PV], 1.0)
 		formatString: 0.00
 		displayFolder: '01 Core EVM'
-		lineageTag: cc657440-11c6-4ecd-8587-85020e226735
+		lineageTag: 64c2f061-7416-4c83-b99f-fdddb80e0d5b
 
 	measure 'EAC Typical CPI' = DIVIDE([Total BAC], [Portfolio CPI], [Total BAC])
 		formatString: #,##0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: f112a32c-7746-4d7a-a447-f3789b8c12e6
+		lineageTag: 72be53e3-ac14-4478-bd7f-decf51098b73
 
 	measure 'EAC Composite CPI_SPI' = VAR RemainingWork = [Total BAC] - [Total EV] VAR CompositeIndex = [Portfolio CPI] * [Portfolio SPI] RETURN IF(CompositeIndex > 0, [Total AC] + DIVIDE(RemainingWork, CompositeIndex, RemainingWork), [Total BAC])
 		formatString: #,##0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: 8429a380-546e-4291-a62d-fa5b7603957a
+		lineageTag: 9ff1f76e-120b-4598-9c64-cf377647a9a7
 
 	measure 'EAC Weighted 80_20' = VAR RemainingWork = [Total BAC] - [Total EV] VAR WeightedIndex = 0.8 * [Portfolio CPI] + 0.2 * [Portfolio SPI] RETURN IF(WeightedIndex > 0, [Total AC] + DIVIDE(RemainingWork, WeightedIndex, RemainingWork), [Total BAC])
 		formatString: #,##0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: bb5b8930-7e01-4eba-bbde-b2a66fdc8d2d
+		lineageTag: cde08df3-920b-4a84-bd18-7e42b79b777f
 
 	measure 'EAC Selected Model' = VAR SelectedModel = SELECTEDVALUE('Dim_Model_Parameter'[ModelCode], "CPI") RETURN SWITCH(SelectedModel, "CPI", [EAC Typical CPI], "COMPOSITE", [EAC Composite CPI_SPI], "WEIGHTED", [EAC Weighted 80_20], [EAC Typical CPI])
 		formatString: #,##0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: df66e63c-c1d5-4617-9e0f-e79d434b5d33
+		lineageTag: 32d8c0ba-4743-4ffa-9a49-a5aae92a92d5
 
 	measure 'VAC Selected Model' = [Total BAC] - [EAC Selected Model]
 		formatString: +#,##0;-#,##0;0
 		displayFolder: '02 EAC Forecasting'
-		lineageTag: 8a8c2f51-6b4f-417a-a225-d88e2730dc48
+		lineageTag: 987885d2-efa0-4931-af50-ced29b81ecf7
 
 	measure 'TCPI Target BAC' = VAR RemainingWork = [Total BAC] - [Total EV] VAR RemainingFund = [Total BAC] - [Total AC] RETURN IF(RemainingFund > 0, DIVIDE(RemainingWork, RemainingFund, 9.99), 9.99)
 		formatString: 0.00
 		displayFolder: '03 TCPI & Risk'
-		lineageTag: 5efcfbba-ebee-4545-82fc-d38503ef60ef
+		lineageTag: 35b86682-db25-4a7a-991a-f9a2d3e10b8c
 
 	measure 'Project Risk Status' = VAR CurrentCPI = [Portfolio CPI] VAR CurrentSPI = [Portfolio SPI] VAR CurrentVAC = [VAC Selected Model] RETURN SWITCH(TRUE(), CurrentCPI < 0.85 || CurrentSPI < 0.85 || CurrentVAC < -1000000, "CRITICAL", CurrentCPI < 0.95 || CurrentSPI < 0.95 || CurrentVAC < -250000, "WARNING", "ON TRACK")
 		displayFolder: '03 TCPI & Risk'
-		lineageTag: e0aff719-39d0-48a3-8c8e-0a24bae3b38b
+		lineageTag: f7966700-0179-48b8-84b6-a0b4d14e7459
 
 	measure 'Status Color Hex' = SWITCH([Project Risk Status], "CRITICAL", "#ef4444", "WARNING", "#f59e0b", "ON TRACK", "#34d399", "#94a3b8")
 		displayFolder: '03 TCPI & Risk'
-		lineageTag: 7e206ebf-11e5-492b-b60f-069111379b36
+		lineageTag: 245db5fa-9d91-4164-b13f-00994418a97e
 
 	measure 'Statlig Rammebevilgning NOK' = 1200000000
 		formatString: #,##0
 		displayFolder: '04 F-05-20 Reserve Cap'
-		lineageTag: 3b19696d-4020-4be3-b2fb-710a6cb04fcb
+		lineageTag: 8cfc1853-a402-4293-8987-d697ccb14e45
 
 	measure 'Reell Driftsavsetning NOK' = 72000000
 		formatString: #,##0
 		displayFolder: '04 F-05-20 Reserve Cap'
-		lineageTag: 719d50c4-efab-425f-9f83-13c3151527d7
+		lineageTag: 737c315f-1223-48dc-a41f-9a0a86561bbb
 
 	measure 'Reserve Share Pct' = DIVIDE([Reell Driftsavsetning NOK], [Statlig Rammebevilgning NOK], 0)
 		formatString: 0.0%
 		displayFolder: '04 F-05-20 Reserve Cap'
-		lineageTag: 6780b6b3-b36d-4545-8b36-6c5095666158
+		lineageTag: 4986c787-71e4-48da-be9e-405d04d9fbe7
 
 	measure 'Reserve Cap 5% Limit NOK' = [Statlig Rammebevilgning NOK] * 0.05
 		formatString: #,##0
 		displayFolder: '04 F-05-20 Reserve Cap'
-		lineageTag: cee2d14f-3e08-432a-9f4f-aee4464b63b2
+		lineageTag: e5aa11d6-4757-45e9-a6f0-7b9f251a2728
 
 	measure 'Reserve Cap Excess NOK' = MAX(0, [Reell Driftsavsetning NOK] - [Reserve Cap 5% Limit NOK])
 		formatString: #,##0
 		displayFolder: '04 F-05-20 Reserve Cap'
-		lineageTag: f59134bb-869b-46e2-940a-dff30da950c4
+		lineageTag: 1cda8938-9542-41af-a9d4-f5b310c03c0d
 
 	measure 'F-05-20 Status Flag' = IF([Reserve Cap Excess NOK] > 0, "DISPENSASJON PÅKREVD", "INNENFOR GRENSE")
 		displayFolder: '04 F-05-20 Reserve Cap'
-		lineageTag: 8b101c93-e272-4806-a35a-6ea43581e2a4
+		lineageTag: d367c071-b1ed-419e-97a7-95f6a03886bd
 
 	measure 'Total Scanned Claims Count' = COUNTROWS('Fact_Travel_Audit')
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 929da627-f08d-4646-8e91-8bb08525cc18
+		lineageTag: e0b16ab1-cdf1-4503-9930-e0680a3295e1
 
 	measure 'Flagged Claims Count' = CALCULATE(COUNTROWS('Fact_Travel_Audit'), 'Fact_Travel_Audit'[Status] = "FLAGGED")
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 0292aebb-77e6-443e-9f67-563a0bb20b28
+		lineageTag: ca5210f7-f0f5-4444-a646-2eb532029452
 
 	measure 'Total Flagged Amount NOK' = CALCULATE(SUM('Fact_Travel_Audit'[Belop_NOK]), 'Fact_Travel_Audit'[Status] = "FLAGGED")
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 64d4a84a-27cd-465e-93f6-1b4634580756
+		lineageTag: c19a3dea-021a-4bdd-95b3-78552ebecfcd
 
 	measure 'Self-Approval Breach Amount NOK' = CALCULATE(SUM('Fact_Travel_Audit'[Belop_NOK]), SEARCH("Egengodkjenning", 'Fact_Travel_Audit'[Avvik_Beskrivelse], 1, 0) > 0)
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 07c36ce9-c0cd-4683-9ab1-c286a2950f1f
+		lineageTag: d8684524-347d-4d04-892d-ecc8de381b44
 
 	measure 'Total UBW Transactions Count' = COUNTROWS('Fact_UBW_Audit')
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 714ef395-c28a-4019-9bcf-f70c25d9c570
+		lineageTag: be6e7d30-c6be-4609-9cc9-00bad9e0de55
 
 	measure 'Total UBW Amount NOK' = SUM('Fact_UBW_Audit'[belop_nok])
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 051995bb-c763-4ee9-8bf6-b448847b407c
+		lineageTag: 7568844f-3ef1-4437-8a6b-e9400c838544
 
 	measure 'Flagged UBW Transactions Count' = CALCULATE(COUNTROWS('Fact_UBW_Audit'), 'Fact_UBW_Audit'[Kontrollflagg] <> "OK")
 		formatString: #,##0
 		displayFolder: '05 Compliance & Audit'
-		lineageTag: 8ab1d24b-44aa-4e33-b1b1-3074a8f01a3e
+		lineageTag: a31ed6c8-c16d-483f-8c5d-9cc6da90853f
+
+	measure 'SCurve Cumulative PV' = [Total PV]
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 08ebc902-edd5-4176-a6ac-bdf4c19b65fb
+
+	measure 'SCurve Cumulative AC' = [Total AC]
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 53a26459-a3bf-4847-81f7-6cbe04831a25
+
+	measure 'SCurve Cumulative EAC' = [EAC Selected Model]
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 7edcb6b1-f92e-49bc-98f3-f5cbd51488d0
+
+	measure 'SCurve Cost Variance Line' = [SCurve Cumulative PV] - [SCurve Cumulative AC]
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 3b56a07f-422f-48ec-9278-6f5b4ca2353a
+
+	measure 'Statlig Ramme Inntekt NOK' = [Total BAC] * 0.78
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: f50c35eb-ce28-4f53-99d2-df9dbb046381
+
+	measure 'BOA Ekstern Forskning NOK' = [Total BAC] * 0.14
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 6180c798-4016-4893-984f-66ddbe3cebc9
+
+	measure 'Oppdragsaktivitet Inntekt NOK' = [Total BAC] * 0.05
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: fc21b652-dc5b-4837-9b4a-affbb73be8d1
+
+	measure 'Oevrige Inntekter NOK' = [Total BAC] * 0.03
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 323be2e3-689a-4571-8383-fb553c840b45
+
+	measure 'Loenn & Sosiale Kostnader NOK' = [Total AC] * 0.64
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: e5fefeb4-cd86-49eb-a08d-0cd48f337366
+
+	measure 'Andre Driftskostnader NOK' = [Total AC] * 0.23
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: cbdb3842-f0ae-40bc-a319-f49c72673bc8
+
+	measure 'Husleie & Eiendom NOK' = [Total AC] * 0.08
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 995d13a7-ced8-4222-9fe4-c0cb78bfe2b7
+
+	measure 'Avskrivninger & Investeringer NOK' = [Total AC] * 0.05
+		formatString: #,##0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 71bc82a6-e9ee-4017-b4c7-64d7dc388ee3
+
+	measure 'Loennsinnsparing Vakanser NOK' = [Cost Variance NOK] * 0.55
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: ea7dde66-ac7c-46c9-bcab-b7a04542e374
+
+	measure 'Driftsinnsparing Konsulent Reise NOK' = [Cost Variance NOK] * 0.30
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: bfbf386b-f21d-4681-9615-dea45bb098d6
+
+	measure 'Eiendomsinnsparing Enoek NOK' = [Cost Variance NOK] * 0.10
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 7290a905-8b66-4b5f-8460-6ccfd67f1f10
+
+	measure 'Investeringsinnsparing Periodisering NOK' = [Cost Variance NOK] * 0.05
+		formatString: +#,##0;-#,##0;0
+		displayFolder: '06 Visual Analytics'
+		lineageTag: 57a78346-dc09-4d09-8cc7-31102ad8e1c5
 
 	column _Placeholder
 		dataType: string
 		isHidden
-		lineageTag: bcecfc73-5fd1-49c0-a5a9-3abb2a61235b
+		lineageTag: f3ad658d-73af-4941-8758-1417ba9a34bd
 		summarizeBy: none
 		sourceColumn: _Placeholder
 

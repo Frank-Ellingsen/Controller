@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "donut_revenue_breakdown",
+  "position": {
+    "x": 40,
+    "y": 600,
+    "width": 590,
+    "height": 420,
+    "z": 1
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Statlig Ramme Inntekt NOK"
+                }
+              },
+              "queryRef": "_Measures.Statlig Ramme Inntekt NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "BOA Ekstern Forskning NOK"
+                }
+              },
+              "queryRef": "_Measures.BOA Ekstern Forskning NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Oppdragsaktivitet Inntekt NOK"
+                }
+              },
+              "queryRef": "_Measures.Oppdragsaktivitet Inntekt NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Oevrige Inntekter NOK"
+                }
+              },
+              "queryRef": "_Measures.Oevrige Inntekter NOK"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {}
+  }
+}

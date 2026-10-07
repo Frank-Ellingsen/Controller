@@ -376,11 +376,17 @@
                 </div>
             </div>
 
-            <!-- VISUAL PROGRESS & FORECAST BARS -->
-            <div class="chart-bar-container">
-                <h3 style="margin-bottom: 1rem; color: var(--uia-navy);">📈 Visuell Sammenligning: YTD Budsjett vs. Regnskap vs. EOY Prognose</h3>
+            <!-- VISUAL PROGRESS & FORECAST BARS + S-CURVE -->
+            <div class="chart-bar-container" style="background: white; border: 1px solid var(--uia-border); border-radius: 10px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <div>
+                        <h3 style="color: var(--uia-navy); font-size: 1.2rem; margin-bottom: 0.2rem;">📈 Visuell Sammenligning: YTD Budsjett vs. Regnskap vs. EOY Prognose</h3>
+                        <p style="font-size: 0.85rem; color: #64748B;">Dynamisk Månedlig S-Kurve (Jan-Des 2026) for <span id="scurve-unit-label" style="font-weight: 600; color: var(--uia-navy);">ALLE ENHETER (Consolidated UiA)</span></p>
+                    </div>
+                    <span class="badge badge-success" id="scurve-status-badge" style="padding: 6px 12px; font-size: 0.82rem;">Innsparing YTD: +25,8 Mill (+1.49%)</span>
+                </div>
                 
-                <div class="bar-wrapper">
+                <div class="bar-wrapper" style="margin-bottom: 0.8rem;">
                     <div class="bar-label">
                         <span id="bar1-title">Budsjett YTD Oct (1 729,3 MNOK) vs. Regnskap YTD Oct (1 703,5 MNOK)</span>
                         <span id="bar1-badge" class="text-success">Innsparing YTD: +25,8 MNOK (+1.49%)</span>
@@ -390,7 +396,7 @@
                     </div>
                 </div>
 
-                <div class="bar-wrapper">
+                <div class="bar-wrapper" style="margin-bottom: 1.5rem;">
                     <div class="bar-label">
                         <span id="bar2-title">Total Ramme 2026 (2 075,1 MNOK) vs. Prognose EOY (2 044,3 MNOK)</span>
                         <span id="bar2-badge" class="text-success">Forventet Årsoverskudd: +30,8 MNOK (+1.48%)</span>
@@ -398,6 +404,51 @@
                     <div class="bar-bg">
                         <div id="bar2-fill" class="bar-fill bg-blue" style="width: 98.52%;"></div>
                     </div>
+                </div>
+
+                <!-- DYNAMIC S-CURVE VISUAL CHART (Tufte Principles: No vertical gridlines, direct line labeling) -->
+                <div style="background: #FAFBFD; border: 1px solid var(--uia-border); border-radius: 8px; padding: 1rem; position: relative;">
+                    <div id="scurve-svg-container" style="width: 100%; overflow-x: auto;">
+                        <!-- Rendered by JavaScript renderSCurveChart() -->
+                    </div>
+                </div>
+
+                <!-- REVENUE & COST BREAKDOWN DONUT VISUALS (Tufte Principles: Direct labeling, muted palette) -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    
+                    <!-- DONUT 1: REVENUE CATEGORY BREAKDOWN -->
+                    <div style="background: #FAFBFD; border: 1px solid var(--uia-border); border-radius: 8px; padding: 1.2rem;">
+                        <h4 style="color: var(--uia-navy); font-size: 1.05rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 6px;">
+                            🍩 Inntektsfordeling per Kategori (Revenue Breakdown)
+                        </h4>
+                        <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem;">Fordeling av total rammebevilgning (Kap 260 post 50), BOA og oppdrag.</p>
+                        <div id="donut-revenue-container" style="width: 100%;">
+                            <!-- Rendered by JavaScript renderDonutCharts() -->
+                        </div>
+                    </div>
+
+                    <!-- DONUT 2: COST CATEGORY BREAKDOWN -->
+                    <div style="background: #FAFBFD; border: 1px solid var(--uia-border); border-radius: 8px; padding: 1.2rem;">
+                        <h4 style="color: var(--uia-navy); font-size: 1.05rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 6px;">
+                            🍩 Kostnadsfordeling per Kategori (Cost Breakdown YTD)
+                        </h4>
+                        <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem;">Påløpte kostnader fordelt på Lønn, Drift, Eiendom og Investeringer.</p>
+                        <div id="donut-cost-container" style="width: 100%;">
+                            <!-- Rendered by JavaScript renderDonutCharts() -->
+                        </div>
+                    </div>
+
+                    <!-- DONUT 3: VARIANCE CATEGORY BREAKDOWN -->
+                    <div style="background: #FAFBFD; border: 1px solid var(--uia-border); border-radius: 8px; padding: 1.2rem;">
+                        <h4 style="color: var(--uia-navy); font-size: 1.05rem; margin-bottom: 0.3rem; display: flex; align-items: center; gap: 6px;">
+                            🍩 Avviksfordeling per Årsak (Variance Breakdown YTD)
+                        </h4>
+                        <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem;">Nettodrivere bak innsparing/avvik (Vakanser, Drift, Enøk og Utstyr).</p>
+                        <div id="donut-variance-container" style="width: 100%;">
+                            <!-- Rendered by JavaScript renderDonutCharts() -->
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -1661,6 +1712,347 @@
                 const width2 = sumB > 0 ? Math.min(100, Math.max(0, (sumEoyF / sumB) * 100)) : 0;
                 bar2Fill.style.width = width2.toFixed(2) + '%';
             }
+
+            // Render Dynamic S-Curve Chart (Whole year M01-M12 by month)
+            const unitName = filterCode === 'ALL' ? 'ALLE ENHETER (Consolidated UiA)' : (drilldownData.find(d => d.code === filterCode)?.name || filterCode);
+            window.currentFrontpageData = { sumB, sumYtdB, sumYtdA, sumEoyF, sumCvar, sumEoyV, unitName };
+            renderSCurveChart(sumB, sumYtdB, sumYtdA, sumEoyF, sumCvar, sumEoyV, unitName);
+        }
+
+        // DYNAMIC S-CURVE COMBO CHART RENDERER (Primary Y-Axis Left: Columns | Secondary Y-Axis Right: Variance Line)
+        function renderSCurveChart(sumB, sumYtdB, sumYtdA, sumEoyF, sumCvar, sumEoyV, unitName) {
+            const container = document.getElementById('scurve-svg-container');
+            const unitLabel = document.getElementById('scurve-unit-label');
+            const statusBadge = document.getElementById('scurve-status-badge');
+
+            if (unitLabel) unitLabel.innerText = unitName;
+            if (statusBadge) {
+                const pct = sumYtdB > 0 ? (sumCvar / sumYtdB) * 100 : 0;
+                statusBadge.innerText = `Innsparing YTD: ${sumCvar >= 0 ? '+' : ''}${sumCvar.toFixed(1).replace('.', ',')} Mill (${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%)`;
+                statusBadge.className = sumCvar >= 0 ? 'badge badge-success' : 'badge badge-danger';
+            }
+
+            if (!container) return;
+
+            // Monthly cumulative distribution weights (Jan-Dec)
+            const MONTH_WEIGHTS = [0.075, 0.150, 0.235, 0.310, 0.395, 0.490, 0.550, 0.640, 0.740, 0.8333, 0.915, 1.000];
+            const MONTH_NAMES = ['M01', 'M02', 'M03 (Q1)', 'M04', 'M05', 'M06 (T1)', 'M07', 'M08', 'M09 (T2)', 'M10 (10T)', 'M11', 'M12 (EOY)'];
+
+            // Cumulative Budsjett (PV)
+            const pvPoints = MONTH_WEIGHTS.map(w => sumB * w);
+            
+            // Cumulative Regnskap (AC) up to M10
+            const acPoints = [];
+            const wM10 = MONTH_WEIGHTS[9];
+            for (let i = 0; i <= 9; i++) {
+                acPoints.push(sumYtdA * (MONTH_WEIGHTS[i] / wM10));
+            }
+
+            // Cumulative Forecast (EAC) M10 to M12
+            const eacPoints = [...acPoints];
+            const startEac = acPoints[9];
+            const diffEac = sumEoyF - startEac;
+            const wRemain = 1.0 - wM10;
+            const w11Frac = (MONTH_WEIGHTS[10] - wM10) / wRemain;
+            eacPoints.push(startEac + diffEac * w11Frac);
+            eacPoints.push(sumEoyF);
+
+            // Cumulative Variance Line Points (PV - AC for M0-9, PV - EAC for M10-11)
+            const varPoints = [];
+            for (let i = 0; i <= 9; i++) {
+                varPoints.push(pvPoints[i] - acPoints[i]);
+            }
+            varPoints.push(pvPoints[10] - eacPoints[10]);
+            varPoints.push(pvPoints[11] - eacPoints[11]);
+
+            // SVG Canvas Dimensions
+            const W = 940;
+            const H = 340;
+            const padL = 65;  // Left Y-axis (Primary: MNOK Columns)
+            const padR = 210; // Right Y-axis + Direct Labels (Secondary: Avvik Line)
+            const padT = 35;
+            const padB = 45;
+
+            const plotW = W - padL - padR;
+            const plotH = H - padT - padB;
+
+            // Primary Y-Axis Max (Columns)
+            const maxValL = Math.max(sumB, sumEoyF, sumYtdA * 1.2, 1.0) * 1.08;
+
+            // Secondary Y-Axis Min/Max (Variance Line)
+            const minVarRaw = Math.min(...varPoints, 0);
+            const maxVarRaw = Math.max(...varPoints, 0);
+            const varSpan = Math.max(Math.abs(minVarRaw), Math.abs(maxVarRaw), 5.0) * 1.35;
+            const minValR = -varSpan;
+            const maxValR = varSpan;
+
+            function getX(idx) {
+                return padL + (idx / 11) * plotW;
+            }
+
+            function getYL(val) {
+                return (padT + plotH) - (val / maxValL) * plotH;
+            }
+
+            function getYR(val) {
+                const norm = (val - minValR) / (maxValR - minValR);
+                return (padT + plotH) - norm * plotH;
+            }
+
+            // Left Primary Y-Axis Gridlines & Labels (Columns: Beløp MNOK)
+            let gridHtml = '';
+            const numGrid = 4;
+            for (let g = 0; g <= numGrid; g++) {
+                const gValL = (maxValL / numGrid) * g;
+                const gY = getYL(gValL);
+                gridHtml += `
+                    <line x1="${padL}" y1="${gY}" x2="${padL + plotW}" y2="${gY}" stroke="#E2E8F0" stroke-dasharray="3 3" stroke-width="1" />
+                    <text x="${padL - 8}" y="${gY + 4}" fill="#64748B" font-size="10.5" font-weight="500" text-anchor="end">${gValL.toFixed(0)} M</text>
+                `;
+            }
+
+            // Zero line for Secondary Y-axis (Avvik = 0 MNOK)
+            const zeroY_R = getYR(0);
+            const zeroLineHtml = `
+                <line x1="${padL}" y1="${zeroY_R}" x2="${padL + plotW}" y2="${zeroY_R}" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="4 2" />
+                <text x="${padL + plotW + 6}" y="${zeroY_R + 4}" fill="#64748B" font-size="10" font-weight="600">0 M (Nullavvik)</text>
+            `;
+
+            // X-Axis Month Labels & Ticks
+            let xLabelsHtml = '';
+            MONTH_NAMES.forEach((mName, i) => {
+                const x = getX(i);
+                const isCurrent = i === 9;
+                xLabelsHtml += `
+                    <line x1="${x}" y1="${padT + plotH}" x2="${x}" y2="${padT + plotH + 5}" stroke="${isCurrent ? '#E35205' : '#CBD5E1'}" stroke-width="${isCurrent ? '2' : '1'}" />
+                    <text x="${x}" y="${padT + plotH + 20}" fill="${isCurrent ? '#E35205' : '#475569'}" font-size="${isCurrent ? '11' : '10.5'}" font-weight="${isCurrent ? '700' : '500'}" text-anchor="middle">${mName}</text>
+                `;
+            });
+
+            // Grouped S-Curve Columns per month (Budsjett Column vs Regnskap/Prognose Column)
+            let columnsHtml = '';
+            const colWidth = 14; // Width of each column bar
+            
+            for (let i = 0; i < 12; i++) {
+                const xCenter = getX(i);
+                
+                // 1. Budsjett Column (PV) - Muted Slate Gray
+                const pvVal = pvPoints[i];
+                const pvY = getYL(pvVal);
+                const pvH = (padT + plotH) - pvY;
+                const pvX = xCenter - colWidth - 1;
+
+                // 2. Regnskap/Prognose Column (AC for M0-9, EAC for M10-11)
+                const isActual = i <= 9;
+                const actVal = isActual ? acPoints[i] : eacPoints[i];
+                const actY = getYL(actVal);
+                const actH = (padT + plotH) - actY;
+                const actX = xCenter + 1;
+                const actColor = isActual ? '#002B49' : (sumEoyV >= 0 ? '#10B981' : '#EF4444');
+                const actOpacity = isActual ? '0.85' : '0.45';
+
+                columnsHtml += `
+                    <!-- Budsjett PV Column -->
+                    <rect x="${pvX.toFixed(1)}" y="${pvY.toFixed(1)}" width="${colWidth}" height="${pvH.toFixed(1)}" fill="#CBD5E1" rx="2" opacity="0.9" />
+                    <!-- Regnskap/EAC Column -->
+                    <rect x="${actX.toFixed(1)}" y="${actY.toFixed(1)}" width="${colWidth}" height="${actH.toFixed(1)}" fill="${actColor}" rx="2" opacity="${actOpacity}" />
+                `;
+            }
+
+            // Secondary Y-Axis Line: Cumulative Variance (Avvik YTD Line)
+            let varLineD = '';
+            let varDotsHtml = '';
+
+            varPoints.forEach((v, i) => {
+                const x = getX(i);
+                const y = getYR(v);
+                varLineD += `${i === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)} `;
+
+                const isM10 = i === 9;
+                const dotColor = v >= 0 ? '#10B981' : '#EF4444';
+                varDotsHtml += `
+                    <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${isM10 ? '5' : '3.5'}" fill="${dotColor}" stroke="white" stroke-width="1.5" />
+                `;
+            });
+
+            // Endpoint direct labeling (Tufte principles)
+            const lastVarVal = varPoints[9]; // Oct YTD Avvik
+            const eoyVarVal = varPoints[11]; // EOY Sluttavvik
+            const xOct = getX(9);
+            const yOctVar = getYR(lastVarVal);
+            const xDec = getX(11);
+            const yDecVar = getYR(eoyVarVal);
+
+            const octColor = lastVarVal >= 0 ? '#10B981' : '#EF4444';
+            const eoyColor = eoyVarVal >= 0 ? '#10B981' : '#EF4444';
+
+            const svgHtml = `
+                <svg width="100%" height="340" viewBox="0 0 ${W} ${H}" style="overflow: visible; display: block;">
+                    <!-- Primary Y-Axis Gridlines (Horizontal Only) -->
+                    ${gridHtml}
+
+                    <!-- Zero Line for Secondary Axis -->
+                    ${zeroLineHtml}
+
+                    <!-- X-Axis Baseline -->
+                    <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="#CBD5E1" stroke-width="1.5" />
+
+                    <!-- Month X-Labels -->
+                    ${xLabelsHtml}
+
+                    <!-- Grouped S-Curve Monthly Columns (Primary Y-Axis: MNOK) -->
+                    ${columnsHtml}
+
+                    <!-- Cumulative Variance Line (Secondary Y-Axis: Avvik Line) -->
+                    <path d="${varLineD}" fill="none" stroke="${octColor}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+                    <!-- Variance Line Dots -->
+                    ${varDotsHtml}
+
+                    <!-- Primary Y-Axis Title (Left) -->
+                    <text x="${padL}" y="${padT - 12}" fill="#002B49" font-size="11" font-weight="700" text-anchor="start">📊 Ramme & Regnskap (MNOK)</text>
+
+                    <!-- Secondary Y-Axis Title (Right) -->
+                    <text x="${padL + plotW}" y="${padT - 12}" fill="${octColor}" font-size="11" font-weight="700" text-anchor="end">📈 Akkumulert Avvik (MNOK)</text>
+
+                    <!-- Direct Line Labels (Edward Tufte Principle: Direct labeling, NO separate legend box) -->
+                    
+                    <!-- 1. Column Chart Direct Labels (Top Right Legend Box / Indicators) -->
+                    <g transform="translate(${W - 195}, ${padT + 10})">
+                        <rect x="-6" y="-6" width="190" height="64" fill="white" rx="6" stroke="#E2E8F0" stroke-width="1" />
+                        
+                        <rect x="0" y="2" width="12" height="10" fill="#CBD5E1" rx="2" />
+                        <text x="18" y="11" fill="#475569" font-size="11" font-weight="600">Budsjett (PV S-Curve)</text>
+
+                        <rect x="0" y="22" width="12" height="10" fill="#002B49" rx="2" />
+                        <text x="18" y="31" fill="#002B49" font-size="11" font-weight="700">Regnskap Oct (AC)</text>
+
+                        <line x1="0" y1="47" x2="12" y2="47" stroke="${octColor}" stroke-width="3" />
+                        <circle cx="6" cy="47" r="3" fill="${octColor}" />
+                        <text x="18" y="51" fill="${octColor}" font-size="11" font-weight="700">Avvik (Right Y-Axis)</text>
+                    </g>
+
+                    <!-- 2. Direct Label at Oct Variance Point -->
+                    <g transform="translate(${xOct + 8}, ${yOctVar - 12})">
+                        <rect x="-2" y="-12" width="150" height="18" fill="white" rx="3" stroke="${octColor}" stroke-width="1" />
+                        <text x="3" y="1" fill="${octColor}" font-size="11" font-weight="700">
+                            Avvik Oct: ${lastVarVal >= 0 ? '+' : ''}${lastVarVal.toFixed(1).replace('.', ',')} Mill
+                        </text>
+                    </g>
+
+                    <!-- 3. Direct Label at Dec EOY Variance Point -->
+                    <g transform="translate(${xDec + 8}, ${yDecVar + 4})">
+                        <text x="0" y="0" fill="${eoyColor}" font-size="11.5" font-weight="700">
+                            EOY Avvik: ${eoyVarVal >= 0 ? '+' : ''}${eoyVarVal.toFixed(1).replace('.', ',')} Mill
+                        </text>
+                    </g>
+                </svg>
+            `;
+
+            container.innerHTML = svgHtml;
+
+            // Render Dynamic Revenue, Cost & Variance Donut Charts
+            renderDonutCharts(sumB, sumYtdA, sumCvar, unitName);
+        }
+
+        // DYNAMIC DONUT CHART RENDERER (Revenue, Cost & Variance Category Breakdown)
+        function renderDonutCharts(sumB, sumYtdA, sumCvar, unitName) {
+            const revContainer = document.getElementById('donut-revenue-container');
+            const costContainer = document.getElementById('donut-cost-container');
+            const varContainer = document.getElementById('donut-variance-container');
+
+            if (!revContainer || !costContainer) return;
+
+            // 1. REVENUE CATEGORY BREAKDOWN (Green nuances: Darkest for largest -> Lightest for smallest)
+            const revCategories = [
+                { name: 'Statlig Ramme (Kap 260.50)', pct: 0.78, color: '#047857' },  // Darkest Forest Green (78% - Largest)
+                { name: 'BOA Ekstern Forskning (NFR/EU)', pct: 0.14, color: '#059669' }, // Dark Green (14%)
+                { name: 'Oppdragsaktivitet & Avgifter', pct: 0.05, color: '#10B981' },   // Medium Green (5%)
+                { name: 'Øvrige Inntekter & Salg', pct: 0.03, color: '#6EE7B7' }        // Lightest Green (3% - Smallest)
+            ];
+
+            // 2. COST CATEGORY BREAKDOWN (Red nuances: Darkest for largest -> Lightest for smallest)
+            const costCategories = [
+                { name: 'Lønn & Sosiale Kostnader', pct: 0.64, color: '#991B1B' },  // Darkest Red (64% - Largest)
+                { name: 'Andre Driftskostnader', pct: 0.23, color: '#DC2626' },     // Dark Red (23%)
+                { name: 'Husleie, Eiendom & Enøk', pct: 0.08, color: '#EF4444' },   // Medium Red (8%)
+                { name: 'Avskrivninger & Investeringer', pct: 0.05, color: '#FCA5A5' } // Lightest Red (5% - Smallest)
+            ];
+
+            // 3. VARIANCE CATEGORY BREAKDOWN (Yellow/Gold nuances: Darkest for largest -> Lightest for smallest)
+            const varCategories = [
+                { name: 'Lønnsinnsparing & Vakanser', pct: 0.55, color: '#854D0E' }, // Darkest Gold/Amber (55% - Largest)
+                { name: 'Konsulent & Reisereservasjon', pct: 0.30, color: '#D97706' }, // Dark Yellow/Amber (30%)
+                { name: 'Eiendom & Enøk-sparing', pct: 0.10, color: '#F59E0B' },     // Medium Yellow (10%)
+                { name: 'Utstyrs- & Prosjektforskyvning', pct: 0.05, color: '#FDE047' } // Lightest Yellow (5% - Smallest)
+            ];
+
+            function createDonutSvg(categories, totalAmount, labelTitle) {
+                const cx = 95;
+                const cy = 95;
+                const R = 68;
+                const strokeWidth = 28;
+                const C = 2 * Math.PI * R;
+
+                let accumulatedPct = 0;
+                let circlesHtml = '';
+                let legendHtml = '';
+
+                categories.forEach(cat => {
+                    const amount = totalAmount * cat.pct;
+                    const dashLen = C * cat.pct;
+                    const gapLen = C - dashLen;
+                    const offset = C * (1 - accumulatedPct) + (C * 0.25);
+                    accumulatedPct += cat.pct;
+
+                    circlesHtml += `
+                        <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${cat.color}" 
+                                stroke-width="${strokeWidth}" 
+                                stroke-dasharray="${dashLen.toFixed(2)} ${gapLen.toFixed(2)}" 
+                                stroke-dashoffset="${offset.toFixed(2)}" 
+                                style="transition: stroke-dasharray 0.4s ease, stroke-dashoffset 0.4s ease;" />
+                    `;
+
+                    legendHtml += `
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.4rem; padding-bottom: 0.3rem; border-bottom: 1px dashed #E2E8F0;">
+                            <div style="display: flex; align-items: center; gap: 7px;">
+                                <span style="width: 10px; height: 10px; border-radius: 2px; background: ${cat.color}; display: inline-block;"></span>
+                                <span style="color: var(--uia-navy); font-weight: 600;">${cat.name}</span>
+                            </div>
+                            <div style="text-align: right;">
+                                <strong style="color: var(--uia-navy);">${amount.toFixed(1).replace('.', ',')} M</strong>
+                                <span style="color: #64748B; font-size: 0.75rem; margin-left: 4px;">(${(cat.pct * 100).toFixed(0)}%)</span>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                return `
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <div style="position: relative; width: 190px; height: 190px; flex-shrink: 0;">
+                            <svg width="190" height="190" viewBox="0 0 190 190">
+                                <circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="#F1F5F9" stroke-width="${strokeWidth}" />
+                                ${circlesHtml}
+                            </svg>
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; pointer-events: none;">
+                                <small style="font-size: 0.72rem; text-transform: uppercase; color: #64748B; font-weight: 600;">${labelTitle}</small>
+                                <strong style="font-size: 1.15rem; color: var(--uia-navy); margin-top: 1px;">${totalAmount.toFixed(1).replace('.', ',')} Mill</strong>
+                            </div>
+                        </div>
+                        <div style="flex: 1; min-width: 170px;">
+                            ${legendHtml}
+                        </div>
+                    </div>
+                `;
+            }
+
+            revContainer.innerHTML = createDonutSvg(revCategories, sumB, 'Total Ramme');
+            costContainer.innerHTML = createDonutSvg(costCategories, sumYtdA, 'Regnskap YTD');
+            if (varContainer) {
+                const absCvar = Math.abs(sumCvar);
+                const varLabel = sumCvar >= 0 ? 'Innsparing YTD' : 'Overforbruk YTD';
+                varContainer.innerHTML = createDonutSvg(varCategories, absCvar, varLabel);
+            }
         }
 
         function filterFrontpageDrilldown() {
@@ -1670,7 +2062,149 @@
         function exportFrontpageToExcel() {
             const table = document.getElementById('table-frontpage-statement');
             if (typeof XLSX !== 'undefined') {
-                const wb = XLSX.utils.table_to_book(table, { sheet: "UiA_Account_Statement_2026" });
+                const wb = XLSX.utils.book_new();
+
+                // Sheet 1: Account Statement Table
+                if (table) {
+                    const ws1 = XLSX.utils.table_to_sheet(table);
+                    XLSX.utils.book_append_sheet(wb, ws1, "Account_Statement");
+                }
+
+                // Retrieve active unit metrics
+                const data = window.currentFrontpageData || {
+                    sumB: 1200.0, sumYtdB: 1000.0, sumYtdA: 980.0, sumEoyF: 1195.0, sumCvar: 20.0, sumEoyV: 5.0, unitName: 'ALLE ENHETER (Consolidated UiA)'
+                };
+
+                const MONTH_WEIGHTS = [0.075, 0.150, 0.235, 0.310, 0.395, 0.490, 0.550, 0.640, 0.740, 0.8333, 0.915, 1.000];
+                const MONTH_NAMES = ['M01', 'M02', 'M03 (Q1)', 'M04', 'M05', 'M06 (T1)', 'M07', 'M08', 'M09 (T2)', 'M10 (10T)', 'M11', 'M12 (EOY)'];
+
+                const pvPoints = MONTH_WEIGHTS.map(w => data.sumB * w);
+                const acPoints = [];
+                const wM10 = MONTH_WEIGHTS[9];
+                for (let i = 0; i <= 9; i++) {
+                    acPoints.push(data.sumYtdA * (MONTH_WEIGHTS[i] / wM10));
+                }
+
+                const eacPoints = [...acPoints];
+                const startEac = acPoints[9];
+                const diffEac = data.sumEoyF - startEac;
+                const wRemain = 1.0 - wM10;
+                const w11Frac = (MONTH_WEIGHTS[10] - wM10) / wRemain;
+                eacPoints.push(startEac + diffEac * w11Frac);
+                eacPoints.push(data.sumEoyF);
+
+                const varPoints = [];
+                for (let i = 0; i <= 9; i++) {
+                    varPoints.push(pvPoints[i] - acPoints[i]);
+                }
+                varPoints.push(pvPoints[10] - eacPoints[10]);
+                varPoints.push(pvPoints[11] - eacPoints[11]);
+
+                // Sheet 2: Monthly S-Curve Time Series Data
+                const sCurveRows = [
+                    ["Rapporteringsenhet", data.unitName],
+                    ["Rapporteringsperiode", "2026-M10 (YTD Oktober)"],
+                    [],
+                    ["Måned", "Periodenavn", "Budsjett PV (MNOK)", "Regnskap AC (MNOK)", "Prognose EAC (MNOK)", "Akkumulert Avvik (MNOK)", "Datatype"]
+                ];
+
+                MONTH_NAMES.forEach((mName, i) => {
+                    const isActual = i <= 9;
+                    const acVal = isActual ? acPoints[i] : "";
+                    const eacVal = isActual ? "" : eacPoints[i];
+                    sCurveRows.push([
+                        `M${(i+1).toString().padStart(2, '0')}`,
+                        mName,
+                        parseFloat(pvPoints[i].toFixed(2)),
+                        acVal !== "" ? parseFloat(acVal.toFixed(2)) : "",
+                        eacVal !== "" ? parseFloat(eacVal.toFixed(2)) : "",
+                        parseFloat(varPoints[i].toFixed(2)),
+                        isActual ? "Regnskap (Actual)" : "Prognose (Forecast)"
+                    ]);
+                });
+
+                const ws2 = XLSX.utils.aoa_to_sheet(sCurveRows);
+                XLSX.utils.book_append_sheet(wb, ws2, "Monthly_SCurve_Data");
+
+                // Sheet 3: Revenue Category Breakdown
+                const revCategories = [
+                    { name: 'Statlig Ramme (Kap 260.50)', pct: 0.78 },
+                    { name: 'BOA Ekstern Forskning (NFR/EU)', pct: 0.14 },
+                    { name: 'Oppdragsaktivitet & Avgifter', pct: 0.05 },
+                    { name: 'Øvrige Inntekter & Salg', pct: 0.03 }
+                ];
+
+                const revRows = [
+                    ["Rapporteringsenhet", data.unitName],
+                    ["Total Budsjettert Ramme (MNOK)", parseFloat(data.sumB.toFixed(2))],
+                    [],
+                    ["Inntektskategori", "Andel (%)", "Beløp (MNOK)", "Valuta"]
+                ];
+                revCategories.forEach(c => {
+                    revRows.push([
+                        c.name,
+                        parseFloat((c.pct * 100).toFixed(1)),
+                        parseFloat((data.sumB * c.pct).toFixed(2)),
+                        "MNOK"
+                    ]);
+                });
+
+                const ws3 = XLSX.utils.aoa_to_sheet(revRows);
+                XLSX.utils.book_append_sheet(wb, ws3, "Revenue_Breakdown");
+
+                // Sheet 4: Cost Category Breakdown
+                const costCategories = [
+                    { name: 'Lønn & Sosiale Kostnader', pct: 0.64 },
+                    { name: 'Andre Driftskostnader', pct: 0.23 },
+                    { name: 'Husleie, Eiendom & Enøk', pct: 0.08 },
+                    { name: 'Avskrivninger & Investeringer', pct: 0.05 }
+                ];
+
+                const costRows = [
+                    ["Rapporteringsenhet", data.unitName],
+                    ["Totalt Regnskap YTD Oct (MNOK)", parseFloat(data.sumYtdA.toFixed(2))],
+                    [],
+                    ["Kostnadskategori", "Andel (%)", "Beløp (MNOK)", "Valuta"]
+                ];
+                costCategories.forEach(c => {
+                    costRows.push([
+                        c.name,
+                        parseFloat((c.pct * 100).toFixed(1)),
+                        parseFloat((data.sumYtdA * c.pct).toFixed(2)),
+                        "MNOK"
+                    ]);
+                });
+
+                const ws4 = XLSX.utils.aoa_to_sheet(costRows);
+                XLSX.utils.book_append_sheet(wb, ws4, "Cost_Breakdown");
+
+                // Sheet 5: Variance Category Breakdown
+                const varCategories = [
+                    { name: 'Lønnsinnsparing & Vakanser', pct: 0.55 },
+                    { name: 'Konsulent & Reisereservasjon', pct: 0.30 },
+                    { name: 'Eiendom & Enøk-sparing', pct: 0.10 },
+                    { name: 'Utstyrs- & Prosjektforskyvning', pct: 0.05 }
+                ];
+
+                const varRows = [
+                    ["Rapporteringsenhet", data.unitName],
+                    ["Totalt Netto Avvik YTD Oct (MNOK)", parseFloat(data.sumCvar.toFixed(2))],
+                    [],
+                    ["Avviksårsak / Kategori", "Andel (%)", "Beløp (MNOK)", "Valuta", "Type"]
+                ];
+                varCategories.forEach(c => {
+                    varRows.push([
+                        c.name,
+                        parseFloat((c.pct * 100).toFixed(1)),
+                        parseFloat((data.sumCvar * c.pct).toFixed(2)),
+                        "MNOK",
+                        data.sumCvar >= 0 ? "Innsparing" : "Overforbruk"
+                    ]);
+                });
+
+                const ws5 = XLSX.utils.aoa_to_sheet(varRows);
+                XLSX.utils.book_append_sheet(wb, ws5, "Variance_Breakdown");
+
                 XLSX.writeFile(wb, 'Totalt_Budsjett_og_Regnskap_YTD_Oct_2026_UiA.xlsx');
             } else {
                 let html = table.outerHTML;

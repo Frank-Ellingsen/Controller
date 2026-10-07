@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "donut_variance_breakdown",
+  "position": {
+    "x": 1280,
+    "y": 600,
+    "width": 600,
+    "height": 420,
+    "z": 1
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Loennsinnsparing Vakanser NOK"
+                }
+              },
+              "queryRef": "_Measures.Loennsinnsparing Vakanser NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Driftsinnsparing Konsulent Reise NOK"
+                }
+              },
+              "queryRef": "_Measures.Driftsinnsparing Konsulent Reise NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Eiendomsinnsparing Enoek NOK"
+                }
+              },
+              "queryRef": "_Measures.Eiendomsinnsparing Enoek NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Investeringsinnsparing Periodisering NOK"
+                }
+              },
+              "queryRef": "_Measures.Investeringsinnsparing Periodisering NOK"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {}
+  }
+}

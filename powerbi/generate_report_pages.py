@@ -284,6 +284,47 @@ PAGES_SPEC = [
                 "columns": ["Fact_UBW_Audit[transaksjon_id]", "Fact_UBW_Audit[konto]", "Fact_UBW_Audit[beskrivelse]", "Fact_UBW_Audit[belop_nok]", "Fact_UBW_Audit[bdm_id]", "Fact_UBW_Audit[attestant_id]", "Fact_UBW_Audit[formaal]", "Fact_UBW_Audit[Kontrollflagg]"]
             }
         ]
+    },
+    {
+        "id": "page_06_visual_analytics",
+        "displayName": "📊 Visuell Sammenligning & Fordeling",
+        "visuals": [
+            {
+                "name": "title_card",
+                "position": {"x": 40, "y": 30, "width": 1840, "height": 80},
+                "type": "textbox",
+                "title": "Visuell Sammenligning: S-Kurve Budsjett vs. Regnskap vs. EOY Prognose & Fordeling",
+                "subtitle": "Kombinasjonsdiagram for S-kurve (PV, AC, EAC og Akkumulert Avvik) samt Inntekts- og Kostnadsstruktur"
+            },
+            {
+                "name": "scurve_combo_chart",
+                "position": {"x": 40, "y": 130, "width": 1840, "height": 450},
+                "type": "lineAndStackedColumnComboChart",
+                "title": "S-Kurve Akkumulert Tidsrekke (M01-M12)",
+                "measures": ["[SCurve Cumulative PV]", "[SCurve Cumulative AC]", "[SCurve Cumulative EAC]", "[SCurve Cost Variance Line]"]
+            },
+            {
+                "name": "donut_revenue_breakdown",
+                "position": {"x": 40, "y": 600, "width": 590, "height": 420},
+                "type": "pieChart",
+                "title": "Inntektstype Fordeling (Revenue Categories)",
+                "measures": ["[Statlig Ramme Inntekt NOK]", "[BOA Ekstern Forskning NOK]", "[Oppdragsaktivitet Inntekt NOK]", "[Oevrige Inntekter NOK]"]
+            },
+            {
+                "name": "donut_cost_breakdown",
+                "position": {"x": 660, "y": 600, "width": 590, "height": 420},
+                "type": "pieChart",
+                "title": "Kostnadskategori Fordeling (Cost Categories)",
+                "measures": ["[Loenn & Sosiale Kostnader NOK]", "[Andre Driftskostnader NOK]", "[Husleie & Eiendom NOK]", "[Avskrivninger & Investeringer NOK]"]
+            },
+            {
+                "name": "donut_variance_breakdown",
+                "position": {"x": 1280, "y": 600, "width": 600, "height": 420},
+                "type": "pieChart",
+                "title": "Avviksfordeling per Årsak (Variance Breakdown YTD)",
+                "measures": ["[Loennsinnsparing Vakanser NOK]", "[Driftsinnsparing Konsulent Reise NOK]", "[Eiendomsinnsparing Enoek NOK]", "[Investeringsinnsparing Periodisering NOK]"]
+            }
+        ]
     }
 ]
 
@@ -313,6 +354,28 @@ def build_visual_json(v, page_name):
                         "queryRef": f"_Measures.{m_name}"
                     }
                 ]
+            }
+        }
+    elif "measures" in v:
+        projections = []
+        for m_spec in v["measures"]:
+            m_name = m_spec.strip("[]")
+            projections.append({
+                "field": {
+                    "Measure": {
+                        "Expression": {
+                            "SourceRef": {
+                                "Entity": "_Measures"
+                            }
+                        },
+                        "Property": m_name
+                    }
+                },
+                "queryRef": f"_Measures.{m_name}"
+            })
+        query_state = {
+            "Y": {
+                "projections": projections
             }
         }
     elif "columns" in v:

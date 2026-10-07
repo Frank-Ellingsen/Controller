@@ -805,6 +805,86 @@ def generate_measures_table():
 \t\tdisplayFolder: '05 Compliance & Audit'
 \t\tlineageTag: {uid()}
 
+\tmeasure 'SCurve Cumulative PV' = [Total PV]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'SCurve Cumulative AC' = [Total AC]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'SCurve Cumulative EAC' = [EAC Selected Model]
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'SCurve Cost Variance Line' = [SCurve Cumulative PV] - [SCurve Cumulative AC]
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Statlig Ramme Inntekt NOK' = [Total BAC] * 0.78
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'BOA Ekstern Forskning NOK' = [Total BAC] * 0.14
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Oppdragsaktivitet Inntekt NOK' = [Total BAC] * 0.05
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Oevrige Inntekter NOK' = [Total BAC] * 0.03
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Loenn & Sosiale Kostnader NOK' = [Total AC] * 0.64
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Andre Driftskostnader NOK' = [Total AC] * 0.23
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Husleie & Eiendom NOK' = [Total AC] * 0.08
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Avskrivninger & Investeringer NOK' = [Total AC] * 0.05
+\t\tformatString: #,##0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Loennsinnsparing Vakanser NOK' = [Cost Variance NOK] * 0.55
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Driftsinnsparing Konsulent Reise NOK' = [Cost Variance NOK] * 0.30
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Eiendomsinnsparing Enoek NOK' = [Cost Variance NOK] * 0.10
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
+\tmeasure 'Investeringsinnsparing Periodisering NOK' = [Cost Variance NOK] * 0.05
+\t\tformatString: +#,##0;-#,##0;0
+\t\tdisplayFolder: '06 Visual Analytics'
+\t\tlineageTag: {uid()}
+
 \tcolumn _Placeholder
 \t\tdataType: string
 \t\tisHidden

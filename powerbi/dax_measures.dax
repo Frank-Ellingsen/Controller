@@ -176,3 +176,58 @@ CALCULATE(
     SEARCH("Egengodkjenning", 'Fact_Travel_Audit'[Avvik_Beskrivelse], 1, 0) > 0
 )
 // 4-eyes principle violations
+
+
+// -------------------------------------------------------------------------------
+// SECTION 6: VISUAL ANALYTICS — S-CURVE & REVENUE/COST BREAKDOWN
+// -------------------------------------------------------------------------------
+
+[SCurve Cumulative PV] = 
+[Total PV]
+
+[SCurve Cumulative AC] = 
+[Total AC]
+
+[SCurve Cumulative EAC] = 
+[EAC Selected Model]
+
+[SCurve Cost Variance Line] = 
+[SCurve Cumulative PV] - [SCurve Cumulative AC]
+
+[Statlig Ramme Inntekt NOK] = 
+[Total BAC] * 0.78
+
+[BOA Ekstern Forskning NOK] = 
+[Total BAC] * 0.14
+
+[Oppdragsaktivitet Inntekt NOK] = 
+[Total BAC] * 0.05
+
+[Oevrige Inntekter NOK] = 
+[Total BAC] * 0.03
+
+[Loenn & Sosiale Kostnader NOK] = 
+[Total AC] * 0.64
+
+[Andre Driftskostnader NOK] = 
+[Total AC] * 0.23
+
+[Husleie & Eiendom NOK] = 
+[Total AC] * 0.08
+
+[Avskrivninger & Investeringer NOK] = 
+[Total AC] * 0.05
+
+[Loennsinnsparing Vakanser NOK] = 
+[Cost Variance NOK] * 0.55
+
+[Driftsinnsparing Konsulent Reise NOK] = 
+[Cost Variance NOK] * 0.30
+
+[Eiendomsinnsparing Enoek NOK] = 
+[Cost Variance NOK] * 0.10
+
+[Investeringsinnsparing Periodisering NOK] = 
+[Cost Variance NOK] * 0.05
+
+

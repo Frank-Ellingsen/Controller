@@ -1,9 +1,9 @@
 table Fact_Travel_Audit
-	lineageTag: 30e4ed06-8237-4724-a942-c3663fa64e01
+	lineageTag: 87ddaf55-134c-4c38-8df7-1f4d28c54c66
 
 	column Reise_ID
 		dataType: string
-		lineageTag: f238c9d8-1bc5-478f-86e0-e675917e85ab
+		lineageTag: 74e30ca7-d1fd-444a-afa7-9610251bce5f
 		summarizeBy: none
 		sourceColumn: Reise_ID
 
@@ -11,7 +11,7 @@ table Fact_Travel_Audit
 
 	column Ansatt
 		dataType: string
-		lineageTag: dd08fa93-74cf-46c8-a51e-1549246993f5
+		lineageTag: 499b9e70-a13f-4722-bb73-31b276e68f1e
 		summarizeBy: none
 		sourceColumn: Ansatt
 
@@ -19,7 +19,7 @@ table Fact_Travel_Audit
 
 	column Dato
 		dataType: string
-		lineageTag: c5e3cdf9-9ae4-4a4f-8436-0d1ea8b2e9eb
+		lineageTag: 66525e3a-e940-4292-960d-9eac74b7495e
 		summarizeBy: none
 		sourceColumn: Dato
 
@@ -27,7 +27,7 @@ table Fact_Travel_Audit
 
 	column Formaal
 		dataType: string
-		lineageTag: 3fe0762c-e200-47f7-9b33-117eed507ee1
+		lineageTag: dd055aa0-eb4f-49f8-8982-7b3fe68ab328
 		summarizeBy: none
 		sourceColumn: Formaal
 
@@ -36,7 +36,7 @@ table Fact_Travel_Audit
 	column Belop_NOK
 		dataType: double
 		formatString: #,##0
-		lineageTag: 60709683-4831-4e9c-9762-2b602460c030
+		lineageTag: 55551ad3-983c-4bfb-876e-8b5a11134e2f
 		summarizeBy: sum
 		sourceColumn: Belop_NOK
 
@@ -44,7 +44,7 @@ table Fact_Travel_Audit
 
 	column Maltid_Dekket
 		dataType: string
-		lineageTag: 83c3fdee-f38d-4207-b6aa-97f26e4ca029
+		lineageTag: a25cd350-663d-4cf8-9b73-ec995c6e7bce
 		summarizeBy: none
 		sourceColumn: Maltid_Dekket
 
@@ -52,7 +52,7 @@ table Fact_Travel_Audit
 
 	column Fradrag_Utfort
 		dataType: boolean
-		lineageTag: c76d7a8d-95f1-4772-bc63-0fb787942982
+		lineageTag: 871ec400-c4d4-4555-817c-aab756b12ab9
 		summarizeBy: none
 		sourceColumn: Fradrag_Utfort
 
@@ -61,7 +61,7 @@ table Fact_Travel_Audit
 	column Km_Godtgjorelse
 		dataType: int64
 		formatString: #,##0
-		lineageTag: 2ee14834-2d7d-4474-953f-ab3c4d08e31d
+		lineageTag: 0b1d50f0-4f3d-46d8-851f-4bfe94b20080
 		summarizeBy: sum
 		sourceColumn: Km_Godtgjorelse
 
@@ -69,7 +69,7 @@ table Fact_Travel_Audit
 
 	column Kvittering_Vedlagt
 		dataType: boolean
-		lineageTag: b3f41683-7552-455e-a0ea-e99afa0b69af
+		lineageTag: 8d365355-fd7d-4e62-8026-117458bb2bf2
 		summarizeBy: none
 		sourceColumn: Kvittering_Vedlagt
 
@@ -77,7 +77,7 @@ table Fact_Travel_Audit
 
 	column BDM_ID
 		dataType: string
-		lineageTag: 78ea096e-6aec-4c04-b041-7e7701ef085c
+		lineageTag: 23801f72-60a7-4f9d-b5d7-b72d521624bb
 		summarizeBy: none
 		sourceColumn: BDM_ID
 
@@ -85,7 +85,7 @@ table Fact_Travel_Audit
 
 	column Attestant_ID
 		dataType: string
-		lineageTag: c76aa66c-c3a5-4dac-9716-58ea58a627dc
+		lineageTag: a0cc3977-e257-4f3b-9e28-e17a29eda1dc
 		summarizeBy: none
 		sourceColumn: Attestant_ID
 
@@ -93,7 +93,7 @@ table Fact_Travel_Audit
 
 	column Km_Rute_Beskrevet
 		dataType: boolean
-		lineageTag: ab8f4bce-3420-4508-bb19-91e3a6ba2149
+		lineageTag: afa4760a-ee2f-4afc-935e-9f39fa807e80
 		summarizeBy: none
 		sourceColumn: Km_Rute_Beskrevet
 
@@ -101,7 +101,7 @@ table Fact_Travel_Audit
 
 	column Avvik_Beskrivelse
 		dataType: string
-		lineageTag: 4c240317-4bac-40c7-9b2b-18c86673506e
+		lineageTag: 630ee0ef-4c0d-4b97-a026-60c6b45395e2
 		summarizeBy: none
 		sourceColumn: Avvik_Beskrivelse
 
@@ -109,7 +109,7 @@ table Fact_Travel_Audit
 
 	column Status
 		dataType: string
-		lineageTag: 5e10fbd6-115b-4333-94ce-c256bc84740b
+		lineageTag: d334a41e-9ac7-4654-ba56-8fed6602ec41
 		summarizeBy: none
 		sourceColumn: Status
 

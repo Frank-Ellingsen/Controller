@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "donut_cost_breakdown",
+  "position": {
+    "x": 660,
+    "y": 600,
+    "width": 590,
+    "height": 420,
+    "z": 1
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Loenn & Sosiale Kostnader NOK"
+                }
+              },
+              "queryRef": "_Measures.Loenn & Sosiale Kostnader NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Andre Driftskostnader NOK"
+                }
+              },
+              "queryRef": "_Measures.Andre Driftskostnader NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Husleie & Eiendom NOK"
+                }
+              },
+              "queryRef": "_Measures.Husleie & Eiendom NOK"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avskrivninger & Investeringer NOK"
+                }
+              },
+              "queryRef": "_Measures.Avskrivninger & Investeringer NOK"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {}
+  }
+}
