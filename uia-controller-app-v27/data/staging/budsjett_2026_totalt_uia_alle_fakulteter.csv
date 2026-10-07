@@ -1,0 +1,769 @@
+Budsjett_ID,Maaned,Kvartal,Tertial,Avdeling_Kode,Avdeling,Enhet_Type,Konto,Kontonavn,Kategori,Budsjett_Maaned_NOK,Tag
+BUD2026-HH-3000-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3000-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-9216798.32,2026_UiA_Full_Oct
+BUD2026-HH-3400-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-3400-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2023199.63,2026_UiA_Full_Oct
+BUD2026-HH-5000-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5000-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,7193598.69,2026_UiA_Full_Oct
+BUD2026-HH-5330-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-5330-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,674399.88,2026_UiA_Full_Oct
+BUD2026-HH-6000-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6000-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1573599.71,2026_UiA_Full_Oct
+BUD2026-HH-6800-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-6800-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,899199.84,2026_UiA_Full_Oct
+BUD2026-HH-7100-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7100-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,7100,Reise & Representasjon,7xxx Reiser,561999.9,2026_UiA_Full_Oct
+BUD2026-HH-7800-01,2026-M01,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-02,2026-M02,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-03,2026-M03,Q1,T1,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-04,2026-M04,Q2,T1,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-05,2026-M05,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-06,2026-M06,Q2,T2,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-07,2026-M07,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-08,2026-M08,Q3,T2,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-09,2026-M09,Q3,T3,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-10,2026-M10,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-11,2026-M11,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HH-7800-12,2026-M12,Q4,T3,HH,Handelshøyskolen (HH),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,337199.94,2026_UiA_Full_Oct
+BUD2026-HELS-3000-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3000-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14179689.72,2026_UiA_Full_Oct
+BUD2026-HELS-3400-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-3400-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3112614.82,2026_UiA_Full_Oct
+BUD2026-HELS-5000-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5000-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11067074.9,2026_UiA_Full_Oct
+BUD2026-HELS-5330-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-5330-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1037538.27,2026_UiA_Full_Oct
+BUD2026-HELS-6000-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6000-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2420922.63,2026_UiA_Full_Oct
+BUD2026-HELS-6800-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-6800-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1383384.36,2026_UiA_Full_Oct
+BUD2026-HELS-7100-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7100-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7100,Reise & Representasjon,7xxx Reiser,864615.23,2026_UiA_Full_Oct
+BUD2026-HELS-7800-01,2026-M01,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-02,2026-M02,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-03,2026-M03,Q1,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-04,2026-M04,Q2,T1,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-05,2026-M05,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-06,2026-M06,Q2,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-07,2026-M07,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-08,2026-M08,Q3,T2,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-09,2026-M09,Q3,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-10,2026-M10,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-11,2026-M11,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HELS-7800-12,2026-M12,Q4,T3,HELS,Fakultet for helse- og idrettsvitenskap (HELS),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,518769.14,2026_UiA_Full_Oct
+BUD2026-HUM-3000-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3000-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-14463283.51,2026_UiA_Full_Oct
+BUD2026-HUM-3400-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-3400-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-3174867.11,2026_UiA_Full_Oct
+BUD2026-HUM-5000-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5000-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,11288416.4,2026_UiA_Full_Oct
+BUD2026-HUM-5330-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-5330-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1058289.04,2026_UiA_Full_Oct
+BUD2026-HUM-6000-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6000-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,2469341.09,2026_UiA_Full_Oct
+BUD2026-HUM-6800-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-6800-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1411052.05,2026_UiA_Full_Oct
+BUD2026-HUM-7100-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7100-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7100,Reise & Representasjon,7xxx Reiser,881907.53,2026_UiA_Full_Oct
+BUD2026-HUM-7800-01,2026-M01,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-02,2026-M02,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-03,2026-M03,Q1,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-04,2026-M04,Q2,T1,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-05,2026-M05,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-06,2026-M06,Q2,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-07,2026-M07,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-08,2026-M08,Q3,T2,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-09,2026-M09,Q3,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-10,2026-M10,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-11,2026-M11,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-HUM-7800-12,2026-M12,Q4,T3,HUM,Fakultet for humaniora og pedagogikk (HUM),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,529144.52,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3000-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-7089844.86,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-3400-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-1556307.41,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5000-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,5533537.45,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-5330-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,518769.14,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6000-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1210461.32,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-6800-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,691692.18,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7100-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7100,Reise & Representasjon,7xxx Reiser,432307.61,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-01,2026-M01,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-02,2026-M02,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-03,2026-M03,Q1,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-04,2026-M04,Q2,T1,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-05,2026-M05,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-06,2026-M06,Q2,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-07,2026-M07,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-08,2026-M08,Q3,T2,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-09,2026-M09,Q3,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-10,2026-M10,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-11,2026-M11,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-KUNST-7800-12,2026-M12,Q4,T3,KUNST,Fakultet for kunstfag (KUNST),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,259384.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3000-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-11627345.57,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-3400-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-2552344.15,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5000-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,9075001.42,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-5330-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,850781.38,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6000-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,1985156.56,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-6800-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1134375.18,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7100-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7100,Reise & Representasjon,7xxx Reiser,708984.49,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-01,2026-M01,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-02,2026-M02,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-03,2026-M03,Q1,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-04,2026-M04,Q2,T1,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-05,2026-M05,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-06,2026-M06,Q2,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-07,2026-M07,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-08,2026-M08,Q3,T2,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-09,2026-M09,Q3,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-10,2026-M10,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-11,2026-M11,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-SAMF-7800-12,2026-M12,Q4,T3,SAMF,Fakultet for samfunnsvitenskap (SAMF),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,425390.69,2026_UiA_Full_Oct
+BUD2026-TN-3000-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3000-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-20135159.4,2026_UiA_Full_Oct
+BUD2026-TN-3400-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-3400-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-4419913.04,2026_UiA_Full_Oct
+BUD2026-TN-5000-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5000-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,15715246.36,2026_UiA_Full_Oct
+BUD2026-TN-5330-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-5330-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,5330,Sensorhonorar & Timelønnede,5xxx Lønn,1473304.35,2026_UiA_Full_Oct
+BUD2026-TN-6000-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6000-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6000,Husleie & Eiendomsdrift,6xxx Drift,3437710.14,2026_UiA_Full_Oct
+BUD2026-TN-6800-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-6800-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,1964405.79,2026_UiA_Full_Oct
+BUD2026-TN-7100-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7100-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7100,Reise & Representasjon,7xxx Reiser,1227753.62,2026_UiA_Full_Oct
+BUD2026-TN-7800-01,2026-M01,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-02,2026-M02,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-03,2026-M03,Q1,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-04,2026-M04,Q2,T1,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-05,2026-M05,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-06,2026-M06,Q2,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-07,2026-M07,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-08,2026-M08,Q3,T2,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-09,2026-M09,Q3,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-10,2026-M10,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-11,2026-M11,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-TN-7800-12,2026-M12,Q4,T3,TN,Fakultet for teknologi og realfag (TN),Fakultet,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,736652.17,2026_UiA_Full_Oct
+BUD2026-ADM-3000-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3000-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-31195317.38,2026_UiA_Full_Oct
+BUD2026-ADM-3400-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-3400-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-6847752.6,2026_UiA_Full_Oct
+BUD2026-ADM-5000-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5000-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,24347564.78,2026_UiA_Full_Oct
+BUD2026-ADM-5330-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-5330-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2282584.2,2026_UiA_Full_Oct
+BUD2026-ADM-6000-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6000-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6000,Husleie & Eiendomsdrift,6xxx Drift,5326029.8,2026_UiA_Full_Oct
+BUD2026-ADM-6800-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-6800-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3043445.6,2026_UiA_Full_Oct
+BUD2026-ADM-7100-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7100-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7100,Reise & Representasjon,7xxx Reiser,1902153.5,2026_UiA_Full_Oct
+BUD2026-ADM-7800-01,2026-M01,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-02,2026-M02,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-03,2026-M03,Q1,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-04,2026-M04,Q2,T1,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-05,2026-M05,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-06,2026-M06,Q2,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-07,2026-M07,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-08,2026-M08,Q3,T2,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-09,2026-M09,Q3,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-10,2026-M10,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-11,2026-M11,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-ADM-7800-12,2026-M12,Q4,T3,ADM,Fellesadministrasjon & Fellestjenester (ADM),Administrasjon,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1141292.1,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3000-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3000,Statlig Rammebevilgning (Kap 260.50),3xxx Inntekter,-33889458.42,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-3400-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,3400,BOA Ekstern Prosjektstøtte (NFR/EU),3xxx Inntekter,-7439149.41,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5000-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5000,Fast Lønn & Sosiale Kostnader,5xxx Lønn,26450309.01,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-5330-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,5330,Sensorhonorar & Timelønnede,5xxx Lønn,2479716.47,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6000-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6000,Husleie & Eiendomsdrift,6xxx Drift,5786005.1,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-6800-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,6800,"IKT, Rekvisita & Utstyr",6xxx Drift,3306288.63,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7100-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7100,Reise & Representasjon,7xxx Reiser,2066430.39,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-01,2026-M01,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-02,2026-M02,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-03,2026-M03,Q1,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-04,2026-M04,Q2,T1,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-05,2026-M05,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-06,2026-M06,Q2,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-07,2026-M07,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-08,2026-M08,Q3,T2,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-09,2026-M09,Q3,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-10,2026-M10,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-11,2026-M11,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct
+BUD2026-FELLES-7800-12,2026-M12,Q4,T3,FELLES,Særkostnader & Fellesutgifter (FELLES),Fellesutgifter,7800,Andre Driftskostnader & Konsulenter,7xxx Reiser,1239858.24,2026_UiA_Full_Oct

@@ -1,0 +1,64 @@
+# ==============================================================================
+# CANONICAL PROJECT MODEL - SYSTEM CONFIGURATION (UiA Controlling App v27)
+# Centralized Configuration & Rule Parameters (Eliminates Hardcoded Values)
+# ==============================================================================
+
+system:
+  organization_name: "Universitetet i Agder (UiA)"
+  currency: "NOK"
+  display_currency: "MNOK"
+  default_reporting_period: "2026-M10"
+  current_fiscal_year: 2026
+
+regulations:
+  f0520_max_reserve_pct: 0.05            # 5.0% limit for unspent reserves per 31.12
+  receipt_requirement_threshold_nok: 100.0 # Receipts mandatory above 100 NOK
+  small_purchase_exception_limit_nok: 5000.0 # BDM/Attestant same-person limit
+  storage_retention_years_standard: 10   # Statlige oppbevaringskrav
+
+departments:
+  HH:
+    code: "HH"
+    name: "Handelshøyskolen (HH)"
+    share_pct: 0.065
+  HELS:
+    code: "HELS"
+    name: "Fakultet for helse- og idrettsvitenskap (HELS)"
+    share_pct: 0.100
+  HUM:
+    code: "HUM"
+    name: "Fakultet for humaniora og pedagogikk (HUM)"
+    share_pct: 0.102
+  KUNST:
+    code: "KUNST"
+    name: "Fakultet for kunstfag (KUNST)"
+    share_pct: 0.050
+  SAMF:
+    code: "SAMF"
+    name: "Fakultet for samfunnsvitenskap (SAMF)"
+    share_pct: 0.082
+  TN:
+    code: "TN"
+    name: "Fakultet for teknologi og realfag (TN)"
+    share_pct: 0.142
+  ADM:
+    code: "ADM"
+    code_full: "Fellesadministrasjon & Fellestjenester (ADM)"
+    share_pct: 0.220
+  FELLES:
+    code: "FELLES"
+    name: "Særkostnader & Fellesutgifter (FELLES)"
+    share_pct: 0.239
+
+account_categories:
+  "3xxx": "3xxx Inntekter"
+  "5xxx": "5xxx Lønn"
+  "6xxx": "6xxx Drift"
+  "7xxx": "7xxx Reiser"
+
+evm_thresholds:
+  cpi_critical: 0.85
+  spi_critical: 0.85
+  vac_critical_nok: -1000000.0
+  cpi_warning: 0.95
+  spi_warning: 0.95

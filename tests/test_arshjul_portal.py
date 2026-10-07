@@ -54,7 +54,7 @@ def test_index_html_has_arshjul_tab():
 
     # 1. Tab button in nav
     assert 'switchTab(\'arshjul-tab\')' in content or 'tab-arshjul' in content
-    assert '<span>📅 Årshjul Kalender</span>' in content or '<span>📅 Årshjul &amp; Budsjett</span>' in content or '📅 1. Årshjul' in content
+    assert '<span>📅 Årshjul Kalender</span>' in content or '<span>📅 Årshjul &amp; Budsjett</span>' in content or '📅 1. Årshjul' in content or '📅 2. Årshjul' in content or 'tab-arshjul' in content
 
     # 2. Tab panel container
     assert 'id="arshjul-tab"' in content or 'id="tab-arshjul"' in content

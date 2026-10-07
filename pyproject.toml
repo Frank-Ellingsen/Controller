@@ -1,7 +1,7 @@
 [project]
 name = "uia-controller-app"
-version = "19.0.0"
-description = "UiA Controlling App for Norwegian Public Sector Financial Management, EVM Capital Project Controlling, Annual Wheel, 2026 YTD Review, Data Ingestion, Power BI & Web Portal Dashboard (v19)"
+version = "27.0.0"
+description = "UiA Controlling App for Norwegian Public Sector Financial Management, EVM Capital Project Controlling, Canonical Domain Models & master_state.json (v27)"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -10,7 +10,9 @@ dependencies = [
     "openpyxl>=3.1.0",
     "pyarrow>=12.0.0",
     "streamlit>=1.20.0",
-    "pytest>=9.1.1",
+    "pytest>=7.0.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0.0",
 ]
 
 [build-system]
